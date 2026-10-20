@@ -1,0 +1,1491 @@
+{
+  "screened_at": "2026-08-05",
+  "date_window": [
+    "2021-01-01",
+    "2026-08-05"
+  ],
+  "candidate_count": 315,
+  "included_count": 40,
+  "screening_mode": "prespecified title-family rules followed by manual relevance audit",
+  "shortlist": [
+    {
+      "paper_id": "https://openalex.org/W4399940222",
+      "title": "Learning dynamical systems from data: An introduction to physics-guided deep learning",
+      "normalized_title": "learning dynamical systems from data an introduction to physics guided deep learning",
+      "authors": [
+        "Rose Yu",
+        "Rui Wang"
+      ],
+      "year": 2024,
+      "publication_date": "2024-06-24",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "work_type": "article",
+      "doi": "10.1073/pnas.2311808121",
+      "url": "https://doi.org/10.1073/pnas.2311808121",
+      "abstract": "Modeling complex physical dynamics is a fundamental task in science and engineering. Traditional physics-based models are first-principled, explainable, and sample-efficient. However, they often rely on strong modeling assumptions and expensive numerical integration, requiring significant computational resources and domain expertise. While deep learning (DL) provides efficient alternatives for modeling complex dynamics, they require a large amount of labeled training data. Furthermore, its predictions may disobey the governing physical laws and are difficult to interpret. Physics-guided DL aims to integrate first-principled physical knowledge into data-driven methods. It has the best of both worlds and is well equipped to better solve scientific problems. Recently, this field has gained great progress and has drawn considerable interest across discipline Here, we introduce the framework of physics-guided DL with a special emphasis on learning dynamical systems. We describe the learning pipeline and categorize state-of-the-art methods under this framework. We also offer our perspectives on the open challenges and emerging opportunities.",
+      "cited_by_count_snapshot": 96,
+      "relevance_terms": [
+        "dynamical",
+        "dynamics"
+      ],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "2024 dynamics-focused perspective",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "yu2024_learning_dynamical_systems_from_data"
+    },
+    {
+      "paper_id": "https://openalex.org/W4391629689",
+      "title": "Respecting causality for training physics-informed neural networks",
+      "normalized_title": "respecting causality for training physics informed neural networks",
+      "authors": [
+        "Sifan Wang",
+        "Shyam Sankaran",
+        "Paris Perdikaris"
+      ],
+      "year": 2024,
+      "publication_date": "2024-02-07",
+      "venue": "Computer Methods in Applied Mechanics and Engineering",
+      "work_type": "article",
+      "doi": "10.1016/j.cma.2024.116813",
+      "url": "https://doi.org/10.1016/j.cma.2024.116813",
+      "abstract": "",
+      "cited_by_count_snapshot": 293,
+      "relevance_terms": [
+        "physics-informed"
+      ],
+      "discovery_query": "physics guided neural nonlinear dynamics",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "physics guided neural nonlinear dynamics",
+        "Physics guided neural networks for modelling of non-linear dynamics"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "recent training-horizon caution",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "wang2024_respecting_causality_for_training_physics"
+    },
+    {
+      "paper_id": "https://openalex.org/W4383955976",
+      "title": "Differentiable modelling to unify machine learning and physical models for geosciences",
+      "normalized_title": "differentiable modelling to unify machine learning and physical models for geosciences",
+      "authors": [
+        "Chaopeng Shen",
+        "Alison Appling",
+        "Pierre Gentine",
+        "Toshiyuki Bandai",
+        "Hoshin V. Gupta",
+        "Alexandre M. Tartakovsky",
+        "Marco Baity‐Jesi",
+        "Fabrizio Fenicia",
+        "Daniel Kifer",
+        "Li Li",
+        "Xiaofeng Liu",
+        "Wei Ren",
+        "Yi Zheng",
+        "C. J. Harman",
+        "Martyn Clark",
+        "Matthew W. Farthing",
+        "Dapeng Feng",
+        "Praveen Kumar",
+        "Doaa Aboelyazeed",
+        "Farshid Rahmani",
+        "Yalan Song",
+        "Hylke E. Beck",
+        "Tadd Bindas",
+        "Dipankar Dwivedi",
+        "Kuai Fang",
+        "Marvin Höge",
+        "Christopher Rackauckas",
+        "Binayak P. Mohanty",
+        "Tirthankar Roy",
+        "Chonggang Xu",
+        "Kathryn Lawson"
+      ],
+      "year": 2023,
+      "publication_date": "2023-07-11",
+      "venue": "Nature Reviews Earth & Environment",
+      "work_type": "article",
+      "doi": "10.1038/s43017-023-00450-9",
+      "url": "https://doi.org/10.1038/s43017-023-00450-9",
+      "abstract": "",
+      "cited_by_count_snapshot": 414,
+      "relevance_terms": [],
+      "discovery_query": "missing observations latent state model",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "missing observations latent state model"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "differentiable hybrid-model perspective",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "shen2023_differentiable_modelling_to_unify_machine"
+    },
+    {
+      "paper_id": "https://openalex.org/W4389252420",
+      "title": "Hybrid Physics- and Data-Driven Dynamic State Estimation of Electricity-Heat Integrated Energy Systems",
+      "normalized_title": "hybrid physics and data driven dynamic state estimation of electricity heat integrated energy systems",
+      "authors": [
+        "Long Chen",
+        "Chun Qin",
+        "Jun Zhao",
+        "Wei Wang"
+      ],
+      "year": 2023,
+      "publication_date": "2023-12-01",
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "work_type": "article",
+      "doi": "10.1109/tim.2023.3338666",
+      "url": "https://doi.org/10.1109/tim.2023.3338666",
+      "abstract": "State estimation (SE) can provide real-time, reliable, and complete operating state of the systems, supporting the subsequent collaborative scheduling and safe operation with credible data. For the dynamic SE of electric-heat integrated energy systems (EH-IESs), a hybrid physics- and data-driven SE method is proposed in this article with the consideration of the transient operation characteristics of the district heating system (DHS) and the coupling relationship between the electric power system (EPS) and DHS. By integrating the physics-driven and data-driven methods, the linear SE model of DHSs is first established, which captures the transient transmission characteristics and parameter variation characteristics of heat in the pipeline and the topological structure characteristics of the system under the guidance of the first principles. To solve the dynamic SE problem of DHSs, a breadth-first search-based Kalman filter algorithm is developed, which is combined with the weighted least squares-based static SE of EPSs to realize the real-time SE of EH-IESs. Numerical results of three systems with different scales in MATLAB show that the proposed method can accurately and efficiently estimate the state of EH-IESs, and the robustness of the SE of EH-IESs is effectively enhanced by combining the SE of the EPS and DHS.",
+      "cited_by_count_snapshot": 10,
+      "relevance_terms": [],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "partial-state hybrid estimation evidence",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "chen2023_hybrid_physics_and_data_driven"
+    },
+    {
+      "paper_id": "https://openalex.org/W4378802379",
+      "title": "Machine Learning With Data Assimilation and Uncertainty Quantification for Dynamical Systems: A Review",
+      "normalized_title": "machine learning with data assimilation and uncertainty quantification for dynamical systems a review",
+      "authors": [
+        "Sibo Cheng",
+        "César Quilodrán-Casas",
+        "Said Ouala",
+        "Alban Farchi",
+        "Che Liu",
+        "Pierre Tandeo",
+        "Ronan Fablet",
+        "Didier Lucor",
+        "Bertrand Iooss",
+        "Julien Brajard",
+        "Dunhui Xiao",
+        "Tijana Janjić",
+        "Weiping Ding",
+        "Yike Guo",
+        "Alberto Carrassi",
+        "Marc Bocquet",
+        "Rossella Arcucci"
+      ],
+      "year": 2023,
+      "publication_date": "2023-05-31",
+      "venue": "IEEE/CAA Journal of Automatica Sinica",
+      "work_type": "article",
+      "doi": "10.1109/jas.2023.123537",
+      "url": "https://doi.org/10.1109/jas.2023.123537",
+      "abstract": "Data assimilation (DA) and uncertainty quantification (UQ) are extensively used in analysing and reducing error propagation in high-dimensional spatial-temporal dynamics. Typical applications span from computational fluid dynamics (CFD) to geoscience and climate systems. Recently, much effort has been given in combining DA, UQ and machine learning (ML) techniques. These research efforts seek to address some critical challenges in high-dimensional dynamical systems, including but not limited to dynamical system identification, reduced order surro-gate modelling, error covariance specification and model error correction. A large number of developed techniques and methodologies exhibit a broad applicability across numerous domains, resulting in the necessity for a comprehensive guide. This paper provides the first overview of state-of-the-art researches in this interdisciplinary field, covering a wide range of applications. This review is aimed at ML scientists who attempt to apply DA and UQ techniques to improve the accuracy and the interpretability of their models, but also at DA and UQ experts who intend to integrate cutting-edge ML approaches to their systems. Therefore, this article has a special focus on how ML methods can overcome the existing limits of DA and UQ, and vice versa. Some exciting perspectives of this rapidly developing research field are also discussed.",
+      "cited_by_count_snapshot": 281,
+      "relevance_terms": [
+        "dynamical",
+        "dynamics",
+        "uncertainty"
+      ],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems",
+        "uncertainty calibration dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "dynamics and uncertainty synthesis",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "cheng2023_machine_learning_with_data_assimilation"
+    },
+    {
+      "paper_id": "https://openalex.org/W4297364310",
+      "title": "Hybrid physics-data-driven online modelling: Framework, methodology and application to electric vehicles",
+      "normalized_title": "hybrid physics data driven online modelling framework methodology and application to electric vehicles",
+      "authors": [
+        "Hao Chen",
+        "Shanhe Lou",
+        "Chen Lv"
+      ],
+      "year": 2022,
+      "publication_date": "2022-09-27",
+      "venue": "Mechanical Systems and Signal Processing",
+      "work_type": "article",
+      "doi": "10.1016/j.ymssp.2022.109791",
+      "url": "https://doi.org/10.1016/j.ymssp.2022.109791",
+      "abstract": "",
+      "cited_by_count_snapshot": 43,
+      "relevance_terms": [],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "recent hybrid residual modeling",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "chen2022_hybrid_physics_data_driven_online"
+    },
+    {
+      "paper_id": "https://openalex.org/W3185585276",
+      "title": "Integrating Scientific Knowledge with Machine Learning for Engineering and Environmental Systems",
+      "normalized_title": "integrating scientific knowledge with machine learning for engineering and environmental systems",
+      "authors": [
+        "Jared Willard",
+        "Xiaowei Jia",
+        "Shaoming Xu",
+        "Michael Steinbach",
+        "Vipin Kumar"
+      ],
+      "year": 2022,
+      "publication_date": "2022-03-25",
+      "venue": "ACM Computing Surveys",
+      "work_type": "article",
+      "doi": "10.1145/3514228",
+      "url": "https://doi.org/10.1145/3514228",
+      "abstract": "There is a growing consensus that solutions to complex science and engineering problems require novel methodologies that are able to integrate traditional physics-based modeling approaches with state-of-the-art machine learning (ML) techniques. This article provides a structured overview of such techniques. Application-centric objective areas for which these approaches have been applied are summarized, and then classes of methodologies used to construct physics-guided ML models and hybrid physics-ML frameworks are described. We then provide a taxonomy of these existing techniques, which uncovers knowledge gaps and potential crossovers of methods between disciplines that can serve as ideas for future research.",
+      "cited_by_count_snapshot": 696,
+      "relevance_terms": [],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "authoritative hybrid-knowledge taxonomy",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "willard2022_integrating_scientific_knowledge_with_machine"
+    },
+    {
+      "paper_id": "https://openalex.org/W4298000212",
+      "title": "Learned turbulence modelling with differentiable fluid solvers: physics-based loss functions and optimisation horizons",
+      "normalized_title": "learned turbulence modelling with differentiable fluid solvers physics based loss functions and optimisation horizons",
+      "authors": [
+        "Bjoern List",
+        "Liwei Chen",
+        "Nils Thuerey"
+      ],
+      "year": 2022,
+      "publication_date": "2022-09-29",
+      "venue": "Journal of Fluid Mechanics",
+      "work_type": "article",
+      "doi": "10.1017/jfm.2022.738",
+      "url": "https://doi.org/10.1017/jfm.2022.738",
+      "abstract": "In this paper, we train turbulence models based on convolutional neural networks. These learned turbulence models improve under-resolved low-resolution solutions to the incompressible Navier–Stokes equations at simulation time. Our study involves the development of a differentiable numerical solver that supports the propagation of optimisation gradients through multiple solver steps. The significance of this property is demonstrated by the superior stability and accuracy of those models that unroll more solver steps during training. Furthermore, we introduce loss terms based on turbulence physics that further improve the model accuracy. This approach is applied to three two-dimensional turbulence flow scenarios, a homogeneous decaying turbulence case, a temporally evolving mixing layer and a spatially evolving mixing layer. Our models achieve significant improvements of long-term a posteriori statistics when compared with no-model simulations, without requiring these statistics to be directly included in the learning targets. At inference time, our proposed method also gains substantial performance improvements over similarly accurate, purely numerical methods.",
+      "cited_by_count_snapshot": 67,
+      "relevance_terms": [],
+      "discovery_query": "differentiable physics learned correction",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "differentiable physics learned correction"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "multi-step physics-loss evidence",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "list2022_learned_turbulence_modelling_with_differentiable"
+    },
+    {
+      "paper_id": "https://openalex.org/W4283259725",
+      "title": "Perspectives on the integration between first-principles and data-driven modeling",
+      "normalized_title": "perspectives on the integration between first principles and data driven modeling",
+      "authors": [
+        "William A. Bradley",
+        "Jinhyeun Kim",
+        "Zachary Kilwein",
+        "Logan Blakely",
+        "Michael Eydenberg",
+        "Jordan Jalvin",
+        "Carl D. Laird",
+        "Fani Boukouvala"
+      ],
+      "year": 2022,
+      "publication_date": "2022-06-21",
+      "venue": "Computers & Chemical Engineering",
+      "work_type": "article",
+      "doi": "10.1016/j.compchemeng.2022.107898",
+      "url": "https://doi.org/10.1016/j.compchemeng.2022.107898",
+      "abstract": "",
+      "cited_by_count_snapshot": 212,
+      "relevance_terms": [],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "integration design context",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "bradley2022_perspectives_on_the_integration_between"
+    },
+    {
+      "paper_id": "https://openalex.org/W4280564014",
+      "title": "Physics guided neural networks for modelling of non-linear dynamics",
+      "normalized_title": "physics guided neural networks for modelling of non linear dynamics",
+      "authors": [
+        "Haakon Robinson",
+        "Suraj Pawar",
+        "Adil Rasheed",
+        "Omer San"
+      ],
+      "year": 2022,
+      "publication_date": "2022-07-26",
+      "venue": "Neural Networks",
+      "work_type": "article",
+      "doi": "10.1016/j.neunet.2022.07.023",
+      "url": "https://doi.org/10.1016/j.neunet.2022.07.023",
+      "abstract": "The success of the current wave of artificial intelligence can be partly attributed to deep neural networks, which have proven to be very effective in learning complex patterns from large datasets with minimal human intervention. However, it is difficult to train these models on complex dynamical systems from data alone due to their low data efficiency and sensitivity to hyperparameters and initialisation. This work demonstrates that injection of partially known information at an intermediate layer in a DNN can improve model accuracy, reduce model uncertainty, and yield improved convergence during the training. The value of these physics-guided neural networks has been demonstrated by learning the dynamics of a wide variety of nonlinear dynamical systems represented by five well-known equations in nonlinear systems theory: the Lotka-Volterra, Duffing, Van der Pol, Lorenz, and Henon-Heiles systems.",
+      "cited_by_count_snapshot": 86,
+      "relevance_terms": [
+        "dynamical",
+        "dynamics",
+        "physics guided",
+        "uncertainty"
+      ],
+      "discovery_query": "physics guided neural nonlinear dynamics",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "physics guided neural nonlinear dynamics",
+        "differentiable physics learned correction",
+        "Physics guided neural networks for modelling of non-linear dynamics"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "recent fixed physics-guided baseline",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "robinson2022_physics_guided_neural_networks_for"
+    },
+    {
+      "paper_id": "https://openalex.org/W3207318965",
+      "title": "Physics-guided Deep Markov Models for learning nonlinear dynamical systems with uncertainty",
+      "normalized_title": "physics guided deep markov models for learning nonlinear dynamical systems with uncertainty",
+      "authors": [
+        "Wei Liu",
+        "Zhilu Lai",
+        "Kiran Bacsa",
+        "Eleni Chatzi"
+      ],
+      "year": 2022,
+      "publication_date": "2022-05-19",
+      "venue": "Mechanical Systems and Signal Processing",
+      "work_type": "article",
+      "doi": "10.1016/j.ymssp.2022.109276",
+      "url": "https://doi.org/10.1016/j.ymssp.2022.109276",
+      "abstract": "In this paper, we propose a probabilistic physics-guided framework, termed Physics-guided Deep Markov Model (PgDMM). The framework targets the inference of the characteristics and latent structure of nonlinear dynamical systems from measurement data, where exact inference of latent variables is typically intractable. A recently surfaced option pertains to leveraging variational inference to perform approximate inference. In such a scheme, transition and emission functions of the system are parameterized via feed-forward neural networks (deep generative models). However, due to the generalized and highly versatile formulation of neural network functions, the learned latent space often lacks physical interpretation and structured representation. To address this, we bridge physics-based state space models with Deep Markov Models, thus delivering a hybrid modeling framework for unsupervised learning and identification of nonlinear dynamical systems. The proposed framework takes advantage of the expressive power of deep learning, while retaining the driving physics of the dynamical system by imposing physics-driven restrictions on the side of the latent space. We demonstrate the benefits of such a fusion in terms of achieving improved performance on illustrative simulation examples and experimental case studies of nonlinear systems. Our results indicate that the physics-based models involved in the employed transition and emission functions essentially enforce a more structured and physically interpretable latent space, which is essential for enhancing and generalizing the predictive capabilities of deep learning-based models.",
+      "cited_by_count_snapshot": 63,
+      "relevance_terms": [
+        "dynamical",
+        "hybrid model",
+        "state space",
+        "uncertainty"
+      ],
+      "discovery_query": "hybrid physics data driven dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "hybrid physics data driven dynamical systems"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "closest probabilistic physics-guided baseline",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "liu2022_physics_guided_deep_markov_models"
+    },
+    {
+      "paper_id": "https://openalex.org/W4288039037",
+      "title": "Scientific Machine Learning Through Physics–Informed Neural Networks: Where we are and What’s Next",
+      "normalized_title": "scientific machine learning through physics informed neural networks where we are and what s next",
+      "authors": [
+        "Salvatore Cuomo",
+        "Vincenzo Schiano Di Cola",
+        "Fabio Giampaolo",
+        "Gianluigi Rozza",
+        "Maziar Raissi",
+        "Francesco Piccialli"
+      ],
+      "year": 2022,
+      "publication_date": "2022-07-26",
+      "venue": "Journal of Scientific Computing",
+      "work_type": "article",
+      "doi": "10.1007/s10915-022-01939-z",
+      "url": "https://doi.org/10.1007/s10915-022-01939-z",
+      "abstract": "Abstract Physics-Informed Neural Networks (PINN) are neural networks (NNs) that encode model equations, like Partial Differential Equations (PDE), as a component of the neural network itself. PINNs are nowadays used to solve PDEs, fractional equations, integral-differential equations, and stochastic PDEs. This novel methodology has arisen as a multi-task learning framework in which a NN must fit observed data while reducing a PDE residual. This article provides a comprehensive review of the literature on PINNs: while the primary goal of the study was to characterize these networks and their related advantages and disadvantages. The review also attempts to incorporate publications on a broader range of collocation-based physics informed neural networks, which stars form the vanilla PINN, as well as many other variants, such as physics-constrained neural networks (PCNN), variational hp-VPINN, and conservative PINN (CPINN). The study indicates that most research has focused on customizing the PINN through different activation functions, gradient optimization techniques, neural network structures, and loss function structures. Despite the wide range of applications for which PINNs have been used, by demonstrating their ability to be more feasible in some contexts than classical numerical techniques like Finite Element Method (FEM), advancements are still possible, most notably theoretical issues that remain unresolved.",
+      "cited_by_count_snapshot": 2464,
+      "relevance_terms": [
+        "physics-informed"
+      ],
+      "discovery_query": "physics guided neural nonlinear dynamics",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "physics guided neural nonlinear dynamics",
+        "hybrid physics data driven dynamical systems",
+        "Physics guided neural networks for modelling of non-linear dynamics"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "2022 scientific-ML synthesis",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "cuomo2022_scientific_machine_learning_through_physics"
+    },
+    {
+      "paper_id": "https://openalex.org/W3160258528",
+      "title": "Physics-Guided Machine Learning for Scientific Discovery: An Application in Simulating Lake Temperature Profiles",
+      "normalized_title": "physics guided machine learning for scientific discovery an application in simulating lake temperature profiles",
+      "authors": [
+        "Xiaowei Jia",
+        "Jared Willard",
+        "Anuj Karpatne",
+        "Jordan S. Read",
+        "Jacob A. Zwart",
+        "Michael Steinbach",
+        "Vipin Kumar"
+      ],
+      "year": 2021,
+      "publication_date": "2021-05-18",
+      "venue": "ACM/IMS Transactions on Data Science",
+      "work_type": "article",
+      "doi": "10.1145/3447814",
+      "url": "https://doi.org/10.1145/3447814",
+      "abstract": "Physics-based models are often used to study engineering and environmental systems. The ability to model these systems is the key to achieving our future environmental sustainability and improving the quality of human life. This article focuses on simulating lake water temperature, which is critical for understanding the impact of changing climate on aquatic ecosystems and assisting in aquatic resource management decisions. General Lake Model (GLM) is a state-of-the-art physics-based model used for addressing such problems. However, like other physics-based models used for studying scientific and engineering systems, it has several well-known limitations due to simplified representations of the physical processes being modeled or challenges in selecting appropriate parameters. While state-of-the-art machine learning models can sometimes outperform physics-based models given ample amount of training data, they can produce results that are physically inconsistent. This article proposes a physics-guided recurrent neural network model (PGRNN) that combines RNNs and physics-based models to leverage their complementary strengths and improves the modeling of physical processes. Specifically, we show that a PGRNN can improve prediction accuracy over that of physics-based models (by over 20% even with very little training data), while generating outputs consistent with physical laws. An important aspect of our PGRNN approach lies in its ability to incorporate the knowledge encoded in physics-based models. This allows training the PGRNN model using very few true observed data while also ensuring high prediction accuracy. Although we present and evaluate this methodology in the context of modeling the dynamics of temperature in lakes, it is applicable more widely to a range of scientific and engineering disciplines where physics-based (also known as mechanistic) models are used.",
+      "cited_by_count_snapshot": 293,
+      "relevance_terms": [
+        "dynamics"
+      ],
+      "discovery_query": "physics guided neural nonlinear dynamics",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "physics guided neural nonlinear dynamics"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "physics-guided modeling evidence",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "jia2021_physics_guided_machine_learning_for"
+    },
+    {
+      "paper_id": "https://openalex.org/W3163993681",
+      "title": "Physics-informed machine learning",
+      "normalized_title": "physics informed machine learning",
+      "authors": [
+        "George Em Karniadakis",
+        "Ioannis G. Kevrekidis",
+        "Lu Lu",
+        "Paris Perdikaris",
+        "Sifan Wang",
+        "Liu Yang"
+      ],
+      "year": 2021,
+      "publication_date": "2021-05-24",
+      "venue": "Nature Reviews Physics",
+      "work_type": "article",
+      "doi": "10.1038/s42254-021-00314-5",
+      "url": "https://doi.org/10.1038/s42254-021-00314-5",
+      "abstract": "",
+      "cited_by_count_snapshot": 7135,
+      "relevance_terms": [
+        "physics-informed"
+      ],
+      "discovery_query": "physics guided neural nonlinear dynamics",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "physics guided neural nonlinear dynamics",
+        "hybrid physics data driven dynamical systems",
+        "missing observations latent state model",
+        "Physics guided neural networks for modelling of non-linear dynamics"
+      ],
+      "category": "physics_hybrid",
+      "screen_decision": "include",
+      "keep_reason": "authoritative 2021 synthesis",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "karniadakis2021_physics_informed_machine_learning"
+    },
+    {
+      "paper_id": "https://openalex.org/W4410287397",
+      "title": "Conformal prediction for uncertainty quantification in dynamic biological systems",
+      "normalized_title": "conformal prediction for uncertainty quantification in dynamic biological systems",
+      "authors": [
+        "Alberto Portela",
+        "Julio R. Banga",
+        "Marcos Matabuena"
+      ],
+      "year": 2025,
+      "publication_date": "2025-05-12",
+      "venue": "PLoS Computational Biology",
+      "work_type": "article",
+      "doi": "10.1371/journal.pcbi.1013098",
+      "url": "https://doi.org/10.1371/journal.pcbi.1013098",
+      "abstract": "Uncertainty quantification (UQ) is the process of systematically determining and characterizing the degree of confidence in computational model predictions. In systems biology, and particularly with dynamic models, UQ is critical due to the nonlinearities and parameter sensitivities that influence the behavior of complex biological systems. Addressing these issues through robust UQ enables a deeper understanding of system dynamics and more reliable extrapolation beyond observed conditions. Many state-of-the-art UQ approaches in this field are grounded in Bayesian statistical methods. While these frameworks naturally incorporate uncertainty quantification, they often require the specification of parameter distributions as priors and may impose parametric assumptions that do not always reflect biological reality. Additionally, Bayesian methods can be computationally expensive, posing significant challenges when dealing with large-scale models and seeking rapid, reliable uncertainty calibration. As an alternative, we propose using conformal predictions methods and introduce two novel algorithms designed for dynamic biological systems. These approaches can provide non-asymptotic guarantees, improving robustness and scalability across various applications, even when the predictive models are misspecified. Through several illustrative scenarios, we demonstrate that these conformal algorithms can serve as powerful complements-or even alternatives-to conventional Bayesian methods, delivering effective uncertainty quantification for predictive tasks in systems biology.",
+      "cited_by_count_snapshot": 16,
+      "relevance_terms": [
+        "calibration",
+        "dynamics",
+        "uncertainty"
+      ],
+      "discovery_query": "uncertainty calibration dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "uncertainty calibration dynamical systems"
+      ],
+      "category": "uncertainty",
+      "screen_decision": "include",
+      "keep_reason": "recent dynamic-system calibration method",
+      "relevance_score": 0.85,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "portela2025_conformal_prediction_for_uncertainty_quantification"
+    },
+    {
+      "paper_id": "https://openalex.org/W4213297865",
+      "title": "Accounting for model form uncertainty in Bayesian calibration of linear dynamic systems",
+      "normalized_title": "accounting for model form uncertainty in bayesian calibration of linear dynamic systems",
+      "authors": [
+        "Mukesh K. Ramancha",
+        "Joel P. Conte",
+        "Matthew Parno"
+      ],
+      "year": 2022,
+      "publication_date": "2022-02-22",
+      "venue": "Mechanical Systems and Signal Processing",
+      "work_type": "article",
+      "doi": "10.1016/j.ymssp.2022.108871",
+      "url": "https://doi.org/10.1016/j.ymssp.2022.108871",
+      "abstract": "",
+      "cited_by_count_snapshot": 24,
+      "relevance_terms": [
+        "calibration",
+        "uncertainty"
+      ],
+      "discovery_query": "uncertainty calibration dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "uncertainty calibration dynamical systems"
+      ],
+      "category": "uncertainty",
+      "screen_decision": "include",
+      "keep_reason": "model-form uncertainty evidence",
+      "relevance_score": 0.85,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "ramancha2022_accounting_for_model_form_uncertainty"
+    },
+    {
+      "paper_id": "https://openalex.org/W4220683755",
+      "title": "Uncertainty estimation with deep learning for rainfall–runoff modeling",
+      "normalized_title": "uncertainty estimation with deep learning for rainfall runoff modeling",
+      "authors": [
+        "Daniel Klotz",
+        "Frederik Kratzert",
+        "Martin Gauch",
+        "Alden Keefe Sampson",
+        "J. Brandstetter",
+        "Günter Klambauer",
+        "Sepp Hochreiter",
+        "Grey Nearing"
+      ],
+      "year": 2022,
+      "publication_date": "2022-03-31",
+      "venue": "Hydrology and earth system sciences",
+      "work_type": "article",
+      "doi": "10.5194/hess-26-1673-2022",
+      "url": "https://doi.org/10.5194/hess-26-1673-2022",
+      "abstract": "Abstract. Deep learning is becoming an increasingly important way to produce accurate hydrological predictions across a wide range of spatial and temporal scales. Uncertainty estimations are critical for actionable hydrological prediction, and while standardized community benchmarks are becoming an increasingly important part of hydrological model development and research, similar tools for benchmarking uncertainty estimation are lacking. This contribution demonstrates that accurate uncertainty predictions can be obtained with deep learning. We establish an uncertainty estimation benchmarking procedure and present four deep learning baselines. Three baselines are based on mixture density networks, and one is based on Monte Carlo dropout. The results indicate that these approaches constitute strong baselines, especially the former ones. Additionally, we provide a post hoc model analysis to put forward some qualitative understanding of the resulting models. The analysis extends the notion of performance and shows that the model learns nuanced behaviors to account for different situations.",
+      "cited_by_count_snapshot": 228,
+      "relevance_terms": [
+        "uncertainty"
+      ],
+      "discovery_query": "uncertainty calibration dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "uncertainty calibration dynamical systems"
+      ],
+      "category": "uncertainty",
+      "screen_decision": "include",
+      "keep_reason": "probabilistic sequence benchmark design",
+      "relevance_score": 0.85,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "klotz2022_uncertainty_estimation_with_deep_learning"
+    },
+    {
+      "paper_id": "https://openalex.org/W3102100346",
+      "title": "A review of uncertainty quantification in deep learning: Techniques, applications and challenges",
+      "normalized_title": "a review of uncertainty quantification in deep learning techniques applications and challenges",
+      "authors": [
+        "Moloud Abdar",
+        "Farhad Pourpanah",
+        "Sadiq Hussain",
+        "Dana Rezazadegan",
+        "Li Liu",
+        "Mohammad Ghavamzadeh",
+        "Paul Fieguth",
+        "Xiaochun Cao",
+        "Abbas Khosravi",
+        "U. Rajendra Acharya",
+        "Vladimir Makarenkov",
+        "Saeid Nahavandi"
+      ],
+      "year": 2021,
+      "publication_date": "2021-05-23",
+      "venue": "Information Fusion",
+      "work_type": "article",
+      "doi": "10.1016/j.inffus.2021.05.008",
+      "url": "https://doi.org/10.1016/j.inffus.2021.05.008",
+      "abstract": "Uncertainty quantification (UQ) methods play a pivotal role in reducing the impact of uncertainties during both optimization and decision making processes. They have been applied to solve a variety of real-world problems in science and engineering. Bayesian approximation and ensemble learning techniques are two widely-used types of uncertainty quantification (UQ) methods. In this regard, researchers have proposed different UQ methods and examined their performance in a variety of applications such as computer vision (e.g., self-driving cars and object detection), image processing (e.g., image restoration), medical image analysis (e.g., medical image classification and segmentation), natural language processing (e.g., text classification, social media texts and recidivism risk-scoring), bioinformatics, etc. This study reviews recent advances in UQ methods used in deep learning, investigates the application of these methods in reinforcement learning, and highlights fundamental research challenges and directions associated with UQ.",
+      "cited_by_count_snapshot": 2537,
+      "relevance_terms": [
+        "uncertainty"
+      ],
+      "discovery_query": "world model reinforcement learning robust prediction",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "world model reinforcement learning robust prediction",
+        "uncertainty calibration dynamical systems"
+      ],
+      "category": "uncertainty",
+      "screen_decision": "include",
+      "keep_reason": "authoritative recent UQ synthesis",
+      "relevance_score": 0.85,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "abdar2021_a_review_of_uncertainty_quantification"
+    },
+    {
+      "paper_id": "https://openalex.org/W3181816558",
+      "title": "Automatic calibration and uncertainty quantification in waves dynamical downscaling",
+      "normalized_title": "automatic calibration and uncertainty quantification in waves dynamical downscaling",
+      "authors": [
+        "Rodrigo Alonso",
+        "Sebastián Solari"
+      ],
+      "year": 2021,
+      "publication_date": "2021-07-05",
+      "venue": "Coastal Engineering",
+      "work_type": "article",
+      "doi": "10.1016/j.coastaleng.2021.103944",
+      "url": "https://doi.org/10.1016/j.coastaleng.2021.103944",
+      "abstract": "",
+      "cited_by_count_snapshot": 11,
+      "relevance_terms": [
+        "calibration",
+        "dynamical",
+        "uncertainty"
+      ],
+      "discovery_query": "uncertainty calibration dynamical systems",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "uncertainty calibration dynamical systems"
+      ],
+      "category": "uncertainty",
+      "screen_decision": "include",
+      "keep_reason": "dynamic calibration evidence",
+      "relevance_score": 0.85,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "alonso2021_automatic_calibration_and_uncertainty_quantification"
+    },
+    {
+      "paper_id": "https://openalex.org/W7160726611",
+      "title": "HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning",
+      "normalized_title": "ham world soft hamiltonian world models with selective memory for planning",
+      "authors": [
+        "Haoyun Tang",
+        "Haodong Cui",
+        "Keyao Xu",
+        "Kun Wang",
+        "Zhandong Mei"
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-07",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2605.05951",
+      "abstract": "World models enable model-based planning through learned latent dynamics, but imagined rollouts become unstable as the planning horizon grows or the dynamics distribution shifts. We argue that this instability reflects two missing structures in planner-facing latents: history-conditioned memory for approximate Markov completeness, and geometric organization that separates configuration, momentum, and task semantics. We propose HaM-World (HMW), a structured world model that decomposes the latent state into a canonical (q, p) subspace and a context subspace c, while using Mamba selective state-space memory as the history-conditioned input to the same latent dynamics. Within this interface, (q, p) evolves through an energy-derived Hamiltonian vector field plus learnable residual/control dynamics, while c captures semantic, dissipative, and non-conservative factors. This gives the planner a single latent state shared by dynamics prediction, reward/value estimation, imagined rollouts, and CEM action search. On four DeepMind Control Suite tasks, HaM-World reaches the highest Avg. AUC (117.9, +9.5%), reduces long-horizon rollout error to 45% of a strong baseline model, and wins 11/12 k in {3,5,7} MSE cells. Under 12 OOD perturbations spanning dynamics shifts, action delay, and observation masking, HaM-World achieves the highest return in every condition, with average OOD-return gains of 10.2% on Finger Spin and 13.6% on Reacher Easy. Mechanism diagnostics further show bounded action-free Hamiltonian-energy drift, structured energy variation under policy rollouts, and coherent control-induced energy transfer, supporting the intended Soft-Hamiltonian dynamics design.",
+      "cited_by_count_snapshot": 0,
+      "relevance_terms": [
+        "dynamics",
+        "rollout",
+        "world model"
+      ],
+      "discovery_query": "TD-MPC2 latent dynamics SimNorm",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2 latent dynamics SimNorm"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "2026 soft-Hamiltonian residual world-model preprint; recency stress test",
+      "relevance_score": 0.95,
+      "quality_score": 0.6000000000000001,
+      "cite_key": "tang2026_ham_world_soft_hamiltonian_world"
+    },
+    {
+      "paper_id": "https://openalex.org/W7164700871",
+      "title": "Certified World Models: Predictability Across Configuration, Horizon, and Resolution",
+      "normalized_title": "certified world models predictability across configuration horizon and resolution",
+      "authors": [
+        "Hongbo Wang"
+      ],
+      "year": 2026,
+      "publication_date": "2026-06-11",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.13092",
+      "abstract": "Scale buys interpolation; structure buys a certified horizon. A world model's average error says nothing about whether a particular prediction can be trusted, or for how long. For equivariant latent world models we give a computable, multi-step certificate of the predictable horizon: $T$-step rollout error is provably constant over each symmetry orbit (Theorem A) and stratified channel-by-channel by the predictor's Lyapunov spectrum, $T_j(ε)\\sim\\log(1/ε)/λ_j$. The horizon is two-sided -- a matching lower bound makes approximate equivariance provably horizon-limited -- and the certificate is exclusive to structure: orbit-constant error characterizes equivariance, so no non-equivariant model has it at any scale. Empirically, on 40-D Lorenz-96 only a $\\mathbb{Z}_N$-equivariant network recovers the full Lyapunov spectrum ($R^2{=}0.98$); dense and recurrent baselines fail. Because the spectrum is faithful, the certificate acts, a priori: under a fixed sensing budget a $c\\times$-inflated certificate provably needs $c\\times$ the budget, and the equivariant certificate meets a budget its inflated dense counterpart cannot -- with zero calibration data. The same read-out, unchanged, audits public pretrained world models training-free: TD-MPC2 checkpoints land on the certificate's own scope taxonomy -- calibrated where strongly expansive (ratio 0.94-1.02), optimistic where weakly expansive, correctly abstaining where contracting -- a map a deployed monitor replicates cell-by-cell, out-of-sample. Across the official 1M-317M multitask ladder, calibration does not improve with parameters. On V-JEPA 2-AC (1B, real robot data) the measured cross-check correctly overrides an over-promising tangent spectrum -- the cross-validated audit, not the raw number, is the deployable object. Scale buys interpolation, not a calibrated horizon.",
+      "cited_by_count_snapshot": 0,
+      "relevance_terms": [
+        "calibration",
+        "rollout",
+        "world model"
+      ],
+      "discovery_query": "TD-MPC2 latent dynamics SimNorm",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2 latent dynamics SimNorm"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "2026 predictability-certificate preprint",
+      "relevance_score": 0.95,
+      "quality_score": 0.6000000000000001,
+      "cite_key": "wang2026_scale_buys_interpolation_structure_buys"
+    },
+    {
+      "paper_id": "https://openalex.org/W4414285669",
+      "title": "A review of learning-based dynamics models for robotic manipulation",
+      "normalized_title": "a review of learning based dynamics models for robotic manipulation",
+      "authors": [
+        "Bo Ai",
+        "Stephen Tian",
+        "Haochen Shi",
+        "Yong Wang",
+        "Tobias Pfaff",
+        "Cheston Tan",
+        "Henrik I. Christensen",
+        "Hao Su",
+        "Jiajun Wu",
+        "Yunzhu Li"
+      ],
+      "year": 2025,
+      "publication_date": "2025-09-17",
+      "venue": "Science Robotics",
+      "work_type": "article",
+      "doi": "10.1126/scirobotics.adt1497",
+      "url": "https://doi.org/10.1126/scirobotics.adt1497",
+      "abstract": "Dynamics models that predict the effects of physical interactions are essential for planning and control in robotic manipulation. Although models based on physical principles often generalize well, they typically require full-state information, which can be difficult or impossible to extract from perception data in complex, real-world scenarios. Learning-based dynamics models provide an alternative by deriving state transition functions purely from perceived interaction data, enabling the capture of complex, hard-to-model factors and predictive uncertainty and accelerating simulations that are often too slow for real-time control. Recent successes in this field have demonstrated notable advancements in robot capabilities, including long-horizon manipulation of deformable objects, granular materials, and complex multiobject interactions such as stowing and packing. A crucial aspect of these investigations is the choice of state representation, which determines the inductive biases in the learning system for reduced-order modeling of scene dynamics. This article provides a timely and comprehensive review of current techniques and trade-offs in designing learned dynamics models, highlighting their role in advancing robot capabilities through integration with state estimation and control and identifying critical research gaps for future exploration.",
+      "cited_by_count_snapshot": 13,
+      "relevance_terms": [
+        "dynamics",
+        "uncertainty"
+      ],
+      "discovery_query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "2025 Science Robotics dynamics review",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "ai2025_a_review_of_learning_based"
+    },
+    {
+      "paper_id": "https://openalex.org/W4409364260",
+      "title": "GLAM: Global-Local Variation Awareness in Mamba-based World Model",
+      "normalized_title": "glam global local variation awareness in mamba based world model",
+      "authors": [
+        "Qian He",
+        "Wenqi Liang",
+        "Chunhui Hao",
+        "Gan Sun",
+        "Jiandong Tian"
+      ],
+      "year": 2025,
+      "publication_date": "2025-04-11",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "work_type": "conference-paper",
+      "doi": "10.1609/aaai.v39i16.33880",
+      "url": "https://doi.org/10.1609/aaai.v39i16.33880",
+      "abstract": "Mimicking the real interaction trajectory in the inference of the world model has been shown to improve the sample efficiency of model-based reinforcement learning (MBRL) algorithms. Many methods directly use known state sequences for reasoning. However, this approach fails to enhance the quality of reasoning by capturing the subtle variation between states. Much like how humans infer trends in event development from this variation, in this work, we introduce Global-Local variation Awareness Mamba-based world model (GLAM) that improves reasoning quality by perceiving and predicting variation between states. GLAM comprises two Mamba-based parallel reasoning modules, GMamba and LMamba, which focus on perceiving variation from global and local perspectives, respectively, during the reasoning process. GMamba focuses on identifying patterns of variation between states in the input sequence and leverages these patterns to enhance the prediction of future state variation. LMamba emphasizes reasoning about unknown information, such as rewards, termination signals, and visual representations, by perceiving variation in adjacent states. By integrating the strengths of the two modules, GLAM accounts for higher-value variation in environmental changes, providing the agent with more efficient imagination-based training. We demonstrate that our method outperforms existing methods in normalized human scores on the Atari 100k benchmark.",
+      "cited_by_count_snapshot": 2,
+      "relevance_terms": [
+        "model-based reinforcement",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "AAAI 2025 state-space world model",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "he2025_glam_global_local_variation_awareness"
+    },
+    {
+      "paper_id": "https://openalex.org/W4409147637",
+      "title": "Mastering diverse control tasks through world models",
+      "normalized_title": "mastering diverse control tasks through world models",
+      "authors": [
+        "Danijar Hafner",
+        "Jurgis Pašukonis",
+        "Jimmy Ba",
+        "Timothy Lillicrap"
+      ],
+      "year": 2025,
+      "publication_date": "2025-04-02",
+      "venue": "Nature",
+      "work_type": "article",
+      "doi": "10.1038/s41586-025-08744-2",
+      "url": "https://doi.org/10.1038/s41586-025-08744-2",
+      "abstract": "Abstract Developing a general algorithm that learns to solve tasks across a wide range of applications has been a fundamental challenge in artificial intelligence. Although current reinforcement-learning algorithms can be readily applied to tasks similar to what they have been developed for, configuring them for new application domains requires substantial human expertise and experimentation 1,2 . Here we present the third generation of Dreamer, a general algorithm that outperforms specialized methods across over 150 diverse tasks, with a single configuration. Dreamer learns a model of the environment and improves its behaviour by imagining future scenarios. Robustness techniques based on normalization, balancing and transformations enable stable learning across domains. Applied out of the box, Dreamer is, to our knowledge, the first algorithm to collect diamonds in Minecraft from scratch without human data or curricula. This achievement has been posed as a substantial challenge in artificial intelligence that requires exploring farsighted strategies from pixels and sparse rewards in an open world 3 . Our work allows solving challenging control problems without extensive experimentation, making reinforcement learning broadly applicable.",
+      "cited_by_count_snapshot": 98,
+      "relevance_terms": [
+        "world model"
+      ],
+      "discovery_query": "Mastering diverse control tasks through world models",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "Mastering diverse control tasks through world models"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "archival DreamerV3 source",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "hafner2025_mastering_diverse_control_tasks_through"
+    },
+    {
+      "paper_id": "https://openalex.org/W7114820402",
+      "title": "Prismatic World Model: Learning Compositional Dynamics for Planning in Hybrid Systems",
+      "normalized_title": "prismatic world model learning compositional dynamics for planning in hybrid systems",
+      "authors": [
+        "Li, Mingwei",
+        "Zhang, Xiaoyuan",
+        "Yang, Chengwei",
+        "Zheng, Zilong",
+        "Yang, Yaodong"
+      ],
+      "year": 2025,
+      "publication_date": "2025-12-09",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2512.08411",
+      "abstract": "Model-based planning in robotic domains is challenged by the hybrid nature of physical dynamics, where continuous motion is punctuated by discrete events such as contacts and impacts. Conventional latent world models typically employ monolithic neural networks that enforce global continuity, which over-smooths distinct dynamic modes (e.g., sticking vs. sliding, flight vs. stance). For a planner, this smoothing results in compounding errors during long-horizon lookaheads, rendering the search process unreliable at physical boundaries. To address this, we introduce the Prismatic World Model (PRISM-WM), a structured architecture designed to decompose complex hybrid dynamics into composable primitives. PRISM-WM uses a context-aware Mixture-of-Experts (MoE) framework where a gating mechanism implicitly identifies the current physical mode, and specialized experts predict the associated transition dynamics. We further introduce a latent orthogonalization objective to ensure expert diversity, preventing mode collapse. By modeling the mode transitions in system dynamics, PRISM-WM reduces rollout drift. Experiments on continuous control benchmarks, including high-dimensional humanoids and multi-task settings, demonstrate that PRISM-WM provides a high-fidelity substrate for trajectory optimization algorithms (e.g., TD-MPC), indicating its potential as a foundational model for model-based agents.",
+      "cited_by_count_snapshot": 0,
+      "relevance_terms": [
+        "dynamics",
+        "rollout",
+        "world model"
+      ],
+      "discovery_query": "TD-MPC2 latent dynamics SimNorm",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2 latent dynamics SimNorm"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "2025 preprint on mode-gated hybrid dynamics; novelty stress test",
+      "relevance_score": 0.95,
+      "quality_score": 0.6000000000000001,
+      "cite_key": "mingwei2025_prismatic_world_model_learning_compositional"
+    },
+    {
+      "paper_id": "https://openalex.org/W4411735734",
+      "title": "Understanding World or Predicting Future? A Comprehensive Survey of World Models",
+      "normalized_title": "understanding world or predicting future a comprehensive survey of world models",
+      "authors": [
+        "Jingtao Ding",
+        "Yunke Zhang",
+        "Yu Shang",
+        "Y. Zhang",
+        "Zefang Zong",
+        "Jie Feng",
+        "Yuan Yuan",
+        "Hongyuan Su",
+        "Nian Li",
+        "Nicholas Sukiennik",
+        "Fengli Xu",
+        "Yong Li"
+      ],
+      "year": 2025,
+      "publication_date": "2025-06-27",
+      "venue": "ACM Computing Surveys",
+      "work_type": "article",
+      "doi": "10.1145/3746449",
+      "url": "https://doi.org/10.1145/3746449",
+      "abstract": "The concept of world models has garnered significant attention due to advancements in multimodal large language models such as GPT-4 and video generation models such as Sora, which are central to the pursuit of artificial general intelligence. This survey offers a comprehensive review of the literature on world models. Generally, world models are regarded as tools for either understanding the present state of the world or predicting its future dynamics. This review presents a systematic categorization of world models, emphasizing two primary functions: (1) constructing internal representations to understand the mechanisms of the world, and (2) predicting future states to simulate and guide decision-making. Initially, we examine the current progress in these two categories. We then explore the application of world models in key domains, including autonomous driving, robotics, and social simulacra, with a focus on how each domain utilizes these aspects. Finally, we outline key challenges and provide insights into potential future research directions. We summarize the representative articles along with their code repositories in https://github.com/tsinghua-fib-lab/World-Model .",
+      "cited_by_count_snapshot": 34,
+      "relevance_terms": [
+        "dynamics",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty",
+        "long horizon rollout error world model",
+        "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "2025 archival field synthesis",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "ding2025_understanding_world_or_predicting_future"
+    },
+    {
+      "paper_id": "https://openalex.org/W4399115353",
+      "title": "Bigger, Regularized, Optimistic: scaling for compute and sample-efficient continuous control",
+      "normalized_title": "bigger regularized optimistic scaling for compute and sample efficient continuous control",
+      "authors": [
+        "Michał Nauman",
+        "Mateusz Ostaszewski",
+        "Krzysztof Jankowski",
+        "Piotr Miłoś",
+        "Marek Cygan"
+      ],
+      "year": 2024,
+      "publication_date": "2024-05-25",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2405.16158",
+      "url": "http://arxiv.org/abs/2405.16158",
+      "abstract": "Sample efficiency in Reinforcement Learning (RL) has traditionally been driven by algorithmic enhancements. In this work, we demonstrate that scaling can also lead to substantial improvements. We conduct a thorough investigation into the interplay of scaling model capacity and domain-specific RL enhancements. These empirical findings inform the design choices underlying our proposed BRO (Bigger, Regularized, Optimistic) algorithm. The key innovation behind BRO is that strong regularization allows for effective scaling of the critic networks, which, paired with optimistic exploration, leads to superior performance. BRO achieves state-of-the-art results, significantly outperforming the leading model-based and model-free algorithms across 40 complex tasks from the DeepMind Control, MetaWorld, and MyoSuite benchmarks. BRO is the first model-free algorithm to achieve near-optimal policies in the notoriously challenging Dog and Humanoid tasks.",
+      "cited_by_count_snapshot": 1,
+      "relevance_terms": [],
+      "discovery_query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "recent scaled continuous-control comparator context",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "nauman2024_bigger_regularized_optimistic_scaling_for"
+    },
+    {
+      "paper_id": "https://openalex.org/W4404360744",
+      "title": "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+      "normalized_title": "dino wm world models on pre trained visual features enable zero shot planning",
+      "authors": [
+        "Gaoyue Zhou",
+        "Pan, Hengkai",
+        "Yann LeCun",
+        "Lerrel Pinto"
+      ],
+      "year": 2024,
+      "publication_date": "2024-11-07",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2411.04983",
+      "url": "http://arxiv.org/abs/2411.04983",
+      "abstract": "The ability to predict future outcomes given control actions is fundamental for physical reasoning. However, such predictive models, often called world models, remains challenging to learn and are typically developed for task-specific solutions with online policy learning. To unlock world models' true potential, we argue that they should 1) be trainable on offline, pre-collected trajectories, 2) support test-time behavior optimization, and 3) facilitate task-agnostic reasoning. To this end, we present DINO World Model (DINO-WM), a new method to model visual dynamics without reconstructing the visual world. DINO-WM leverages spatial patch features pre-trained with DINOv2, enabling it to learn from offline behavioral trajectories by predicting future patch features. This allows DINO-WM to achieve observational goals through action sequence optimization, facilitating task-agnostic planning by treating goal features as prediction targets. We demonstrate that DINO-WM achieves zero-shot behavioral solutions at test time on six environments without expert demonstrations, reward modeling, or pre-learned inverse models, outperforming prior state-of-the-art work across diverse task families such as arbitrarily configured mazes, push manipulation with varied object shapes, and multi-particle scenarios.",
+      "cited_by_count_snapshot": 5,
+      "relevance_terms": [
+        "dynamics",
+        "world model"
+      ],
+      "discovery_query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "recent offline feature-space world model",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "zhou2024_dino_wm_world_models_on"
+    },
+    {
+      "paper_id": "https://openalex.org/W4399399455",
+      "title": "Dream to Drive With Predictive Individual World Model",
+      "normalized_title": "dream to drive with predictive individual world model",
+      "authors": [
+        "Yinfeng Gao",
+        "Qichao Zhang",
+        "Da‐Wei Ding",
+        "Dongbin Zhao"
+      ],
+      "year": 2024,
+      "publication_date": "2024-06-04",
+      "venue": "IEEE Transactions on Intelligent Vehicles",
+      "work_type": "article",
+      "doi": "10.1109/tiv.2024.3408830",
+      "url": "https://doi.org/10.1109/tiv.2024.3408830",
+      "abstract": "It is still a challenging topic to make reactive driving behaviors in complex urban environments as road users' intentions are unknown. Model-based reinforcement learning (MBRL) offers great potential to learn a reactive policy by constructing a world model that can provide informative states and imagination training. However, a critical limitation in relevant research lies in the scene-level reconstruction representation learning, which may overlook key interactive vehicles and hardly model the interactive features among vehicles and their long-term intentions. Therefore, this paper presents a novel MBRL method with a predictive individual world model (PIWM) for autonomous driving. PIWM describes the driving environment from an individual-level perspective and captures vehicles' interactive relations and their intentions via trajectory prediction task. Meanwhile, a behavior policy is learned jointly with PIWM. It is trained in PIWM's imagination and effectively navigates in the urban driving scenes leveraging intention-aware latent states. The proposed method is trained and evaluated on simulation environments built upon real-world challenging interactive scenarios. Compared with popular model-free and state-of-the-art model-based reinforcement learning methods, experimental results show that the proposed method achieves the best performance in terms of safety and efficiency.",
+      "cited_by_count_snapshot": 7,
+      "relevance_terms": [
+        "model-based reinforcement",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "archival applied world-model evidence",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "gao2024_dream_to_drive_with_predictive"
+    },
+    {
+      "paper_id": "https://openalex.org/W4404576896",
+      "title": "QT-TDM: Planning With Transformer Dynamics Model and Autoregressive Q-Learning",
+      "normalized_title": "qt tdm planning with transformer dynamics model and autoregressive q learning",
+      "authors": [
+        "Mostafa Kotb",
+        "Cornelius Weber",
+        "Muhammad Burhan Hafez",
+        "Stefan Wermter"
+      ],
+      "year": 2024,
+      "publication_date": "2024-11-21",
+      "venue": "IEEE Robotics and Automation Letters",
+      "work_type": "article",
+      "doi": "10.1109/lra.2024.3504341",
+      "url": "https://doi.org/10.1109/lra.2024.3504341",
+      "abstract": "Inspired by the success of the Transformer architecture in natural language processing and computer vision, we investigate the use of Transformers in Reinforcement Learning (RL), specifically in modeling the environment's dynamics using Transformer Dynamics Models (TDMs). We evaluate the capabilities of TDMs for continuous control in real-time planning scenarios with Model Predictive Control (MPC). While Transformers excel in long-horizon prediction, their tokenization mechanism and autoregressive nature lead to costly planning over long horizons, especially as the environment's dimensionality increases. To alleviate this issue, we use a TDM for short-term planning, and learn an autoregressive discrete Q-function using a separate Q-Transformer (QT) model to estimate a long-term return beyond the short-horizon planning. Our proposed method, QT-TDM, integrates the robust predictive capabilities of Transformers as dynamics models with the efficacy of a model-free Q-Transformer to mitigate the computational burden associated with real-time planning. Experiments in diverse state-based continuous control tasks show that QT-TDM is superior in performance and sample efficiency compared to existing Transformer-based RL models while achieving fast and computationally efficient inference.",
+      "cited_by_count_snapshot": 6,
+      "relevance_terms": [
+        "dynamics"
+      ],
+      "discovery_query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "archival transformer dynamics planning method",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "kotb2024_qt_tdm_planning_with_transformer"
+    },
+    {
+      "paper_id": "https://openalex.org/W4392223123",
+      "title": "Think2Drive: Efficient Reinforcement Learning by Thinking in Latent World Model for Quasi-Realistic Autonomous Driving (in CARLA-v2)",
+      "normalized_title": "think2drive efficient reinforcement learning by thinking in latent world model for quasi realistic autonomous driving in carla v2",
+      "authors": [
+        "Qifeng Li",
+        "Xiaosong Jia",
+        "Shaobo Wang",
+        "Junchi Yan"
+      ],
+      "year": 2024,
+      "publication_date": "2024-02-26",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2402.16720",
+      "url": "http://arxiv.org/abs/2402.16720",
+      "abstract": "Real-world autonomous driving (AD) especially urban driving involves many corner cases. The lately released AD simulator CARLA v2 adds 39 common events in the driving scene, and provide more quasi-realistic testbed compared to CARLA v1. It poses new challenge to the community and so far no literature has reported any success on the new scenarios in V2 as existing works mostly have to rely on specific rules for planning yet they cannot cover the more complex cases in CARLA v2. In this work, we take the initiative of directly training a planner and the hope is to handle the corner cases flexibly and effectively, which we believe is also the future of AD. To our best knowledge, we develop the first model-based RL method named Think2Drive for AD, with a world model to learn the transitions of the environment, and then it acts as a neural simulator to train the planner. This paradigm significantly boosts the training efficiency due to the low dimensional state space and parallel computing of tensors in the world model. As a result, Think2Drive is able to run in an expert-level proficiency in CARLA v2 within 3 days of training on a single A6000 GPU, and to our best knowledge, so far there is no reported success (100\\% route completion)on CARLA v2. We also propose CornerCase-Repository, a benchmark that supports the evaluation of driving models by scenarios. Additionally, we propose a new and balanced metric to evaluate the performance by route completion, infraction number, and scenario density, so that the driving score could give more information about the actual driving performance.",
+      "cited_by_count_snapshot": 2,
+      "relevance_terms": [
+        "state space",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "recent long-horizon driving world model",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "li2024_think2drive_efficient_reinforcement_learning_by"
+    },
+    {
+      "paper_id": "https://openalex.org/W4399794420",
+      "title": "UniZero: Generalized and Efficient Planning with Scalable Latent World Models",
+      "normalized_title": "unizero generalized and efficient planning with scalable latent world models",
+      "authors": [
+        "Yuan Pu",
+        "Yazhe Niu",
+        "Zhenjie Yang",
+        "Jiyuan Ren",
+        "Hongsheng Li",
+        "Yu Liu"
+      ],
+      "year": 2024,
+      "publication_date": "2024-06-15",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2406.10667",
+      "url": "http://arxiv.org/abs/2406.10667",
+      "abstract": "Learning predictive world models is crucial for enhancing the planning capabilities of reinforcement learning (RL) agents. Recently, MuZero-style algorithms, leveraging the value equivalence principle and Monte Carlo Tree Search (MCTS), have achieved superhuman performance in various domains. However, these methods struggle to scale in heterogeneous scenarios with diverse dependencies and task variability. To overcome these limitations, we introduce UniZero, a novel approach that employs a modular transformer-based world model to effectively learn a shared latent space. By concurrently predicting latent dynamics and decision-oriented quantities conditioned on the learned latent history, UniZero enables joint optimization of the long-horizon world model and policy, facilitating broader and more efficient planning in the latent space. We show that UniZero significantly outperforms existing baselines in benchmarks that require long-term memory. Additionally, UniZero demonstrates superior scalability in multitask learning experiments conducted on Atari benchmarks. In standard single-task RL settings, such as Atari and DMControl, UniZero matches or even surpasses the performance of current state-of-the-art methods. Finally, extensive ablation studies and visual analyses validate the effectiveness and scalability of UniZero's design choices. Our code is available at \\textcolor{magenta}{https://github.com/opendilab/LightZero}.",
+      "cited_by_count_snapshot": 0,
+      "relevance_terms": [
+        "dynamics",
+        "world model"
+      ],
+      "discovery_query": "TD-MPC2 latent dynamics SimNorm",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "TD-MPC2 latent dynamics SimNorm"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "recent scalable latent world model",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "pu2024_unizero_generalized_and_efficient_planning"
+    },
+    {
+      "paper_id": "https://openalex.org/W4382618501",
+      "title": "Curious Replay for Model-based Adaptation",
+      "normalized_title": "curious replay for model based adaptation",
+      "authors": [
+        "Isaac Kauvar",
+        "Chris Doyle",
+        "Linqi Zhou",
+        "Nick Haber"
+      ],
+      "year": 2023,
+      "publication_date": "2023-06-28",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2306.15934",
+      "url": "http://arxiv.org/abs/2306.15934",
+      "abstract": "Agents must be able to adapt quickly as an environment changes. We find that existing model-based reinforcement learning agents are unable to do this well, in part because of how they use past experiences to train their world model. Here, we present Curious Replay -- a form of prioritized experience replay tailored to model-based agents through use of a curiosity-based priority signal. Agents using Curious Replay exhibit improved performance in an exploration paradigm inspired by animal behavior and on the Crafter benchmark. DreamerV3 with Curious Replay surpasses state-of-the-art performance on Crafter, achieving a mean score of 19.4 that substantially improves on the previous high score of 14.5 by DreamerV3 with uniform replay, while also maintaining similar performance on the Deepmind Control Suite. Code for Curious Replay is available at https://github.com/AutonomousAgentsLab/curiousreplay",
+      "cited_by_count_snapshot": 2,
+      "relevance_terms": [
+        "model-based reinforcement",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "adaptation under changed dynamics",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "kauvar2023_curious_replay_for_model_based"
+    },
+    {
+      "paper_id": "https://openalex.org/W4387323447",
+      "title": "HarmonyDream: Task Harmonization Inside World Models",
+      "normalized_title": "harmonydream task harmonization inside world models",
+      "authors": [
+        "Haoyu Ma",
+        "Jialong Wu",
+        "Ningya Feng",
+        "Xiao, Chenjun",
+        "Li, Dong",
+        "Hao, Jianye",
+        "Wang, Jianmin",
+        "Long, Mingsheng"
+      ],
+      "year": 2023,
+      "publication_date": "2023-09-30",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2310.00344",
+      "url": "http://arxiv.org/abs/2310.00344",
+      "abstract": "Model-based reinforcement learning (MBRL) holds the promise of sample-efficient learning by utilizing a world model, which models how the environment works and typically encompasses components for two tasks: observation modeling and reward modeling. In this paper, through a dedicated empirical investigation, we gain a deeper understanding of the role each task plays in world models and uncover the overlooked potential of sample-efficient MBRL by mitigating the domination of either observation or reward modeling. Our key insight is that while prevalent approaches of explicit MBRL attempt to restore abundant details of the environment via observation models, it is difficult due to the environment's complexity and limited model capacity. On the other hand, reward models, while dominating implicit MBRL and adept at learning compact task-centric dynamics, are inadequate for sample-efficient learning without richer learning signals. Motivated by these insights and discoveries, we propose a simple yet effective approach, HarmonyDream, which automatically adjusts loss coefficients to maintain task harmonization, i.e. a dynamic equilibrium between the two tasks in world model learning. Our experiments show that the base MBRL method equipped with HarmonyDream gains 10%-69% absolute performance boosts on visual robotic tasks and sets a new state-of-the-art result on the Atari 100K benchmark. Code is available at https://github.com/thuml/HarmonyDream.",
+      "cited_by_count_snapshot": 1,
+      "relevance_terms": [
+        "dynamics",
+        "model-based reinforcement",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "multi-task world-model context",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "ma2023_harmonydream_task_harmonization_inside_world"
+    },
+    {
+      "paper_id": "https://openalex.org/W3038822267",
+      "title": "Model-based Reinforcement Learning: A Survey",
+      "normalized_title": "model based reinforcement learning a survey",
+      "authors": [
+        "Thomas M. Moerland",
+        "Joost Broekens",
+        "Aske Plaat",
+        "Catholijn M. Jonker"
+      ],
+      "year": 2023,
+      "publication_date": "2023-01-04",
+      "venue": "Foundations and Trends® in Machine Learning",
+      "work_type": "article",
+      "doi": "10.1561/2200000086",
+      "url": "https://doi.org/10.1561/2200000086",
+      "abstract": "Sequential decision making, commonly formalized as Markov Decision Process (MDP) optimization, is an important challenge in artificial intelligence. Two key approaches to this problem are reinforcement learning (RL) and planning. This survey is an integration of both fields, better known as model-based reinforcement learning. Model-based RL has two main steps. First, we systematically cover approaches to dynamics model learning, including challenges like dealing with stochasticity, uncertainty, partial observability, and temporal abstraction. Second, we present a systematic categorization of planning-learning integration, including aspects like: where to start planning, what budgets to allocate to planning and real data collection, how to plan, and how to integrate planning in the learning and acting loop. After these two sections, we also discuss implicit model-based RL as an end-to-end alternative for model learning and planning, and we cover the potential benefits of model-based RL. Along the way, the survey also draws connections to several related RL fields, like hierarchical RL and transfer learning. Altogether, the survey presents a broad conceptual overview of the combination of planning and learning for MDP optimization.",
+      "cited_by_count_snapshot": 498,
+      "relevance_terms": [
+        "dynamics",
+        "model-based reinforcement",
+        "uncertainty"
+      ],
+      "discovery_query": "world model reinforcement learning robust prediction",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "world model reinforcement learning robust prediction",
+        "model based reinforcement learning survey"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "2023 field synthesis",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "moerland2023_model_based_reinforcement_learning_a"
+    },
+    {
+      "paper_id": "https://openalex.org/W4387723804",
+      "title": "STORM: Efficient Stochastic Transformer based World Models for Reinforcement Learning",
+      "normalized_title": "storm efficient stochastic transformer based world models for reinforcement learning",
+      "authors": [
+        "Weipu Zhang",
+        "Gang Wang",
+        "Jian Sun",
+        "Yetian Yuan",
+        "Gao Huang"
+      ],
+      "year": 2023,
+      "publication_date": "2023-10-14",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2310.09615",
+      "url": "http://arxiv.org/abs/2310.09615",
+      "abstract": "Recently, model-based reinforcement learning algorithms have demonstrated remarkable efficacy in visual input environments. These approaches begin by constructing a parameterized simulation world model of the real environment through self-supervised learning. By leveraging the imagination of the world model, the agent's policy is enhanced without the constraints of sampling from the real environment. The performance of these algorithms heavily relies on the sequence modeling and generation capabilities of the world model. However, constructing a perfectly accurate model of a complex unknown environment is nearly impossible. Discrepancies between the model and reality may cause the agent to pursue virtual goals, resulting in subpar performance in the real environment. Introducing random noise into model-based reinforcement learning has been proven beneficial. In this work, we introduce Stochastic Transformer-based wORld Model (STORM), an efficient world model architecture that combines the strong sequence modeling and generation capabilities of Transformers with the stochastic nature of variational autoencoders. STORM achieves a mean human performance of $126.7\\%$ on the Atari $100$k benchmark, setting a new record among state-of-the-art methods that do not employ lookahead search techniques. Moreover, training an agent with $1.85$ hours of real-time interaction experience on a single NVIDIA GeForce RTX 3090 graphics card requires only $4.3$ hours, showcasing improved efficiency compared to previous methodologies.",
+      "cited_by_count_snapshot": 8,
+      "relevance_terms": [
+        "model-based reinforcement",
+        "world model"
+      ],
+      "discovery_query": "IRIS transformer sample efficient world model",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "IRIS transformer sample efficient world model",
+        "stochastic transformer world model"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "recent stochastic transformer world model",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "zhang2023_storm_efficient_stochastic_transformer_based"
+    },
+    {
+      "paper_id": "https://openalex.org/W4387964172",
+      "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "normalized_title": "td mpc2 scalable robust world models for continuous control",
+      "authors": [
+        "Nicklas Hansen",
+        "Hao Su",
+        "Xiaolong Wang"
+      ],
+      "year": 2023,
+      "publication_date": "2023-10-25",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2310.16828",
+      "url": "http://arxiv.org/abs/2310.16828",
+      "abstract": "TD-MPC is a model-based reinforcement learning (RL) algorithm that performs local trajectory optimization in the latent space of a learned implicit (decoder-free) world model. In this work, we present TD-MPC2: a series of improvements upon the TD-MPC algorithm. We demonstrate that TD-MPC2 improves significantly over baselines across 104 online RL tasks spanning 4 diverse task domains, achieving consistently strong results with a single set of hyperparameters. We further show that agent capabilities increase with model and data size, and successfully train a single 317M parameter agent to perform 80 tasks across multiple task domains, embodiments, and action spaces. We conclude with an account of lessons, opportunities, and risks associated with large TD-MPC2 agents. Explore videos, models, data, code, and more at https://tdmpc2.com",
+      "cited_by_count_snapshot": 8,
+      "relevance_terms": [
+        "model-based reinforcement",
+        "world model"
+      ],
+      "discovery_query": "DreamerV3 world model uncertainty",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "DreamerV3 world model uncertainty",
+        "TD-MPC2 latent dynamics SimNorm",
+        "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "ICLR 2024 baseline anchor",
+      "relevance_score": 0.95,
+      "quality_score": 0.7000000000000001,
+      "cite_key": "hansen2023_td_mpc2_scalable_robust_world"
+    },
+    {
+      "paper_id": "https://openalex.org/W3195968524",
+      "title": "Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning",
+      "normalized_title": "safe learning in robotics from learning based control to safe reinforcement learning",
+      "authors": [
+        "Lukas Brunke",
+        "Melissa Greeff",
+        "Adam W. Hall",
+        "Zhaocong Yuan",
+        "Siqi Zhou",
+        "Jacopo Panerati",
+        "Angela P. Schoellig"
+      ],
+      "year": 2022,
+      "publication_date": "2022-01-26",
+      "venue": "Annual Review of Control Robotics and Autonomous Systems",
+      "work_type": "article",
+      "doi": "10.1146/annurev-control-042920-020211",
+      "url": "https://doi.org/10.1146/annurev-control-042920-020211",
+      "abstract": "The last half decade has seen a steep rise in the number of contributions on safe learning methods for real-world robotic deployments from both the control and reinforcement learning communities. This article provides a concise but holistic review of the recent advances made in using machine learning to achieve safe decision-making under uncertainties, with a focus on unifying the language and frameworks used in control theory and reinforcement learning research. It includes learning-based control approaches that safely improve performance by learning the uncertain dynamics, reinforcement learning approaches that encourage safety or robustness, and methods that can formally certify the safety of a learned control policy. As data- and learning-based robot control methods continue to gain traction, researchers must understand when and how to best leverage them in real-world scenarios where safety is imperative, such as when operating in close proximityto humans. We highlight some of the open challenges that will drive the field of robot learning in the coming years, and emphasize the need for realistic physics-based benchmarks to facilitate fair comparisons between control and reinforcement learning approaches.",
+      "cited_by_count_snapshot": 683,
+      "relevance_terms": [
+        "dynamics"
+      ],
+      "discovery_query": "world model reinforcement learning robust prediction",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "world model reinforcement learning robust prediction",
+        "differentiable physics learned correction",
+        "model based reinforcement learning survey"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "safety and reliability context",
+      "relevance_score": 0.95,
+      "quality_score": 0.9500000000000002,
+      "cite_key": "brunke2022_safe_learning_in_robotics_from"
+    },
+    {
+      "paper_id": "https://openalex.org/W4294435908",
+      "title": "Transformers are Sample-Efficient World Models",
+      "normalized_title": "transformers are sample efficient world models",
+      "authors": [
+        "Vincent Micheli",
+        "Eloi Alonso",
+        "François Fleuret"
+      ],
+      "year": 2022,
+      "publication_date": "2022-09-01",
+      "venue": "arXiv (Cornell University)",
+      "work_type": "preprint",
+      "doi": "10.48550/arxiv.2209.00588",
+      "url": "http://arxiv.org/abs/2209.00588",
+      "abstract": "Deep reinforcement learning agents are notoriously sample inefficient, which considerably limits their application to real-world problems. Recently, many model-based methods have been designed to address this issue, with learning in the imagination of a world model being one of the most prominent approaches. However, while virtually unlimited interaction with a simulated environment sounds appealing, the world model has to be accurate over extended periods of time. Motivated by the success of Transformers in sequence modeling tasks, we introduce IRIS, a data-efficient agent that learns in a world model composed of a discrete autoencoder and an autoregressive Transformer. With the equivalent of only two hours of gameplay in the Atari 100k benchmark, IRIS achieves a mean human normalized score of 1.046, and outperforms humans on 10 out of 26 games, setting a new state of the art for methods without lookahead search. To foster future research on Transformers and world models for sample-efficient reinforcement learning, we release our code and models at https://github.com/eloialonso/iris.",
+      "cited_by_count_snapshot": 11,
+      "relevance_terms": [
+        "world model"
+      ],
+      "discovery_query": "IRIS transformer sample efficient world model",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "IRIS transformer sample efficient world model",
+        "Transformers are Sample-Efficient World Models"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "ICLR 2023 transformer baseline anchor",
+      "relevance_score": 0.95,
+      "quality_score": 0.7500000000000001,
+      "cite_key": "micheli2022_transformers_are_sample_efficient_world"
+    },
+    {
+      "paper_id": "https://openalex.org/W3121342653",
+      "title": "Challenges of real-world reinforcement learning: definitions, benchmarks and analysis",
+      "normalized_title": "challenges of real world reinforcement learning definitions benchmarks and analysis",
+      "authors": [
+        "Gabriel Dulac-Arnold",
+        "Nir Levine",
+        "Daniel J. Mankowitz",
+        "Jerry Li",
+        "Cosmin Păduraru",
+        "Sven Gowal",
+        "Todd Hester"
+      ],
+      "year": 2021,
+      "publication_date": "2021-04-22",
+      "venue": "Machine Learning",
+      "work_type": "article",
+      "doi": "10.1007/s10994-021-05961-4",
+      "url": "https://doi.org/10.1007/s10994-021-05961-4",
+      "abstract": "",
+      "cited_by_count_snapshot": 594,
+      "relevance_terms": [],
+      "discovery_query": "world model reinforcement learning robust prediction",
+      "metadata_source": "OpenAlex",
+      "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+      "discovery_queries": [
+        "world model reinforcement learning robust prediction",
+        "Mastering diverse control tasks through world models"
+      ],
+      "category": "world_models",
+      "screen_decision": "include",
+      "keep_reason": "deployment-shift benchmark rationale",
+      "relevance_score": 0.95,
+      "quality_score": 0.9000000000000001,
+      "cite_key": "dulac-arnold2021_challenges_of_real_world_reinforcement"
+    }
+  ]
+}

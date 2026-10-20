@@ -1,0 +1,24 @@
+{
+  "baseline": "pgnn",
+  "proposed": "rgpwm",
+  "metric": "nrmse_h25",
+  "difference_proposed_minus_baseline": -0.0017225662652062903,
+  "relative_improvement_percent": 1.5550643763471186,
+  "ci_95": [
+    -0.006343764287511832,
+    0.0059553170767666355
+  ],
+  "p_two_sided": 0.4784,
+  "replicates": 5000,
+  "paired_trajectories": 4320,
+  "h1_threshold_percent": 10.0,
+  "h1_supported": false,
+  "mean_gate_oracle_spearman": 0.033966658768735794,
+  "h2_corrupt_calibration_better": false,
+  "h2_one_step_relative_change_percent": 2.5440512655108702,
+  "h2_one_step_noninferior": true,
+  "h2_supported": false,
+  "h3_positive_gate_alignment_point": true,
+  "h3_catastrophic_rate_lower": false,
+  "h3_preliminary_without_ablation_comparators": false
+}

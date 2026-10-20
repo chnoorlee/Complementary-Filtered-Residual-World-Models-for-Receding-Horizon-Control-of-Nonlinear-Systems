@@ -1,0 +1,92 @@
+version: 1
+frozen_on: 2026-08-05
+objective:
+  primary: compare aggregate normalized_RMSE_h25 across 15 prespecified cells
+  secondary: evaluate calibration, dynamics_defect, catastrophic_rollouts, and efficiency
+statistical_unit: independently_generated_trajectory
+systems:
+  - damped_oscillator
+  - forced_duffing
+  - controlled_van_der_pol
+  - torque_pendulum
+  - cartpole
+regimes:
+  - id_clean
+  - id_corrupt
+  - ood_parameter_corrupt
+data:
+  integrator: RK4
+  context_steps: 8
+  forecast_steps: 25
+  trajectory_steps: 72
+  train_trajectories_per_system: 256
+  validation_trajectories_per_system: 64
+  test_trajectories_per_cell: 96
+  split_by_trajectory: true
+  control: bounded_filtered_stochastic_control_with_recorded_seed
+  note: random sampling generates simulator inputs and is never used to fabricate metrics
+methods:
+  - RSSM_25_transition_adaptation
+  - SimNorm_WM_24_transition_adaptation
+  - TransWM_23_transition_adaptation
+  - PGNN_22_adaptation
+  - PgDMM_22_adaptation
+  - RGP_WM
+ablations:
+  - RGP_no_reliability_supervision
+  - RGP_fixed_gate
+  - RGP_no_physics
+  - RGP_one_step_training
+ablation_target_metrics:
+  RGP_no_reliability_supervision: gate_oracle_spearman_higher_is_better
+  RGP_fixed_gate: NRMSE_h25_lower_is_better
+  RGP_no_physics: NRMSE_h25_lower_is_better
+  RGP_one_step_training: NRMSE_h25_lower_is_better
+seeds: [11, 23, 37]
+training:
+  optimizer: AdamW
+  max_epochs: 60
+  early_stopping_patience: 10
+  gradient_clip_norm: 5.0
+  tuning_trials_per_method_system: 6
+  matched_tuning_budget: true
+  parameter_count_tolerance: 0.20
+  convergence_condition: validation_NLL_improvement_below_1e-5_for_patience_epochs
+metrics:
+  primary: NRMSE_h25
+  nrmse_scale: per_channel_training_split_standard_deviation_only
+  accuracy: [NRMSE_h1, NRMSE_h5, NRMSE_h10, MAE_h25]
+  probabilistic: [gaussian_NLL, coverage_90, interval_width_90, calibration_error]
+  robustness: [catastrophic_rollout_rate]
+  catastrophic_scale: per_channel_training_split_standard_deviation_only
+  interpretability: [gate_oracle_spearman, mean_data_gate_by_regime]
+  physics: [normalized_nominal_dynamics_defect]
+  efficiency: [parameter_count, training_seconds, rollout_latency_ms]
+statistics:
+  confidence_level: 0.95
+  primary: paired_hierarchical_bootstrap
+  cell_contrasts: paired_bootstrap
+  multiple_testing: Holm
+  minimum_bootstrap_replicates: 5000
+pilot:
+  system: forced_duffing
+  seed: 11
+  epochs: 3
+  must_print_time_estimate: true
+  full_budget_hours: 8
+  time_guard_fraction: 0.80
+risks:
+  - gate_collapse
+  - interval_variance_collapse
+  - nominal_physics_too_accurate_or_too_wrong
+  - transformer_parameter_mismatch
+  - synthetic_benchmark_generalizability
+decision:
+  proceed_if:
+    - no_nan_or_inf
+    - no_split_leakage
+    - full_grid_estimate_within_budget
+  refine_if:
+    - gate_mass_below_0.05_or_above_0.95_on_more_than_90_percent_of_validation_steps
+    - interval_coverage_below_0.50
+    - parameter_count_mismatch_above_0.20

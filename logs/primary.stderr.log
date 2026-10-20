@@ -1,0 +1,2 @@
+C:\Users\Chnoor\Desktop\all paper\paper-real\code\rgpwm\models.py:129: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(layer, num_layers=2)

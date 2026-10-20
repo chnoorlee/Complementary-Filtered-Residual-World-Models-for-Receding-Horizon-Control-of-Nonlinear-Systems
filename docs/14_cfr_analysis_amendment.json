@@ -1,0 +1,34 @@
+{
+  "amendment_version": "cfr-confirmatory-analysis-amendment-v1",
+  "status": "frozen_before_amended_analysis",
+  "frozen_at": "2026-08-06T09:06:35+08:00",
+  "reason": "The original frozen analyzer stopped before inferential computation because the generic loader did not copy the already-recorded top-level parameter_count field into the aggregate table required only for descriptive model-size reporting.",
+  "original_contract_path": "docs/12_cfr_confirmatory_contract.json",
+  "original_contract_sha256": "9af39c8d2858f391006e7dc9ce4a86fdfb60ec980d7b8e58294e8fef6127a240",
+  "completed_run_manifest_sha256": "58ed7d01289d88fea2c8a1e4fdfe0358d5be4844f063b573367fad66c6ec3962",
+  "original_analysis_code_sha256": "56fd06a30ee20effce2274509dcb413317ba47ec98915f2d35584abecc89f9a3",
+  "amendment_entrypoint": "code/rgpwm/confirm_analyze_amended.py",
+  "amendment_code_sha256": "00c4076d6ae8c16d789069ddfa8d398cd435b25d26fa19c31080f3dc8ce3202e",
+  "failed_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "failed_stderr_sha256": "62b96cb31d860bcf727576c0081239dff6a6b374c8f0794348ee0153b82bbfc1",
+  "failed_attempt_wrote_analysis_outputs": false,
+  "inference_change": "none",
+  "joined_field": "parameter_count",
+  "join_keys": [
+    "method",
+    "seed",
+    "system"
+  ],
+  "join_cardinality": "many aggregate regimes to one run payload",
+  "field_role": "descriptive model-size reporting only",
+  "unchanged": [
+    "all 440 raw JSON and checkpoint payloads",
+    "all trajectory and aggregate outcome values",
+    "all estimands and practical margins",
+    "all bootstrap and sign-flip implementations",
+    "all random seeds and 5000 bootstrap replicates",
+    "all multiplicity families and decision rules",
+    "the original frozen contract and analysis modules"
+  ],
+  "execution_rule": "Run this amended entry point exactly once after independent code and statistical review; refuse to overwrite any analysis output."
+}

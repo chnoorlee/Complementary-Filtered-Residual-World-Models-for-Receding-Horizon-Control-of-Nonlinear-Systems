@@ -1,0 +1,545 @@
+{
+  "confirmatory_only": true,
+  "methods": [
+    "rssm",
+    "simnorm",
+    "transformer",
+    "pgnn",
+    "pgdmm",
+    "cfrwm",
+    "cfr_gain0",
+    "cfr_gain025",
+    "cfr_gain075",
+    "cfr_gain1",
+    "cfr_1step"
+  ],
+  "seeds": [
+    41,
+    53,
+    67,
+    79,
+    83,
+    97,
+    109,
+    113
+  ],
+  "systems": [
+    "damped_oscillator",
+    "forced_duffing",
+    "controlled_van_der_pol",
+    "torque_pendulum",
+    "cartpole"
+  ],
+  "regimes": [
+    "id_clean",
+    "id_corrupt",
+    "ood_parameter_corrupt"
+  ],
+  "all_metrics_finite": true,
+  "primary_h1": {
+    "baseline": "pgnn",
+    "proposed": "cfrwm",
+    "metric": "nrmse_h25",
+    "baseline_cell_balanced_mean": 0.1096145811258726,
+    "proposed_cell_balanced_mean": 0.09976694548182148,
+    "difference_proposed_minus_baseline": -0.009847635644051137,
+    "relative_improvement_percent": 8.972957729005063,
+    "ci_95": [
+      -0.012111429394569972,
+      -0.00751508672780797
+    ],
+    "relative_improvement_ci_95": [
+      6.882510562915413,
+      10.95153508020368
+    ],
+    "p_two_sided": 0.0078125,
+    "relative_margin_percent": 5.0,
+    "p_one_sided_relative_margin": 0.00390625,
+    "seed_level_relative_improvements_percent": [
+      5.289646418498669,
+      12.761908705120375,
+      12.014250398706231,
+      10.486170276541097,
+      9.693239560740519,
+      6.661449593983265,
+      9.317895174694,
+      5.559101703756364
+    ],
+    "sign_flip_clusters": 8,
+    "sign_flip_symmetry_assumption": true,
+    "replicates": 5000,
+    "paired_trajectories": 11520,
+    "fixed_benchmark_cells": 15,
+    "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+    "minimum_relative_improvement_percent": 5.0,
+    "preselected_comparator": true,
+    "h1_supported": true
+  },
+  "robustness_h2": {
+    "hierarchically_gated_by_h1": true,
+    "corrupt_and_shifted": {
+      "baseline": "pgnn",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.14411389209592518,
+      "proposed_cell_balanced_mean": 0.12675974621357103,
+      "difference_proposed_minus_baseline": -0.017354145882354156,
+      "relative_improvement_percent": 12.045135849175084,
+      "ci_95": [
+        -0.01949929880403028,
+        -0.01509324894179908
+      ],
+      "relative_improvement_ci_95": [
+        10.513339093582035,
+        13.493792904648856
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 5.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        9.565081062750078,
+        14.112272326271254,
+        14.563350207281708,
+        13.673614430166827,
+        12.337704675566714,
+        10.6541750907778,
+        11.673455824559284,
+        9.781433176027008
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 7680,
+      "fixed_benchmark_cells": 10,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system"
+    },
+    "clean_signed_relative_margin_percent": -5.0,
+    "clean_maximum_degradation_percent": 5.0,
+    "clean": {
+      "baseline": "pgnn",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.0406159591857675,
+      "proposed_cell_balanced_mean": 0.0457813440183224,
+      "difference_proposed_minus_baseline": 0.0051653848325549,
+      "relative_improvement_percent": -13.079550994181124,
+      "ci_95": [
+        0.0022054630029136224,
+        0.008084332705760724
+      ],
+      "relative_improvement_ci_95": [
+        -20.600604289141998,
+        -5.6686833927311415
+      ],
+      "p_two_sided": 0.015625,
+      "relative_margin_percent": -5.0,
+      "p_one_sided_relative_margin": 0.95703125,
+      "seed_level_relative_improvements_percent": [
+        -25.9252179099608,
+        3.823164784383715,
+        -5.427621976091364,
+        -11.141727962378317,
+        -9.951961051175001,
+        -22.715139193927424,
+        -7.3758986808877385,
+        -25.92200596341205
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 3840,
+      "fixed_benchmark_cells": 5,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system"
+    },
+    "supported": false
+  },
+  "comparator_contrasts": [
+    {
+      "baseline": "rssm",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.12340153692539127,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.023634591443569785,
+      "relative_improvement_percent": 19.077373942919408,
+      "ci_95": [
+        -0.026535184444058835,
+        -0.020743309822624945
+      ],
+      "relative_improvement_ci_95": [
+        17.157418267276924,
+        20.98357390670293
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        18.599748024847354,
+        22.94077717274487,
+        19.57936254630408,
+        15.590225618076534,
+        15.688780834894727,
+        18.479976015107695,
+        20.6595222718058,
+        21.080599059574194
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "simnorm",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.138058691045893,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.0382917455640715,
+      "relative_improvement_percent": 27.344310392319564,
+      "ci_95": [
+        -0.04544601803492432,
+        -0.03140770558679443
+      ],
+      "relative_improvement_ci_95": [
+        23.995743180388427,
+        30.619328114640858
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        30.212007792099897,
+        30.667102129845766,
+        29.69762802534172,
+        23.098340674561488,
+        21.810823704208737,
+        34.81470070876524,
+        21.408314491864846,
+        27.04556561186882
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "transformer",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.1317306749165535,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.031963729434732024,
+      "relative_improvement_percent": 24.09398213829047,
+      "ci_95": [
+        -0.03660139023519119,
+        -0.027583595015799038
+      ],
+      "relative_improvement_ci_95": [
+        21.650284059801493,
+        26.63602334222233
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        25.105221556582144,
+        27.61820597901175,
+        20.55773049648858,
+        23.04693408195065,
+        30.584447880914308,
+        20.059929238204784,
+        21.272853928159282,
+        24.50653394501226
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "pgnn",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.1096145811258726,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.009847635644051137,
+      "relative_improvement_percent": 8.972957729005063,
+      "ci_95": [
+        -0.01210993691086788,
+        -0.007526180762952733
+      ],
+      "relative_improvement_ci_95": [
+        6.892379195982071,
+        10.95702068079936
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        5.289646418498669,
+        12.761908705120375,
+        12.014250398706231,
+        10.486170276541097,
+        9.693239560740519,
+        6.661449593983265,
+        9.317895174694,
+        5.559101703756364
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "pgdmm",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.11395702930455623,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.014190083822734753,
+      "relative_improvement_percent": 12.44098658555042,
+      "ci_95": [
+        -0.016535916785690302,
+        -0.011915467762109099
+      ],
+      "relative_improvement_ci_95": [
+        10.5113041746885,
+        14.390848070276679
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        9.771021116074625,
+        14.335710236736936,
+        12.444906586392536,
+        12.429238044540556,
+        14.42668474153273,
+        8.277696279963042,
+        16.885686276502522,
+        10.956949402660408
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    }
+  ],
+  "ablation_contrasts": [
+    {
+      "baseline": "cfr_gain0",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.1444275546458662,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.04466060916404474,
+      "relative_improvement_percent": 30.886442120478296,
+      "ci_95": [
+        -0.04799605790579585,
+        -0.041257028701587255
+      ],
+      "relative_improvement_ci_95": [
+        28.95031355510706,
+        32.671394054717
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        25.680012479634115,
+        31.196765723837913,
+        30.52429164184631,
+        30.899987736758707,
+        31.809557750287496,
+        28.994284035808786,
+        34.521399330731086,
+        33.465238264921965
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "cfr_gain025",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.10286307921647084,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.003096133734649356,
+      "relative_improvement_percent": 2.972843670642136,
+      "ci_95": [
+        -0.005606083629075164,
+        -0.0008828610065117806
+      ],
+      "relative_improvement_ci_95": [
+        0.8793315506655041,
+        5.273094282201022
+      ],
+      "p_two_sided": 0.03125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.015625,
+      "seed_level_relative_improvements_percent": [
+        -0.2427081969501137,
+        3.947183580758503,
+        2.8744503889126083,
+        2.0267348951623587,
+        9.12608311477009,
+        -1.1936222959861837,
+        4.864333111784909,
+        2.380294766684918
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "cfr_gain075",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.10732843506551736,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.007561489583695876,
+      "relative_improvement_percent": 6.973373085790147,
+      "ci_95": [
+        -0.01035558106900164,
+        -0.0050891783600969425
+      ],
+      "relative_improvement_ci_95": [
+        4.769742384263115,
+        9.417719141137805
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        5.596514455728139,
+        10.379610475321174,
+        5.3599618999895595,
+        5.5119910551216,
+        9.408079568473763,
+        3.999770572487667,
+        12.80617961217387,
+        2.7248770470254127
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "cfr_gain1",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.11357930688267842,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.013812361400856937,
+      "relative_improvement_percent": 12.132224239097123,
+      "ci_95": [
+        -0.0160646616229935,
+        -0.011623201060359044
+      ],
+      "relative_improvement_ci_95": [
+        10.307087357855798,
+        13.923397014387849
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        7.117667716604584,
+        16.200903079849674,
+        12.450874237134986,
+        11.156225574654618,
+        14.1534810706851,
+        11.087730530199085,
+        13.315092938569858,
+        11.575818765079086
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    },
+    {
+      "baseline": "cfr_1step",
+      "proposed": "cfrwm",
+      "metric": "nrmse_h25",
+      "baseline_cell_balanced_mean": 0.27794090502112534,
+      "proposed_cell_balanced_mean": 0.09976694548182148,
+      "difference_proposed_minus_baseline": -0.1781739595393039,
+      "relative_improvement_percent": 59.38127900867259,
+      "ci_95": [
+        -0.2479931273759429,
+        -0.11354410415813629
+      ],
+      "relative_improvement_ci_95": [
+        48.87817688854501,
+        68.88447349147323
+      ],
+      "p_two_sided": 0.0078125,
+      "relative_margin_percent": 0.0,
+      "p_one_sided_relative_margin": 0.00390625,
+      "seed_level_relative_improvements_percent": [
+        59.06834852547378,
+        72.95561959625722,
+        32.18051345026633,
+        67.73881469475498,
+        78.50695566559949,
+        46.020420232330316,
+        52.12031733354253,
+        66.45924257115611
+      ],
+      "sign_flip_clusters": 8,
+      "sign_flip_symmetry_assumption": true,
+      "replicates": 5000,
+      "paired_trajectories": 11520,
+      "fixed_benchmark_cells": 15,
+      "trajectory_resampling": "bundled_when trajectory identifiers repeat across regimes within seed/system",
+      "p_holm": 0.0390625
+    }
+  ],
+  "multi_step_ablation_supported": true,
+  "cells_worse_than_pgnn_by_more_than_10_percent": 3,
+  "cell_degradation_guard_is_descriptive": true,
+  "cell_contrasts_are_descriptive": true,
+  "confirmation_passed": true,
+  "analysis_code_sha256": "56fd06a30ee20effce2274509dcb413317ba47ec98915f2d35584abecc89f9a3",
+  "training_code_sha256": "aa2e74fa7fea1bbdea84c84a2ee55cabefb1999b0a50534de8cdde929a38756f",
+  "evaluation_code_sha256": "aa2e74fa7fea1bbdea84c84a2ee55cabefb1999b0a50534de8cdde929a38756f",
+  "confirmatory_contract_sha256": "9af39c8d2858f391006e7dc9ce4a86fdfb60ec980d7b8e58294e8fef6127a240",
+  "tuning_file_sha256": "0d47f17a3c85b1cb08c04f4534d6ab6a719d63b45069bfff32c9fcca69a8ea4d",
+  "unique_data_sha256_count": 40,
+  "analysis_amendment_version": "cfr-confirmatory-analysis-amendment-v1",
+  "analysis_amendment_contract_sha256": "ece5d1a00f40bd67d86840b187d9b91279e5768d1114ca8c09080a42b14d8cff",
+  "analysis_amendment_code_sha256": "00c4076d6ae8c16d789069ddfa8d398cd435b25d26fa19c31080f3dc8ce3202e",
+  "analysis_amendment_inference_change": "none"
+}

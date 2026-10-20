@@ -1,0 +1,154 @@
+[
+  {
+    "source": "OpenAlex",
+    "query": "world model reinforcement learning robust prediction",
+    "url": "https://api.openalex.org/works?search=world+model+reinforcement+learning+robust+prediction&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "DreamerV3 world model uncertainty",
+    "url": "https://api.openalex.org/works?search=DreamerV3+world+model+uncertainty&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "TD-MPC2 latent dynamics SimNorm",
+    "url": "https://api.openalex.org/works?search=TD-MPC2+latent+dynamics+SimNorm&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 14,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "IRIS transformer sample efficient world model",
+    "url": "https://api.openalex.org/works?search=IRIS+transformer+sample+efficient+world+model&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "stochastic transformer world model",
+    "url": "https://api.openalex.org/works?search=stochastic+transformer+world+model&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "physics guided neural nonlinear dynamics",
+    "url": "https://api.openalex.org/works?search=physics+guided+neural+nonlinear+dynamics&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "hybrid physics data driven dynamical systems",
+    "url": "https://api.openalex.org/works?search=hybrid+physics+data+driven+dynamical+systems&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "differentiable physics learned correction",
+    "url": "https://api.openalex.org/works?search=differentiable+physics+learned+correction&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "uncertainty calibration dynamical systems",
+    "url": "https://api.openalex.org/works?search=uncertainty+calibration+dynamical+systems&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "missing observations latent state model",
+    "url": "https://api.openalex.org/works?search=missing+observations+latent+state+model&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "long horizon rollout error world model",
+    "url": "https://api.openalex.org/works?search=long+horizon+rollout+error+world+model&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "model based reinforcement learning survey",
+    "url": "https://api.openalex.org/works?search=model+based+reinforcement+learning+survey&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "Mastering diverse control tasks through world models",
+    "url": "https://api.openalex.org/works?search=Mastering+diverse+control+tasks+through+world+models&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+    "url": "https://api.openalex.org/works?search=TD-MPC2%3A+Scalable%2C+Robust+World+Models+for+Continuous+Control&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "Transformers are Sample-Efficient World Models",
+    "url": "https://api.openalex.org/works?search=Transformers+are+Sample-Efficient+World+Models&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "OpenAlex",
+    "query": "Physics guided neural networks for modelling of non-linear dynamics",
+    "url": "https://api.openalex.org/works?search=Physics+guided+neural+networks+for+modelling+of+non-linear+dynamics&filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2026-08-05&sort=relevance_score%3Adesc&per-page=25&select=id%2Cdoi%2Ctitle%2Cdisplay_name%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cauthorships%2Cabstract_inverted_index%2Ccited_by_count%2Cids",
+    "records": 25,
+    "retrieved_at": "2026-08-05T02:27:55.968490+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "DBLP",
+    "query": "Mastering diverse control tasks through world models",
+    "url": "https://dblp.org/search/publ/api",
+    "records": 1,
+    "retrieved_at": "2026-08-05T02:28:49.969258+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "DBLP",
+    "query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+    "url": "https://dblp.org/search/publ/api",
+    "records": 2,
+    "retrieved_at": "2026-08-05T02:28:54.133191+00:00",
+    "status": "ok"
+  },
+  {
+    "source": "DBLP",
+    "query": "Transformers are Sample-Efficient World Models",
+    "url": "https://dblp.org/search/publ/api",
+    "records": 4,
+    "retrieved_at": "2026-08-05T02:28:55.637245+00:00",
+    "status": "ok"
+  }
+]

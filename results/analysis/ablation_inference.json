@@ -1,0 +1,95 @@
+{
+  "rgp_fixed": {
+    "baseline": "rgp_fixed",
+    "proposed": "rgpwm",
+    "metric": "nrmse_h25",
+    "difference_proposed_minus_baseline": 0.0015924352753927174,
+    "relative_improvement_percent": -1.4819364865819094,
+    "ci_95": [
+      -0.0007284985431854276,
+      0.006306103846695029
+    ],
+    "p_two_sided": 0.3556,
+    "replicates": 5000,
+    "paired_trajectories": 4320,
+    "systems_where_full_rgp_is_better": 1,
+    "h4_component_supported": false
+  },
+  "rgp_no_phys": {
+    "baseline": "rgp_no_phys",
+    "proposed": "rgpwm",
+    "metric": "nrmse_h25",
+    "difference_proposed_minus_baseline": 0.0015676449670653542,
+    "relative_improvement_percent": -1.4585298886581164,
+    "ci_95": [
+      -0.0066313009169099504,
+      0.012106847471114198
+    ],
+    "p_two_sided": 0.7892,
+    "replicates": 5000,
+    "paired_trajectories": 4320,
+    "systems_where_full_rgp_is_better": 1,
+    "h4_component_supported": false
+  },
+  "rgp_1step": {
+    "baseline": "rgp_1step",
+    "proposed": "rgpwm",
+    "metric": "nrmse_h25",
+    "difference_proposed_minus_baseline": -0.12651461170826372,
+    "relative_improvement_percent": 53.70723898285715,
+    "ci_95": [
+      -0.17467243355109607,
+      -0.07982025402811266
+    ],
+    "p_two_sided": 0.0,
+    "replicates": 5000,
+    "paired_trajectories": 4320,
+    "systems_where_full_rgp_is_better": 5,
+    "h4_component_supported": true
+  },
+  "rgp_no_rel": {
+    "target_metric": "gate_oracle_spearman",
+    "difference_full_minus_ablation": 0.012848652187954326,
+    "systems_where_full_rgp_is_better": 2,
+    "h4_component_supported": false
+  },
+  "h4_supported_for_all_components": false,
+  "h3": {
+    "gate_spearman_mean": 0.033966658768735794,
+    "gate_spearman_ci_95": [
+      -0.006651014029813837,
+      0.07674939998359966
+    ],
+    "catastrophic_contrasts": {
+      "rgp_fixed": {
+        "baseline": "rgp_fixed",
+        "proposed": "rgpwm",
+        "metric": "catastrophic",
+        "difference_proposed_minus_baseline": 0.0,
+        "relative_improvement_percent": null,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "p_two_sided": 1.0,
+        "replicates": 5000,
+        "paired_trajectories": 2880
+      },
+      "rgp_no_phys": {
+        "baseline": "rgp_no_phys",
+        "proposed": "rgpwm",
+        "metric": "catastrophic",
+        "difference_proposed_minus_baseline": 0.0,
+        "relative_improvement_percent": null,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "p_two_sided": 1.0,
+        "replicates": 5000,
+        "paired_trajectories": 2880
+      }
+    },
+    "supported": false
+  }
+}

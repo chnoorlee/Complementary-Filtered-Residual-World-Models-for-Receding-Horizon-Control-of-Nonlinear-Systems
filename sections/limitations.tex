@@ -1,0 +1,38 @@
+\section{Limitations}
+
+The evidential scope is intentionally narrower than the general world-model
+problem. First, all trajectories come from five analytically specified,
+low-dimensional controlled systems. This gives exact split, corruption, and
+parameter-shift provenance, but it does not reproduce the visual ambiguity,
+contacts, unmodeled objects, sensor synchronization failures, or nonstationary
+actuation encountered by embodied agents. The state is directly observed
+before synthetic corruption, future controls are supplied, and no policy is
+trained. Prediction quality here therefore cannot be converted into a claim
+about control return, planning safety, or real-robot transfer.
+
+Second, every model receives the correct differential-equation family with
+imperfect parameters. Structural misspecification, hidden state variables, and
+informative sensor dropout may change the balance between nominal propagation
+and measurement correction. The gain 0.5 is deliberately fixed rather than
+estimated from uncertainty; the gain sweep measures sensitivity on this
+benchmark but does not establish filter optimality. The Gaussian diagonal
+forecast likewise cannot represent multimodality or full cross-state
+covariance, and the bounded one-step residual does not guarantee stable
+multi-step trajectories.
+
+The two corrupt evaluation regimes bundle Gaussian observation noise and
+missingness, and the OOD-corrupt regime additionally bundles parameter shift.
+There are no noise-only, missingness-only, or clean-OOD factorial cells.
+Accordingly, regime differences cannot identify which perturbation caused an
+effect or establish the complementary update as its causal mechanism.
+
+Third, inference has only eight independent seed-level training/data
+realizations. The exact sign-flip test is attainable for the prespecified
+five-comparison families, but it has coarse resolution and assumes symmetry of
+seed effects. Trajectory resampling improves precision for the fixed benchmark
+without creating additional independent training replicates. System--regime
+contrasts are consequently descriptive, and all generalization claims remain
+limited to the frozen five-system grid. Larger preregistered seed studies,
+structurally wrong physics, state-dependent missingness, visual encoders, and
+hardware-in-the-loop evaluation are necessary before deployment claims would
+be justified.

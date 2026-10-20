@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "generated_at": "2026-10-20T03:56:26.862384+00:00",
+  "inputs": {
+    "paper/mypaper/main_springer.tex": "85ef5b3ff46f424421e4be5f2c2e78bca2cce19e2c04b730df6238623aebf37b",
+    "paper/references.bib": "82c20ff3a19f46eb6205865561cf714a8a324141f53ba0cad64aadbae73a629a",
+    "paper/submission_source_manifest.json": "22baae5479d39faad39d3a6c28526a379081cb9bd947876d9b5b938784811808",
+    "paper/springer-official/sn-article-template/sn-jnl.cls": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "paper/springer-official/sn-article-template/bst/sn-mathphys-num.bst": "b3a7c7fbcc1e7f9619de634fcea2f5bb7a245818a5942bc576e40ea001633332",
+    "code/build_springer_submission.py": "c8487de7e371a07d60cac041cd008ec8b502020f3008edf5a0a026576a77a7db",
+    "code/README.md": "e0fa7916ce5ae5ca96b6777ce326e796e80cf2c90a07e5a389bde2bdc92dc280",
+    "code/create_springer_build_manifest.py": "0dd4c77a63eaa5eb6d9a8f656b3e05ee7cc17a5f1f73aa1a0d4ace335beadaf3"
+  },
+  "outputs": {
+    "paper/mypaper/main_springer.bbl": "9c119d286d843b77fb19daa78302cfa04047ce41630ef81dd978d483e66d01df",
+    "paper/mypaper/main_springer.log": "a02edd64c8f2db66dbe4870749c0a93e0b8ae293c5dffdcd7cf33ac5c88daa14",
+    "paper/mypaper/main_springer.pdf": "d9531cf5e3c70bd0d442cd67748b12dd0f75a0211711bf13c958d846e35e1339"
+  },
+  "pdf": {
+    "title": "A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption",
+    "pages": 27,
+    "author": ""
+  },
+  "toolchain": {
+    "pdflatex": "MiKTeX-pdfTeX 4.26 (MiKTeX 26.2)",
+    "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.2)",
+    "pdfinfo": "pdfinfo version 26.07.0"
+  }
+}

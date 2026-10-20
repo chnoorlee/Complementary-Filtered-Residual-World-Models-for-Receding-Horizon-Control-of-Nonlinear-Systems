@@ -1,0 +1,78 @@
+{
+  "Mastering diverse control tasks through world models": [
+    {
+      "title": "Mastering diverse control tasks through world models.",
+      "year": "2025",
+      "venue": "Nat.",
+      "doi": "10.1038/s41586-025-08744-2",
+      "url": "https://dblp.org/rec/journals/nature/HafnerPBL25",
+      "metadata_source": "DBLP",
+      "query": "Mastering diverse control tasks through world models",
+      "retrieved_at": "2026-08-05T02:28:49.969258+00:00"
+    }
+  ],
+  "TD-MPC2: Scalable, Robust World Models for Continuous Control": [
+    {
+      "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control.",
+      "year": "2024",
+      "venue": "ICLR",
+      "doi": null,
+      "url": "https://dblp.org/rec/conf/iclr/00010024",
+      "metadata_source": "DBLP",
+      "query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "retrieved_at": "2026-08-05T02:28:54.133191+00:00"
+    },
+    {
+      "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control.",
+      "year": "2023",
+      "venue": "CoRR",
+      "doi": "10.48550/arxiv.2310.16828",
+      "url": "https://dblp.org/rec/journals/corr/abs-2310-16828",
+      "metadata_source": "DBLP",
+      "query": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "retrieved_at": "2026-08-05T02:28:54.133191+00:00"
+    }
+  ],
+  "Transformers are Sample-Efficient World Models": [
+    {
+      "title": "Decentralized Transformers with Centralized Aggregation are Sample-Efficient Multi-Agent World Models.",
+      "year": "2025",
+      "venue": "Trans. Mach. Learn. Res.",
+      "doi": null,
+      "url": "https://dblp.org/rec/journals/tmlr/ZhangB0Y0025",
+      "metadata_source": "DBLP",
+      "query": "Transformers are Sample-Efficient World Models",
+      "retrieved_at": "2026-08-05T02:28:55.637245+00:00"
+    },
+    {
+      "title": "Decentralized Transformers with Centralized Aggregation are Sample-Efficient Multi-Agent World Models.",
+      "year": "2024",
+      "venue": "CoRR",
+      "doi": "10.48550/arxiv.2406.15836",
+      "url": "https://dblp.org/rec/journals/corr/abs-2406-15836",
+      "metadata_source": "DBLP",
+      "query": "Transformers are Sample-Efficient World Models",
+      "retrieved_at": "2026-08-05T02:28:55.637245+00:00"
+    },
+    {
+      "title": "Transformers are Sample-Efficient World Models.",
+      "year": "2023",
+      "venue": "ICLR",
+      "doi": null,
+      "url": "https://dblp.org/rec/conf/iclr/MicheliAF23",
+      "metadata_source": "DBLP",
+      "query": "Transformers are Sample-Efficient World Models",
+      "retrieved_at": "2026-08-05T02:28:55.637245+00:00"
+    },
+    {
+      "title": "Transformers are Sample Efficient World Models.",
+      "year": "2022",
+      "venue": "CoRR",
+      "doi": "10.48550/arxiv.2209.00588",
+      "url": "https://dblp.org/rec/journals/corr/abs-2209-00588",
+      "metadata_source": "DBLP",
+      "query": "Transformers are Sample-Efficient World Models",
+      "retrieved_at": "2026-08-05T02:28:55.637245+00:00"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{"event": "run_start", "pilot": false, "device": "cuda", "torch": "2.11.0+cu130", "python": "3.11.15", "systems": ["damped_oscillator", "forced_duffing", "controlled_van_der_pol", "torque_pendulum", "cartpole"], "seeds": [11], "methods": ["pgnn", "pfrwm", "pfr_fixed"], "epochs": 60}
+{"event": "condition_complete", "system": "damped_oscillator", "seed": 11, "method": "pgnn", "seconds": 50.87087489999976, "best_validation_nll": -0.8438557386398315}
+{"event": "condition_complete", "system": "damped_oscillator", "seed": 11, "method": "pfrwm", "seconds": 43.05302830000073, "best_validation_nll": -1.7283382415771484}
+{"event": "condition_complete", "system": "damped_oscillator", "seed": 11, "method": "pfr_fixed", "seconds": 31.878150300002744, "best_validation_nll": -1.672839879989624}
+{"event": "condition_complete", "system": "forced_duffing", "seed": 11, "method": "pgnn", "seconds": 51.21330279999893, "best_validation_nll": -0.7963630557060242}
+{"event": "condition_complete", "system": "forced_duffing", "seed": 11, "method": "pfrwm", "seconds": 26.070347900000343, "best_validation_nll": -1.5477901697158813}
+{"event": "condition_complete", "system": "forced_duffing", "seed": 11, "method": "pfr_fixed", "seconds": 51.79358100000172, "best_validation_nll": -1.5554277896881104}
+{"event": "condition_complete", "system": "controlled_van_der_pol", "seed": 11, "method": "pgnn", "seconds": 52.84915069999988, "best_validation_nll": -0.8717393279075623}
+{"event": "condition_complete", "system": "controlled_van_der_pol", "seed": 11, "method": "pfrwm", "seconds": 28.082416000001103, "best_validation_nll": -1.4954020977020264}
+{"event": "condition_complete", "system": "controlled_van_der_pol", "seed": 11, "method": "pfr_fixed", "seconds": 23.950217599998723, "best_validation_nll": -1.7953726053237915}
+{"event": "condition_complete", "system": "torque_pendulum", "seed": 11, "method": "pgnn", "seconds": 52.48077639999974, "best_validation_nll": -0.8434523940086365}
+{"event": "condition_complete", "system": "torque_pendulum", "seed": 11, "method": "pfrwm", "seconds": 34.39911199999915, "best_validation_nll": -1.491892695426941}
+{"event": "condition_complete", "system": "torque_pendulum", "seed": 11, "method": "pfr_fixed", "seconds": 33.34392950000256, "best_validation_nll": -1.5266698598861694}
+{"event": "condition_complete", "system": "cartpole", "seed": 11, "method": "pgnn", "seconds": 93.99318309999944, "best_validation_nll": -0.8240188956260681}
+{"event": "condition_complete", "system": "cartpole", "seed": 11, "method": "pfrwm", "seconds": 87.07399840000289, "best_validation_nll": -1.5234663486480713}
+{"event": "condition_complete", "system": "cartpole", "seed": 11, "method": "pfr_fixed", "seconds": 59.52791369999977, "best_validation_nll": -1.3616410493850708}
+{"event": "run_complete", "elapsed_seconds": 731.4105186000015, "conditions": 15}

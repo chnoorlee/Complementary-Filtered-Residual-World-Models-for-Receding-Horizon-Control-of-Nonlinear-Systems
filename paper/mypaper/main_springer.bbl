@@ -1,0 +1,772 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{41}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Hafner
+  et~al.}{2025}]{hafner2025_mastering_diverse_control_tasks_through}
+\begin{barticle}
+\bauthor{\bsnm{Hafner}, \binits{D.}},
+\bauthor{\bsnm{Pašukonis}, \binits{J.}},
+\bauthor{\bsnm{Ba}, \binits{J.}},
+\bauthor{\bsnm{Lillicrap}, \binits{T.}}:
+\batitle{{{Mastering diverse control tasks through world models}}}.
+\bjtitle{Nature}
+(\byear{2025})
+\doiurl{10.1038/s41586-025-08744-2}
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Hansen
+  et~al.}{2023}]{hansen2023_td_mpc2_scalable_robust_world}
+\begin{barticle}
+\bauthor{\bsnm{Hansen}, \binits{N.}},
+\bauthor{\bsnm{Su}, \binits{H.}},
+\bauthor{\bsnm{Wang}, \binits{X.}}:
+\batitle{{{TD-MPC2: Scalable, Robust World Models for Continuous Control}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2023})
+\doiurl{10.48550/arxiv.2310.16828}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Micheli
+  et~al.}{2022}]{micheli2022_transformers_are_sample_efficient_world}
+\begin{barticle}
+\bauthor{\bsnm{Micheli}, \binits{V.}},
+\bauthor{\bsnm{Alonso}, \binits{E.}},
+\bauthor{\bsnm{Fleuret}, \binits{F.}}:
+\batitle{{{Transformers are Sample-Efficient World Models}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2022})
+\doiurl{10.48550/arxiv.2209.00588}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Zhang
+  et~al.}{2023}]{zhang2023_storm_efficient_stochastic_transformer_based}
+\begin{barticle}
+\bauthor{\bsnm{Zhang}, \binits{W.}},
+\bauthor{\bsnm{Wang}, \binits{G.}},
+\bauthor{\bsnm{Sun}, \binits{J.}},
+\bauthor{\bsnm{Yuan}, \binits{Y.}},
+\bauthor{\bsnm{Huang}, \binits{G.}}:
+\batitle{{{STORM: Efficient Stochastic Transformer based World Models for
+  Reinforcement Learning}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2023})
+\doiurl{10.48550/arxiv.2310.09615}
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Moerland
+  et~al.}{2023}]{moerland2023_model_based_reinforcement_learning_a}
+\begin{barticle}
+\bauthor{\bsnm{Moerland}, \binits{T.M.}},
+\bauthor{\bsnm{Broekens}, \binits{J.}},
+\bauthor{\bsnm{Plaat}, \binits{A.}},
+\bauthor{\bsnm{Jonker}, \binits{C.M.}}:
+\batitle{{{Model-based Reinforcement Learning: A Survey}}}.
+\bjtitle{Foundations and Trends® in Machine Learning}
+(\byear{2023})
+\doiurl{10.1561/2200000086}
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Dulac-Arnold
+  et~al.}{2021}]{dulac-arnold2021_challenges_of_real_world_reinforcement}
+\begin{barticle}
+\bauthor{\bsnm{Dulac-Arnold}, \binits{G.}},
+\bauthor{\bsnm{Levine}, \binits{N.}},
+\bauthor{\bsnm{Mankowitz}, \binits{D.J.}},
+\bauthor{\bsnm{Li}, \binits{J.}},
+\bauthor{\bsnm{Păduraru}, \binits{C.}},
+\bauthor{\bsnm{Gowal}, \binits{S.}},
+\bauthor{\bsnm{Hester}, \binits{T.}}:
+\batitle{{{Challenges of real-world reinforcement learning: definitions,
+  benchmarks and analysis}}}.
+\bjtitle{Machine Learning}
+(\byear{2021})
+\doiurl{10.1007/s10994-021-05961-4}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Brunke
+  et~al.}{2022}]{brunke2022_safe_learning_in_robotics_from}
+\begin{barticle}
+\bauthor{\bsnm{Brunke}, \binits{L.}},
+\bauthor{\bsnm{Greeff}, \binits{M.}},
+\bauthor{\bsnm{Hall}, \binits{A.W.}},
+\bauthor{\bsnm{Yuan}, \binits{Z.}},
+\bauthor{\bsnm{Zhou}, \binits{S.}},
+\bauthor{\bsnm{Panerati}, \binits{J.}},
+\bauthor{\bsnm{Schoellig}, \binits{A.P.}}:
+\batitle{{{Safe Learning in Robotics: From Learning-Based Control to Safe
+  Reinforcement Learning}}}.
+\bjtitle{Annual Review of Control Robotics and Autonomous Systems}
+(\byear{2022})
+\doiurl{10.1146/annurev-control-042920-020211}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Karniadakis
+  et~al.}{2021}]{karniadakis2021_physics_informed_machine_learning}
+\begin{barticle}
+\bauthor{\bsnm{Karniadakis}, \binits{G.E.}},
+\bauthor{\bsnm{Kevrekidis}, \binits{I.G.}},
+\bauthor{\bsnm{Lu}, \binits{L.}},
+\bauthor{\bsnm{Perdikaris}, \binits{P.}},
+\bauthor{\bsnm{Wang}, \binits{S.}},
+\bauthor{\bsnm{Yang}, \binits{L.}}:
+\batitle{{{Physics-informed machine learning}}}.
+\bjtitle{Nature Reviews Physics}
+(\byear{2021})
+\doiurl{10.1038/s42254-021-00314-5}
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Willard
+  et~al.}{2022}]{willard2022_integrating_scientific_knowledge_with_machine}
+\begin{barticle}
+\bauthor{\bsnm{Willard}, \binits{J.}},
+\bauthor{\bsnm{Jia}, \binits{X.}},
+\bauthor{\bsnm{Xu}, \binits{S.}},
+\bauthor{\bsnm{Steinbach}, \binits{M.}},
+\bauthor{\bsnm{Kumar}, \binits{V.}}:
+\batitle{{{Integrating Scientific Knowledge with Machine Learning for
+  Engineering and Environmental Systems}}}.
+\bjtitle{ACM Computing Surveys}
+(\byear{2022})
+\doiurl{10.1145/3514228}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Yu and
+  Wang}{2024}]{yu2024_learning_dynamical_systems_from_data}
+\begin{barticle}
+\bauthor{\bsnm{Yu}, \binits{R.}},
+\bauthor{\bsnm{Wang}, \binits{R.}}:
+\batitle{{{Learning dynamical systems from data: An introduction to
+  physics-guided deep learning}}}.
+\bjtitle{Proceedings of the National Academy of Sciences}
+(\byear{2024})
+\doiurl{10.1073/pnas.2311808121}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Shen
+  et~al.}{2023}]{shen2023_differentiable_modelling_to_unify_machine}
+\begin{barticle}
+\bauthor{\bsnm{Shen}, \binits{C.}},
+\bauthor{\bsnm{Appling}, \binits{A.}},
+\bauthor{\bsnm{Gentine}, \binits{P.}},
+\bauthor{\bsnm{Bandai}, \binits{T.}},
+\bauthor{\bsnm{Gupta}, \binits{H.V.}},
+\bauthor{\bsnm{Tartakovsky}, \binits{A.M.}},
+\bauthor{\bsnm{Baity‐Jesi}, \binits{M.}},
+\bauthor{\bsnm{Fenicia}, \binits{F.}},
+\bauthor{\bsnm{Kifer}, \binits{D.}},
+\bauthor{\bsnm{Li}, \binits{L.}},
+\bauthor{\bsnm{Liu}, \binits{X.}},
+\bauthor{\bsnm{Ren}, \binits{W.}},
+\bauthor{\bsnm{Zheng}, \binits{Y.}},
+\bauthor{\bsnm{Harman}, \binits{C.J.}},
+\bauthor{\bsnm{Clark}, \binits{M.}},
+\bauthor{\bsnm{Farthing}, \binits{M.W.}},
+\bauthor{\bsnm{Feng}, \binits{D.}},
+\bauthor{\bsnm{Kumar}, \binits{P.}},
+\bauthor{\bsnm{Aboelyazeed}, \binits{D.}},
+\bauthor{\bsnm{Rahmani}, \binits{F.}},
+\bauthor{\bsnm{Song}, \binits{Y.}},
+\bauthor{\bsnm{Beck}, \binits{H.E.}},
+\bauthor{\bsnm{Bindas}, \binits{T.}},
+\bauthor{\bsnm{Dwivedi}, \binits{D.}},
+\bauthor{\bsnm{Fang}, \binits{K.}},
+\bauthor{\bsnm{Höge}, \binits{M.}},
+\bauthor{\bsnm{Rackauckas}, \binits{C.}},
+\bauthor{\bsnm{Mohanty}, \binits{B.P.}},
+\bauthor{\bsnm{Roy}, \binits{T.}},
+\bauthor{\bsnm{Xu}, \binits{C.}},
+\bauthor{\bsnm{Lawson}, \binits{K.}}:
+\batitle{{{Differentiable modelling to unify machine learning and physical
+  models for geosciences}}}.
+\bjtitle{Nature Reviews Earth \& Environment}
+(\byear{2023})
+\doiurl{10.1038/s43017-023-00450-9}
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Revach et~al.}{2022}]{revach2022_kalmannet}
+\begin{barticle}
+\bauthor{\bsnm{Revach}, \binits{G.}},
+\bauthor{\bsnm{Shlezinger}, \binits{N.}},
+\bauthor{\bsnm{Ni}, \binits{X.}},
+\bauthor{\bsnm{Escoriza}, \binits{A.L.}},
+\bauthor{\bsnm{Sloun}, \binits{R.J.G.}},
+\bauthor{\bsnm{Eldar}, \binits{Y.C.}}:
+\batitle{{{KalmanNet: Neural Network Aided Kalman Filtering for Partially Known
+  Dynamics}}}.
+\bjtitle{IEEE Transactions on Signal Processing}
+(\byear{2022})
+\doiurl{10.1109/TSP.2022.3158588}
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Cheng
+  et~al.}{2023}]{cheng2023_machine_learning_with_data_assimilation}
+\begin{barticle}
+\bauthor{\bsnm{Cheng}, \binits{S.}},
+\bauthor{\bsnm{Quilodrán-Casas}, \binits{C.}},
+\bauthor{\bsnm{Ouala}, \binits{S.}},
+\bauthor{\bsnm{Farchi}, \binits{A.}},
+\bauthor{\bsnm{Liu}, \binits{C.}},
+\bauthor{\bsnm{Tandeo}, \binits{P.}},
+\bauthor{\bsnm{Fablet}, \binits{R.}},
+\bauthor{\bsnm{Lucor}, \binits{D.}},
+\bauthor{\bsnm{Iooss}, \binits{B.}},
+\bauthor{\bsnm{Brajard}, \binits{J.}},
+\bauthor{\bsnm{Xiao}, \binits{D.}},
+\bauthor{\bsnm{Janjić}, \binits{T.}},
+\bauthor{\bsnm{Ding}, \binits{W.}},
+\bauthor{\bsnm{Guo}, \binits{Y.}},
+\bauthor{\bsnm{Carrassi}, \binits{A.}},
+\bauthor{\bsnm{Bocquet}, \binits{M.}},
+\bauthor{\bsnm{Arcucci}, \binits{R.}}:
+\batitle{{{Machine Learning With Data Assimilation and Uncertainty
+  Quantification for Dynamical Systems: A Review}}}.
+\bjtitle{IEEE/CAA Journal of Automatica Sinica}
+(\byear{2023})
+\doiurl{10.1109/jas.2023.123537}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Pu
+  et~al.}{2024}]{pu2024_unizero_generalized_and_efficient_planning}
+\begin{barticle}
+\bauthor{\bsnm{Pu}, \binits{Y.}},
+\bauthor{\bsnm{Niu}, \binits{Y.}},
+\bauthor{\bsnm{Yang}, \binits{Z.}},
+\bauthor{\bsnm{Ren}, \binits{J.}},
+\bauthor{\bsnm{Li}, \binits{H.}},
+\bauthor{\bsnm{Liu}, \binits{Y.}}:
+\batitle{{{UniZero: Generalized and Efficient Planning with Scalable Latent
+  World Models}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2024})
+\doiurl{10.48550/arxiv.2406.10667}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Ma
+  et~al.}{2023}]{ma2023_harmonydream_task_harmonization_inside_world}
+\begin{barticle}
+\bauthor{\bsnm{Ma}, \binits{H.}},
+\bauthor{\bsnm{Wu}, \binits{J.}},
+\bauthor{\bsnm{Feng}, \binits{N.}},
+\bauthor{\bsnm{Xiao}, \binits{C.}},
+\bauthor{\bsnm{Li}, \binits{D.}},
+\bauthor{\bsnm{Hao}, \binits{J.}},
+\bauthor{\bsnm{Wang}, \binits{J.}},
+\bauthor{\bsnm{Long}, \binits{M.}}:
+\batitle{{{HarmonyDream: Task Harmonization Inside World Models}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2023})
+\doiurl{10.48550/arxiv.2310.00344}
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Kauvar
+  et~al.}{2023}]{kauvar2023_curious_replay_for_model_based}
+\begin{barticle}
+\bauthor{\bsnm{Kauvar}, \binits{I.}},
+\bauthor{\bsnm{Doyle}, \binits{C.}},
+\bauthor{\bsnm{Zhou}, \binits{L.}},
+\bauthor{\bsnm{Haber}, \binits{N.}}:
+\batitle{{{Curious Replay for Model-based Adaptation}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2023})
+\doiurl{10.48550/arxiv.2306.15934}
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Nauman
+  et~al.}{2024}]{nauman2024_bigger_regularized_optimistic_scaling_for}
+\begin{barticle}
+\bauthor{\bsnm{Nauman}, \binits{M.}},
+\bauthor{\bsnm{Ostaszewski}, \binits{M.}},
+\bauthor{\bsnm{Jankowski}, \binits{K.}},
+\bauthor{\bsnm{Miłoś}, \binits{P.}},
+\bauthor{\bsnm{Cygan}, \binits{M.}}:
+\batitle{{{Bigger, Regularized, Optimistic: scaling for compute and
+  sample-efficient continuous control}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2024})
+\doiurl{10.48550/arxiv.2405.16158}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Li
+  et~al.}{2024}]{li2024_think2drive_efficient_reinforcement_learning_by}
+\begin{barticle}
+\bauthor{\bsnm{Li}, \binits{Q.}},
+\bauthor{\bsnm{Jia}, \binits{X.}},
+\bauthor{\bsnm{Wang}, \binits{S.}},
+\bauthor{\bsnm{Yan}, \binits{J.}}:
+\batitle{{{Think2Drive: Efficient Reinforcement Learning by Thinking in Latent
+  World Model for Quasi-Realistic Autonomous Driving (in CARLA-v2)}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2024})
+\doiurl{10.48550/arxiv.2402.16720}
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Gao
+  et~al.}{2024}]{gao2024_dream_to_drive_with_predictive}
+\begin{barticle}
+\bauthor{\bsnm{Gao}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{Q.}},
+\bauthor{\bsnm{Ding}, \binits{D.}},
+\bauthor{\bsnm{Zhao}, \binits{D.}}:
+\batitle{{{Dream to Drive With Predictive Individual World Model}}}.
+\bjtitle{IEEE Transactions on Intelligent Vehicles}
+(\byear{2024})
+\doiurl{10.1109/tiv.2024.3408830}
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Zhou
+  et~al.}{2024}]{zhou2024_dino_wm_world_models_on}
+\begin{barticle}
+\bauthor{\bsnm{Zhou}, \binits{G.}},
+\bauthor{\bsnm{Pan}, \binits{H.}},
+\bauthor{\bsnm{LeCun}, \binits{Y.}},
+\bauthor{\bsnm{Pinto}, \binits{L.}}:
+\batitle{{{DINO-WM: World Models on Pre-trained Visual Features enable
+  Zero-shot Planning}}}.
+\bjtitle{arXiv (Cornell University)}
+(\byear{2024})
+\doiurl{10.48550/arxiv.2411.04983}
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Ai
+  et~al.}{2025}]{ai2025_a_review_of_learning_based}
+\begin{barticle}
+\bauthor{\bsnm{Ai}, \binits{B.}},
+\bauthor{\bsnm{Tian}, \binits{S.}},
+\bauthor{\bsnm{Shi}, \binits{H.}},
+\bauthor{\bsnm{Wang}, \binits{Y.}},
+\bauthor{\bsnm{Pfaff}, \binits{T.}},
+\bauthor{\bsnm{Tan}, \binits{C.}},
+\bauthor{\bsnm{Christensen}, \binits{H.I.}},
+\bauthor{\bsnm{Su}, \binits{H.}},
+\bauthor{\bsnm{Wu}, \binits{J.}},
+\bauthor{\bsnm{Li}, \binits{Y.}}:
+\batitle{{{A review of learning-based dynamics models for robotic
+  manipulation}}}.
+\bjtitle{Science Robotics}
+(\byear{2025})
+\doiurl{10.1126/scirobotics.adt1497}
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Kotb
+  et~al.}{2024}]{kotb2024_qt_tdm_planning_with_transformer}
+\begin{barticle}
+\bauthor{\bsnm{Kotb}, \binits{M.}},
+\bauthor{\bsnm{Weber}, \binits{C.}},
+\bauthor{\bsnm{Hafez}, \binits{M.B.}},
+\bauthor{\bsnm{Wermter}, \binits{S.}}:
+\batitle{{{QT-TDM: Planning With Transformer Dynamics Model and Autoregressive
+  Q-Learning}}}.
+\bjtitle{IEEE Robotics and Automation Letters}
+(\byear{2024})
+\doiurl{10.1109/lra.2024.3504341}
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{He
+  et~al.}{2025}]{he2025_glam_global_local_variation_awareness}
+\begin{barticle}
+\bauthor{\bsnm{He}, \binits{Q.}},
+\bauthor{\bsnm{Liang}, \binits{W.}},
+\bauthor{\bsnm{Hao}, \binits{C.}},
+\bauthor{\bsnm{Sun}, \binits{G.}},
+\bauthor{\bsnm{Tian}, \binits{J.}}:
+\batitle{{{GLAM: Global-Local Variation Awareness in Mamba-based World
+  Model}}}.
+\bjtitle{Proceedings of the AAAI Conference on Artificial Intelligence}
+(\byear{2025})
+\doiurl{10.1609/aaai.v39i16.33880}
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{Li
+  et~al.}{2025}]{mingwei2025_prismatic_world_model_learning_compositional}
+\begin{botherref}
+\oauthor{\bsnm{Li}, \binits{M.}},
+\oauthor{\bsnm{Zhang}, \binits{X.}},
+\oauthor{\bsnm{Yang}, \binits{C.}},
+\oauthor{\bsnm{Zheng}, \binits{Z.}},
+\oauthor{\bsnm{Yang}, \binits{Y.}}:
+{{Prismatic World Model: Learning Compositional Dynamics for Planning in Hybrid
+  Systems}}.
+arXiv (Cornell University)
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Tang
+  et~al.}{2026}]{tang2026_ham_world_soft_hamiltonian_world}
+\begin{botherref}
+\oauthor{\bsnm{Tang}, \binits{H.}},
+\oauthor{\bsnm{Cui}, \binits{H.}},
+\oauthor{\bsnm{Xu}, \binits{K.}},
+\oauthor{\bsnm{Wang}, \binits{K.}},
+\oauthor{\bsnm{Mei}, \binits{Z.}}:
+{{HaM-World: Soft-Hamiltonian World Models with Selective Memory for
+  Planning}}.
+arXiv (Cornell University)
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Wang}{2026}]{wang2026_scale_buys_interpolation_structure_buys}
+\begin{botherref}
+\oauthor{\bsnm{Wang}, \binits{H.}}:
+{{Certified World Models: Predictability Across Configuration, Horizon, and
+  Resolution}}.
+arXiv (Cornell University)
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Ding
+  et~al.}{2025}]{ding2025_understanding_world_or_predicting_future}
+\begin{barticle}
+\bauthor{\bsnm{Ding}, \binits{J.}},
+\bauthor{\bsnm{Zhang}, \binits{Y.}},
+\bauthor{\bsnm{Shang}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{Y.}},
+\bauthor{\bsnm{Zong}, \binits{Z.}},
+\bauthor{\bsnm{Feng}, \binits{J.}},
+\bauthor{\bsnm{Yuan}, \binits{Y.}},
+\bauthor{\bsnm{Su}, \binits{H.}},
+\bauthor{\bsnm{Li}, \binits{N.}},
+\bauthor{\bsnm{Sukiennik}, \binits{N.}},
+\bauthor{\bsnm{Xu}, \binits{F.}},
+\bauthor{\bsnm{Li}, \binits{Y.}}:
+\batitle{{{Understanding World or Predicting Future? A Comprehensive Survey of
+  World Models}}}.
+\bjtitle{ACM Computing Surveys}
+(\byear{2025})
+\doiurl{10.1145/3746449}
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{Cuomo
+  et~al.}{2022}]{cuomo2022_scientific_machine_learning_through_physics}
+\begin{barticle}
+\bauthor{\bsnm{Cuomo}, \binits{S.}},
+\bauthor{\bsnm{Cola}, \binits{V.S.D.}},
+\bauthor{\bsnm{Giampaolo}, \binits{F.}},
+\bauthor{\bsnm{Rozza}, \binits{G.}},
+\bauthor{\bsnm{Raissi}, \binits{M.}},
+\bauthor{\bsnm{Piccialli}, \binits{F.}}:
+\batitle{{{Scientific Machine Learning Through Physics–Informed Neural
+  Networks: Where we are and What’s Next}}}.
+\bjtitle{Journal of Scientific Computing}
+(\byear{2022})
+\doiurl{10.1007/s10915-022-01939-z}
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{Bradley
+  et~al.}{2022}]{bradley2022_perspectives_on_the_integration_between}
+\begin{barticle}
+\bauthor{\bsnm{Bradley}, \binits{W.A.}},
+\bauthor{\bsnm{Kim}, \binits{J.}},
+\bauthor{\bsnm{Kilwein}, \binits{Z.}},
+\bauthor{\bsnm{Blakely}, \binits{L.}},
+\bauthor{\bsnm{Eydenberg}, \binits{M.}},
+\bauthor{\bsnm{Jalvin}, \binits{J.}},
+\bauthor{\bsnm{Laird}, \binits{C.D.}},
+\bauthor{\bsnm{Boukouvala}, \binits{F.}}:
+\batitle{{{Perspectives on the integration between first-principles and
+  data-driven modeling}}}.
+\bjtitle{Computers \& Chemical Engineering}
+(\byear{2022})
+\doiurl{10.1016/j.compchemeng.2022.107898}
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{Wang
+  et~al.}{2024}]{wang2024_respecting_causality_for_training_physics}
+\begin{barticle}
+\bauthor{\bsnm{Wang}, \binits{S.}},
+\bauthor{\bsnm{Sankaran}, \binits{S.}},
+\bauthor{\bsnm{Perdikaris}, \binits{P.}}:
+\batitle{{{Respecting causality for training physics-informed neural
+  networks}}}.
+\bjtitle{Computer Methods in Applied Mechanics and Engineering}
+(\byear{2024})
+\doiurl{10.1016/j.cma.2024.116813}
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem[\protect\citeauthoryear{List
+  et~al.}{2022}]{list2022_learned_turbulence_modelling_with_differentiable}
+\begin{barticle}
+\bauthor{\bsnm{List}, \binits{B.}},
+\bauthor{\bsnm{Chen}, \binits{L.}},
+\bauthor{\bsnm{Thuerey}, \binits{N.}}:
+\batitle{{{Learned turbulence modelling with differentiable fluid solvers:
+  physics-based loss functions and optimisation horizons}}}.
+\bjtitle{Journal of Fluid Mechanics}
+(\byear{2022})
+\doiurl{10.1017/jfm.2022.738}
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem[\protect\citeauthoryear{Robinson
+  et~al.}{2022}]{robinson2022_physics_guided_neural_networks_for}
+\begin{barticle}
+\bauthor{\bsnm{Robinson}, \binits{H.}},
+\bauthor{\bsnm{Pawar}, \binits{S.}},
+\bauthor{\bsnm{Rasheed}, \binits{A.}},
+\bauthor{\bsnm{San}, \binits{O.}}:
+\batitle{{{Physics guided neural networks for modelling of non-linear
+  dynamics}}}.
+\bjtitle{Neural Networks}
+(\byear{2022})
+\doiurl{10.1016/j.neunet.2022.07.023}
+\end{barticle}
+\endbibitem
+
+%%% 33
+\bibitem[\protect\citeauthoryear{Liu
+  et~al.}{2022}]{liu2022_physics_guided_deep_markov_models}
+\begin{barticle}
+\bauthor{\bsnm{Liu}, \binits{W.}},
+\bauthor{\bsnm{Lai}, \binits{Z.}},
+\bauthor{\bsnm{Bacsa}, \binits{K.}},
+\bauthor{\bsnm{Chatzi}, \binits{E.}}:
+\batitle{{{Physics-guided Deep Markov Models for learning nonlinear dynamical
+  systems with uncertainty}}}.
+\bjtitle{Mechanical Systems and Signal Processing}
+(\byear{2022})
+\doiurl{10.1016/j.ymssp.2022.109276}
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem[\protect\citeauthoryear{Chen
+  et~al.}{2022}]{chen2022_hybrid_physics_data_driven_online}
+\begin{barticle}
+\bauthor{\bsnm{Chen}, \binits{H.}},
+\bauthor{\bsnm{Lou}, \binits{S.}},
+\bauthor{\bsnm{Lv}, \binits{C.}}:
+\batitle{{{Hybrid physics-data-driven online modelling: Framework, methodology
+  and application to electric vehicles}}}.
+\bjtitle{Mechanical Systems and Signal Processing}
+(\byear{2022})
+\doiurl{10.1016/j.ymssp.2022.109791}
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem[\protect\citeauthoryear{Chen
+  et~al.}{2023}]{chen2023_hybrid_physics_and_data_driven}
+\begin{barticle}
+\bauthor{\bsnm{Chen}, \binits{L.}},
+\bauthor{\bsnm{Qin}, \binits{C.}},
+\bauthor{\bsnm{Zhao}, \binits{J.}},
+\bauthor{\bsnm{Wang}, \binits{W.}}:
+\batitle{{{Hybrid Physics- and Data-Driven Dynamic State Estimation of
+  Electricity-Heat Integrated Energy Systems}}}.
+\bjtitle{IEEE Transactions on Instrumentation and Measurement}
+(\byear{2023})
+\doiurl{10.1109/tim.2023.3338666}
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Jia
+  et~al.}{2021}]{jia2021_physics_guided_machine_learning_for}
+\begin{barticle}
+\bauthor{\bsnm{Jia}, \binits{X.}},
+\bauthor{\bsnm{Willard}, \binits{J.}},
+\bauthor{\bsnm{Karpatne}, \binits{A.}},
+\bauthor{\bsnm{Read}, \binits{J.S.}},
+\bauthor{\bsnm{Zwart}, \binits{J.A.}},
+\bauthor{\bsnm{Steinbach}, \binits{M.}},
+\bauthor{\bsnm{Kumar}, \binits{V.}}:
+\batitle{{{Physics-Guided Machine Learning for Scientific Discovery: An
+  Application in Simulating Lake Temperature Profiles}}}.
+\bjtitle{ACM/IMS Transactions on Data Science}
+(\byear{2021})
+\doiurl{10.1145/3447814}
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Abdar
+  et~al.}{2021}]{abdar2021_a_review_of_uncertainty_quantification}
+\begin{barticle}
+\bauthor{\bsnm{Abdar}, \binits{M.}},
+\bauthor{\bsnm{Pourpanah}, \binits{F.}},
+\bauthor{\bsnm{Hussain}, \binits{S.}},
+\bauthor{\bsnm{Rezazadegan}, \binits{D.}},
+\bauthor{\bsnm{Liu}, \binits{L.}},
+\bauthor{\bsnm{Ghavamzadeh}, \binits{M.}},
+\bauthor{\bsnm{Fieguth}, \binits{P.}},
+\bauthor{\bsnm{Cao}, \binits{X.}},
+\bauthor{\bsnm{Khosravi}, \binits{A.}},
+\bauthor{\bsnm{Acharya}, \binits{U.R.}},
+\bauthor{\bsnm{Makarenkov}, \binits{V.}},
+\bauthor{\bsnm{Nahavandi}, \binits{S.}}:
+\batitle{{{A review of uncertainty quantification in deep learning: Techniques,
+  applications and challenges}}}.
+\bjtitle{Information Fusion}
+(\byear{2021})
+\doiurl{10.1016/j.inffus.2021.05.008}
+\end{barticle}
+\endbibitem
+
+%%% 38
+\bibitem[\protect\citeauthoryear{Klotz
+  et~al.}{2022}]{klotz2022_uncertainty_estimation_with_deep_learning}
+\begin{barticle}
+\bauthor{\bsnm{Klotz}, \binits{D.}},
+\bauthor{\bsnm{Kratzert}, \binits{F.}},
+\bauthor{\bsnm{Gauch}, \binits{M.}},
+\bauthor{\bsnm{Sampson}, \binits{A.K.}},
+\bauthor{\bsnm{Brandstetter}, \binits{J.}},
+\bauthor{\bsnm{Klambauer}, \binits{G.}},
+\bauthor{\bsnm{Hochreiter}, \binits{S.}},
+\bauthor{\bsnm{Nearing}, \binits{G.}}:
+\batitle{{{Uncertainty estimation with deep learning for rainfall–runoff
+  modeling}}}.
+\bjtitle{Hydrology and earth system sciences}
+(\byear{2022})
+\doiurl{10.5194/hess-26-1673-2022}
+\end{barticle}
+\endbibitem
+
+%%% 39
+\bibitem[\protect\citeauthoryear{Ramancha
+  et~al.}{2022}]{ramancha2022_accounting_for_model_form_uncertainty}
+\begin{barticle}
+\bauthor{\bsnm{Ramancha}, \binits{M.K.}},
+\bauthor{\bsnm{Conte}, \binits{J.P.}},
+\bauthor{\bsnm{Parno}, \binits{M.}}:
+\batitle{{{Accounting for model form uncertainty in Bayesian calibration of
+  linear dynamic systems}}}.
+\bjtitle{Mechanical Systems and Signal Processing}
+(\byear{2022})
+\doiurl{10.1016/j.ymssp.2022.108871}
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem[\protect\citeauthoryear{Alonso and
+  Solari}{2021}]{alonso2021_automatic_calibration_and_uncertainty_quantification}
+\begin{barticle}
+\bauthor{\bsnm{Alonso}, \binits{R.}},
+\bauthor{\bsnm{Solari}, \binits{S.}}:
+\batitle{{{Automatic calibration and uncertainty quantification in waves
+  dynamical downscaling}}}.
+\bjtitle{Coastal Engineering}
+(\byear{2021})
+\doiurl{10.1016/j.coastaleng.2021.103944}
+\end{barticle}
+\endbibitem
+
+%%% 41
+\bibitem[\protect\citeauthoryear{Portela
+  et~al.}{2025}]{portela2025_conformal_prediction_for_uncertainty_quantification}
+\begin{barticle}
+\bauthor{\bsnm{Portela}, \binits{A.}},
+\bauthor{\bsnm{Banga}, \binits{J.R.}},
+\bauthor{\bsnm{Matabuena}, \binits{M.}}:
+\batitle{{{Conformal prediction for uncertainty quantification in dynamic
+  biological systems}}}.
+\bjtitle{PLoS Computational Biology}
+(\byear{2025})
+\doiurl{10.1371/journal.pcbi.1013098}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}

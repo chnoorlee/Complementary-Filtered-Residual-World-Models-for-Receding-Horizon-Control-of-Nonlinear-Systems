@@ -1,0 +1,143 @@
+{
+  "development_only": true,
+  "cell_balanced_nrmse_h25": {
+    "pfr_fixed": 0.0972848516597105,
+    "pfrwm": 0.09706797534666313,
+    "pgnn": 0.11050418137520443
+  },
+  "pfr_improvement_vs_pgnn_percent": 12.159002366544108,
+  "pfr_improvement_vs_fixed_filter_percent": 0.2229291707263687,
+  "cells_worse_than_pgnn_by_more_than_10_percent": 2,
+  "degenerate_gain_systems": 0,
+  "mean_observed_gain_by_system": {
+    "cartpole": 0.41021262227466143,
+    "controlled_van_der_pol": 0.4724137260940717,
+    "damped_oscillator": 0.49240380137235823,
+    "forced_duffing": 0.3389442908890857,
+    "torque_pendulum": 0.5453301990768487
+  },
+  "all_metrics_finite": true,
+  "kill_rule_passed": false,
+  "cell_details": [
+    {
+      "system": "cartpole",
+      "regime": "id_clean",
+      "pfr_fixed": 0.051125410667846004,
+      "pfrwm": 0.04843759996423652,
+      "pgnn": 0.02747211620709845,
+      "relative_change_vs_pgnn_percent": 76.31550332376962
+    },
+    {
+      "system": "cartpole",
+      "regime": "id_corrupt",
+      "pfr_fixed": 0.13647777860878604,
+      "pfrwm": 0.11751436206645517,
+      "pgnn": 0.16941349385737672,
+      "relative_change_vs_pgnn_percent": -30.634591501084092
+    },
+    {
+      "system": "cartpole",
+      "regime": "ood_parameter_corrupt",
+      "pfr_fixed": 0.18224964388933718,
+      "pfrwm": 0.15770004610551588,
+      "pgnn": 0.186746948965254,
+      "relative_change_vs_pgnn_percent": -15.554151230145436
+    },
+    {
+      "system": "controlled_van_der_pol",
+      "regime": "id_clean",
+      "pfr_fixed": 0.022561389290318968,
+      "pfrwm": 0.05347316351606812,
+      "pgnn": 0.03402363121921428,
+      "relative_change_vs_pgnn_percent": 57.164775186812065
+    },
+    {
+      "system": "controlled_van_der_pol",
+      "regime": "id_corrupt",
+      "pfr_fixed": 0.057880136985718734,
+      "pfrwm": 0.07893314124584112,
+      "pgnn": 0.08917595424982183,
+      "relative_change_vs_pgnn_percent": -11.486070533415315
+    },
+    {
+      "system": "controlled_van_der_pol",
+      "regime": "ood_parameter_corrupt",
+      "pfr_fixed": 0.18300898910959396,
+      "pfrwm": 0.20382804443645253,
+      "pgnn": 0.19610254039445887,
+      "relative_change_vs_pgnn_percent": 3.939522673420679
+    },
+    {
+      "system": "damped_oscillator",
+      "regime": "id_clean",
+      "pfr_fixed": 0.039417007951554846,
+      "pfrwm": 0.04378326603353344,
+      "pgnn": 0.04581370635982484,
+      "relative_change_vs_pgnn_percent": -4.431949492023507
+    },
+    {
+      "system": "damped_oscillator",
+      "regime": "id_corrupt",
+      "pfr_fixed": 0.056039523450456125,
+      "pfrwm": 0.05856655142029837,
+      "pgnn": 0.08652369488896049,
+      "relative_change_vs_pgnn_percent": -32.31154599273725
+    },
+    {
+      "system": "damped_oscillator",
+      "regime": "ood_parameter_corrupt",
+      "pfr_fixed": 0.06308141061992983,
+      "pfrwm": 0.06249576615912018,
+      "pgnn": 0.08831979744820267,
+      "relative_change_vs_pgnn_percent": -29.239232918562383
+    },
+    {
+      "system": "forced_duffing",
+      "regime": "id_clean",
+      "pfr_fixed": 0.042200513577167344,
+      "pfrwm": 0.03150339166982789,
+      "pgnn": 0.03597834714161046,
+      "relative_change_vs_pgnn_percent": -12.437912876234089
+    },
+    {
+      "system": "forced_duffing",
+      "regime": "id_corrupt",
+      "pfr_fixed": 0.061294745541769606,
+      "pfrwm": 0.04922213277619996,
+      "pgnn": 0.0905839729914855,
+      "relative_change_vs_pgnn_percent": -45.661322692451755
+    },
+    {
+      "system": "forced_duffing",
+      "regime": "ood_parameter_corrupt",
+      "pfr_fixed": 0.2383023226959389,
+      "pfrwm": 0.2431489899446931,
+      "pgnn": 0.23322411854765546,
+      "relative_change_vs_pgnn_percent": 4.2555081604948475
+    },
+    {
+      "system": "torque_pendulum",
+      "regime": "id_clean",
+      "pfr_fixed": 0.0469867781128352,
+      "pfrwm": 0.05055087454022055,
+      "pgnn": 0.05704740431470823,
+      "relative_change_vs_pgnn_percent": -11.387949815646056
+    },
+    {
+      "system": "torque_pendulum",
+      "regime": "id_corrupt",
+      "pfr_fixed": 0.06994287880997026,
+      "pfrwm": 0.07000005483273618,
+      "pgnn": 0.11990308383162984,
+      "relative_change_vs_pgnn_percent": -41.619470829431236
+    },
+    {
+      "system": "torque_pendulum",
+      "regime": "ood_parameter_corrupt",
+      "pfr_fixed": 0.20870424558443426,
+      "pfrwm": 0.18686224548874805,
+      "pgnn": 0.19723391021076467,
+      "relative_change_vs_pgnn_percent": -5.258560615126186
+    }
+  ]
+}

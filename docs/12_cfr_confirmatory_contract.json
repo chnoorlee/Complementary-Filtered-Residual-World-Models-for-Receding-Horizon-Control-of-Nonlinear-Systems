@@ -1,0 +1,145 @@
+{
+  "contract_version": "cfr-confirmatory-v3.0",
+  "status": "frozen_before_confirmation",
+  "frozen_at_local_date": "2026-08-05",
+  "direction": "world_model",
+  "selection_provenance": {
+    "v1_candidate": "RGP-WM",
+    "v1_outcome": "rejected after corrected fixed-training-scale NRMSE analysis",
+    "v2_candidate": "learned-gain PFR-WM",
+    "v2_development_seed": 11,
+    "v2_kill_rule_outcome": "failed because learned gain improved only 0.222929 percent over the prespecified fixed-gain comparator",
+    "v2_confirmatory_action": "do_not_generate_confirmatory_pfrwm_results",
+    "v3_candidate_selection": "fixed equal-trust gain 0.5 was selected from the prespecified v2 fixed-gain comparator before any v3 seed was generated",
+    "confirmatory_seeds_previously_generated": false
+  },
+  "candidate": {
+    "method": "cfrwm",
+    "full_name": "Complementary-Filtered Residual World Model",
+    "fixed_filter_gain": 0.5,
+    "missing_measurement_gain": 0.0,
+    "forecast_mode": "probabilistic physics-residual open-loop rollout",
+    "novelty_boundary": "application-level composition of a prespecified complementary context filter and physics-residual probabilistic rollout; no claim of novelty for complementary or Kalman-style filtering"
+  },
+  "methods": [
+    "rssm",
+    "simnorm",
+    "transformer",
+    "pgnn",
+    "pgdmm",
+    "cfrwm",
+    "cfr_gain0",
+    "cfr_gain025",
+    "cfr_gain075",
+    "cfr_gain1",
+    "cfr_1step"
+  ],
+  "seeds": [41, 53, 67, 79, 83, 97, 109, 113],
+  "systems": [
+    "damped_oscillator",
+    "forced_duffing",
+    "controlled_van_der_pol",
+    "torque_pendulum",
+    "cartpole"
+  ],
+  "regimes": [
+    "id_clean",
+    "id_corrupt",
+    "ood_parameter_corrupt"
+  ],
+  "comparators": [
+    "rssm",
+    "simnorm",
+    "transformer",
+    "pgnn",
+    "pgdmm"
+  ],
+  "ablations": [
+    "cfr_gain0",
+    "cfr_gain025",
+    "cfr_gain075",
+    "cfr_gain1",
+    "cfr_1step"
+  ],
+  "data_design": {
+    "train_count": 256,
+    "validation_count": 64,
+    "test_count": 96,
+    "trajectory_steps": 72,
+    "context_steps": 8,
+    "forecast_steps": 25,
+    "trajectories_per_cell": 96,
+    "training_observation_noise_fraction": 0.03,
+    "training_missing_fraction": 0.1,
+    "corrupt_observation_noise_fraction": 0.08,
+    "corrupt_missing_fraction": 0.25,
+    "expected_runs": 440,
+    "expected_aggregate_rows": 1320,
+    "expected_trajectory_rows": 126720,
+    "pairing": "all methods share one deterministic dataset per seed/system; ID-clean and ID-corrupt reuse the same underlying trajectory identifiers; OOD identifiers must be disjoint from all ID identifiers",
+    "independence_boundary": "the eight seed-level training/data realizations are the top-level independent clusters; trajectories are nested repeated observations",
+    "generalization_boundary": "claims apply to the prespecified finite five-system benchmark and stochastic training/data realizations, not to all physical systems"
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "epochs": 60,
+    "patience": 10,
+    "batch_size": 128,
+    "min_delta": 1e-05,
+    "gradient_clip": 5.0,
+    "num_workers": 0,
+    "tuning_file": "results/tuning/best_configs.json",
+    "tuning_file_sha256": "0d47f17a3c85b1cb08c04f4534d6ab6a719d63b45069bfff32c9fcca69a8ea4d",
+    "baseline_tuning_source": "own_frozen_system_method",
+    "cfr_tuning_source": "pgnn_same_system",
+    "cfr_hidden_dimension": 72,
+    "output_directory": "results/confirmatory",
+    "wall_clock_hours": 8.0,
+    "deadline_fraction": 0.8,
+    "device_policy": "cuda_if_available_else_cpu",
+    "overwrite": false,
+    "resume_policy": "only an exact provenance-bound subset with paired JSON/checkpoint artifacts may resume"
+  },
+  "statistics": {
+    "primary_metric": "fixed-training-scale NRMSE at horizon 25",
+    "bootstrap_replicates": 5000,
+    "primary_comparator": "pgnn",
+    "primary_estimand": "arithmetic mean across eight seed-specific relative improvements; within each seed, baseline and candidate means are equally weighted across all fixed system-regime cells",
+    "absolute_estimand": "arithmetic mean across seed-specific proposed-minus-baseline fixed-cell mean differences",
+    "bootstrap": "resample seeds globally with replacement; within each selected seed/system, resample paired trajectory identifiers; reuse one sampled identifier vector for regimes sharing the same underlying trajectories; resample the distinct OOD trajectory set separately; retain every system-regime cell",
+    "relative_ratio_rule": "recompute baseline, candidate, and their relative ratio inside every bootstrap replicate",
+    "confidence_interval": "two-sided percentile 95 percent interval",
+    "exact_test": "enumerate all 2^8 seed-level sign flips under a prespecified symmetry assumption",
+    "h1_relative_margin_percent": 5.0,
+    "h1": "CFR-WM seed-mean relative NRMSE-25 improvement over the preselected PGNN comparator is at least 5 percent",
+    "h1_success_rule": "all metrics finite AND lower endpoint of relative-improvement 95 percent bootstrap interval is at least 5 percent AND one-sided exact sign-flip p value for the 5 percent margin is below 0.05",
+    "h2_clean_noninferiority_margin_percent": -5.0,
+    "h2": "conditional on H1, corrupt plus shifted regimes improve by at least 5 percent and clean-regime performance is noninferior within a 5 percent degradation margin",
+    "h2_hierarchically_gated_by_h1": true,
+    "h2_success_rule": "H1 succeeds AND all metrics finite AND corrupt/shifted relative-CI lower endpoint is at least 5 percent with one-sided margin p below 0.05 AND clean relative-CI lower endpoint is at least -5 percent with one-sided margin p below 0.05",
+    "confirmation_pass_rule": "H1 only; H2 is a hierarchically gated secondary robustness claim",
+    "multiplicity_families": {
+      "preselected_h1": "no adjustment",
+      "five_broad_comparator_contrasts": "Holm adjustment of two-sided exact seed sign-flip p values",
+      "five_cfr_ablation_and_sensitivity_contrasts": "Holm adjustment of two-sided exact seed sign-flip p values",
+      "fifteen_system_regime_contrasts": "descriptive effect estimates and unadjusted bootstrap intervals only; no cell-level significance claim"
+    },
+    "cell_degradation_guard": "number of fixed cells with CFR-WM more than 10 percent worse than PGNN is descriptive and cannot override or rescue H1"
+  },
+  "commands": {
+    "run": "$env:PYTHONPATH='code'; .\\.conda_env\\python.exe -m rgpwm.confirm_run",
+    "analyze": "$env:PYTHONPATH='code'; .\\.conda_env\\python.exe -m rgpwm.confirm_analyze"
+  },
+  "freeze_rules": [
+    "No interim confirmatory metric inspection is permitted.",
+    "No method, seed, system, regime, hyperparameter, metric, margin, multiplicity family, or success rule may change after the first confirmatory dataset is generated.",
+    "Any code, analysis, tuning, contract, or payload provenance mismatch must abort before new data generation or analysis.",
+    "The generic experiment CLI must reject every frozen confirmatory seed and the reserved confirmatory output directory.",
+    "Negative or inconclusive results must be reported without redefining the hypotheses.",
+    "Learned-gain PFR-WM is prohibited from this confirmatory grid because its frozen development kill rule failed."
+  ],
+  "hashes": {
+    "training_code_sha256": "aa2e74fa7fea1bbdea84c84a2ee55cabefb1999b0a50534de8cdde929a38756f",
+    "analysis_code_sha256": "56fd06a30ee20effce2274509dcb413317ba47ec98915f2d35584abecc89f9a3"
+  }
+}

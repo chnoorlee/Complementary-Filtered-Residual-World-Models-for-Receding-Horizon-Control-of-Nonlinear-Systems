@@ -1,0 +1,104 @@
+\section{Introduction}
+
+World models compress observations and actions into a state from which future
+outcomes can be predicted. Their appeal is clearest when direct interaction is
+costly: imagined trajectories can support planning, control, or data-efficient
+reinforcement learning. DreamerV3, TD-MPC2, IRIS, and STORM illustrate the
+range of recurrent, implicit, and transformer dynamics used in modern agents
+\cite{hafner2025_mastering_diverse_control_tasks_through,hansen2023_td_mpc2_scalable_robust_world,micheli2022_transformers_are_sample_efficient_world,zhang2023_storm_efficient_stochastic_transformer_based}.
+However, benchmark return does not by itself establish that a transition model
+has a reliable forecast origin when recent observations are noisy or missing.
+Reviews of model-based reinforcement learning and real-world deployment treat
+predictive quality, partial observability, distribution shift, and safety as
+distinct problems
+\cite{moerland2023_model_based_reinforcement_learning_a,dulac-arnold2021_challenges_of_real_world_reinforcement,brunke2022_safe_learning_in_robotics_from}.
+
+Known dynamics offer useful inductive bias but do not eliminate the forecast-
+origin problem. A nominal simulator can be interpretable and data-efficient,
+yet parameter drift, unmodeled friction, discretization, and actuator error
+make its state estimate biased. A direct measurement is current but may be
+corrupted or absent. Physics-guided learning combines mechanistic and neural
+components through losses, features, hybrid solvers, and probabilistic state
+models
+\cite{karniadakis2021_physics_informed_machine_learning,willard2022_integrating_scientific_knowledge_with_machine,yu2024_learning_dynamical_systems_from_data,shen2023_differentiable_modelling_to_unify_machine}.
+KalmanNet and data-assimilation research further show that learned or
+physics-aware filtering is established prior art
+\cite{revach2022_kalmannet,cheng2023_machine_learning_with_data_assimilation}.
+The narrower unresolved question is whether a deliberately simple,
+prespecified complementary update can provide a more robust starting state for
+a long-horizon physics-residual world model under corrupted context.
+
+That question separates three operations that are often evaluated only as a
+single end-to-end score. A representation maps the available history into a
+state, a context update decides how strongly to trust a new observation, and a
+transition propagates the resulting forecast origin. Improving the transition
+cannot repair an arbitrarily biased origin, while an accurate context update
+cannot prevent a misspecified transition from accumulating error. Missingness
+makes the distinction sharper: last-value imputation supplies a numerical
+input but does not make that value contemporaneous, whereas nominal propagation
+remains current but inherits parameter error. Learned filters can adapt this
+trade-off, but their extra flexibility also creates a mechanism-identification
+question: an apparent gain over a deterministic physics-guided model may come
+from the residual transition rather than from the learned update itself. We
+therefore treat equal-trust filtering as a falsifiable engineering choice and
+compare it with both no-update and measurement-dominant sensitivities.
+
+We study this question with the Complementary-Filtered Residual World Model
+(\method). Within the observed eight-step context, nominal physics predicts the
+next state and a fixed gain of 0.5 combines that prediction with each available
+measurement; missing channels receive exactly zero measurement gain. The final
+filtered state initializes a probabilistic nominal-physics plus bounded neural-
+residual transition. This transition is trained by multi-step Gaussian
+likelihood and rolled out freely for 25 steps. The fixed update avoids an
+unsupported claim that a learned gain is necessary, while gain 0, 0.25, 0.75,
+and 1 sensitivities test whether the result is specific to equal trust.
+
+A second gap is evidential rather than architectural. Flexible synthetic
+benchmarks make it inexpensive to try many candidate mechanisms, but the same
+flexibility can silently turn development outcomes into confirmation. We use a
+versioned firewall: two rejected candidates and the normalization defect that
+invalidated the first analysis remain archived; a new eight-seed grid was
+frozen only after candidate selection; and the runner refuses changes to code,
+tuning, methods, seeds, metrics, or decision thresholds. The primary endpoint
+tests a practical 5\% margin directly rather than declaring success from an
+interval that merely excludes zero. This design makes a negative result as
+interpretable as a positive one and prevents favorable system-level cells from
+rescuing a failed aggregate hypothesis.
+
+The study is scoped to transition prediction. Five controlled nonlinear
+systems---a damped oscillator, Duffing oscillator, Van der Pol oscillator,
+torque-driven pendulum, and cart--pole---are evaluated under clean ID,
+corrupted ID, and corrupted parameter-shift regimes. The analytical benchmark
+makes trajectories, corruption, and shift auditable, but it does not establish
+image understanding, policy quality, hardware safety, or real-robot transfer.
+
+Our contributions are:
+\begin{enumerate}
+ \item a mask-exact complementary context update whose fixed gain and missing-
+ channel behavior are frozen before training, coupled to a probabilistic
+ physics-residual free rollout;
+ \item an exact error decomposition that states when complementary updating can
+ reduce forecast-origin error, without claiming universal filter optimality;
+ \item an approximately parameter-matched evaluation against five broad
+ transition baselines, plus five prespecified gain and training-horizon
+ sensitivities over 15 fixed benchmark cells; and
+ \item a fail-closed confirmatory design with eight independent seed clusters,
+ paired repeated-measurement resampling, direct testing of a 5\% relative-
+ improvement margin, attainable multiplicity control, and archived negative
+ development decisions.
+\end{enumerate}
+
+The primary hypothesis was frozen before any confirmatory seed was generated:
+the mean seed-specific NRMSE-25 improvement over a preselected PGNN-style comparator
+must be at least 5\%. Support requires both a bootstrap lower bound of 5\% and a
+one-sided exact seed sign-flip test against that same margin. This tests the
+claimed practical magnitude rather than combining a 5\% point estimate with a
+weaker test against zero.
+
+The remainder of the paper positions the method against recent world-model,
+physics-guided, and state-estimation work; defines the causal filter and
+probabilistic free rollout; specifies the fixed benchmark and inferential
+contract; and reports aggregate, regime, comparator, and gain-sensitivity
+results. The discussion then separates measured evidence from conditional
+mathematical properties and identifies the additional visual, control, and
+hardware experiments required for broader embodied-world-model claims.

@@ -1,0 +1,126 @@
+{
+  "generated": "2026-08-05",
+  "source": "literature/shortlist.json plus inspected abstracts and DBLP core verification",
+  "cards": [
+    {
+      "card_id": "wm_dreamerv3_2025",
+      "cite_key": "hafner2025_mastering_diverse_control_tasks",
+      "title": "Mastering diverse control tasks through world models",
+      "citation": "Nature (2025), DOI 10.1038/s41586-025-08744-2",
+      "problem": "general world-model-based control across heterogeneous domains",
+      "method": "recurrent world model with normalization, balancing, transformations, and imagined behavior learning",
+      "evidence": "the abstract reports a single configuration across more than 150 tasks",
+      "limitation_for_this_paper": "full control agent and mostly different observation protocols; only the transition-family design is comparable"
+    },
+    {
+      "card_id": "wm_tdmpc2_2024",
+      "cite_key": "hansen2024_td_mpc2",
+      "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+      "citation": "ICLR (2024); arXiv DOI 10.48550/arXiv.2310.16828",
+      "problem": "scalable decoder-free latent world models for continuous control",
+      "method": "implicit latent dynamics and local trajectory optimization; SimNorm is a key representation design",
+      "evidence": "the abstract reports 104 tasks and a 317M-parameter multitask agent",
+      "limitation_for_this_paper": "published return is not a supervised state-forecast result; the present study adapts only the transition backbone"
+    },
+    {
+      "card_id": "wm_iris_2023",
+      "cite_key": "micheli2023_transformers_sample_efficient",
+      "title": "Transformers are Sample-Efficient World Models",
+      "citation": "ICLR (2023); arXiv DOI 10.48550/arXiv.2209.00588",
+      "problem": "extended imagination accuracy with limited environment data",
+      "method": "discrete autoencoder plus autoregressive Transformer world model",
+      "evidence": "the abstract reports Atari-100k evaluation",
+      "limitation_for_this_paper": "visual tokenization and policy learning are outside the continuous-state prediction protocol"
+    },
+    {
+      "card_id": "physics_pgnn_2022",
+      "cite_key": "doan2022_physics_guided_neural_networks",
+      "title": "Physics guided neural networks for modelling of non-linear dynamics",
+      "citation": "Neural Networks (2022), DOI 10.1016/j.neunet.2022.07.023",
+      "problem": "data inefficiency and sensitivity when learning nonlinear dynamics from data alone",
+      "method": "inject partially known physics at an intermediate neural layer",
+      "evidence": "the abstract names five nonlinear-system equations and reports improved accuracy, uncertainty, and convergence",
+      "limitation_for_this_paper": "does not state branch-specific supervised reliability gating under missing observations and parameter shift"
+    },
+    {
+      "card_id": "physics_pgdmm_2022",
+      "cite_key": "liu2022_physics_guided_deep_markov",
+      "title": "Physics-guided Deep Markov Models for learning nonlinear dynamical systems with uncertainty",
+      "citation": "Mechanical Systems and Signal Processing (2022), DOI 10.1016/j.ymssp.2022.109276",
+      "problem": "uncertain latent inference and physically unstructured deep state-space representations",
+      "method": "variational Deep Markov Model whose transition/emission structure incorporates physics-based state-space models",
+      "evidence": "the abstract reports simulation and experimental nonlinear-system case studies",
+      "limitation_for_this_paper": "already invalidates a generic physics-plus-uncertainty novelty claim; does not state the proposed supervised relative-error gate"
+    },
+    {
+      "card_id": "wm_glam_2025",
+      "cite_key": "he2025_glam",
+      "title": "GLAM: Global-Local Variation Awareness in Mamba-based World Model",
+      "citation": "AAAI (2025), DOI 10.1609/aaai.v39i16.33880",
+      "problem": "reasoning quality from subtle state variation",
+      "method": "parallel global and local Mamba modules",
+      "evidence": "the abstract reports Atari-100k normalized-score comparisons",
+      "limitation_for_this_paper": "memory architecture rather than calibrated physics/data expert selection"
+    },
+    {
+      "card_id": "wm_prism_2025",
+      "cite_key": "li2025_prismatic_world_model",
+      "title": "Prismatic World Model: Learning Compositional Dynamics for Planning in Hybrid Systems",
+      "citation": "arXiv:2512.08411 (2025 preprint)",
+      "problem": "over-smoothed dynamics across contact and impact modes",
+      "method": "context-aware mixture of dynamics experts with orthogonalization",
+      "evidence": "preprint abstract reports continuous-control and humanoid experiments",
+      "limitation_for_this_paper": "gate identifies latent physical modes, not predicted reliability of known physics and data branches; non-archival in the snapshot"
+    },
+    {
+      "card_id": "wm_ham_2026",
+      "cite_key": "tang2026_ham_world",
+      "title": "HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning",
+      "citation": "arXiv:2605.05951 (2026 preprint)",
+      "problem": "rollout instability under horizon growth and dynamics shift",
+      "method": "Hamiltonian latent subspace, residual/control dynamics, and Mamba memory",
+      "evidence": "preprint abstract reports four DeepMind Control tasks and twelve OOD perturbations",
+      "limitation_for_this_paper": "Hamiltonian structural prior is not general to all dissipative systems; no supervised physics-versus-data reliability gate; non-archival"
+    },
+    {
+      "card_id": "wm_certificate_2026",
+      "cite_key": "wang2026_scale_buys_interpolation_structure_buys",
+      "title": "Certified World Models: Predictability Across Configuration, Horizon, and Resolution",
+      "citation": "arXiv:2606.13092 (2026 preprint)",
+      "problem": "average error does not identify a trustworthy region across configuration, horizon, and resolution",
+      "method": "equivariance, finite-time Lyapunov spectra, and held-out divergence cross-checks",
+      "evidence": "preprint abstract reports a 40-dimensional learned model and audits of public non-equivariant world models",
+      "limitation_for_this_paper": "the certificate centers equivariant structure; the present study instead evaluates empirical robustness to corrupted physical context"
+    },
+    {
+      "card_id": "hybrid_review_2023",
+      "cite_key": "reichstein2023_differentiable_modelling",
+      "title": "Differentiable modelling to unify machine learning and physical models for geosciences",
+      "citation": "Nature Reviews Earth & Environment (2023), DOI 10.1038/s43017-023-00450-9",
+      "problem": "integration of data-driven learning with mechanistic models",
+      "method": "review and conceptual synthesis of differentiable hybrid modeling",
+      "evidence": "peer-reviewed review article",
+      "limitation_for_this_paper": "domain-level synthesis, not a protocol-matched world-model baseline"
+    },
+    {
+      "card_id": "uq_review_2021",
+      "cite_key": "abdar2021_uncertainty_quantification_review",
+      "title": "A review of uncertainty quantification in deep learning: Techniques, applications and challenges",
+      "citation": "Information Fusion (2021), DOI 10.1016/j.inffus.2021.05.008",
+      "problem": "uncertainty in deep-learning decisions and predictions",
+      "method": "review of Bayesian approximations, ensembles, and applications including reinforcement learning",
+      "evidence": "peer-reviewed review article",
+      "limitation_for_this_paper": "does not prescribe a dynamics-specific calibration protocol"
+    },
+    {
+      "card_id": "uq_sequence_2022",
+      "cite_key": "klotz2022_uncertainty_rainfall_runoff",
+      "title": "Uncertainty estimation with deep learning for rainfall-runoff modeling",
+      "citation": "Hydrology and Earth System Sciences (2022), DOI 10.5194/hess-26-1673-2022",
+      "problem": "benchmarking probabilistic sequence prediction",
+      "method": "mixture-density and Monte-Carlo-dropout baselines with post-hoc analysis",
+      "evidence": "the abstract reports a standardized uncertainty benchmark",
+      "limitation_for_this_paper": "forecasting domain without action-conditioned world-model rollouts"
+    }
+  ]
+}

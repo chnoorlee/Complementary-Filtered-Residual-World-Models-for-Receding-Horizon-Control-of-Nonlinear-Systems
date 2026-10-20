@@ -1,0 +1,46 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=2.1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,graphicx,siunitx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption}}
+\newcommand{\method}{CFR-WM}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\input{../results_macros}
+
+\title{A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption}
+\author{Anonymous authors}
+\date{}
+
+\begin{document}
+\maketitle
+\input{../../sections/abstract}
+\noindent\textbf{Keywords:} world models; physics-guided machine learning;
+complementary filtering; long-horizon prediction; missing observations;
+distribution shift.
+
+\medskip
+\noindent\textbf{Provisional JIRS classification:} Category (2), Systems
+Modelling/Simulation/Control/Computer-Aided Design. MSC 2020: 68T07, 68T40,
+93B07.
+\input{../../sections/introduction}
+\input{../../sections/related_work}
+\input{../../sections/method}
+\input{../../sections/experiments}
+\input{../../sections/results}
+\input{../../sections/discussion}
+\input{../../sections/limitations}
+\input{../../sections/conclusion}
+\input{../../sections/appendix}
+
+\section*{Data and code availability}
+All trajectories are generated from the explicitly specified controlled differential equations in the accompanying code. The repository contains the generation seeds, split identifiers, trained-run metadata, trajectory-level metrics, analysis scripts, and the commands needed to reproduce every table and figure. No proprietary or real sensor data are used.
+
+\section*{Declaration of generative-AI assistance}
+Generative-AI assistance was used for drafting and software support. All equations, source metadata, code outputs, statistical results, and claims were checked against the archived artifacts by the authors. This declaration should be adapted to the policy of the selected journal before submission.
+
+\bibliographystyle{unsrtnat}
+\bibliography{../references}
+\end{document}

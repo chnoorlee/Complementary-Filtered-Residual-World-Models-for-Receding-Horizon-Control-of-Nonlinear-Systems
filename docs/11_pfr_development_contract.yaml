@@ -1,0 +1,55 @@
+version: pfr_development_v1
+frozen_on: 2026-08-05
+role: development_only_kill_test
+method: PFR-WM
+code_sha256: 75c50c996adac97e8f32af1324f1db8df3369574d13a83e5bc754ec743db8bb7
+data_generation:
+  seed: 11
+  systems:
+    - damped_oscillator
+    - forced_duffing
+    - controlled_van_der_pol
+    - torque_pendulum
+    - cartpole
+  regimes: [id_clean, id_corrupt, ood_parameter_corrupt]
+  train_trajectories_per_system: 256
+  validation_trajectories_per_system: 64
+  test_trajectories_per_cell: 96
+methods:
+  - pgnn
+  - pfrwm
+  - pfr_fixed
+matched_design:
+  pfr_hidden_width: 72
+  pfr_fixed_hidden_width: 72
+  pfr_fixed_gain: 0.5
+  pfr_fixed_gain_selection: prespecified_before_training
+  pfr_architecture_and_parameter_count_matched: true
+  pfr_hyperparameters: inherit_each_systems_frozen_pgnn_validation_winner
+training:
+  epochs: 60
+  early_stopping_patience: 10
+  optimizer: AdamW
+metric:
+  primary: cell_balanced_NRMSE_h25
+  scale: fixed_training_split_standard_deviation
+kill_rule_all_required:
+  improvement_vs_retrained_pgnn_percent_at_least: 5.0
+  improvement_vs_fixed_gain_ablation_percent_at_least: 2.0
+  cells_worse_than_pgnn_by_more_than_10_percent_at_most: 2
+  systems_with_any_regime_over_95_percent_pooled_gain_saturation_at_most: 1
+  all_accuracy_probability_and_calibration_metrics_finite: true
+gain_saturation:
+  denominator: all_observed_gain_entries_pooled_within_each_method_system_regime
+  empty_trajectory_contribution_to_denominator: 0
+  near_zero: gain_lte_0.05
+  near_one: gain_gte_0.95
+confirmatory_action:
+  if_pass: freeze_and_run_new_seeds_41_53_67
+  if_fail: do_not_generate_confirmatory_pfr_results
+command: >-
+  python -m rgpwm.experiment --full
+  --systems damped_oscillator,forced_duffing,controlled_van_der_pol,torque_pendulum,cartpole
+  --seeds 11
+  --methods pgnn,pfrwm,pfr_fixed --output-dir results/pfr_development
+  --max-hours 8

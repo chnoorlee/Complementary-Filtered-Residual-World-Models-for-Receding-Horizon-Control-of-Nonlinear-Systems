@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-05T02:28:55.990820+00:00",
+  "date_window": [
+    "2021-01-01",
+    "2026-08-05"
+  ],
+  "queries": 16,
+  "raw_records": 389,
+  "deduplicated_records": 315,
+  "records_with_doi": 308,
+  "records_with_abstract": 277
+}

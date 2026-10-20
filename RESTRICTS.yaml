@@ -1,0 +1,89 @@
+version: 1.0
+updated: 2026-08-06
+language:
+  manuscript: English
+  project_docs: Chinese_or_English
+research_scope:
+  direction: world_models
+  topic: reliable_long_horizon_prediction_for_partially_observed_controlled_physical_systems
+  prohibited:
+    - embodied_intelligence_claims_not_tested_here
+    - environment_setup_as_research_contribution
+    - reinforcement_learning_return_claims_without_policy_training
+    - claims_of_exact_reproduction_of_full_DreamerV3_IRIS_or_TD_MPC2_agents
+evidence:
+  citation_window_start: 2021-01-01
+  citation_window_end: 2026-08-06
+  minimum_references: 30
+  minimum_recent_core_fraction: 0.90
+  allowed_sources:
+    - peer_reviewed_journals
+    - peer_reviewed_conferences
+    - academic_preprints_when_no_archival_version_is_available
+    - official_benchmark_or_technical_reports
+  prohibited_sources:
+    - blogs
+    - wikipedia
+    - fabricated_or_unverified_citations
+  doi_or_official_url_required: true
+experiments:
+  minimum_evaluation_conditions: 15
+  pilot_required: true
+  pilot_must_print_time_estimate: true
+  seeds:
+    historical_v1_development: [11, 23, 37]
+    v2_development_only: [11]
+    v3_confirmatory: [41, 53, 67, 79, 83, 97, 109, 113]
+    reason: eight_top_level_clusters_make_prespecified_exact_tests_attainable
+  v3_confirmatory:
+    methods: 11
+    systems: 5
+    regimes: 3
+    expected_training_runs: 440
+    expected_aggregate_rows: 1320
+    expected_trajectory_rows: 126720
+    primary_comparator: pgnn
+    primary_margin_relative_percent: 5.0
+    no_interim_metric_inspection: true
+    contract: docs/12_cfr_confirmatory_contract.json
+  convergence_check_required: true
+  time_guard_fraction: 0.80
+  nan_inf_is_failure: true
+  synthetic_data_label: analytically_simulated_controlled_dynamics
+  generated_metrics_must_come_from_code: true
+  comparison:
+    same_train_validation_test_trajectories: true
+    same_hyperparameter_search_budget: true
+    parameter_count_tolerance_fraction: 0.20
+    report_all_prespecified_conditions: true
+  statistics:
+    paired_seeds: true
+    confidence_level: 0.95
+    hierarchical_bootstrap: true
+    multiplicity_correction: holm
+claims:
+  no_guaranteed_acceptance: true
+  no_unverified_journal_quartile_claim: true
+  no_causal_language_for_associational_results: true
+  no_sota_claim_without_direct_protocol_matched_evidence: true
+  distinguish:
+    - measured_result
+    - literature_evidence
+    - mathematical_result
+    - design_hypothesis
+writing:
+  target_main_words: [5000, 6500]
+  required_sections:
+    - Abstract
+    - Introduction
+    - Related_Work
+    - Method
+    - Experiments
+    - Results
+    - Discussion
+    - Limitations
+    - Conclusion
+  figure_1_prompt_required: true
+  ablation_for_every_claimed_component: true
+  references_bibtex_verified: true
+  latex_compile_required: true

@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "entry_count": 41,
+  "sources": {
+    "literature/shortlist.json": "0486ce3c457af4971e683710052d0f0984d4bddea64553424d16dea6a6c10260",
+    "literature/v2_supplement.json": "f4ef5c53c6f6dc824efac6989b701cbd4d53a17c1508f7081ca9f002178dbb98",
+    "literature/citation_audit.json": "e86dd174346bfb0bccc28bc890afd60f4213b2b782d0d29ad9f8e5d4e4255237"
+  },
+  "generators": {
+    "code/make_bibliography.py": "ec95571c08b221b796c0665e5fd266ccba8040ad22a4d4fb6f9136e9505f2ecb",
+    "code/bibliography_provenance.py": "fee05183bd03af03fe2b9dc9f610f05d764bce29cfc1f2083d9789b79ee47e1e"
+  },
+  "bibliography": {
+    "paper/references.bib": "82c20ff3a19f46eb6205865561cf714a8a324141f53ba0cad64aadbae73a629a"
+  }
+}

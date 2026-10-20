@@ -1,0 +1,222 @@
+{
+  "damped_oscillator": {
+    "rssm": {
+      "trial": 3,
+      "learning_rate": 0.0015,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.3,
+      "validation_nll": -1.315759539604187
+    },
+    "simnorm": {
+      "trial": 2,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.2459717988967896
+    },
+    "transformer": {
+      "trial": 4,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.4,
+      "validation_nll": -1.1863410472869873
+    },
+    "pgnn": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.2862713634967804
+    },
+    "pgdmm": {
+      "trial": 1,
+      "learning_rate": 0.0006,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.2896199226379395
+    },
+    "rgpwm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.5007753372192383
+    }
+  },
+  "forced_duffing": {
+    "rssm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.22571711242198944
+    },
+    "simnorm": {
+      "trial": 4,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.4,
+      "validation_nll": -0.04976857081055641
+    },
+    "transformer": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.8406496644020081
+    },
+    "pgnn": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.272842675447464
+    },
+    "pgdmm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.337328553199768
+    },
+    "rgpwm": {
+      "trial": 4,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.4,
+      "validation_nll": -1.5360952615737915
+    }
+  },
+  "controlled_van_der_pol": {
+    "rssm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.9618999361991882
+    },
+    "simnorm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.0679515600204468
+    },
+    "transformer": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.9954453706741333
+    },
+    "pgnn": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.2861703038215637
+    },
+    "pgdmm": {
+      "trial": 0,
+      "learning_rate": 0.0003,
+      "weight_decay": 1e-06,
+      "reliability_weight": 0.1,
+      "validation_nll": -1.3387174606323242
+    },
+    "rgpwm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.5320024490356445
+    }
+  },
+  "torque_pendulum": {
+    "rssm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.0290330648422241
+    },
+    "simnorm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.7563410401344299
+    },
+    "transformer": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.8165823221206665
+    },
+    "pgnn": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.27155667543411255
+    },
+    "pgdmm": {
+      "trial": 4,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.4,
+      "validation_nll": -1.2732175588607788
+    },
+    "rgpwm": {
+      "trial": 4,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "reliability_weight": 0.4,
+      "validation_nll": -1.477776050567627
+    }
+  },
+  "cartpole": {
+    "rssm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.17196598649024963
+    },
+    "simnorm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": 0.0017283606575801969
+    },
+    "transformer": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.34431394934654236
+    },
+    "pgnn": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.24587248265743256
+    },
+    "pgdmm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -0.7848111391067505
+    },
+    "rgpwm": {
+      "trial": 5,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "reliability_weight": 0.2,
+      "validation_nll": -1.149634838104248
+    }
+  }
+}

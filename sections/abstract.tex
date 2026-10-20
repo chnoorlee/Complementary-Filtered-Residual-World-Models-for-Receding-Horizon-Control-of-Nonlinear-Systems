@@ -1,0 +1,28 @@
+\begin{abstract}
+Long-horizon world-model prediction can fail before rollout begins: a nominal
+physical prior may be biased under parameter shift, whereas recent measurements
+may be noisy or missing. We introduce the Complementary-Filtered Residual World
+Model (\method), which applies a prespecified gain-0.5, mask-exact complementary
+update over the observed context and initializes a probabilistic
+physics-residual transition for 25-step open-loop forecasting. The contribution
+is this auditable composition and its confirmatory evaluation, not a claim that
+complementary or Kalman-style filtering is new or universally optimal. We train
+\ConfirmatoryRuns{} models spanning five controlled nonlinear systems, three
+clean/corrupted/parameter-shift regimes, eight independent seed-level
+realizations, five broad comparators, and five gain/training-horizon
+sensitivities. The frozen primary estimand is the mean of seed-specific relative
+NRMSE-25 changes against a preselected physics-guided neural network style
+comparator (PGNN-style),
+with all 15 system--regime cells equally weighted. The estimated relative
+improvement was \PrimaryImprovement\% (95\% bootstrap CI
+[\PrimaryRelativeCILow\%, \PrimaryRelativeCIHigh\%]); the absolute
+proposed-minus-PGNN-style difference was \PrimaryDifference{} (95\% CI
+[\PrimaryCILow, \PrimaryCIHigh]), and the exact one-sided sign-flip value for a
+5\% practical margin was $p=\PrimaryPValue$. Thus H1 was \PrimaryDecision,
+but the prespecified H2 robustness claim was \RobustnessDecision{} because
+clean noninferiority failed: corrupt/shifted cells improved by
+\CorruptImprovement\%, whereas clean cells changed by \CleanImprovement\%.
+The evidence is limited to transition prediction on a finite
+synthetic-mechanistic benchmark with known future controls; it does not
+establish policy quality, visual world modeling, or real-robot transfer.
+\end{abstract}

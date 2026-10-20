@@ -1,0 +1,18 @@
+name: rgp-wm-paper
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pytorch>=2.5
+  - pytorch-cuda=12.8
+  - numpy>=2.0
+  - scipy>=1.13
+  - pandas>=2.2
+  - matplotlib>=3.9
+  - seaborn>=0.13
+  - scikit-learn>=1.5
+  - pyyaml>=6.0
+  - pytest>=8.0
+

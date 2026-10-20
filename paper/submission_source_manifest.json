@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "inputs": {
+    "sections/abstract.tex": "eece546d5d75e8a05f25a043adeee31b475f34269c720cde7668028eb98197bf",
+    "sections/introduction.tex": "3dccf614ef31634ca41e46190465964b40850defe3729ffe646036e757ce5878",
+    "sections/related_work.tex": "b2f1c9a28132d8f6d874f4bedad243054d6e7fe4b2e6229fb3134c2350eec05e",
+    "sections/method.tex": "b2dd161380b025ff9e69e29e13cd8092d29f6e4373a30d95f51e955b70ff01b2",
+    "sections/experiments.tex": "9ba26be452f647eaeddccae8fec1f748480e2c60d8db3e5ab71789278d43ed9d",
+    "sections/results.tex": "de7ccfd2c68d076031a896fdf0d362ab81b776019bc7118d2a4b01744828bf84",
+    "sections/discussion.tex": "ad205026569a5727114f70b5816b5e4fed38c41e99ebc69ff0f5bce6ae1dbbea",
+    "sections/limitations.tex": "4896459231c6336f1c318269929003d8736f1b429096a2bcc2b265c04ed2a795",
+    "sections/conclusion.tex": "dd972f1e3123dd54e31127cb6fbef79da5a66695eef78a47bf43faf43b8910f1",
+    "sections/appendix.tex": "4fd52aad5db2e2b5482a5ef2d05030e9df58ab741638287fa9fae6b2e9c5f712",
+    "paper/mypaper/figures/figure1_method.png": "872b08ec3afa25555f28d0ca863652b83f9499a4a4c2aa37519e6cc2f5b9cacf",
+    "paper/mypaper/figures/confirmatory_overview.png": "747258e8b7a2f848bb92216d6624b21ec1f109cac7596bdb176dc1fb1103ccf7",
+    "paper/mypaper/figures/cell_difference_heatmap.png": "9805b3c96eeba24806b1cbfd40c63b4113f48bdf05b165c4b0f82de2275c1e6e",
+    "paper/references.bib": "82c20ff3a19f46eb6205865561cf714a8a324141f53ba0cad64aadbae73a629a",
+    "paper/manuscript_assets_manifest.json": "be45a654ee0a0fc26bb935f4eb1eb83dda48624f825fff97f0753f8665bb4aca",
+    "literature/bibliography_manifest.json": "8af5c0772ddc9c3eaff344171e385773e7adae0a6e40f3a34fe34d738c5bd72b",
+    "paper/springer-official/sn-article-template/sn-jnl.cls": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "paper/springer-official/sn-article-template/bst/sn-mathphys-num.bst": "b3a7c7fbcc1e7f9619de634fcea2f5bb7a245818a5942bc576e40ea001633332",
+    "code/README.md": "e0fa7916ce5ae5ca96b6777ce326e796e80cf2c90a07e5a389bde2bdc92dc280",
+    "code/build_springer_submission.py": "c8487de7e371a07d60cac041cd008ec8b502020f3008edf5a0a026576a77a7db"
+  },
+  "output": {
+    "paper/mypaper/main_springer.tex": "85ef5b3ff46f424421e4be5f2c2e78bca2cce19e2c04b730df6238623aebf37b"
+  }
+}
