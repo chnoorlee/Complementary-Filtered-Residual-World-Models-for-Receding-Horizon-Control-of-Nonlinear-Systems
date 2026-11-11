@@ -1,0 +1,25 @@
+\begin{abstract}
+Accurate multistep prediction of nonlinear controlled dynamics depends on the
+forecast-origin state estimate and the transition model. We study the
+Complementary-Filtered Residual World Model (\method), which combines a fixed
+gain-0.5, mask-gated context update with a diagonal-Gaussian physics-residual
+transition. For correlated prediction and measurement errors, we derive the
+channel-wise mean-square-error optimal scalar gain. The confirmatory study
+trains \ConfirmatoryRuns{} models across five nonlinear systems, three regimes,
+and eight seeds. Against the preselected physics-guided neural-network
+comparator, cell-balanced 25-step normalized root-mean-square error (NRMSE-25)
+improves by \PrimaryImprovement\% (95\% bootstrap interval
+[\PrimaryRelativeCILow\%, \PrimaryRelativeCIHigh\%]; exact one-sided test
+against a 5\% margin, $p=\PrimaryPValue$). The aggregate hypothesis is
+supported, but clean-condition noninferiority fails. In secondary analyses, a
+classical gain-0.5 context filter with nominal rollout attains
+$0.111\pm0.003$ NRMSE-25 versus $0.119\pm0.004$ for CFR-WM; disabling the
+learned residual also gives the lowest mean among four inference scales. A
+synchronous two-step context outage increases CFR-WM error by 2.7\%, versus
+51.9\% for the comparator. On held-out measured NanoDrone flights, CFR-WM has
+higher full-state NRMSE than a matched unfiltered residual model in all eight
+condition--horizon comparisons, but lower 50-step position error in all four;
+its nominal 90\% coverage at 50 steps is 0.524--0.667. The results attribute
+the controlled-benchmark gain primarily to forecast-origin filtering and show
+the limitations of a uniform gain and diagonal uncertainty.
+\end{abstract}

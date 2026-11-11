@@ -1,25 +1,26 @@
 {
   "schema_version": 1,
   "complete": true,
-  "generated_at": "2026-10-20T03:56:26.862384+00:00",
+  "generated_at": "2026-11-04T13:21:34.311725+00:00",
   "inputs": {
-    "paper/mypaper/main_springer.tex": "85ef5b3ff46f424421e4be5f2c2e78bca2cce19e2c04b730df6238623aebf37b",
+    "paper/mypaper/main_springer.tex": "730bcbd5230faff6a57961ba0f111b636eac82787583b5a0541b195e98a13637",
     "paper/references.bib": "82c20ff3a19f46eb6205865561cf714a8a324141f53ba0cad64aadbae73a629a",
-    "paper/submission_source_manifest.json": "22baae5479d39faad39d3a6c28526a379081cb9bd947876d9b5b938784811808",
+    "paper/external_references.bib": "6a5eecb2c47b2dbfa47f2044fc1f960bb0ccae03b576b110f7a42f0576a4387a",
+    "paper/submission_source_manifest.json": "76dfd7fef68976485e18fdc2ae4515de8d755a27e6454c1002ff265fd90f145a",
     "paper/springer-official/sn-article-template/sn-jnl.cls": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
     "paper/springer-official/sn-article-template/bst/sn-mathphys-num.bst": "b3a7c7fbcc1e7f9619de634fcea2f5bb7a245818a5942bc576e40ea001633332",
-    "code/build_springer_submission.py": "c8487de7e371a07d60cac041cd008ec8b502020f3008edf5a0a026576a77a7db",
-    "code/README.md": "e0fa7916ce5ae5ca96b6777ce326e796e80cf2c90a07e5a389bde2bdc92dc280",
-    "code/create_springer_build_manifest.py": "0dd4c77a63eaa5eb6d9a8f656b3e05ee7cc17a5f1f73aa1a0d4ace335beadaf3"
+    "code/build_springer_submission.py": "1e9dde5bbf5483a5fd80b7a458c7af6e6ac36d57d0cd874454c6e899845ffe26",
+    "code/README.md": "00a577ab07fb087a7c022ebf5d3ba46054f40d6e993f65a83979fd20a6eab440",
+    "code/create_springer_build_manifest.py": "827cef4d47a35475da7d2a8662e8b494ed0cab0130d5b4447fadaa245481e81b"
   },
   "outputs": {
-    "paper/mypaper/main_springer.bbl": "9c119d286d843b77fb19daa78302cfa04047ce41630ef81dd978d483e66d01df",
-    "paper/mypaper/main_springer.log": "a02edd64c8f2db66dbe4870749c0a93e0b8ae293c5dffdcd7cf33ac5c88daa14",
-    "paper/mypaper/main_springer.pdf": "d9531cf5e3c70bd0d442cd67748b12dd0f75a0211711bf13c958d846e35e1339"
+    "paper/mypaper/main_springer.bbl": "e43f2869dfe919eec3e74d49cbeb6b6cb9ef40504aea499219a699641f571622",
+    "paper/mypaper/main_springer.log": "dba736a5025315d06fe104c14b59e8d23529c17156e7a7a69faba1665bed3150",
+    "paper/mypaper/main_springer.pdf": "d4908eb2c140d25792baac1236d55647b5e8138e18758fedca5846c91badb80e"
   },
   "pdf": {
-    "title": "A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption",
-    "pages": 27,
+    "title": "Complementary-Filtered Residual World Models: Controlled Benchmarks and Real-Flight Evaluation",
+    "pages": 28,
     "author": ""
   },
   "toolchain": {

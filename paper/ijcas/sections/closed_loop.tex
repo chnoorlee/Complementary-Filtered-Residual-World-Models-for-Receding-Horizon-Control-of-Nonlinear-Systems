@@ -1,0 +1,71 @@
+\section{Receding-horizon control evaluation}
+
+\subsection{Frozen regulation protocol}
+
+The closed-loop study was specified before execution and reuses the frozen
+PGNN-style and \method{} checkpoints. It includes all five systems, eight
+seeds, and three plant/observation conditions: clean in-distribution (ID),
+corrupted ID, and corrupted out-of-distribution parameters. Four independently
+generated plant episodes populate each seed--system--condition cell. Initial
+states, plant parameters, observation draws, masks, and planner draws are
+paired across four prediction interfaces: nominal propagation from the last
+imputed state, filter plus nominal propagation, PGNN-style, and \method. Clean
+and corrupted ID evaluations share the plant draw.
+
+Seven zero-input transitions establish the eight-state context. The controller
+then regulates for 20 steps. Deterministic-mean cross-entropy model predictive
+control uses a horizon of 8, 64 candidates, two iterations, and eight elites.
+Action sequences start with standard deviation 0.6 of the action limit, with a
+0.05 floor. The stage objective is mean squared state error in training-
+standard-deviation units plus 0.01 times squared normalized action; terminal
+state error receives an additional factor of two. The pendulum target is
+$(\sin\theta,\cos\theta,\omega)=(0,1,0)$ and the other targets are zero.
+Corrupted observations use Gaussian noise with scalar standard deviation 8\%
+of the mean training-state standard deviation and 25\% independent channel
+missingness.
+
+The primary response is the realized mean normalized state loss over 20
+controlled transitions. Episodes, systems, and conditions receive equal weight
+within each seed. The reported \method{}--PGNN-style contrast is the mean of
+eight seed-level relative improvements, with a 5,000-replicate paired seed
+bootstrap interval and an exact one-sided sign-flip test against zero.
+Controller settings were not changed after observing outcomes.
+
+\subsection{Regulation outcomes}
+
+Table~\ref{tab:closed-loop} reports \ClosedLoopEpisodes{} paired episodes.
+CFR-WM obtains state loss \ClosedLoopCFRLoss{} versus
+\ClosedLoopPGNNLoss{} for PGNN-style. The seed-balanced relative improvement
+is \ClosedLoopImprovement\% (95\% paired bootstrap interval
+[\ClosedLoopCILow\%, \ClosedLoopCIHigh\%]); the exact one-sided sign-flip
+test against zero gives $p=\ClosedLoopPValue$. Mean improvements favor CFR-WM
+in all 15 system--condition cells, ranging from 0.006\% for the damped-
+oscillator out-of-distribution corrupted cell to 2.8\% for the cart--pole
+corrupted-ID cell (Fig.~\ref{fig:closed-loop}).
+
+\begin{table*}[t]
+\centering
+\caption{Closed-loop regulation with a common cross-entropy model predictive
+controller. State loss and action effort are mean $\pm$ SD across eight
+seed-level aggregates. Condition columns report state loss.}
+\label{tab:closed-loop}
+\resizebox{\textwidth}{!}{%
+\input{table_closed_loop}}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/FigClosedLoop.pdf}
+\caption{Frozen closed-loop study. (a) Seed-balanced mean normalized state
+loss; error bars are one SD across eight seeds. (b) Mean CFR-WM improvement
+over PGNN-style within each system--condition cell. Positive values favor
+CFR-WM.}
+\label{fig:closed-loop}
+\end{figure*}
+
+The separation between learned predictors is small. Filtering followed by
+nominal dynamics obtains state loss \ClosedLoopFilterNominalLoss{}, slightly
+below CFR-WM's \ClosedLoopCFRLoss{}, and uses less action effort (0.398 versus
+0.404). The nominal-last interface reaches \ClosedLoopNominalLoss{}. The
+closed-loop study therefore supports the value of context correction, but does
+not show an additional benefit from the learned residual.

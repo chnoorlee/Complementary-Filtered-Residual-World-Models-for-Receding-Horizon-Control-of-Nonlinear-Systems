@@ -19,7 +19,7 @@ where $\vect{m}_t\in\{0,1\}^{d_x}$ is a channel-wise availability mask and
 $\boldsymbol{\epsilon}_t$ is observation noise. Missing entries are filled
 causally by the latest available value, producing $\tilde{\vect{y}}_t$; the
 mask and elapsed time since observation $\boldsymbol{\delta}_t$ remain explicit
-inputs, so an imputed value is never represented as a fresh measurement.
+inputs to distinguish imputed values from fresh measurements.
 
 At forecast origin $t$, the model receives eight context states and their past
 controls,
@@ -29,15 +29,17 @@ controls,
 \end{equation}
 together with known future controls $\vect u_{t:t+H-1}$. It estimates a
 diagonal predictive distribution for $\vect{x}_{t+1:t+H}$ under free rollout,
-with $H=25$. Future states or observations are never fed back. All learned
+with training horizon $H=25$, using predicted states at subsequent rollout
+steps. The flight evaluation additionally extends rollout to $H=50$. All learned
 operations use affine statistics estimated from the training split; the
 nominal equations are evaluated in physical coordinates and then returned to
 normalized coordinates.
 
 \subsection{Mask-exact complementary context filter}
 
-Let $F_0$ be one fourth-order Runge--Kutta step of a nominal controlled
-differential equation. Starting from the first imputed context vector, the
+Let $F_0$ denote a nominal dynamics step: fourth-order Runge--Kutta integration
+for the controlled benchmark, and the reduced flight model in
+Section~\ref{sec:external}. Starting from the first imputed context vector, the
 filter alternates nominal prediction and measurement update. For context index
 $k>t-7$,
 \begin{align}
@@ -52,22 +54,22 @@ Thus, before projection, an observed channel receives equal weight from the
 nominal prediction and the current measurement, while a missing channel has
 exactly zero measurement correction. The projection $\Pi$ is the identity
 except for the sine--cosine pendulum representation, which is returned to the
-unit circle after each update. That joint projection can alter either pendulum
-channel even when its own measurement gain is zero, so the implementation does
-not claim channel-wise equality to nominal propagation after projection. The
-gain is fixed before training and has no access to validation or test outcomes.
+unit circle after each update. This joint projection couples the pendulum
+channels and can change a channel whose measurement gain is zero. Mask-exactness
+therefore describes the measurement correction before projection. The gain is
+fixed before training, independently of validation and test outcomes.
 
 In parallel, a GRU encodes
 $[\tilde{\vect y}_k,\vect m_k,\log(1+\boldsymbol\delta_k),\vect u_{k-1}]$.
 Its last hidden state supplies trajectory context to the forecast transition;
-it does not alter the fixed measurement gain. The implementation retains the
-same unused gain-head parameterization in every fixed-gain sensitivity model,
+the measurement gain remains fixed. The implementation retains the
+same unused gain-head parameterization in every controlled-benchmark
+fixed-gain sensitivity model,
 so comparisons at gains 0, 0.25, 0.5, 0.75, and 1 do not change nominal
-capacity. We do not claim that complementary or Kalman-style filtering is new;
-KalmanNet and modern data-assimilation work establish the broader prior art
-\cite{revach2022_kalmannet,cheng2023_machine_learning_with_data_assimilation}.
-The tested contribution is the use of a prespecified, mask-exact context update
-as the forecast origin of a physics-residual probabilistic world model.
+capacity. This construction draws on filtering and data-assimilation approaches
+\cite{revach2022_kalmannet,cheng2023_machine_learning_with_data_assimilation}
+and uses the mask-exact context update to initialize a physics-residual
+probabilistic world model.
 
 \subsection{Probabilistic physics-residual rollout}
 
@@ -83,10 +85,9 @@ The last filtered context state initializes a free rollout. At step $h$,
  10^{-6}\right\}.
  \label{eq:residual-rollout}
 \end{align}
-The fixed residual scale bounds a single normalized correction but does not
-guarantee a bounded trajectory because errors can accumulate. The predicted
-mean becomes the next state, and a GRUCell updates $\vect b$ from that mean and
-the known control. No sampled state or future target enters the recurrence.
+The fixed residual scale bounds each normalized correction. The predicted mean
+becomes the next state, and a GRUCell updates $\vect b$ from that mean and the
+known control.
 
 The training loss is the mean diagonal Gaussian negative log likelihood over
 all $H$ steps and state channels,
@@ -115,16 +116,14 @@ gradients disabled, so teacher forcing is absent from both validation and test
 rollouts.
 
 Let $T_c$ denote context length, $H$ forecast horizon, $d_b$ recurrent width,
-and $C_{F_0}$ the cost of one nominal RK4 step. Dense recurrent operations cost
+and $C_{F_0}$ the cost of one nominal step. Dense recurrent operations cost
 $O((T_c+H)d_b^2)$ per trajectory, while nominal propagation costs
 $O((T_c+H)C_{F_0})$. Diagonal mean and variance storage is $O(Hd_x)$; recurrent
 working memory at inference is $O(d_b+d_x)$. Thus inference grows linearly in
-context and horizon. The analysis does not claim asymptotic superiority over
-the comparators: the fixed filter adds nominal context steps, and measured
-latency is reported as an implementation property rather than a theoretical
-speed advantage.
+context and horizon. The fixed filter adds nominal context steps; measured
+latency captures their cost in the implementation.
 
-\subsection{Error decomposition and claim boundary}
+\subsection{Forecast-origin and rollout error}
 
 For an observed scalar channel on which $\Pi$ is the identity, write the
 nominal pre-update error as $e_p=\bar x-x$ and measurement error as
@@ -139,13 +138,12 @@ If these errors are zero-mean and uncorrelated, then
  +\alpha^2\mathbb E[\epsilon^2].
  \label{eq:filter-mse}
 \end{equation}
-Equal trust is therefore not universally optimal: it helps only when the two
-error sources are sufficiently balanced, and a missing channel receives no
-direct measurement-error term because its gain is zero. For the pendulum's
-joint sine--cosine projection, an additional coupled projection error must be
-accounted for, so Equation~\eqref{eq:filter-mse} is not asserted channel-wise
-after projection. This conditional identity, rather than an optimal-filter
-claim, motivates the fixed-gain sensitivity analysis.
+The benefit of equal trust depends on the relative sizes of the two error
+terms. A missing channel has zero gain and therefore receives no direct
+measurement-error term. For the pendulum's joint sine--cosine projection,
+Equation~\eqref{eq:filter-mse} applies before projection; the projected error
+also includes the coupled projection contribution. These dependencies motivate
+the fixed-gain sensitivity analysis.
 
 If the rollout transition is locally $L$-Lipschitz and incurs local error
 $\eta_h$, the standard recursion yields
@@ -154,7 +152,6 @@ $\eta_h$, the standard recursion yields
  \le L^H\|\hat{\vect x}_t-\vect x_t\|
  +\sum_{h=0}^{H-1}L^{H-1-h}\eta_h.
 \end{equation}
-The context filter can reduce only the initial-error term; the residual model
-must control subsequent local errors. Neither relation provides an
-unconditional stability guarantee or supports claims about visual
-representation learning, policy quality, or real-robot transfer.
+The context filter acts on the initial-error term, while the residual model
+must control subsequent local errors. The bound makes these two contributions
+to long-horizon forecasting explicit.

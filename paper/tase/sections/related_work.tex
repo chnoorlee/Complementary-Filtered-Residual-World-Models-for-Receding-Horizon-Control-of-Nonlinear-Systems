@@ -1,0 +1,55 @@
+\section{Related Work}
+
+\subsection{State estimation and learned dynamics}
+
+The Kalman filter balances a dynamic prediction against a measurement through
+an error-covariance-dependent gain \cite{kalman1960_filtering}. Complementary
+filters use a simpler structured allocation between the two information
+sources and can be effective when their error characteristics differ by
+channel or frequency \cite{mahony2008_complementary}. Neural estimators such as
+KalmanNet learn parts of this recursion for partially known dynamics
+\cite{revach2022_kalmannet}; differentiable ensemble filters and the broader
+combination of machine learning with data assimilation provide related routes
+to trainable state estimation
+\cite{chen2022_autodifferentiable_enkf,cheng2023_machine_learning_with_data_assimilation}.
+\method{} retains an explicit fixed-gain update: the gain is interpretable,
+missing channels receive no direct measurement correction, and the transition
+model remains independently testable.
+
+Physics-guided learning combines measured data with mechanistic structure
+through features, constraints, differentiable solvers, or residual dynamics
+\cite{willard2022_integrating_scientific_knowledge_with_machine,liu2022_physics_guided_deep_markov_models}.
+Hybrid first-principles/data-driven modeling has been studied as a general
+design pattern and in nonlinear dynamics and online vehicle modeling
+\cite{bradley2022_perspectives_on_the_integration_between,robinson2022_physics_guided_neural_networks_for,chen2022_hybrid_physics_data_driven_online}.
+Residual models are attractive for control because the nominal transition can
+remain operational outside the training distribution. Their learned correction
+can nevertheless amplify error when model mismatch changes. We therefore
+evaluate the filter-plus-nominal component and vary the residual multiplier at
+fixed trained weights.
+
+\subsection{World models and predictive control}
+
+Latent and recurrent world models have achieved strong performance on broad
+control suites, including planning with learned representations
+\cite{moerland2023_model_based_reinforcement_learning_a,hansen2023_td_mpc2_scalable_robust_world}.
+Dynamics-model learning has also been surveyed for robotic manipulation and
+used in predictive autonomous-driving control
+\cite{ai2025_a_review_of_learning_based,gao2024_dream_to_drive_with_predictive}.
+These systems commonly learn task rewards, latent dynamics, or policies
+jointly. The present study instead uses observed physical states, known
+controls, and a separate MPC objective so that forecast-origin estimation and
+transition error can be examined directly.
+
+Learning-based MPC requires a model that remains useful over optimized action
+sequences, not only under the data-collection policy
+\cite{hewing2020_learning_mpc}; safety and real-world operating constraints
+remain central in learning-based control
+\cite{brunke2022_safe_learning_in_robotics_from,dulac-arnold2021_challenges_of_real_world_reinforcement}.
+Sparse system identification has likewise been connected to MPC in low-data
+nonlinear settings \cite{kaiser2018_sindy_mpc}.
+Our closed-loop experiment holds the optimizer, horizon, action constraints,
+objective, and random draws fixed across prediction interfaces. It therefore
+tests the downstream value of the model change rather than a jointly tuned
+controller-model package.
+

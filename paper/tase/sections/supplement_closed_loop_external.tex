@@ -1,0 +1,90 @@
+\section{Closed-Loop Protocol and Complete Aggregates}
+
+The closed-loop study loads the frozen CFR-WM and PGNN-style checkpoint for
+each seed--system pair. The nominal-last and filter-plus-nominal interfaces use
+the CFR-WM checkpoint's normalization buffers and nominal step but do not use
+its residual. Equality of the CFR-WM and PGNN normalization buffers is checked
+before each comparison. Table~\ref{tab:supp-closed-loop} gives the complete
+controller and condition aggregates.
+
+\begin{table*}[!t]
+\centering
+\caption{Closed-loop normalized state loss and action effort. Values are mean
+$\pm$ SD across eight seed-level aggregates. Every seed aggregate gives equal
+weight to five systems, three conditions, and four episodes per cell.}
+\label{tab:supp-closed-loop}
+\resizebox{\textwidth}{!}{\input{table_closed_loop}}
+\end{table*}
+
+The plant and controller integration uses the benchmark sampling and
+four-substep Runge--Kutta functions. The episode receipt stores controller,
+seed, system, condition, episode index, realized metrics, initial state, plant
+parameters, and planner seed. Each controller quartet must have identical
+initial state, plant parameters, and planner seed. ID-clean and ID-corrupt
+episodes must also have identical plant draws. Asset generation rejects a
+missing or duplicate identity, a nonfinite metric, a changed checkpoint or
+source hash, or disagreement with the recomputed aggregates and inference.
+
+Figure~\ref{fig:supp-closed-loop} reports the same aggregate loss as the main
+paper and all 15 descriptive system--condition CFR-WM contrasts against
+PGNN-style. Positive percentages favor CFR-WM.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.94\textwidth]{figures/FigClosedLoop.pdf}
+\caption{Closed-loop aggregate and heterogeneity. Error bars in (a) are SD
+across eight seed-level aggregates; heat-map entries in (b) are seed means.}
+\label{fig:supp-closed-loop}
+\end{figure*}
+
+\section{Measured-Flight Protocol and Full Results}
+
+The external data set contains timestamped position, linear velocity, Euler
+attitude, angular rates, and four motor commands. The reduced nominal prior
+uses mass-normalized thrust, linear drag, an Euler-angle kinematic
+approximation, inertia-scaled motor moments, and angular damping. The learned
+residual retains the same 0.25 normalized bound used in the controlled
+benchmark. Training uses only the designated training flight family;
+development selects the learning rate from $\{10^{-3},3\times10^{-3}\}$ on a
+separate seed. Five final seeds are then fit once. Sliding evaluation windows
+do not cross flight boundaries.
+
+Table~\ref{tab:supp-external-normalized} reports full-state NRMSE for every
+method, context condition, and horizon. Table~\ref{tab:supp-external-physical}
+gives position and velocity errors. The nominal prior has no training-seed
+variation, so its reported SD is zero.
+
+\begin{table*}[!t]
+\centering
+\caption{External full-state NRMSE, mean $\pm$ SD across training seeds after
+equal weighting of the three held-out flights.}
+\label{tab:supp-external-normalized}
+\resizebox{\textwidth}{!}{\input{table_external_results}}
+\end{table*}
+
+\begin{table*}[!t]
+\centering
+\caption{External position and velocity RMSE in physical units.}
+\label{tab:supp-external-physical}
+\resizebox{\textwidth}{!}{\input{table_external_physical}}
+\end{table*}
+
+The probabilistic models use diagonal Gaussian marginals. The full external
+uncertainty diagnostics are shown in Table~\ref{tab:supp-external-uncertainty}.
+
+\begin{table*}[!t]
+\centering
+\caption{Measured-flight uncertainty diagnostics, averaged equally over held-
+out flights and then over training seeds.}
+\label{tab:supp-external-uncertainty}
+\resizebox{\textwidth}{!}{\input{table_external_uncertainty}}
+\end{table*}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.94\textwidth]{figures/Fig4.pdf}
+\caption{Measured-flight forecast errors by method, context condition, and
+horizon. Position and full-state errors need not rank models identically.}
+\label{fig:supp-external}
+\end{figure*}
+

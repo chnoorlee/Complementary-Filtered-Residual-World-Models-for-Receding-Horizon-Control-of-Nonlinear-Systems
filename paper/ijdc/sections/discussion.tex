@@ -1,0 +1,64 @@
+\section{Discussion}
+
+The confirmatory analysis \PrimaryInterpretation. Against the preselected
+PGNN-style comparator, the lower bootstrap endpoint clears the 5\% practical
+margin and the exact seed-level test rejects that margin. The classical
+baseline refines the interpretation of this result. A gain-0.5
+context filter followed by the nominal transition reaches 0.111 NRMSE-25,
+compared with 0.119 for CFR-WM and 0.132 for PGNN-style. The confirmatory H1
+remains supported for its prespecified comparison. The component analysis
+attributes the aggregate advantage to forecast-origin filtering rather than to
+the learned residual transition.
+
+The fixed-weight scale analysis strengthens that attribution. Removing the
+residual at inference gives the lowest mean in clean ID, corrupt ID, corrupt
+OOD, and the aggregate; increasing the multiplier from 0 to 0.5 monotonically
+increases aggregate NRMSE-25. With transition weights held fixed, the fitted
+correction increases the reported cell-balanced point error. The nominal prior
+and context correction capture the useful structure in this benchmark.
+
+The regime decomposition explains when the filter helps relative to PGNN-style.
+The corrupted and shifted regimes improve by \CorruptImprovement\%, whereas
+the clean regime changes by \CleanImprovement\%; consequently H2
+\RobustnessInterpretation. The synchronous two-step outage produces only a
+2.7\% increase over clean-context CFR-WM, versus 51.9\% for PGNN-style. This
+extends the missing-at-random evidence to a short, synchronized loss of all
+channels and indicates that nominal context propagation is valuable during
+brief sensor interruptions.
+
+Equation~\eqref{eq:optimal-gain} turns the gain trade-off into an estimator
+design rule. Equal trust is optimal only for equal prediction and measurement
+error variances with zero cross-covariance. Per-channel estimates of
+$v_p$, $v_\epsilon$, and $c$ from training or validation innovations would
+produce fixed channel gains without using test outcomes; a causal network could
+instead condition them on current sensor metadata. Either construction matches
+the observed heterogeneity better than one scalar gain. The pendulum audit also
+shows why gain semantics and state constraints must be separated: 75.4\% of
+missing sine/cosine entries change under the subsequent unit-circle projection,
+even though their direct measurement correction is exactly zero.
+
+The measured-flight evaluation exposes a state-component and uncertainty
+trade-off. The matched unfiltered residual model has lower mean full-state
+NRMSE in every condition--horizon comparison, whereas CFR-WM has lower 50-step
+position error in all four conditions. On recorded contexts, velocity error
+rises from \ExternalUnfilteredRecordedLongVelocityMean{} to
+\ExternalCFRRecordedLongVelocityMean{}\,m\,s$^{-1}$. At the same horizon,
+CFR-WM's nominal 90\% marginal coverage is only 0.524--0.667 and is below the
+unfiltered model in all four conditions. Narrower intervals accompany higher
+NLL and calibration error, consistent with missing cross-state dependence and
+unrepresented model-form error in the diagonal Gaussian forecast.
+
+These results connect estimator design to the control objective. Uniform NLL
+weights every normalized state component equally, while a controller can value
+position, velocity, or constraint-related coordinates differently.
+Equation~\eqref{eq:weighted-nll} makes such weights explicit and requires them
+to be fixed from the downstream specification rather than selected from test
+performance. Correlated covariance or calibrated prediction sets would also be
+needed when constraints depend jointly on several state coordinates.
+
+The measured runtime places CFR-WM at
+\CFRLatencyMean{}\,ms per trajectory for an eight-step context and 25-step
+rollout on the stated GPU and represents throughput for 96 simultaneous
+trajectories. Online control requires separate timing and closed-loop tests for
+a specified controller, plant, sampling deadline, and disturbance model
+\cite{hewing2020_learning_mpc}.

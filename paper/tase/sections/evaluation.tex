@@ -1,0 +1,77 @@
+\section{Evaluation Design}
+
+\subsection{Open-loop controlled benchmark}
+
+The benchmark contains a damped oscillator, forced Duffing oscillator,
+controlled Van der Pol oscillator, torque-driven pendulum, and cart--pole.
+Fourth-order Runge--Kutta integration generates training, validation, and test
+trajectories. Each of eight seeds independently draws the data and initializes
+training. Methods share each seed--system data set.
+
+Three test regimes are fixed: clean in-distribution (ID), corrupted ID, and
+corrupted out-of-distribution (OOD) parameters. Corruption combines additive
+measurement noise and channel missingness with causal carry-forward. Eleven
+variants include recurrent, transformer, neural ODE, physics-guided, nominal,
+and residual predictors plus filter-gain and training-horizon sensitivities.
+Every learned method receives the same six-trial validation budget. The primary
+metric is normalized root mean squared error at the 25-step horizon
+(NRMSE-25), averaged equally across the 15 system--regime cells within each
+seed.
+
+The predeclared primary contrast compares \method{} with the PGNN-style model.
+It requires a paired 95\% interval lower bound above a 5\% improvement and an
+exact one-sided seed sign-flip $p<0.05$. The gated robustness claim additionally
+requires improvement in the two corrupted regimes and noninferiority within
+5\% on clean ID data. Component analyses compare the fixed filter plus nominal
+rollout with the complete model, vary the residual multiplier at fixed weights,
+and impose a synchronous two-step context outage.
+
+\subsection{Frozen closed-loop regulation study}
+
+The additional control study was specified before execution and reuses the
+frozen PGNN-style and \method{} checkpoints. It includes all five systems,
+eight seeds, and three plant/observation conditions: ID clean, ID corrupt, and
+OOD-parameter corrupt. Four independently generated plant episodes populate
+each seed--system--condition cell. Initial states, plant parameters,
+observation draws, masks, and planner draws are paired across four prediction
+interfaces: nominal propagation from the last imputed state, filter plus
+nominal propagation, PGNN-style, and \method. ID clean and ID corrupt also
+share the plant draw.
+
+Seven zero-input transitions establish the eight-state context. The controller
+then regulates for 20 steps. Deterministic-mean cross-entropy MPC uses horizon
+8, 64 candidates, two iterations, and eight elites. Action sequences start
+with standard deviation 0.6 of the action limit, with a 0.05 floor. The stage
+objective is mean squared state error in training-standard-deviation units plus
+0.01 times squared normalized action; terminal state error receives an
+additional factor of two. The pendulum target is
+$(\sin\theta,\cos\theta,\omega)=(0,1,0)$ and the other targets are zero.
+Corrupt observations use Gaussian noise with scalar standard deviation 8\% of
+the mean training-state standard deviation and 25\% independent channel
+missingness.
+
+The primary closed-loop response is the realized mean normalized state loss
+over 20 controlled transitions. Episodes, systems, and conditions receive
+equal weight within each seed. The reported \method{}--PGNN contrast is the
+mean of eight seed-level relative improvements, with a 5,000-replicate paired
+seed bootstrap interval and an exact one-sided sign-flip test against zero.
+Controller settings were not changed after observing outcomes.
+
+\subsection{Measured-flight external evaluation}
+
+The NanoDrone experiment uses recorded states and motor commands from the
+nonlinear system-identification benchmark \cite{busetto2026_nanodrone}. Three
+held-out flights from a distinct trajectory family provide 387 forecast
+windows. A reduced quadrotor prior omits parts of the recorded platform
+dynamics; learned models have 47,000 parameters and use five training seeds.
+The evaluation crosses four context conditions (recorded, added noise,
+missingness, and both), two horizons (25 and 50), and four predictors
+(\method, its unfiltered residual counterpart, a recurrent model, and the
+nominal prior). It reports full-state NRMSE, position RMSE, velocity RMSE, and
+marginal 95\% coverage. Flights receive equal weight before averaging training
+seeds.
+
+Training, test, and analysis artifacts are hash-checked before tables and
+figures are generated. The supplementary material gives the system equations,
+parameter ranges, tuning space, complete cell results, and artifact inventory.
+

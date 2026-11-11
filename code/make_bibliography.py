@@ -60,6 +60,21 @@ def escape(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def publication_name(record: dict[str, object]) -> str:
+    """Map provider-specific preprint labels to a portable citation label."""
+    if record.get("work_type") == "preprint" or "arxiv.org" in str(record.get("url", "")):
+        return "arXiv preprint"
+    return str(record.get("venue") or "Preprint")
+
+
+def publication_url(record: dict[str, object]) -> str:
+    """Use HTTPS for arXiv links without changing the audited record itself."""
+    url = str(record.get("url") or "")
+    if url.startswith("http://arxiv.org/"):
+        return "https://" + url.removeprefix("http://")
+    return url
+
+
 def main() -> None:
     source = _load_verified_records()
     entries = []
@@ -68,9 +83,9 @@ def main() -> None:
             "author": " and ".join(record["authors"]),
             "title": "{{" + record["title"] + "}}",
             "year": str(record["year"]),
-            "journal": record.get("venue") or "Preprint",
+            "journal": publication_name(record),
             "doi": record.get("doi") or "",
-            "url": record.get("url") or "",
+            "url": publication_url(record),
         }
         body = ",\n".join(
             f"  {name} = {{{escape(value)}}}" for name, value in fields.items() if value

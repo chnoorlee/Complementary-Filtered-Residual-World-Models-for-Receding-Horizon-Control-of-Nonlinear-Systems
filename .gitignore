@@ -21,3 +21,31 @@ paper/mypaper/qa/render_pages_current/
 !paper/mypaper/main.log
 !paper/mypaper/main_springer.bbl
 !paper/mypaper/main_springer.log
+# Obtain upstream flight records from the pinned author URLs; retain metadata.
+data/external/nanodrone/**/*.csv
+paper/mypaper/qa/external_revision_20261104/
+# LaTeX intermediates for the venue submission directories.
+paper/ijcas/*.aux
+paper/ijcas/*.blg
+paper/ijcas/*.fdb_latexmk
+paper/ijcas/*.fls
+paper/ijcas/*.log
+paper/ijcas/*.out
+paper/ijcas/*.synctex.gz
+paper/ijcas/.qa_preview/
+paper/ijcas/.qa_render/
+paper/ijcas/.submission_qa/
+paper/ijdc/*.aux
+paper/ijdc/*.blg
+paper/ijdc/*.fdb_latexmk
+paper/ijdc/*.fls
+paper/ijdc/*.log
+paper/ijdc/*.out
+paper/ijdc/*.synctex.gz
+paper/tase/*.aux
+paper/tase/*.blg
+paper/tase/*.fdb_latexmk
+paper/tase/*.fls
+paper/tase/*.log
+paper/tase/*.out
+paper/tase/*.synctex.gz

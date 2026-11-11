@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "submission_source_archive": true,
+  "repository_identifier_pending": true,
+  "repository_identifier_required_for_initial_submission": false,
+  "submission_blocker": null,
+  "archive_sha256": "63e3a3019add516a43523ab71a679dc04dd3f2021a390339eeb1bed50695afea",
+  "files": {
+    "main.tex": "ff2516b4ac4f195f74f4d6e3969d334780b36c85cea39a7614ad0efbe3ee5837",
+    "references.bib": "12804a2b59e06fec6236d0e12db8d61ed7ab0cd741ad9a6f7717477d9c9962cf",
+    "sn-jnl.cls": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "sn-basic.bst": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
+    "figures/Fig1.pdf": "ee2cfb05223277b77cdb85ef19ba83a1b2238b655e48af1895a8fc09966641da",
+    "figures/Fig2.pdf": "9765b8be94777b9feec9e3a64b587098aea41ab4bb86e8d4832cc208468c644b",
+    "figures/Fig3.pdf": "95f1e5988dda0e4f9dfea265a050d63554c951bb53bff73f60bb67da4a0aeba1",
+    "figures/Fig4.pdf": "c77e586ce45f56dda33a71d2dd3a8185444b092abb0c45db98eca2e2874bb5f0",
+    "figures/Fig5.pdf": "6b87c4ba2194c52ea29ef7382970d38e3d4e14ccf619302e73e182740e2bf374",
+    "main.bbl": "2505e1ee91eb97f646bd404e9908c97b02a98b4a4cb068ad6388a034dde2eb17",
+    "main.pdf": "e4c4341fba6da414937f874431c7149bbf1d6a25e7a69e8f5edb980b66e3093d"
+  }
+}

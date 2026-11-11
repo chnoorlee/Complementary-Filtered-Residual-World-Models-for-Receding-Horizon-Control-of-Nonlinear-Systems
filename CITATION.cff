@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Complementary-Filtered Residual World Models for Receding-Horizon Control of Nonlinear Systems"
+type: software
+authors:
+  - family-names: Li
+    given-names: Yongzhi
+    orcid: "https://orcid.org/0009-0008-8642-7385"
+    affiliation: "Computer Science and Technology, Wenzhou-Kean University, Wenzhou, Zhejiang, China"
+repository-code: "https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems"
+license: MIT
+keywords:
+  - complementary filtering
+  - model predictive control
+  - nonlinear systems
+  - physics-guided learning
+  - state estimation
+  - world models
+preferred-citation:
+  type: article
+  title: "Complementary-Filtered Residual World Models for Receding-Horizon Control of Nonlinear Systems"
+  authors:
+    - family-names: Li
+      given-names: Yongzhi
+      orcid: "https://orcid.org/0009-0008-8642-7385"
+  journal: "International Journal of Control, Automation and Systems"
+  status: submitted

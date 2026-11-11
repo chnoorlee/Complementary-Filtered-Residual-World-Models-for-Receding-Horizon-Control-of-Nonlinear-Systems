@@ -1,0 +1,99 @@
+\section{Introduction}
+
+Prediction models for nonlinear controlled systems support state estimation,
+receding-horizon optimization, fault diagnosis, and simulation-based control.
+Their accuracy depends on two coupled objects: the state supplied at the
+forecast origin and the transition used to propagate that state under future
+inputs. Learning-based model predictive control makes the same dependence
+explicit because model error enters each optimized prediction horizon
+\cite{hewing2020_learning_mpc}. Modern world models extend this idea with
+recurrent, latent, or transformer transitions and have demonstrated strong
+planning performance in continuous control and reinforcement learning
+\cite{hafner2025_mastering_diverse_control_tasks_through,hansen2023_td_mpc2_scalable_robust_world,micheli2022_transformers_are_sample_efficient_world,zhang2023_storm_efficient_stochastic_transformer_based}.
+For physical systems, transition accuracy and state-estimation reliability are
+joint requirements when recent measurements are noisy or missing.
+
+Recursive state estimation classically balances a dynamic prediction against
+new measurements. The Kalman filter computes this balance from a stochastic
+linear model and evolving error covariance \cite{kalman1960_filtering}, while
+complementary filters and nonlinear observers exploit structural separation
+between measurement channels and model dynamics
+\cite{mahony2008_complementary,zhao2023_wheel_rail_observer}. Learned filters
+such as KalmanNet relax parts of the assumed model, and data-assimilation
+research couples machine learning with dynamical estimation and uncertainty
+quantification
+\cite{revach2022_kalmannet,cheng2023_machine_learning_with_data_assimilation}.
+These methods motivate a direct question for multistep prediction: can an
+explicit, fixed context correction improve a physics-residual transition when
+observations are incomplete or corrupted?
+
+The answer depends on the relative reliability of the physical prediction and
+the measurement. Parameter drift, unmodeled friction, discretization, and
+actuator dynamics bias nominal propagation. Measurement noise, missing packets,
+and preprocessing errors bias or remove the observation. Last-value imputation
+supplies a numerical input but does not make it current; pure nominal
+propagation remains current but inherits model mismatch. Physics-guided
+learning combines mechanistic and neural components through constraints,
+features, hybrid solvers, and probabilistic state models
+\cite{karniadakis2021_physics_informed_machine_learning,willard2022_integrating_scientific_knowledge_with_machine,yu2024_learning_dynamical_systems_from_data,shen2023_differentiable_modelling_to_unify_machine}.
+The forecast-origin correction nevertheless remains a distinct design choice
+from the learned transition.
+
+We study this choice with the Complementary-Filtered Residual World Model
+(\method). Within an eight-step observed context, nominal dynamics predict the
+next state and a fixed gain of 0.5 combines that prediction with each available
+measurement. Missing channels receive zero measurement gain. The final
+corrected state initializes a probabilistic nominal-physics-plus-bounded-
+residual transition trained by multistep Gaussian likelihood and rolled out
+freely under known future controls. The update is a fixed-gain complementary
+filter that exposes the allocation between nominal prediction and measurement
+at the forecast origin.
+
+The evaluation has two layers. First, five controlled nonlinear systems: a
+damped oscillator, Duffing oscillator, controlled Van der Pol oscillator,
+torque-driven pendulum, and cart--pole. They provide known equations, controlled
+parameter shift, and paired observation corruption. Eleven transition variants
+are compared across clean in-distribution, corrupted in-distribution, and
+corrupted parameter-shift regimes. The primary analysis averages the 15
+system-regime cells within each of eight independent data-training seeds and
+tests a practical 5\% improvement margin against a preselected physics-guided
+neural-network comparator. Fixed gains 0, 0.25, 0.5, 0.75, and 1 isolate the
+context correction, while a one-step-trained variant isolates the training
+horizon.
+
+Second, an external experiment uses measured flight states from the NanoDrone
+benchmark \cite{busetto2026_nanodrone}. Three flights from a held-out
+trajectory family are evaluated with a reduced quadrotor prior, three
+parameter-matched learned models, a nominal model, four context conditions, and
+25- and 50-step horizons. Noise and missingness are varied separately and
+together. This experiment tests whether the controlled-benchmark finding
+persists when the physical prior is structurally incomplete and the targets are
+recorded flight states.
+
+The main contributions are:
+\begin{enumerate}
+ \item a mask-gated fixed-gain context correction coupled to a probabilistic
+ physics-residual free rollout for nonlinear controlled dynamics;
+ \item an error identity for correlated nominal-prediction and measurement
+ errors, its constrained MSE-optimal scalar gain, and fixed-gain sensitivity;
+ \item a paired confirmatory benchmark comprising \ConfirmatoryRuns{} trained
+ models, five systems, three regimes, and eight independent seed clusters; and
+ \item secondary classical-filter, residual-scale, structured-outage,
+ projection, latency, and calibration audits, together with an external
+ measured-flight evaluation.
+\end{enumerate}
+
+The controlled benchmark supports the aggregate primary hypothesis against the
+preselected PGNN-style comparator but not the gated clean-regime noninferiority
+requirement. Classical component analysis and residual-scale sensitivity show
+that the gain-0.5 filter followed by nominal rollout performs better than the
+learned residual transition. The flight
+evaluation shows that lower long-horizon position error can coexist with higher
+full-state error and undercovered intervals. These component and uncertainty
+trade-offs matter when a predictor supplies an observer or predictive
+controller.
+
+The remainder of the paper reviews state-estimation, physics-guided, and world-
+model approaches; defines the correction and free rollout; reports the
+controlled and flight experiments; and discusses implications for learned
+observers and receding-horizon prediction.

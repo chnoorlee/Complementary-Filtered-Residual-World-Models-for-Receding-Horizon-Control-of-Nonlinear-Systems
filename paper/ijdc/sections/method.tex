@@ -1,0 +1,201 @@
+\section{Complementary-filtered residual world model}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/figure1_method.png}
+\caption{Causal data flow of \method{}. A fixed complementary update is applied only inside the observed context. Missing channels receive zero direct measurement correction before any state-space projection. The filtered forecast origin then initializes a probabilistic nominal-physics plus neural-residual transition, which is rolled out freely for 25 steps using known future controls and no future observations.}
+\label{fig:method}
+\end{figure*}
+
+\subsection{Forecasting problem}
+
+Let $\vect{x}_t\in\mathbb{R}^{d_x}$ be a physical state and
+$\vect{u}_t\in\mathbb{R}^{d_u}$ a recorded control. The observation available
+to the model is
+\begin{equation}
+ \vect{y}_t=\vect{m}_t\odot(\vect{x}_t+\boldsymbol{\epsilon}_t),
+\end{equation}
+where $\vect{m}_t\in\{0,1\}^{d_x}$ is a channel-wise availability mask and
+$\boldsymbol{\epsilon}_t$ is observation noise. Missing entries are filled
+causally by the latest available value, producing $\tilde{\vect{y}}_t$; the
+mask and elapsed time since observation $\boldsymbol{\delta}_t$ remain explicit
+inputs to distinguish imputed values from fresh measurements.
+
+At forecast origin $t$, the model receives eight context states and their past
+controls,
+\begin{equation}
+ \mathcal C_t=\{\tilde{\vect y}_{t-7:t},\vect m_{t-7:t},
+ \boldsymbol\delta_{t-7:t},\vect u_{t-7:t-1}\},
+\end{equation}
+together with known future controls $\vect u_{t:t+H-1}$. It estimates a
+diagonal predictive distribution for $\vect{x}_{t+1:t+H}$ under free rollout,
+with training horizon $H=25$, using predicted states at subsequent rollout
+steps. The flight evaluation additionally extends rollout to $H=50$. All learned
+operations use affine statistics estimated from the training split; the
+nominal equations are evaluated in physical coordinates and then returned to
+normalized coordinates.
+
+\subsection{Mask-gated complementary context filter}
+
+Let $F_0$ denote a nominal dynamics step: fourth-order Runge--Kutta integration
+for the controlled benchmark, and the reduced flight model in
+Section~\ref{sec:external}. Starting from the first imputed context vector, the
+filter alternates nominal prediction and measurement update. For context index
+$k>t-7$,
+\begin{align}
+ \bar{\vect x}_{k} &= F_0(\hat{\vect x}_{k-1},\vect u_{k-1}),\\
+ \vect K_k &= \alpha\vect m_k,\qquad \alpha=0.5,\\
+ \hat{\vect x}_k &= \Pi\!\left[
+ \bar{\vect x}_k+\vect K_k\odot
+ (\tilde{\vect y}_k-\bar{\vect x}_k)\right].
+ \label{eq:complementary-update}
+\end{align}
+Thus, before projection, an observed channel receives equal weight from the
+nominal prediction and the current measurement, while a missing channel has
+exactly zero measurement correction. The projection $\Pi$ is the identity
+except for the sine--cosine pendulum representation, which is returned to the
+unit circle after each update. This joint projection couples the pendulum
+channels and can change a channel whose measurement gain is zero. The zero-gain
+statement therefore applies to the direct correction before projection, not
+necessarily to the projected state. The gain is
+fixed before training, independently of validation and test outcomes.
+
+In parallel, a GRU encodes
+$[\tilde{\vect y}_k,\vect m_k,\log(1+\boldsymbol\delta_k),\vect u_{k-1}]$.
+Its last hidden state supplies trajectory context to the forecast transition;
+the measurement gain remains fixed. The implementation retains the
+same unused gain-head parameterization in every controlled-benchmark
+fixed-gain sensitivity model,
+so comparisons at gains 0, 0.25, 0.5, 0.75, and 1 do not change nominal
+capacity. This construction draws on filtering and data-assimilation approaches
+\cite{revach2022_kalmannet,cheng2023_machine_learning_with_data_assimilation}
+and uses the mask-gated context update to initialize a physics-residual
+probabilistic world model.
+
+\subsection{Probabilistic physics-residual rollout}
+
+The last filtered context state initializes a free rollout. At step $h$,
+\begin{align}
+ \boldsymbol\mu^{p}_{t+h} &= F_0(\hat{\vect x}_{t+h-1},\vect u_{t+h-1}),\\
+ [\vect r_{t+h},\vect \ell_{t+h}] &=
+ R_\theta([\hat{\vect x}_{t+h-1},\vect u_{t+h-1},\vect b_{t+h-1}]),\\
+ \boldsymbol\mu_{t+h} &= \Pi\!\left[
+ \boldsymbol\mu^{p}_{t+h}+0.25\tanh(\vect r_{t+h})\right],\\
+ \boldsymbol\sigma^2_{t+h} &=
+ \max\!\left\{\exp\!\left(\operatorname{clip}(\vect\ell_{t+h},-8,4)\right),
+ 10^{-6}\right\}.
+ \label{eq:residual-rollout}
+\end{align}
+The fixed coefficient 0.25 bounds every per-step residual to one quarter of a
+training standard deviation in normalized coordinates and defines the residual
+scale convention used by the architecture. A fixed-weight sensitivity analysis
+varies this multiplier at inference to quantify its effect. The predicted mean becomes
+the next state, and a GRUCell updates $\vect b$ from that mean and the known
+control.
+
+The training loss is the mean diagonal Gaussian negative log likelihood over
+all $H$ steps and state channels,
+\begin{equation}
+\begin{aligned}
+ \mathcal L_{\mathrm{NLL}}
+ &=\frac{1}{2Hd_x}\sum_{h=1}^{H}\sum_{q=1}^{d_x}
+ \left[\log(2\pi\sigma^2_{hq})\right.\\[-0.2em]
+ &\qquad\left.+\frac{(x_{hq}-\mu_{hq})^2}{\sigma^2_{hq}}\right].
+\end{aligned}
+ \label{eq:nll}
+\end{equation}
+The one-step ablation applies the same loss only at $h=1$ but is still
+evaluated by a 25-step free rollout.
+
+When a control objective supplies nonnegative state weights $w_q$, the same
+architecture admits the component-weighted loss
+\begin{equation}
+ \begin{aligned}
+ \mathcal L_w={}&\frac{1}{2H\sum_q w_q}
+ \sum_{h=1}^{H}\sum_{q=1}^{d_x}w_q \\
+ &\times\left[\log(2\pi\sigma^2_{hq})+
+ \frac{(x_{hq}-\mu_{hq})^2}{\sigma^2_{hq}}\right].
+ \end{aligned}
+ \label{eq:weighted-nll}
+\end{equation}
+The experiments use $w_q=1$ for all channels; Equation~\eqref{eq:weighted-nll}
+states how a prespecified downstream cost could change that objective.
+
+\subsection{Causal execution and computational cost}
+
+For each window, execution follows four deterministic stages. First, the GRU
+encodes the imputed context together with masks, elapsed times, and past
+controls. Second, Equation~\eqref{eq:complementary-update} advances the nominal
+state through the same context and applies the mask-gated correction after each
+available observation. Third, the final hidden state and filtered state jointly
+initialize the residual recurrence. Fourth, Equation~\eqref{eq:residual-rollout}
+is iterated for every known future control; predicted means, rather than samples
+or targets, feed the next step. Training backpropagates the multi-step NLL
+through this entire causal graph. Evaluation uses the identical graph with
+gradients disabled, so teacher forcing is absent from both validation and test
+rollouts.
+
+Let $T_c$ denote context length, $H$ forecast horizon, $d_b$ recurrent width,
+and $C_{F_0}$ the cost of one nominal step. Dense recurrent operations cost
+$O((T_c+H)d_b^2)$ per trajectory, while nominal propagation costs
+$O((T_c+H)C_{F_0})$. Diagonal mean and variance storage is $O(Hd_x)$; recurrent
+working memory at inference is $O(d_b+d_x)$. Thus inference grows linearly in
+context and horizon. The fixed filter adds nominal context steps; measured
+latency captures their cost in the implementation.
+
+\subsection{Forecast-origin and rollout error}
+
+For an observed scalar channel on which $\Pi$ is the identity, write the
+nominal pre-update error as $e_p=\bar x-x$ and measurement error as
+$\epsilon=y-x$. Before any non-identity projection, Equation
+\eqref{eq:complementary-update} gives the exact post-update error
+\begin{equation}
+ e_f=(1-\alpha)e_p+\alpha\epsilon.
+\end{equation}
+Let $v_p=\mathbb E[e_p^2]$, $v_\epsilon=\mathbb E[\epsilon^2]$, and
+$c=\mathbb E[e_p\epsilon]$ for zero-mean errors. Then
+\begin{equation}
+ \mathbb E[e_f^2]=(1-\alpha)^2v_p+\alpha^2v_\epsilon
+ +2\alpha(1-\alpha)c.
+ \label{eq:filter-mse}
+\end{equation}
+Provided $v_p+v_\epsilon-2c>0$, the scalar gain minimizing this conditional MSE
+over $[0,1]$ is
+\begin{equation}
+ \alpha^*=\operatorname{clip}_{[0,1]}
+ \left(\frac{v_p-c}{v_p+v_\epsilon-2c}\right).
+ \label{eq:optimal-gain}
+\end{equation}
+The fixed value 0.5 is optimal only when $v_p=v_\epsilon$ and $c=0$. In an
+adaptive implementation, $v_p$, $v_\epsilon$, and $c$ can be estimated per
+channel from training or validation innovations and held fixed for test data,
+or predicted causally from sensor metadata. A missing channel has zero gain and
+therefore receives no direct measurement-error term. For the pendulum's joint sine--cosine projection,
+Equation~\eqref{eq:filter-mse} applies before projection; the projected error
+also includes the coupled projection contribution. These dependencies motivate
+the fixed-gain sensitivity analysis.
+
+If the rollout transition is locally $L$-Lipschitz and incurs local error
+$\eta_h$, the standard recursion yields
+\begin{equation}
+ \|\hat{\vect x}_{t+H}-\vect x_{t+H}\|
+ \le L^H\|\hat{\vect x}_t-\vect x_t\|
+ +\sum_{h=0}^{H-1}L^{H-1-h}\eta_h.
+\end{equation}
+The context filter acts on the initial-error term, while the residual model
+must control subsequent local errors. The bound makes these two contributions
+to long-horizon forecasting explicit.
+
+For receding-horizon control, Equations~\eqref{eq:complementary-update} and
+\eqref{eq:residual-rollout} define an estimator--predictor interface: the
+context update supplies the current state, and the residual transition maps a
+candidate future control sequence to a state distribution. Prediction error
+and channel-level sensitivity quantify the contribution of the fixed-gain
+interface in the following experiments.
+
+\subsection{Use of generative AI tools}
+
+Generative AI tools assisted literature screening, manuscript drafting, and
+software and analysis-script development. The authors verified the sources,
+equations, code, results, and scientific claims, approved the final manuscript,
+and take responsibility for its content.

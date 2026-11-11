@@ -1,0 +1,24 @@
+\section{Limitations}
+
+The controlled evidence covers five equation families, eight independent
+data-training seed clusters, one deterministic-mean cross-entropy controller,
+a 20-step regulation interval, and a quadratic objective. The component
+analyses reuse fitted checkpoints. The structured missingness test is a
+synchronous two-step all-channel outage inside an eight-step context; longer
+bursts, informative dropout, delayed measurements, sensor-specific failures,
+and actuator faults are not represented.
+
+The measured-flight evidence contains three held-out trajectories from one
+platform and collection session. Targets are the dataset authors' offline-
+preprocessed state estimates, and forecasts use recorded future motor inputs.
+These records test offline prediction, not online intervention. Physical
+closed-loop control, raw-sensor estimation, cross-platform transfer, task
+constraints, and controller timing on embedded hardware remain unevaluated.
+
+The flight prior omits angular acceleration, drag, and motor lag. A uniform
+fixed gain cannot track channel- or time-dependent reliability. The diagonal-
+Gaussian output omits cross-state covariance and multimodality, and its
+50-step marginal intervals under-cover on the held-out flights. Unit-circle
+projection couples pendulum coordinates after the mask-gated correction. No
+stability certificate follows from the bounded residual or the finite-horizon
+open- and closed-loop results.

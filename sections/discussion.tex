@@ -1,41 +1,46 @@
 \section{Discussion}
 
-The frozen analysis \PrimaryInterpretation. This statement is deliberately
-stronger than asking whether CFR-WM's point estimate is favorable: H1 required
-the lower bootstrap endpoint to clear a 5\% practical margin and the exact
-seed-level test to reject that same margin. The distinction matters with eight
-top-level realizations, for which apparently stable trajectory-level averages
-can coexist with substantial training-seed uncertainty. The result therefore
-answers a narrow question about equal-trust context correction on the fixed
-benchmark; it is neither a universal ranking of world-model architectures nor
-a post hoc selection of the most favorable comparator.
+The frozen analysis \PrimaryInterpretation. The lower bootstrap endpoint
+cleared the 5\% practical margin, and the exact seed-level test rejected that
+same margin. Together, these results support CFR-WM's aggregate forecasting
+advantage across the fixed benchmark, accounting for variation
+across eight independent training/data realizations.
 
-The regime decomposition gives the proposed mechanism a more specific stress test. The
+The regime decomposition reveals the central trade-off. The
 corrupt/shifted estimate was \CorruptImprovement\%, whereas the clean estimate
 was \CleanImprovement\%; after hierarchical gating, the full analysis
 \RobustnessInterpretation. Context corruption and parameter shift stress
-different terms in the error recursion. Noise and missingness weaken the
-measurement term in Equation~\eqref{eq:filter-mse}, while parameter shift biases
+different terms in the error recursion. Noise affects the measurement error in
+Equation~\eqref{eq:filter-mse}, while missingness switches off the measurement
+correction. Parameter shift biases
 the nominal pre-update error and the subsequent nominal rollout. A gain of 0.5
-cannot adapt between these cases. Consequently, similar aggregate effects can
-mask different cell patterns. The three cells with more than 10\% degradation
-were all clean, led by cart--pole, while every ID-corrupt cell improved
-descriptively. This pattern is consistent with noise suppression within the
-bundled corrupt regimes, but the design cannot separate Gaussian noise from
-missingness or parameter shift; equal trust can also over-correct already
-accurate clean context. This is why the regime effects and all 15 cells are
-retained without promoting them to independent confirmatory or causal claims.
+applies the same weighting in these cases. The three cells with more than 10\%
+degradation were all clean, led by cart--pole, while every ID-corrupt cell improved
+descriptively. This pattern is consistent with noise suppression under
+corrupted context and over-correction of already accurate clean context.
+The external flight experiment complements this bundled-regime comparison
+with separately varied noise and missingness.
 
-The gain sweep further prevents the fixed value from being interpreted as an
-optimal filter. The descriptively lowest aggregate NRMSE among the five frozen
-gains occurred at \BestGain. This result locates equal trust within a continuum
-from pure nominal context propagation (gain 0) to direct measurement
-replacement (gain 1). It does not estimate a Bayes-optimal gain, because the
-noise, nominal-model error, and missingness processes vary by channel and
-trajectory. A learned gain was considered during development, but its advantage
-over the matched fixed-gain model missed a prespecified mechanism threshold;
-excluding it from confirmation avoids relabeling residual-model capacity as
-filter adaptation.
+The measured flights sharpen this interpretation. The matched unfiltered
+model has lower full-state NRMSE in every external condition--horizon mean,
+while CFR-WM has lower 50-step position error in all four conditions.
+On recorded contexts, its velocity error rises from
+\ExternalUnfilteredRecordedLongVelocityMean{} to
+\ExternalCFRRecordedLongVelocityMean{}\,m\,s$^{-1}$.
+This component dependence is compatible with the conditional error identity:
+the same gain acts on channels with different observation errors and
+physical-model mismatch. The authors' offline smoothing also changes the
+context error relative to raw sensing. Determining which of these factors
+causes the observed pattern requires channel-specific interventions.
+
+The gain sweep places equal trust within a continuum of context updates. The
+descriptively lowest aggregate NRMSE among the five frozen gains occurred at
+\BestGain. The endpoints are pure nominal context propagation (gain 0) and
+direct measurement replacement (gain 1). Their relative accuracy depends on
+observation noise, nominal-model error, and missingness, which vary by channel
+and trajectory. A learned gain was screened during development; its advantage
+over the matched fixed-gain model fell below the prespecified mechanism
+threshold.
 
 Multi-step training addresses a different part of the recursion. CFR-WM's
 relative effect against the one-step-trained variant was
@@ -43,26 +48,15 @@ relative effect against the one-step-trained variant was
 \OneStepRelativeCIHigh\%]). The context filter changes the initial-error term,
 whereas multi-step likelihood exposes the residual transition to its own
 forecast distribution and targets accumulated local errors. Their roles are
-therefore complementary in the mathematical sense of the bound, even if the
-Holm-adjusted sensitivity contrast does not support a population-level
-component claim.
+therefore complementary in the error bound. The paired sensitivity contrast
+supports lower error with multi-step training on this benchmark
+(Holm $p=\OneStepHolmP$).
 
-Relative to recent world-model and physics-guided work, the value of CFR-WM is
-auditability rather than architectural scale. It uses a transparent
+The design separates context correction and transition learning through a
 measurement rule, explicit missing-channel semantics, known-control free
-rollout, and a fixed practical-effect gate. This design trades adaptive
-expressivity for a mechanism that can be falsified with approximately
-parameter-matched gains.
-The archived failure of two earlier candidates is part of that evidence: it
-shows that physics, uncertainty, or a learned gate cannot be treated as useful
-merely because each is plausible in isolation. Future extensions should adopt
-the same separation when adding visual encoders, structured occlusion,
-ensembles or conformal calibration, and closed-loop planning
+rollout, and approximately parameter-matched gain comparisons. The clean--corrupted
+and position--velocity trade-offs motivate context updates that account for
+channel-specific measurement reliability and nominal dynamics. Further extensions
+include structured occlusion, ensembles or conformal calibration, and
+closed-loop planning
 \cite{portela2025_conformal_prediction_for_uncertainty_quantification,brunke2022_safe_learning_in_robotics_from}.
-
-Most importantly, the study distinguishes mathematical, simulated, and
-deployment evidence. The filter identity is conditional; the benchmark
-establishes measured predictive effects under explicit perturbations; neither
-establishes causal mechanism, policy benefit, or hardware safety. Maintaining
-those boundaries is necessary for a compact physical-world-model result to be
-scientifically useful rather than rhetorically broader than its data.

@@ -1,0 +1,45 @@
+\section{Discussion}
+
+The experiments separate forecast-origin correction from residual transition
+learning. Against the preselected PGNN-style comparator, the open-loop lower
+bootstrap endpoint clears the 5\% practical margin. In the simulated
+receding-horizon study, the corresponding state-loss improvement is
+\ClosedLoopImprovement\%, with all 15 system--condition means favoring
+CFR-WM. The synchronous two-step outage increases CFR-WM error by 2.7\%,
+versus 51.9\% for PGNN-style. These results consistently associate the
+advantage under corrupted observations with the complementary context update.
+
+The component evidence does not support the same interpretation for the
+learned residual. Filtering followed by nominal propagation reaches 0.111
+NRMSE-25, compared with 0.119 for CFR-WM, and removing the residual at
+inference gives the lowest mean in every reported regime. Filter plus nominal
+dynamics also records a slightly lower closed-loop state loss and lower action
+effort than the complete model. For the present systems and fitted
+checkpoints, the residual adds no demonstrated point-prediction or regulation
+benefit.
+
+The regime decomposition explains why a uniform gain is insufficient. The
+corrupted and shifted regimes improve by \CorruptImprovement\%, whereas the
+clean regime changes by \CleanImprovement\% and fails the prespecified
+noninferiority criterion. Equation~\eqref{eq:optimal-gain} shows that equal
+trust is optimal only for a particular relationship between prediction and
+measurement errors. Channel-specific gains estimated from training or
+validation innovations could adapt to unequal sensor reliability without
+using test outcomes.
+
+The measured-flight results further narrow the transfer claim. CFR-WM lowers
+50-step position error in all four context conditions, while the matched
+unfiltered residual model has lower full-state NRMSE in all eight condition--
+horizon comparisons. CFR-WM's nominal 90\% coverage is 0.524--0.667 at 50
+steps and is below the unfiltered model in all four conditions. A control
+objective that emphasizes position can therefore rank models differently from
+an equally weighted state metric, but the undercoverage precludes treating the
+reported intervals as calibrated constraint margins.
+
+The results suggest a modular design procedure for predictive control: first
+validate the forecast-origin estimator, then retain a residual transition only
+when it improves held-out rollout and closed-loop objectives. State weights
+should follow the control specification, and joint constraints require a
+covariance or calibrated prediction-set model that represents cross-state
+dependence. The reported RTX 5070 latency remains a batched throughput
+measurement; deadline compliance requires timing on the intended controller.

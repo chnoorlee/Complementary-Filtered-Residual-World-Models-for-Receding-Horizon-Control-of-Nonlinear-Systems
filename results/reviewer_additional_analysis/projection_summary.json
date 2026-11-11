@@ -1,0 +1,7 @@
+{
+  "missing_sine_cosine_entries": 5404,
+  "fraction_changed_above_1e-6": 0.7544411547002221,
+  "mean_absolute_normalized_change": 0.032773351295693254,
+  "p95_absolute_normalized_change": 0.13735613971948615,
+  "max_absolute_normalized_change": 0.3848223090171814
+}

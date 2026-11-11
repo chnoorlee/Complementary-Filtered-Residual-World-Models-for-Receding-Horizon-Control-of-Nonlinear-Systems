@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "source_manifest_sha256": "ff7c87dbefda03be0e4732a202a900497dd3b8a0251358c5342bcbe008e16b49",
+  "pages": 31,
+  "author_metadata_pending": false,
+  "declarations_pending": false,
+  "repository_identifier_pending": true,
+  "outputs": {
+    "paper/ijcas/main.pdf": "e4c4341fba6da414937f874431c7149bbf1d6a25e7a69e8f5edb980b66e3093d",
+    "paper/ijcas/main.bbl": "2505e1ee91eb97f646bd404e9908c97b02a98b4a4cb068ad6388a034dde2eb17",
+    "paper/ijcas/main.log": "0f47fce31b01d5487b7c5fefc59784ecc5eab6a1f7e5a84b28f1dfa1fd0f1203"
+  }
+}

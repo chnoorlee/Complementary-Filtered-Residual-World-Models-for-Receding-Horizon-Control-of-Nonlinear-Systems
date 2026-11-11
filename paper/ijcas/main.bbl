@@ -1,0 +1,195 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+\providecommand{\eprint}[2][]{\url{#2}}
+ \bibcommenthead
+
+\bibitem[{Abdar et~al.(2021)Abdar, Pourpanah, Hussain, Rezazadegan, Liu,
+  Ghavamzadeh, Fieguth, Cao, Khosravi, Acharya, Makarenkov, and
+  Nahavandi}]{abdar2021_a_review_of_uncertainty_quantification}
+Abdar M, Pourpanah F, Hussain S, et~al (2021) {{A review of uncertainty
+  quantification in deep learning: Techniques, applications and challenges}}.
+  Information Fusion \doi{10.1016/j.inffus.2021.05.008}
+
+\bibitem[{Bradley et~al.(2022)Bradley, Kim, Kilwein, Blakely, Eydenberg,
+  Jalvin, Laird, and
+  Boukouvala}]{bradley2022_perspectives_on_the_integration_between}
+Bradley WA, Kim J, Kilwein Z, et~al (2022) {{Perspectives on the integration
+  between first-principles and data-driven modeling}}. Computers \& Chemical
+  Engineering \doi{10.1016/j.compchemeng.2022.107898}
+
+\bibitem[{Busetto et~al.(2026)Busetto, Cereda, Forgione, Maroni, Piga, and
+  Palossi}]{busetto2026_nanodrone}
+Busetto R, Cereda E, Forgione M, et~al (2026) Nonlinear system identification
+  for a nano-drone benchmark. Control Engineering Practice 172:106871.
+  \doi{10.1016/j.conengprac.2026.106871},
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0967066126001152}
+
+\bibitem[{Chen et~al.(2022{\natexlab{a}})Chen, Lou, and
+  Lv}]{chen2022_hybrid_physics_data_driven_online}
+Chen H, Lou S, Lv C (2022{\natexlab{a}}) {{Hybrid physics-data-driven online
+  modelling: Framework, methodology and application to electric vehicles}}.
+  Mechanical Systems and Signal Processing \doi{10.1016/j.ymssp.2022.109791}
+
+\bibitem[{Chen et~al.(2023)Chen, Qin, Zhao, and
+  Wang}]{chen2023_hybrid_physics_and_data_driven}
+Chen L, Qin C, Zhao J, et~al (2023) {{Hybrid Physics- and Data-Driven Dynamic
+  State Estimation of Electricity-Heat Integrated Energy Systems}}. IEEE
+  Transactions on Instrumentation and Measurement
+  \doi{10.1109/tim.2023.3338666}
+
+\bibitem[{Chen et~al.(2022{\natexlab{b}})Chen, Sanz-Alonso, and
+  Willett}]{chen2022_autodifferentiable_enkf}
+Chen Y, Sanz-Alonso D, Willett R (2022{\natexlab{b}}) Autodifferentiable
+  ensemble kalman filters. SIAM Journal on Mathematics of Data Science
+  4(2):801--833. \doi{10.1137/21M1434477}
+
+\bibitem[{Cheng et~al.(2023)Cheng, Quilodrán-Casas, Ouala, Farchi, Liu,
+  Tandeo, Fablet, Lucor, Iooss, Brajard, Xiao, Janjić, Ding, Guo, Carrassi,
+  Bocquet, and Arcucci}]{cheng2023_machine_learning_with_data_assimilation}
+Cheng S, Quilodrán-Casas C, Ouala S, et~al (2023) {{Machine Learning With Data
+  Assimilation and Uncertainty Quantification for Dynamical Systems: A
+  Review}}. IEEE/CAA Journal of Automatica Sinica \doi{10.1109/jas.2023.123537}
+
+\bibitem[{Cuomo et~al.(2022)Cuomo, Cola, Giampaolo, Rozza, Raissi, and
+  Piccialli}]{cuomo2022_scientific_machine_learning_through_physics}
+Cuomo S, Cola VSD, Giampaolo F, et~al (2022) {{Scientific Machine Learning
+  Through Physics–Informed Neural Networks: Where we are and What’s Next}}.
+  Journal of Scientific Computing \doi{10.1007/s10915-022-01939-z}
+
+\bibitem[{Ding et~al.(2025)Ding, Zhang, Shang, Zhang, Zong, Feng, Yuan, Su, Li,
+  Sukiennik, Xu, and Li}]{ding2025_understanding_world_or_predicting_future}
+Ding J, Zhang Y, Shang Y, et~al (2025) {{Understanding World or Predicting
+  Future? A Comprehensive Survey of World Models}}. ACM Computing Surveys
+  \doi{10.1145/3746449}
+
+\bibitem[{Hafner et~al.(2025)Hafner, Pašukonis, Ba, and
+  Lillicrap}]{hafner2025_mastering_diverse_control_tasks_through}
+Hafner D, Pašukonis J, Ba J, et~al (2025) {{Mastering diverse control tasks
+  through world models}}. Nature \doi{10.1038/s41586-025-08744-2}
+
+\bibitem[{Hansen et~al.(2023)Hansen, Su, and
+  Wang}]{hansen2023_td_mpc2_scalable_robust_world}
+Hansen N, Su H, Wang X (2023) {{TD-MPC2: Scalable, Robust World Models for
+  Continuous Control}}. arXiv preprint \doi{10.48550/arxiv.2310.16828},
+  \urlprefix\url{https://arxiv.org/abs/2310.16828}
+
+\bibitem[{Hewing et~al.(2020)Hewing, Wabersich, Menner, and
+  Zeilinger}]{hewing2020_learning_mpc}
+Hewing L, Wabersich KP, Menner M, et~al (2020) Learning-based model predictive
+  control: Toward safe learning in control. Annual Review of Control, Robotics,
+  and Autonomous Systems 3:269--296.
+  \doi{10.1146/annurev-control-090419-075625}
+
+\bibitem[{Kaiser et~al.(2018)Kaiser, Kutz, and Brunton}]{kaiser2018_sindy_mpc}
+Kaiser E, Kutz JN, Brunton SL (2018) Sparse identification of nonlinear
+  dynamics for model predictive control in the low-data limit. Proceedings of
+  the Royal Society A: Mathematical, Physical and Engineering Sciences
+  474(2219):20180335. \doi{10.1098/rspa.2018.0335}
+
+\bibitem[{Kalman(1960)}]{kalman1960_filtering}
+Kalman RE (1960) A new approach to linear filtering and prediction problems.
+  Journal of Basic Engineering 82(1):35--45. \doi{10.1115/1.3662552}
+
+\bibitem[{Karniadakis et~al.(2021)Karniadakis, Kevrekidis, Lu, Perdikaris,
+  Wang, and Yang}]{karniadakis2021_physics_informed_machine_learning}
+Karniadakis GE, Kevrekidis IG, Lu L, et~al (2021) {{Physics-informed machine
+  learning}}. Nature Reviews Physics \doi{10.1038/s42254-021-00314-5}
+
+\bibitem[{Klotz et~al.(2022)Klotz, Kratzert, Gauch, Sampson, Brandstetter,
+  Klambauer, Hochreiter, and
+  Nearing}]{klotz2022_uncertainty_estimation_with_deep_learning}
+Klotz D, Kratzert F, Gauch M, et~al (2022) {{Uncertainty estimation with deep
+  learning for rainfall–runoff modeling}}. Hydrology and earth system
+  sciences \doi{10.5194/hess-26-1673-2022}
+
+\bibitem[{List et~al.(2022)List, Chen, and
+  Thuerey}]{list2022_learned_turbulence_modelling_with_differentiable}
+List B, Chen L, Thuerey N (2022) {{Learned turbulence modelling with
+  differentiable fluid solvers: physics-based loss functions and optimisation
+  horizons}}. Journal of Fluid Mechanics \doi{10.1017/jfm.2022.738}
+
+\bibitem[{Liu et~al.(2022)Liu, Lai, Bacsa, and
+  Chatzi}]{liu2022_physics_guided_deep_markov_models}
+Liu W, Lai Z, Bacsa K, et~al (2022) {{Physics-guided Deep Markov Models for
+  learning nonlinear dynamical systems with uncertainty}}. Mechanical Systems
+  and Signal Processing \doi{10.1016/j.ymssp.2022.109276}
+
+\bibitem[{Mahony et~al.(2008)Mahony, Hamel, and
+  Pflimlin}]{mahony2008_complementary}
+Mahony R, Hamel T, Pflimlin JM (2008) Nonlinear complementary filters on the
+  special orthogonal group. IEEE Transactions on Automatic Control
+  53(5):1203--1218. \doi{10.1109/TAC.2008.923738}
+
+\bibitem[{Micheli et~al.(2022)Micheli, Alonso, and
+  Fleuret}]{micheli2022_transformers_are_sample_efficient_world}
+Micheli V, Alonso E, Fleuret F (2022) {{Transformers are Sample-Efficient World
+  Models}}. arXiv preprint \doi{10.48550/arxiv.2209.00588},
+  \urlprefix\url{https://arxiv.org/abs/2209.00588}
+
+\bibitem[{Portela et~al.(2025)Portela, Banga, and
+  Matabuena}]{portela2025_conformal_prediction_for_uncertainty_quantification}
+Portela A, Banga JR, Matabuena M (2025) {{Conformal prediction for uncertainty
+  quantification in dynamic biological systems}}. PLoS Computational Biology
+  \doi{10.1371/journal.pcbi.1013098}
+
+\bibitem[{Ramancha et~al.(2022)Ramancha, Conte, and
+  Parno}]{ramancha2022_accounting_for_model_form_uncertainty}
+Ramancha MK, Conte JP, Parno M (2022) {{Accounting for model form uncertainty
+  in Bayesian calibration of linear dynamic systems}}. Mechanical Systems and
+  Signal Processing \doi{10.1016/j.ymssp.2022.108871}
+
+\bibitem[{Revach et~al.(2022)Revach, Shlezinger, Ni, Escoriza, van Sloun, and
+  Eldar}]{revach2022_kalmannet}
+Revach G, Shlezinger N, Ni X, et~al (2022) {{KalmanNet: Neural Network Aided
+  Kalman Filtering for Partially Known Dynamics}}. IEEE Transactions on Signal
+  Processing \doi{10.1109/TSP.2022.3158588}
+
+\bibitem[{Robinson et~al.(2022)Robinson, Pawar, Rasheed, and
+  San}]{robinson2022_physics_guided_neural_networks_for}
+Robinson H, Pawar S, Rasheed A, et~al (2022) {{Physics guided neural networks
+  for modelling of non-linear dynamics}}. Neural Networks
+  \doi{10.1016/j.neunet.2022.07.023}
+
+\bibitem[{Shen et~al.(2023)Shen, Appling, Gentine, Bandai, Gupta, Tartakovsky,
+  Baity‐Jesi, Fenicia, Kifer, Li, Liu, Ren, Zheng, Harman, Clark, Farthing,
+  Feng, Kumar, Aboelyazeed, Rahmani, Song, Beck, Bindas, Dwivedi, Fang, Höge,
+  Rackauckas, Mohanty, Roy, Xu, and
+  Lawson}]{shen2023_differentiable_modelling_to_unify_machine}
+Shen C, Appling A, Gentine P, et~al (2023) {{Differentiable modelling to unify
+  machine learning and physical models for geosciences}}. Nature Reviews Earth
+  \& Environment \doi{10.1038/s43017-023-00450-9}
+
+\bibitem[{Wang et~al.(2024)Wang, Sankaran, and
+  Perdikaris}]{wang2024_respecting_causality_for_training_physics}
+Wang S, Sankaran S, Perdikaris P (2024) {{Respecting causality for training
+  physics-informed neural networks}}. Computer Methods in Applied Mechanics and
+  Engineering \doi{10.1016/j.cma.2024.116813}
+
+\bibitem[{Willard et~al.(2022)Willard, Jia, Xu, Steinbach, and
+  Kumar}]{willard2022_integrating_scientific_knowledge_with_machine}
+Willard J, Jia X, Xu S, et~al (2022) {{Integrating Scientific Knowledge with
+  Machine Learning for Engineering and Environmental Systems}}. ACM Computing
+  Surveys \doi{10.1145/3514228}
+
+\bibitem[{Yu and Wang(2024)}]{yu2024_learning_dynamical_systems_from_data}
+Yu R, Wang R (2024) {{Learning dynamical systems from data: An introduction to
+  physics-guided deep learning}}. Proceedings of the National Academy of
+  Sciences \doi{10.1073/pnas.2311808121}
+
+\bibitem[{Zhang et~al.(2023)Zhang, Wang, Sun, Yuan, and
+  Huang}]{zhang2023_storm_efficient_stochastic_transformer_based}
+Zhang W, Wang G, Sun J, et~al (2023) {{STORM: Efficient Stochastic Transformer
+  based World Models for Reinforcement Learning}}. arXiv preprint
+  \doi{10.48550/arxiv.2310.09615},
+  \urlprefix\url{https://arxiv.org/abs/2310.09615}
+
+\bibitem[{Zhao et~al.(2023)Zhao, Huang, and Sun}]{zhao2023_wheel_rail_observer}
+Zhao A, Huang J, Sun JQ (2023) Estimation of wheel--rail structural
+  interactions from motion signals of high-speed train bogie. International
+  Journal of Dynamics and Control 11:1609--1620.
+  \doi{10.1007/s40435-022-01085-2}
+
+\end{thebibliography}

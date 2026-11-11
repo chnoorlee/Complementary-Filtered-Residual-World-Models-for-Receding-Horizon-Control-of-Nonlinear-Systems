@@ -1,0 +1,76 @@
+\section{Related work}
+
+\subsection{State estimation and complementary filtering}
+
+The Kalman filter established recursive prediction and measurement correction
+for linear stochastic systems, with gains determined by propagated covariance
+\cite{kalman1960_filtering}. Complementary filters provide a lower-complexity
+alternative when measurements and model predictions have different reliability
+or frequency characteristics. Nonlinear complementary observers on
+$\mathrm{SO}(3)$ provide an influential example for attitude estimation
+\cite{mahony2008_complementary}. Extended-state observers likewise estimate
+unmodeled interactions from motion measurements; recent IJDC work demonstrates
+this role for wheel--rail dynamics \cite{zhao2023_wheel_rail_observer}.
+
+Learning has been introduced into this estimation loop in several ways.
+KalmanNet learns Kalman-style updates for partially known dynamics
+\cite{revach2022_kalmannet}; autodifferentiable ensemble Kalman filters expose
+the assimilation procedure to gradient-based learning
+\cite{chen2022_autodifferentiable_enkf}; hybrid estimators combine physical and data-driven
+components in energy and vehicle systems
+\cite{chen2022_hybrid_physics_data_driven_online,chen2023_hybrid_physics_and_data_driven};
+and machine learning with data assimilation connects estimation to uncertainty
+quantification \cite{cheng2023_machine_learning_with_data_assimilation}. CFR-WM
+uses a fixed-gain mechanism: an observed channel receives a prespecified scalar
+gain, a missing channel receives zero gain, and the corrected state initializes
+a learned multistep predictor. A classical fixed-gain-filter-plus-nominal-
+rollout baseline separates the context filter from the neural residual.
+
+\subsection{Physics-guided dynamical learning and predictive control}
+
+Physics-guided learning can constrain outputs, embed equations, combine
+numerical solvers with neural corrections, or assimilate uncertain
+observations. Reviews emphasize that the appropriate integration depends on the
+dynamics, available measurements, and downstream objective
+\cite{cuomo2022_scientific_machine_learning_through_physics,bradley2022_perspectives_on_the_integration_between,yu2024_learning_dynamical_systems_from_data}.
+Differentiable modeling exposes mechanistic components to gradient-based
+learning, while horizon-aware optimization addresses temporal error
+accumulation
+\cite{shen2023_differentiable_modelling_to_unify_machine,wang2024_respecting_causality_for_training_physics,list2022_learned_turbulence_modelling_with_differentiable}.
+
+Physics-guided neural networks have been evaluated on nonlinear dynamics
+\cite{robinson2022_physics_guided_neural_networks_for}, and physics-guided Deep
+Markov Models combine state-space physics with probabilistic latent inference
+\cite{liu2022_physics_guided_deep_markov_models}. These approaches primarily
+shape the transition or latent dynamics. CFR-WM instead couples a fixed context
+correction to a bounded residual transition, allowing the forecast-origin and
+rollout contributions to be evaluated separately. This distinction also
+matters for learning-based model predictive control, where a learned prediction
+model is repeatedly queried across an optimization horizon and uncertainty or
+model mismatch can affect feasibility and performance
+\cite{hewing2020_learning_mpc}. Sparse system identification has likewise been
+coupled directly to nonlinear model predictive control in the low-data regime
+\cite{kaiser2018_sindy_mpc}. The present study focuses on the offline
+estimator--predictor mapping that supplies state forecasts to such controllers.
+
+\subsection{World models and predictive uncertainty}
+
+World models use recurrent stochastic state-space models, normalized latent
+representations, transformers, and other sequence architectures. DreamerV3 and
+TD-MPC2 demonstrate scalable learned dynamics for continuous control, while
+IRIS and STORM show transformer-based alternatives
+\cite{hafner2025_mastering_diverse_control_tasks_through,hansen2023_td_mpc2_scalable_robust_world,micheli2022_transformers_are_sample_efficient_world,zhang2023_storm_efficient_stochastic_transformer_based}.
+For the explicit-state forecasting problem here, we implement compact,
+approximately parameter-matched recurrent, normalized, transformer, and
+physics-guided transition families under a common protocol. Broader surveys
+organize world models around representation, dynamics, planning, and agent
+learning \cite{ding2025_understanding_world_or_predicting_future}.
+
+Predictive uncertainty can represent observation noise, transition ambiguity,
+or model-form error, and likelihood alone does not establish calibrated
+intervals \cite{abdar2021_a_review_of_uncertainty_quantification}. Dynamic-
+system studies assess coverage and interval width together, while Bayesian and
+conformal methods address model-form and distributional uncertainty
+\cite{klotz2022_uncertainty_estimation_with_deep_learning,ramancha2022_accounting_for_model_form_uncertainty,portela2025_conformal_prediction_for_uncertainty_quantification}.
+We therefore report Gaussian negative log likelihood, empirical coverage,
+interval width, and calibration error in addition to multistep point accuracy.

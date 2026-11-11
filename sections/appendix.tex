@@ -8,8 +8,7 @@
 Table~\ref{tab:systems} records the simulator time step and nominal
 parameterization; Table~\ref{tab:parameter-ranges} gives every sampled training
 and OOD interval. All OOD intervals are non-overlapping on every named shifted
-parameter. The ranges are benchmark definitions, not a claim that they exhaust
-physically meaningful behavior.
+parameter. These ranges define the fixed benchmark.
 
 \begin{table*}[ht]
 \centering
@@ -49,23 +48,21 @@ Cart--pole & $g\in[9.65,9.95],\ m_c\in[0.90,1.10],\ m_p\in[0.085,0.115],\ l/2\in
 \end{tabular}}
 \end{table*}
 
-The action generator is a bounded first-order filtered process. At step $t$, a Gaussian innovation with scale $0.55$ times the system action limit is combined with the previous action using coefficients 0.18 and 0.82, then clipped. Limits are 1.5, 1.8, 1.2, 2.2, and 8.0 for the systems in Table~\ref{tab:systems}. This produces persistent excitation without using the simulated state as feedback. It is part of the input distribution, not a learned behavior policy.
+The action generator is a bounded first-order filtered process. At step $t$, a Gaussian innovation with scale $0.55$ times the system action limit is combined with the previous action using coefficients 0.18 and 0.82, then clipped. Limits are 1.5, 1.8, 1.2, 2.2, and 8.0 for the systems in Table~\ref{tab:systems}. This produces persistent excitation independently of the simulated state and defines the control-input distribution.
 
 Train/validation/test separation occurs before window construction. A root NumPy \texttt{SeedSequence} spawns distinct split generators, which in turn spawn one generator per trajectory. The OOD test has a separate root seed. Observation corruption uses another recorded seed after state generation. Consequently, changing an observation-noise level does not change the underlying clean ID trajectory, and all methods see exactly the same corruption draw within a condition.
 
-\section{Development firewall and confirmatory grid}
+\section{Candidate selection and confirmatory grid}
 
-Two earlier candidates were screened before the present confirmation. The first, RGP-WM, was rejected after correcting an inappropriate trajectory-local normalization in the development analysis. The second, a learned-gain PFR-WM, was rejected by its frozen kill rule because its NRMSE-25 improvement over the prespecified gain-0.5 sensitivity was only 0.223\%, below the required 2\%. Neither candidate appears in the confirmatory grid. The fixed gain of 0.5 used by CFR-WM was selected from that prespecified development sensitivity before any confirmatory seed was generated. These development outcomes motivate the design but provide no evidence for the confirmatory claims.
+Two earlier candidates were screened before the present confirmation. The first, RGP-WM, was rejected after correcting an inappropriate trajectory-local normalization in the development analysis. The second, a learned-gain PFR-WM, was rejected by its frozen selection rule because its NRMSE-25 improvement over the prespecified gain-0.5 sensitivity was 0.223\%, below the required 2\%. Neither candidate appears in the confirmatory grid. The fixed gain of 0.5 used by CFR-WM was selected from that prespecified development sensitivity before any confirmatory seed was generated. Development outcomes are archived separately from the confirmatory analysis.
 
 The immutable grid comprises 11 methods, eight seeds (41, 53, 67, 79, 83, 97, 109, and 113), five systems, and three test regimes. It therefore contains 440 fitted models, 1,320 aggregate evaluation cells, and 126,720 trajectory-level rows. Each seed--system dataset contains 256 training, 64 validation, and 96 test trajectories of 72 time steps. Models receive eight context steps and predict 25 steps open loop. Training observations use noise equal to 3\% of the fixed training-state scale and a nominal 10\% independent missing probability; the corrupt regimes use 8\% observation noise and a nominal 25\% probability. The first time point of each generated trajectory is forced observed in every channel, with independent masks sampled at all subsequent trajectory times; a later sliding-window context can begin with an imputed value. ID-clean and ID-corrupt evaluations share trajectory identifiers; the OOD trajectory set is disjoint.
 
 The five broad comparators are compact, protocol-matched RSSM-style,
-SimNorm-style, Transformer-style, PGNN-style, and PG-DMM-style transitions.
-They are not exact reproductions of the cited end-to-end systems. Five
+SimNorm-style, Transformer-style, PGNN-style, and PG-DMM-style transitions. Five
 prespecified CFR sensitivities test gains $0$, $0.25$, $0.75$, and $1$, plus a
 one-step-trained gain-0.5 model. CFR-WM retains the unused learned-gain-head
-parameters so that fixed-gain comparisons do not obtain a parameter-count
-advantage by removing that head.
+parameters to maintain identical parameter counts across fixed-gain comparisons.
 
 All methods ingest normalized context values, masks, log-one-plus elapsed times,
 and actions. Except for the Transformer-style encoder, context is encoded by a
@@ -155,21 +152,20 @@ H2 is a hierarchically gated robustness claim. Conditional on H1, the combined c
 
 The bootstrap uses 5,000 replicates. Each replicate resamples the eight seed clusters globally with replacement and then resamples paired trajectory identifiers within every retained seed--system block. A single sampled identifier vector is reused for ID-clean and ID-corrupt repeated measurements, whereas the disjoint OOD identifiers are sampled separately. All five systems and three regimes remain in every replicate, and baseline, candidate, and their relative ratio are recomputed within the replicate. Exact tests enumerate all $2^8$ seed-level sign flips and therefore rely on a seed-effect symmetry assumption. The five broad-comparator contrasts and the five sensitivity contrasts form separate Holm-adjusted families. The 15 system--regime contrasts are descriptive and carry no cell-level significance claim.
 
-\section{Integrity and scope boundaries}
+\section{Provenance and analysis amendment}
 
 The frozen contract records the method list, seeds, data design, training configuration, success rules, and SHA-256 hashes of the training, evaluation, analysis, and tuning artifacts. The dedicated runner rejects command-line overrides and resumes only provenance-matched JSON/checkpoint pairs. The generic development runner rejects every frozen seed and the reserved confirmatory output directory. Analysis aborts unless the exact grid, finite metrics, trajectory pairing, disjoint OOD identifiers, 40 distinct seed--system data hashes, and stored provenance all validate.
 
 The first frozen-analysis invocation failed before inferential resampling and wrote no result directory because the generic loader had not copied the existing top-level \texttt{parameter\_count} metadata into the aggregate frame used for descriptive model-size reporting. The archived amendment was frozen before performance inspection. It adds only that field by a method--seed--system many-to-one join, verifies all 440 JSON/checkpoint pairs and the completed-run manifest, and then invokes the unchanged frozen inference functions. The failed log, original analysis hash, amendment code hash, and amendment-contract hash are included in the reproduction package. No trajectory metric, hypothesis, threshold, resampling seed, replicate count, multiplicity family, or decision changed.
 
-The top-level independent units are the eight stochastic training/data realizations; trajectories are nested observations and are not treated as independent experimental replicates. Statistical claims therefore concern this prespecified finite benchmark and variation across the frozen seed realizations. They do not establish universal superiority across physical systems, hardware platforms, sensing stacks, control policies, or real-world deployment conditions.
+The top-level independent units are the eight stochastic training/data realizations, with trajectories nested within them. Statistical inference concerns the prespecified finite benchmark and variation across the frozen seed realizations.
 
 \section{Complete descriptive cell contrasts}
 
 Table~\ref{tab:all-cell-contrasts} reports every prespecified CFR-WM--PGNN-style
 system--regime contrast. Absolute intervals come from the paired nested
 bootstrap. Relative changes use PGNN-style as the denominator, with negative values
-favoring CFR-WM. These fixed-cell estimates are descriptive: no cell-level
-significance decision or multiplicity-adjusted $p$ value was prespecified.
+favoring CFR-WM. These fixed-cell estimates are descriptive.
 
 \begin{table*}[ht]
 \centering

@@ -79,6 +79,46 @@ builder source, and flattened output by SHA-256. Author, affiliation, funding,
 contribution, and repository metadata remain explicit placeholders for the
 submitting authors.
 
+## Measured-flight external extension
+
+The NanoDrone extension is recorded separately in
+`plans/26_external_validity_revision.md`; it does not modify the original
+synthetic H1/H2 analysis. Download the author-released records from the pinned
+source commit using `external_validity.data.download_dataset` if they are not
+already present. Each record is verified against its upstream Git LFS hash.
+The downloaded data have no redistribution license identified in the pinned
+repository; the package records their source URLs and hashes rather than
+granting a license to upstream records.
+
+```powershell
+$env:PYTHONPATH = "code"
+& '.\.conda_env\python.exe' -c "from external_validity.data import download_dataset; download_dataset('data/external/nanodrone')"
+& '.\.conda_env\python.exe' -m external_validity.run pilot
+& '.\.conda_env\python.exe' -m external_validity.run train
+# Only for an interrupted, source-matched, incomplete training grid:
+& '.\.conda_env\python.exe' -m external_validity.run resume
+# Evaluate only after all validation selection and final training finish:
+& '.\.conda_env\python.exe' -m external_validity.run evaluate
+& '.\.conda_env\python.exe' code\make_external_assets.py
+& '.\.conda_env\python.exe' code\build_springer_submission.py
+```
+
+The external runner uses complete-flight train/validation/test splits and
+training-only scales and thrust fitting. It evaluates 25- and 50-step
+predictions under four context conditions. Its normalized RMSE is the square
+root of mean squared error across windows, steps, and coordinates within each
+flight. Scores are then averaged equally across three flights, followed by
+mean/sample SD across five training seeds. This metric differs from the frozen
+synthetic metric, which averages per-coordinate normalized RMSEs. Training
+seeds describe optimization variability, not independent platforms.
+
+The external asset generator verifies the full prediction/checkpoint/source
+chain, recomputes recorded errors, and rejects incomplete or inconsistent
+grids. Its separate manifest binds every external table, figure, and result
+macro. The submission builder validates this chain and the independently
+verified NanoDrone citation in `literature/external_citation_audit.json`, while
+retaining the original 41-entry bibliography and synthetic asset checks.
+
 ## Manuscript build
 
 MiKTeX on the verified machine lacks the Perl engine required by `latexmk`.

@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{41}
+\begin{thebibliography}{42}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -294,6 +294,24 @@
 \endbibitem
 
 %%% 14
+\bibitem[\protect\citeauthoryear{Busetto et~al.}{2026}]{busetto2026_nanodrone}
+\begin{barticle}
+\bauthor{\bsnm{Busetto}, \binits{R.}},
+\bauthor{\bsnm{Cereda}, \binits{E.}},
+\bauthor{\bsnm{Forgione}, \binits{M.}},
+\bauthor{\bsnm{Maroni}, \binits{G.}},
+\bauthor{\bsnm{Piga}, \binits{D.}},
+\bauthor{\bsnm{Palossi}, \binits{D.}}:
+\batitle{Nonlinear system identification for a nano-drone benchmark}.
+\bjtitle{Control Engineering Practice}
+\bvolume{172},
+\bfpage{106871}
+(\byear{2026})
+\doiurl{10.1016/j.conengprac.2026.106871}
+\end{barticle}
+\endbibitem
+
+%%% 15
 \bibitem[\protect\citeauthoryear{Pu
   et~al.}{2024}]{pu2024_unizero_generalized_and_efficient_planning}
 \begin{barticle}
@@ -311,7 +329,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 15
+%%% 16
 \bibitem[\protect\citeauthoryear{Ma
   et~al.}{2023}]{ma2023_harmonydream_task_harmonization_inside_world}
 \begin{barticle}
@@ -330,7 +348,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 16
+%%% 17
 \bibitem[\protect\citeauthoryear{Kauvar
   et~al.}{2023}]{kauvar2023_curious_replay_for_model_based}
 \begin{barticle}
@@ -345,7 +363,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 17
+%%% 18
 \bibitem[\protect\citeauthoryear{Nauman
   et~al.}{2024}]{nauman2024_bigger_regularized_optimistic_scaling_for}
 \begin{barticle}
@@ -362,7 +380,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 18
+%%% 19
 \bibitem[\protect\citeauthoryear{Li
   et~al.}{2024}]{li2024_think2drive_efficient_reinforcement_learning_by}
 \begin{barticle}
@@ -378,7 +396,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 19
+%%% 20
 \bibitem[\protect\citeauthoryear{Gao
   et~al.}{2024}]{gao2024_dream_to_drive_with_predictive}
 \begin{barticle}
@@ -393,7 +411,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 20
+%%% 21
 \bibitem[\protect\citeauthoryear{Zhou
   et~al.}{2024}]{zhou2024_dino_wm_world_models_on}
 \begin{barticle}
@@ -409,7 +427,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 21
+%%% 22
 \bibitem[\protect\citeauthoryear{Ai
   et~al.}{2025}]{ai2025_a_review_of_learning_based}
 \begin{barticle}
@@ -431,7 +449,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 22
+%%% 23
 \bibitem[\protect\citeauthoryear{Kotb
   et~al.}{2024}]{kotb2024_qt_tdm_planning_with_transformer}
 \begin{barticle}
@@ -447,7 +465,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 23
+%%% 24
 \bibitem[\protect\citeauthoryear{He
   et~al.}{2025}]{he2025_glam_global_local_variation_awareness}
 \begin{barticle}
@@ -464,7 +482,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 24
+%%% 25
 \bibitem[\protect\citeauthoryear{Li
   et~al.}{2025}]{mingwei2025_prismatic_world_model_learning_compositional}
 \begin{botherref}
@@ -480,7 +498,7 @@ arXiv (Cornell University)
 \end{botherref}
 \endbibitem
 
-%%% 25
+%%% 26
 \bibitem[\protect\citeauthoryear{Tang
   et~al.}{2026}]{tang2026_ham_world_soft_hamiltonian_world}
 \begin{botherref}
@@ -496,7 +514,7 @@ arXiv (Cornell University)
 \end{botherref}
 \endbibitem
 
-%%% 26
+%%% 27
 \bibitem[\protect\citeauthoryear{Wang}{2026}]{wang2026_scale_buys_interpolation_structure_buys}
 \begin{botherref}
 \oauthor{\bsnm{Wang}, \binits{H.}}:
@@ -507,7 +525,7 @@ arXiv (Cornell University)
 \end{botherref}
 \endbibitem
 
-%%% 27
+%%% 28
 \bibitem[\protect\citeauthoryear{Ding
   et~al.}{2025}]{ding2025_understanding_world_or_predicting_future}
 \begin{barticle}
@@ -531,7 +549,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 28
+%%% 29
 \bibitem[\protect\citeauthoryear{Cuomo
   et~al.}{2022}]{cuomo2022_scientific_machine_learning_through_physics}
 \begin{barticle}
@@ -549,7 +567,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 29
+%%% 30
 \bibitem[\protect\citeauthoryear{Bradley
   et~al.}{2022}]{bradley2022_perspectives_on_the_integration_between}
 \begin{barticle}
@@ -569,7 +587,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 31
 \bibitem[\protect\citeauthoryear{Wang
   et~al.}{2024}]{wang2024_respecting_causality_for_training_physics}
 \begin{barticle}
@@ -584,7 +602,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 32
 \bibitem[\protect\citeauthoryear{List
   et~al.}{2022}]{list2022_learned_turbulence_modelling_with_differentiable}
 \begin{barticle}
@@ -599,7 +617,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 32
+%%% 33
 \bibitem[\protect\citeauthoryear{Robinson
   et~al.}{2022}]{robinson2022_physics_guided_neural_networks_for}
 \begin{barticle}
@@ -615,7 +633,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 33
+%%% 34
 \bibitem[\protect\citeauthoryear{Liu
   et~al.}{2022}]{liu2022_physics_guided_deep_markov_models}
 \begin{barticle}
@@ -631,7 +649,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 34
+%%% 35
 \bibitem[\protect\citeauthoryear{Chen
   et~al.}{2022}]{chen2022_hybrid_physics_data_driven_online}
 \begin{barticle}
@@ -646,7 +664,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 35
+%%% 36
 \bibitem[\protect\citeauthoryear{Chen
   et~al.}{2023}]{chen2023_hybrid_physics_and_data_driven}
 \begin{barticle}
@@ -662,7 +680,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 36
+%%% 37
 \bibitem[\protect\citeauthoryear{Jia
   et~al.}{2021}]{jia2021_physics_guided_machine_learning_for}
 \begin{barticle}
@@ -681,7 +699,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 38
 \bibitem[\protect\citeauthoryear{Abdar
   et~al.}{2021}]{abdar2021_a_review_of_uncertainty_quantification}
 \begin{barticle}
@@ -705,7 +723,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 38
+%%% 39
 \bibitem[\protect\citeauthoryear{Klotz
   et~al.}{2022}]{klotz2022_uncertainty_estimation_with_deep_learning}
 \begin{barticle}
@@ -725,7 +743,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 39
+%%% 40
 \bibitem[\protect\citeauthoryear{Ramancha
   et~al.}{2022}]{ramancha2022_accounting_for_model_form_uncertainty}
 \begin{barticle}
@@ -740,7 +758,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 40
+%%% 41
 \bibitem[\protect\citeauthoryear{Alonso and
   Solari}{2021}]{alonso2021_automatic_calibration_and_uncertainty_quantification}
 \begin{barticle}
@@ -754,7 +772,7 @@ arXiv (Cornell University)
 \end{barticle}
 \endbibitem
 
-%%% 41
+%%% 42
 \bibitem[\protect\citeauthoryear{Portela
   et~al.}{2025}]{portela2025_conformal_prediction_for_uncertainty_quantification}
 \begin{barticle}

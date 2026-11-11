@@ -1,0 +1,61 @@
+\section{Discussion}
+
+The experiments distinguish two mechanisms that are often combined inside a
+single learned dynamics model. Complementary context correction reduces the
+forecast-origin error in (\ref{eq:rollout_bound}); the learned residual is
+intended to reduce accumulated transition error. Here the first mechanism is
+consistently useful under observation corruption. It explains the
+\CorruptImprovement\% open-loop gain, the outage response, and the reduction in
+closed-loop action effort relative to PGNN-style. Its small closed-loop state
+loss advantage is repeated across all system--condition means, although the
+aggregate magnitude is only \ClosedLoopImprovement\%.
+
+The residual evidence points in the other direction. Filter plus nominal
+dynamics is better than the full model in both the post-hoc open-loop analysis
+and the frozen closed-loop study. This result is compatible with a nominal
+model that is accurate enough that the learned correction adds estimation
+variance or compounds small one-step biases. Residual learning may still be
+useful when mismatch is larger, but the current benchmark does not demonstrate
+that benefit. A model-selection rule for automation should consequently retain
+the zero-residual variant rather than assuming that an additional trainable
+component improves control.
+
+Equation~(\ref{eq:alpha}) also explains the clean-regime result. A fixed gain
+of 0.5 assumes a particular relationship between nominal-prediction and
+measurement errors. When measurements are clean, equal weighting can discard
+useful measurement information; when measurements are corrupted, it can
+suppress noise and bridge missing channels. A channel- and state-dependent
+gain estimated without access to test outcomes is a direct extension. Its
+evaluation should retain the same clean noninferiority gate because an
+adaptive estimator can otherwise trade nominal accuracy for corruption
+robustness.
+
+The measured-flight study narrows the transfer claim. Position error improves,
+whereas full-state error and interval coverage do not. The reduced quadrotor
+prior omits platform effects, and the diagonal Gaussian head does not represent
+cross-state or temporal dependence. Risk-sensitive control therefore requires
+recalibration or a richer predictive distribution before using these
+uncertainties as constraint margins.
+
+The closed-loop experiment uses simulated plants, one deterministic-mean CEM
+configuration, 20 control steps, and a quadratic regulation objective. The
+measured flights provide real sensor and actuation records but not an online
+intervention. Physical closed-loop experiments, task constraints, longer
+missing-data bursts, informative sensor failures, and latency on the target
+controller remain necessary to assess deployment performance. The bounded
+residual and finite-horizon results do not by themselves establish closed-loop
+stability.
+
+\section{Conclusion}
+
+CFR-WM separates a mask-gated complementary state update from a
+nominal-plus-residual free rollout. Across a controlled open-loop benchmark,
+the interface improves 25-step prediction under corrupted observations but
+does not meet the clean-regime noninferiority criterion. In a frozen
+receding-horizon study it reduces state loss relative to PGNN-style by
+\ClosedLoopImprovement\%, while filter plus nominal dynamics remains slightly
+better than the complete model. Measured flights show a position benefit
+alongside worse full-state error and undercovered intervals. For the tested
+automation setting, complementary context filtering is the supported design
+element; residual and uncertainty components require stronger evidence before
+they are used for control decisions.

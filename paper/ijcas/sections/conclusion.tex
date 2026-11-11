@@ -1,0 +1,17 @@
+\section{Conclusion}
+
+CFR-WM combines a mask-gated gain-0.5 context filter with nominal-physics and
+learned-residual rollout. Relative to the prespecified PGNN-style comparator,
+it improves cell-balanced NRMSE-25 by \PrimaryImprovement\% and simulated
+receding-horizon state loss by \ClosedLoopImprovement\%. The clean-condition
+noninferiority criterion is not met.
+
+Classical component analyses identify the useful mechanism more narrowly.
+Filtering followed by nominal dynamics outperforms the complete model in both
+open-loop prediction and closed-loop regulation, and a zero residual scale is
+best in every reported open-loop regime. On measured flights, CFR-WM lowers
+50-step position error but raises full-state error and yields undercovered
+intervals. The supported contribution is therefore the forecast-origin
+context correction; adaptive gains, residual transitions, and joint
+uncertainty models require separate validation against the intended control
+objective.

@@ -21,13 +21,22 @@ ASSET_GENERATOR = ROOT / "code" / "make_confirmatory_manuscript_assets.py"
 BIBLIOGRAPHY_MANIFEST = ROOT / "literature" / "bibliography_manifest.json"
 SUBMISSION_MANIFEST = PAPER / "submission_source_manifest.json"
 REFERENCES = PAPER / "references.bib"
+EXTERNAL_REFERENCES = PAPER / "external_references.bib"
+EXTERNAL_CITATION_AUDIT = ROOT / "literature" / "external_citation_audit.json"
+EXTERNAL_ASSET_MANIFEST = PAPER / "external_assets_manifest.json"
+EXTERNAL_ASSET_GENERATOR = ROOT / "code" / "make_external_assets.py"
+EXTERNAL_MACROS = PAPER / "external_results_macros.tex"
+TITLE = (
+    "Complementary-Filtered Residual World Models: "
+    "Controlled Benchmarks and Real-Flight Evaluation"
+)
 BIBLIOGRAPHY_GENERATORS = (
     ROOT / "code" / "make_bibliography.py",
     ROOT / "code" / "bibliography_provenance.py",
 )
 BODY_SECTIONS = (
     "introduction", "related_work", "method", "experiments", "results",
-    "discussion", "limitations", "conclusion",
+    "external_validation", "discussion", "limitations", "conclusion",
 )
 
 
@@ -121,6 +130,87 @@ def _required_result_assets() -> list[Path]:
         PAPER / "table_cell_contrasts.tex",
         PAPER / "table_seed_effects.tex",
     ]
+
+
+def _external_assets() -> tuple[Path, ...]:
+    return (
+        *(ROOT / "results/external_nanodrone" / f"{name}.csv"
+          for name in ("summary", "contrasts", "seed_scores")),
+        PAPER / "table_external_results.tex", PAPER / "table_external_physical.tex",
+        EXTERNAL_MACROS,
+        MAIN_DIR / "figures/external_flight.png", MAIN_DIR / "figures/external_flight.pdf",
+    )
+
+
+def _validate_hashes(recorded: object, label: str) -> None:
+    if not isinstance(recorded, dict) or not recorded:
+        raise RuntimeError(f"{label} lacks file hashes")
+    for key, expected in recorded.items():
+        if not isinstance(key, str) or not isinstance(expected, str):
+            raise RuntimeError(f"{label} has invalid file hashes")
+        path = _inside_root(ROOT / key)
+        if not path.is_file() or _sha256(path) != expected:
+            raise RuntimeError(f"{label} mismatch: {key}")
+
+
+def _validate_external_citation() -> None:
+    if not EXTERNAL_CITATION_AUDIT.is_file() or not EXTERNAL_REFERENCES.is_file():
+        raise RuntimeError("external citation audit or bibliography is missing")
+    audit = json.loads(EXTERNAL_CITATION_AUDIT.read_text(encoding="utf-8"))
+    fields = audit.get("fields")
+    required = {"author", "title", "journal", "volume", "pages", "year", "doi", "url"}
+    if (audit.get("status") != "verified" or audit.get("cite_key") != "busetto2026_nanodrone"
+            or not isinstance(fields, dict) or set(fields) != required
+            or any(not isinstance(value, str) for value in fields.values())):
+        raise RuntimeError("external citation audit is incomplete")
+    expected = "@article{busetto2026_nanodrone,\n" + "".join(
+        f"  {key} = {{{fields[key]}}},\n" for key in sorted(fields)
+    ) + "}\n"
+    if (EXTERNAL_REFERENCES.read_text(encoding="utf-8") != expected
+            or _sha256(EXTERNAL_REFERENCES) != audit.get("bibliography_sha256")):
+        raise RuntimeError("external bibliography differs from verified metadata")
+    _validate_hashes(audit.get("local_evidence"), "external citation evidence")
+
+
+def _validate_external_assets() -> None:
+    """Require the new empirical chain without modifying the frozen synthetic chain."""
+    if not EXTERNAL_ASSET_MANIFEST.is_file():
+        raise RuntimeError("external result-asset manifest is missing")
+    manifest = json.loads(EXTERNAL_ASSET_MANIFEST.read_text(encoding="utf-8"))
+    if manifest.get("complete") is not True:
+        raise RuntimeError("external result-asset manifest is incomplete")
+    expected_assets = {_manifest_key(path) for path in _external_assets()}
+    if set(manifest.get("assets", {})) != expected_assets:
+        raise RuntimeError("external result-asset inventory mismatch")
+    if set(manifest.get("generator", {})) != {_manifest_key(EXTERNAL_ASSET_GENERATOR)}:
+        raise RuntimeError("external asset-generator inventory mismatch")
+    for group in ("generator", "assets", "authenticated_sources"):
+        _validate_hashes(manifest.get(group), f"external {group}")
+    directory = ROOT / "results/external_nanodrone"
+    train_path, eval_path = directory / "training_manifest.json", directory / "evaluation_manifest.json"
+    train = json.loads(train_path.read_text(encoding="utf-8"))
+    evaluation = json.loads(eval_path.read_text(encoding="utf-8"))
+    if (train.get("complete") is not True or evaluation.get("complete") is not True
+            or evaluation.get("training_manifest_sha256") != _sha256(train_path)
+            or train.get("sources") != evaluation.get("sources")):
+        raise RuntimeError("external training/evaluation provenance mismatch")
+    for source, label in ((train.get("sources"), "source"),
+                          (train.get("training_outputs"), "training output"),
+                          (evaluation.get("files"), "evaluation output")):
+        _validate_hashes(source, f"external {label}")
+    expected_sources = {**train["sources"], **train["training_outputs"], **evaluation["files"],
+                        _manifest_key(train_path): _sha256(train_path),
+                        _manifest_key(eval_path): _sha256(eval_path)}
+    if manifest["authenticated_sources"] != expected_sources:
+        raise RuntimeError("external asset-source inventory mismatch")
+    if manifest.get("counts") != {"flight_rows": 384, "summary_rows": 32,
+                                   "contrast_rows": 16, "prediction_files": 64}:
+        raise RuntimeError("external result inventory is incomplete")
+
+
+def _external_submission_inputs() -> tuple[Path, ...]:
+    return (EXTERNAL_REFERENCES, EXTERNAL_CITATION_AUDIT, EXTERNAL_ASSET_MANIFEST,
+            EXTERNAL_ASSET_GENERATOR, *_external_assets())
 
 
 def _analysis_code_sha256() -> str:
@@ -288,8 +378,11 @@ def build() -> str:
         raise RuntimeError(f"locked manuscript assets are incomplete: {missing}")
     _validate_bibliography_provenance()
     _validate_asset_manifest(required)
+    _validate_external_citation()
+    _validate_external_assets()
 
-    macros = RESULT_MACROS.read_text(encoding="utf-8").strip()
+    macros = "\n".join(path.read_text(encoding="utf-8").strip()
+                       for path in (RESULT_MACROS, EXTERNAL_MACROS))
     body = "\n\n".join(_body(name) for name in BODY_SECTIONS)
     appendix = _body("appendix")
     appendix = re.sub(r"^\\appendix\s*", "", appendix, count=1)
@@ -302,7 +395,7 @@ def build() -> str:
 \usepackage{{siunitx}}
 \usepackage{{xcolor}}
 \usepackage[title]{{appendix}}
-\hypersetup{{pdftitle={{A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption}}}}
+\hypersetup{{pdftitle={{{TITLE}}}}}
 \newcommand{{\method}}{{CFR-WM}}
 \newcommand{{\vect}}[1]{{\mathbf{{#1}}}}
 {macros}
@@ -310,15 +403,14 @@ def build() -> str:
 \raggedbottom
 \begin{{document}}
 
-\title[Complementary-Filtered Residual World Models]{{A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption}}
+\title[Complementary-Filtered Residual World Models]{{{TITLE}}}
 
-% Replace all placeholder metadata before submission; JIRS uses single-blind review.
+% Replace all placeholder metadata before submission.
 \author*[1]{{\fnm{{Author}} \sur{{Placeholder}}}}\email{{author@example.com}}
 \affil*[1]{{\orgdiv{{Department}}, \orgname{{Institution}}, \orgaddress{{\city{{City}}, \country{{Country}}}}}}
 
 \abstract{{{_abstract_text()}}}
 \keywords{{world models, physics-guided machine learning, complementary filtering, long-horizon prediction, missing observations, distribution shift}}
-\pacs[Journal classification]{{Category (2): Systems Modelling/Simulation/Control/Computer-Aided Design}}
 \pacs[MSC 2020]{{68T07, 68T40, 93B07}}
 
 \maketitle
@@ -331,23 +423,23 @@ def build() -> str:
 
 \textbf{{Funding}} [To be completed by the authors before submission.]
 
-\textbf{{Competing interests}} The authors declare no competing interests.
+\textbf{{Competing interests}} [To be confirmed by the authors before submission.]
 
-\textbf{{Ethics approval and consent to participate}} Not applicable. The study uses analytically simulated controlled dynamics and no human participants, animals, or personal data.
+\textbf{{Ethics approval and consent to participate}} The study uses simulated dynamics and publicly released quadrotor flight records. [Authors to confirm the applicable ethics statement before submission.]
 
 \textbf{{Consent for publication}} Not applicable.
 
-\textbf{{Data and code availability}} All trajectories are generated from the controlled differential equations supplied with the source package. The package contains generation seeds, split identifiers, checkpoints, trajectory-level metrics, the frozen confirmatory contract, and scripts for every table and figure. A public archival repository and persistent identifier must be added before submission.
+\textbf{{Data and code availability}} The controlled-system trajectories are generated by the supplied differential-equation code. External evaluation uses the NanoDrone authors' publicly released, offline-preprocessed flight state estimates~\cite{{busetto2026_nanodrone}}. The accompanying research package contains source code, seeds, split identifiers, checkpoints, saved predictions, metrics, analysis scripts, and data-download URLs with SHA-256 hashes. Upstream flight records are obtained from the authors' repository; this package grants no additional license to those records. [A public archival repository and persistent identifier must be added before submission.]
 
 \textbf{{Author contributions}} [To be completed by the authors before submission.]
 
-\textbf{{Generative-AI assistance}} Generative-AI tools assisted drafting and software development. The authors retain responsibility for the final text and verified the equations, source metadata, code outputs, statistical results, and claims against the archived artifacts. This statement must be reconciled with the publisher policy in force on the submission date.
+\textbf{{Generative-AI assistance}} Generative-AI tools assisted drafting and software development. [Human author review and approval of the equations, sources, code outputs, statistical results, and claims remain to be documented. The authors must confirm this disclosure against the selected journal's policy before submission.]
 
 \begin{{appendices}}
 {appendix}
 \end{{appendices}}
 
-\bibliography{{../references}}
+\bibliography{{../references,../external_references}}
 \end{{document}}
 """
     if re.search(r"\\(?:input|include)\b", document):
@@ -363,6 +455,7 @@ def _write_submission_manifest() -> None:
         REFERENCES,
         ASSET_MANIFEST,
         BIBLIOGRAPHY_MANIFEST,
+        *_external_submission_inputs(),
         *_template_sources(),
         Path(__file__),
     )
@@ -387,10 +480,13 @@ def validate_submission_manifest() -> None:
         raise RuntimeError("submission source manifest is incomplete")
     _validate_bibliography_provenance()
     _validate_asset_manifest(_required_result_assets())
+    _validate_external_citation()
+    _validate_external_assets()
     expected = {
         "inputs": (
             *_manuscript_sources(), *_graphics_sources(), REFERENCES,
             ASSET_MANIFEST, BIBLIOGRAPHY_MANIFEST, *_template_sources(),
+            *_external_submission_inputs(),
             Path(__file__),
         ),
         "output": (OUTPUT,),

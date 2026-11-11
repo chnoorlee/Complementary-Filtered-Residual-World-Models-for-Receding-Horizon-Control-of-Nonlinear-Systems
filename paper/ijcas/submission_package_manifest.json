@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "venue": "International Journal of Control, Automation, and Systems",
+  "peer_review": "single-blind",
+  "technically_ready_for_portal_upload": true,
+  "author_metadata_pending": false,
+  "declarations_pending": false,
+  "repository_identifier_pending": true,
+  "repository_identifier_required_for_initial_submission": false,
+  "author_portal_confirmations_pending": true,
+  "manuscript_pages": 31,
+  "title_page_pages": 1,
+  "cover_letter_pages": 1,
+  "upload_files": {
+    "IJCAS_Manuscript.pdf": {
+      "sha256": "e4c4341fba6da414937f874431c7149bbf1d6a25e7a69e8f5edb980b66e3093d",
+      "bytes": 700733
+    },
+    "IJCAS_Source_Files.zip": {
+      "sha256": "63e3a3019add516a43523ab71a679dc04dd3f2021a390339eeb1bed50695afea",
+      "bytes": 861971
+    },
+    "IJCAS_Title_Page.pdf": {
+      "sha256": "b45b6674da85bbcb2e12883b9baf50beee56ae4aa233e0a4a012b27b78b51465",
+      "bytes": 113514
+    },
+    "IJCAS_Cover_Letter.pdf": {
+      "sha256": "80f529e916b334d0480c86e16ca5da56bf0725417037561b81546116a017b785",
+      "bytes": 57219
+    }
+  },
+  "support_files": {
+    "IJCAS_Title_Page.tex": {
+      "sha256": "b5f0143ad6c8b9514f5bfcd8c61c12e8e56be4bb549cb6d7fe6835b0072a469c",
+      "bytes": 1594
+    },
+    "IJCAS_Cover_Letter.tex": {
+      "sha256": "a3f9a5b5ec2cc33a5bed00a2d87b1d131aec75cf49a69c19312ebaad042985d0",
+      "bytes": 2633
+    },
+    "SUBMISSION_README.md": {
+      "sha256": "a293ed44d62079e1e82aa652b9abeb8f6d725115e9eb4e9665bd38c7ffc0c88f",
+      "bytes": 3038
+    },
+    "REPOSITORY_DOI_GUIDE.md": {
+      "sha256": "692179a97c822ed3afa3bdad0c4f99f3710cd7b241c8e9eb8284571a99afa65f",
+      "bytes": 1735
+    }
+  },
+  "checksum_file_sha256": "0a264fe5defb3731dca1e2942b5505c2db3b8a19e19c57afa7004ae65816b3f0"
+}

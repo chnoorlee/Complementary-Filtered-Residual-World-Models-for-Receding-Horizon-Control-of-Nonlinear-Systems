@@ -1,32 +1,25 @@
-\section{Results}
+\section{Controlled benchmark results}
 
-\subsection{Integrity checks and aggregate accuracy}
+\subsection{Aggregate accuracy}
 
 The confirmatory analyzer accepted the complete grid of \ConfirmatoryRuns{}
 trained models and \ConfirmatoryTrajectories{} trajectory-level rows. All
 prespecified metrics were finite (\AllMetricsFinite), and the 40 seed--system
 groups produced \UniqueDataHashes{} distinct data fingerprints while sharing
-one fingerprint across methods within each group. These checks establish grid
-completeness and pairing; they are not performance evidence.
+one fingerprint across methods within each group, confirming grid completeness
+and pairing.
 
 Table~\ref{tab:main-results} reports the seed-balanced mean and standard
 deviation for horizons 1, 10, and 25. Across all 11 methods, \BestMethod{}
 had the lowest aggregate NRMSE-25 (\BestNRMSE). CFR-WM's mean was
 \CFRNRMSE{}, compared with \PGNNNRMSE{} for the preselected PGNN-style comparator.
-This ordering is descriptive: confirmatory support depends on paired
-seed-level effects and frozen practical margins, not on the lowest pooled mean
-alone.
-The confirmatory estimand does not follow solely from these pooled means: it
-averages eight within-seed relative effects after giving every fixed
-system--regime cell equal weight.
 
 \begin{table*}[t]
 \centering
 \caption{Confirmatory accuracy over the fixed five-system, three-regime
 benchmark. Entries are means $\pm$ SD across eight seed-level, cell-balanced
-aggregates. Bold marks the lowest aggregate NRMSE-25; it does not by itself
-denote confirmatory support. Parameter counts are means over the five
-system-specific input dimensions; all methods received the same six-trial
+aggregates. Bold marks the lowest aggregate NRMSE-25. Parameter counts are means
+over the five system-specific input dimensions; all methods received the same six-trial
 validation search budget.}
 \label{tab:main-results}
 \resizebox{\textwidth}{!}{\input{../../results/confirmatory_analysis/table_confirmatory}}
@@ -50,8 +43,7 @@ CFR-WM minus PGNN-style was \PrimaryDifference{} (95\% CI [\PrimaryCILow,
 \PrimaryCIHigh]). The exact one-sided sign-flip test against the same 5\%
 practical margin gave $p=\PrimaryPValue$. Under the frozen conjunction of a
 5\% interval lower bound, $p<0.05$, and finite metrics, H1 was
-\PrimaryDecision. This decision is not changed by rankings against other
-comparators or by favorable individual cells.
+\PrimaryDecision.
 
 For the H2 components, the combined corrupt-ID and corrupt-OOD regimes had a
 relative effect of \CorruptImprovement\% (95\% CI
@@ -62,9 +54,8 @@ $-5\%$-margin $p=\CleanPValue$). Because H2 is hierarchically gated by H1 and
 requires both component rules, the robustness hypothesis was
 \RobustnessDecision.
 
-Table~\ref{tab:seed-effects} exposes the eight independent cluster effects
-rather than only their mean. Every seed exceeded the 5\% practical threshold,
-although the exact test still treats the seed effects as the inferential units.
+Table~\ref{tab:seed-effects} reports the eight independent cluster effects.
+Every seed exceeded the 5\% practical threshold.
 
 \begin{table}[t]
 \centering
@@ -90,8 +81,8 @@ seed-level SD; D uses the nested 95\% bootstrap interval.}
 Table~\ref{tab:comparator-contrasts} reports every prespecified broad
 comparison. Positive relative effects favor CFR-WM. The confidence intervals
 retain all fixed cells, whereas the exact two-sided seed sign-flip values are
-Holm-adjusted as one five-test family. These comparisons contextualize H1 but
-do not replace its preselected PGNN-style contrast or its 5\% margin.
+Holm-adjusted as one five-test family. These secondary comparisons contextualize
+the primary PGNN-style contrast.
 
 The PGNN-style row repeats the primary point estimate but uses the frozen
 comparator-family bootstrap seed (20260808), whereas H1 uses its prespecified
@@ -113,9 +104,7 @@ The lowest aggregate NRMSE-25 among gains $0$, $0.25$, $0.5$, $0.75$, and $1$
 occurred at gain \BestGain. Relative to the one-step-trained variant, CFR-WM's
 effect was \OneStepImprovement\% (95\% CI [\OneStepRelativeCILow\%,
 \OneStepRelativeCIHigh\%], Holm $p=\OneStepHolmP$). Table
-\ref{tab:sensitivity-contrasts} gives the complete second five-test family;
-therefore the gain sweep is reported even when it does not favor the proposed
-value.
+\ref{tab:sensitivity-contrasts} gives the complete second five-test family.
 
 \begin{table*}[t]
 \centering
@@ -125,11 +114,8 @@ sensitivities. Positive values favor the proposed gain-0.5 multi-step model.}
 \input{../table_sensitivity_contrasts}
 \end{table*}
 
-Secondary probabilistic metrics are shown in Table~\ref{tab:secondary}. They
-are diagnostics rather than alternate confirmation endpoints: lower Gaussian
-NLL, calibration error, or catastrophic-rollout rate cannot rescue a failed
-H1, and diagonal-Gaussian calibration does not imply a correct joint forecast
-distribution.
+Table~\ref{tab:secondary} reports secondary diagnostics of Gaussian forecast
+quality, marginal calibration, and catastrophic-rollout frequency.
 
 \begin{table*}[t]
 \centering
@@ -149,11 +135,9 @@ the frozen descriptive guard, CFR-WM was more than 10\% worse than PGNN-style in
 \IDCorruptFavoredCount{} of \IDCorruptCellCount{} ID-corrupt cells favored
 CFR-WM, with descriptive changes from \IDCorruptLeastChange\% to
 \IDCorruptMostChange\%. This pattern explains why an aggregate H1 success coexists with
-failure of clean-regime noninferiority. No cell-level $p$ value is reported:
-with eight seed clusters, those contrasts were not assigned confirmatory
-multiplicity claims.
-The exact estimates and unadjusted bootstrap intervals are archived in the
-appendix table and machine-readable CSV.
+failure of clean-regime noninferiority. These cell-level estimates are
+descriptive; their unadjusted bootstrap intervals are reported in the appendix
+table and machine-readable CSV.
 
 \begin{figure}[t]
 \centering

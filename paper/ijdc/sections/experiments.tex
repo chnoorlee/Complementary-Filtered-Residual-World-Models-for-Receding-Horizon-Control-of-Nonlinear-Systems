@@ -1,0 +1,158 @@
+\section{Controlled benchmark design}
+
+\subsection{Controlled systems, corruption, and shift}
+
+We evaluate five action-conditioned nonlinear systems. The damped oscillator
+has state $(q,\dot q)$ and dynamics $m\ddot q+c\dot q+kq=u$; the Duffing
+oscillator follows $\ddot q+c\dot q+\alpha q+\beta q^3=u$; and the controlled
+Van der Pol system follows
+$\ddot q=\mu(1-q^2)\dot q-q+g_u u$. The pendulum is represented by
+$(\sin\theta,\cos\theta,\dot\theta)$, and the cart--pole by
+$(x,\dot x,\theta,\dot\theta)$. Reference trajectories use fourth-order
+Runge--Kutta integration with four internal substeps. Initial conditions,
+bounded filtered stochastic controls, and physical parameters are generated
+from recorded seeds. Shifted parameter intervals are prespecified and disjoint
+from training intervals; unit tests verify that separation.
+
+Each seed--system dataset contains 256 training, 64 validation, and 96 ID test
+trajectories, plus 96 independently generated OOD test trajectories. A
+trajectory has 72 states. Windows contain eight context states and 25 forecast
+transitions; training and validation strides are eight and 16, respectively,
+whereas evaluation uses one window per trajectory. Split identifiers encode
+system, parameter regime, split, trajectory index, and generation seed. No
+trajectory crosses splits.
+
+The three evaluation regimes are (i) clean ID context, (ii) ID context with
+feature-wise Gaussian noise at 8\% of the mean training-state standard
+deviation and a nominal 25\% independent missing-at-random probability, and
+(iii) the same corruption with OOD physical parameters. Training context uses
+3\% noise and a nominal 10\% missing probability. The first time point of every
+generated trajectory is forced observed in every channel so causal last-value
+imputation is defined; masks at all subsequent trajectory time points are
+sampled independently. A later sliding window can therefore begin at an
+unobserved, causally imputed context value. Masks and channel-wise elapsed times
+are retained. ID-clean and ID-corrupt evaluations reuse the same underlying 96
+trajectories, permitting repeated-measurement resampling. OOD identifiers are
+required to be disjoint from ID identifiers.
+
+\subsection{Comparators and sensitivities}
+
+The five broad comparators cover recurrent, normalized, transformer, and
+physics-guided transition families. \textbf{RSSM-style} is a compact recurrent
+stochastic-style transition. \textbf{SimNorm-style} applies grouped simplex
+normalization to its recurrent representation, adapting a representation
+principle used by scalable continuous-control world models
+\cite{hansen2023_td_mpc2_scalable_robust_world}. \textbf{Transformer-style} uses a
+two-layer causal context transformer followed by recurrent free rollout
+\cite{micheli2022_transformers_are_sample_efficient_world}. \textbf{PGNN-style}
+adds a deterministic neural correction to a nominal physics step
+\cite{robinson2022_physics_guided_neural_networks_for}. \textbf{PG-DMM-style} is a
+probabilistic physics-residual transition inspired by physics-guided Deep
+Markov modeling \cite{liu2022_physics_guided_deep_markov_models}. These are
+protocol-matched transition implementations designed for the same explicit-
+state forecasting inputs and outputs.
+
+The proposed \textbf{\method} uses gain 0.5. Four fixed-gain sensitivities use
+$\alpha\in\{0,0.25,0.75,1\}$, and \textbf{CFR-one-step} changes only the
+training horizon. All six CFR variants have hidden width 72 and identical
+parameterization; even the inactive fixed-gain head is retained. Comparator
+widths are 80 for RSSM-style and SimNorm-style, 48 for Transformer-style, and
+84 for PGNN-style and PG-DMM-style.
+
+Architecture, gain, tuning budget, endpoints, and decision thresholds were
+fixed using development data before the eight confirmatory seeds were
+generated. Development trajectories and model outputs are excluded from the
+confirmatory analysis. This separation preserves a direct comparison between
+the gain-0.5 model, four fixed-gain sensitivities, and the one-step-trained
+variant.
+
+\subsection{Optimization and endpoint definitions}
+
+All models use AdamW, batch size 128, gradient clipping at norm 5, at most 60
+epochs, and early stopping after ten epochs without a validation-NLL
+improvement of $10^{-5}$. The pre-confirmation tuning archive contains the same
+six-trial validation budget for every baseline--system pair. Each baseline uses
+its own selected winner. CFR-WM and all CFR sensitivities inherit the selected PGNN-style
+winner for the same system. All hyperparameters were fixed before confirmation.
+
+The primary endpoint is NRMSE through horizon 25. Per-feature RMSE is divided
+by that feature's standard deviation estimated from the training split only,
+then averaged over features. Because stored targets and predictions are already
+in those normalized coordinates, the evaluation divisor is one. This avoids
+estimating a denominator from the test trajectory and remains defined at
+horizon one. Secondary accuracy endpoints are cumulative NRMSE at horizons 1,
+5, and 10 and MAE through horizon 25. Probabilistic endpoints are diagonal
+Gaussian NLL, empirical 90\% coverage, mean 90\% interval width, and mean
+absolute central-interval calibration error over nominal levels 0.1--0.9. A
+trajectory is catastrophic when any feature-step absolute error exceeds three
+training-set standard deviations.
+
+\subsection{Confirmatory inference}
+
+The confirmation grid contains 11 methods, eight untouched seeds
+$(41,53,67,79,83,97,109,113)$, five systems, and three regimes: 440 training
+runs, 1,320 aggregate cells, and 126,720 paired trajectory rows. One
+deterministic dataset fingerprint is shared by all methods within each
+seed--system group, and all 40 such fingerprints must be distinct. The eight
+seed-level training/data realizations are the top-level independent clusters;
+trajectories are nested observations. Inference conditions on the fixed set of
+systems and regimes.
+
+For a seed $s$, let $B_s$ and $C_s$ be the PGNN-style and CFR-WM NRMSE-25 means after
+equal weighting of all 15 system--regime cells. The primary estimand is
+\begin{equation}
+ \Delta_{\mathrm{rel}}=\frac{1}{8}\sum_{s=1}^{8}
+ 100\frac{B_s-C_s}{B_s}.
+ \label{eq:primary-estimand}
+\end{equation}
+A 5,000-replicate bootstrap resamples seeds globally with replacement. Within
+each selected seed and system it resamples paired trajectory identifiers;
+ID-clean and ID-corrupt reuse the same sampled identifier vector, while the
+disjoint OOD set is resampled independently. Every system--regime cell is
+retained, and $B_s$, $C_s$, and their ratio are recomputed in each replicate.
+The interval is the two-sided percentile 95\% interval.
+
+H1 states that \method{} improves on the preselected PGNN-style comparator by at least 5\%.
+Support requires finite metrics, a lower relative-improvement interval endpoint
+of at least 5\%, and a one-sided exact sign-flip $p<0.05$ for the seed effects
+after subtracting the 5\% margin. All $2^8$ sign configurations are enumerated
+under a prespecified symmetry assumption. Confirmation success is determined
+by H1 alone.
+
+H2 is tested only if H1 succeeds. It requires at least 5\% improvement when
+pooling ID-corrupt and OOD-corrupt fixed cells, and clean-regime
+noninferiority with signed relative-improvement margin $-5\%$. Both components
+must meet their respective bootstrap bound and one-sided margin test, with all
+metrics finite. The five broad CFR-versus-comparator contrasts form one Holm
+family; the five CFR sensitivity/ablation contrasts form another. With eight
+clusters, the minimum two-sided exact raw and five-test Holm-adjusted values are
+$2/2^8=0.0078125$ and 0.0390625. The 15 system--regime contrasts report paired
+effects and unadjusted bootstrap intervals as descriptive estimates.
+
+\subsection{Secondary component and stress analyses}
+
+Six secondary analyses characterize the fitted models. First, two nonlearned
+rollouts use the nominal dynamics from either the
+final imputed context state or the gain-0.5 filtered context state. Second,
+CFR-WM is evaluated with residual multipliers 0, 0.125, 0.25, and 0.5 while
+holding the trained weights fixed; the stored 0.25 predictions are reproduced
+exactly. Third, a synchronous two-step
+all-channel outage is inserted at context indices 3--4, 5--6, or 7--8 of
+otherwise clean ID windows and the three start positions are averaged. Fourth,
+the pendulum audit measures how often unit-circle projection changes a missing
+sine or cosine channel after its zero direct correction. Fifth, stored RTX 5070
+batch timings are summarized. Each timing cell places 96 trajectories in one
+batch and includes CPU-to-GPU transfer, context encoding, and 25-step rollout,
+but excludes data-loader iteration and metric computation. Sixth,
+external-flight NLL and marginal interval metrics are recomputed from all 15
+final learned checkpoints. These analyses are descriptive and use the original
+seed and cell weighting.
+
+\subsection{Reproducibility controls}
+
+The reproducibility contract fixes code hashes, configurations, data identities,
+trajectory pairing, and finite-metric checks. Analysis proceeds only after the
+complete grid and stored provenance pass these checks.
+
+Execution uses Python 3.11.15 and PyTorch 2.11.0+cu130 on an NVIDIA RTX 5070
+Laptop GPU with 8,151 MiB reported memory and an AMD Ryzen 9 9955HX processor.

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "source_manifest_sha256": "b209b4b5d9e391a60f1f1a280d3e1eb7e6d15dd66237384bad51a02428aa63a6",
+  "outputs": {
+    "paper/ijdc/main.pdf": "3ebc8a5b0ae39bbfdd155e65a0b03cd62c55c110995f24a77490bfb15484cb45",
+    "paper/ijdc/main.bbl": "c2ddd69ffb6f10de84d40708165f62e1321b51854a8dd2c6aaaa295557bd90fc",
+    "paper/ijdc/main.log": "28f0f8e1d812d59bdeceddba3aa7eaa6b945b025fb2432443f5ec709cbcaf938"
+  }
+}

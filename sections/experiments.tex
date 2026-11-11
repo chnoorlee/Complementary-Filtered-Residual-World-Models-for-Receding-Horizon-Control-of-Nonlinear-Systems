@@ -1,4 +1,4 @@
-\section{Experimental design}
+\section{Controlled benchmark design}
 
 \subsection{Controlled systems, corruption, and shift}
 
@@ -22,7 +22,7 @@ whereas evaluation uses one window per trajectory. Split identifiers encode
 system, parameter regime, split, trajectory index, and generation seed. No
 trajectory crosses splits.
 
-The three deployment regimes are (i) clean ID context, (ii) ID context with
+The three evaluation regimes are (i) clean ID context, (ii) ID context with
 feature-wise Gaussian noise at 8\% of the mean training-state standard
 deviation and a nominal 25\% independent missing-at-random probability, and
 (iii) the same corruption with OOD physical parameters. Training context uses
@@ -35,7 +35,7 @@ are retained. ID-clean and ID-corrupt evaluations reuse the same underlying 96
 trajectories, permitting repeated-measurement resampling. OOD identifiers are
 required to be disjoint from ID identifiers.
 
-\subsection{Comparators, sensitivities, and development firewall}
+\subsection{Comparators, sensitivities, and candidate selection}
 
 The five broad comparators cover recurrent, normalized, transformer, and
 physics-guided transition families. \textbf{RSSM-style} is a compact recurrent
@@ -62,9 +62,9 @@ widths are 80 for RSSM-style and SimNorm-style, 48 for Transformer-style, and
 Candidate selection was separated from confirmation. A first development
 model, reliability-gated RGP-WM, failed its corrected primary hypothesis after
 an audit replaced a trajectory-local NRMSE denominator by a training-only
-scale. A structurally distinct learned-gain PFR-WM then improved over retrained
-the PGNN-style comparator on development seed 11, but exceeded its prespecified gain-0.5 matched
-ablation by only 0.223\%, below the frozen 2\% mechanism threshold. Learned
+scale. A structurally distinct learned-gain PFR-WM then improved over the retrained
+PGNN-style comparator on development seed 11, but exceeded its prespecified gain-0.5 matched
+ablation by 0.223\%, below the frozen 2\% mechanism threshold. Learned
 gain was therefore rejected and is absent from every confirmatory seed. The
 gain-0.5 comparator from that failed mechanism test became the versioned
 CFR-WM candidate before confirmation. Original development outputs, corrected
@@ -78,8 +78,7 @@ epochs, and early stopping after ten epochs without a validation-NLL
 improvement of $10^{-5}$. The pre-confirmation tuning archive contains the same
 six-trial validation budget for every baseline--system pair. Each baseline uses
 its own frozen winner. CFR-WM and all CFR sensitivities inherit the frozen PGNN-style
-winner for the same system, preventing an additional candidate-specific search.
-No confirmatory result can alter a hyperparameter.
+winner for the same system. All hyperparameters were fixed before confirmation.
 
 The primary endpoint is NRMSE through horizon 25. Per-feature RMSE is divided
 by that feature's standard deviation estimated from the training split only,
@@ -101,9 +100,8 @@ runs, 1,320 aggregate cells, and 126,720 paired trajectory rows. One
 deterministic dataset fingerprint is shared by all methods within each
 seed--system group, and all 40 such fingerprints must be distinct. The eight
 seed-level training/data realizations are the top-level independent clusters;
-trajectories are nested observations. Systems and regimes are treated as a
-fixed benchmark, so inference does not imply sampling from a population of all
-physical systems.
+trajectories are nested observations. Inference conditions on the fixed set of
+systems and regimes.
 
 For a seed $s$, let $B_s$ and $C_s$ be the PGNN-style and CFR-WM NRMSE-25 means after
 equal weighting of all 15 system--regime cells. The primary estimand is
@@ -134,36 +132,17 @@ metrics finite. The five broad CFR-versus-comparator contrasts form one Holm
 family; the five CFR sensitivity/ablation contrasts form another. With eight
 clusters, the minimum two-sided exact raw and five-test Holm-adjusted values are
 $2/2^8=0.0078125$ and 0.0390625. The 15 system--regime contrasts report paired
-effects and unadjusted bootstrap intervals only; they are explicitly
-descriptive and carry no cell-level significance claim.
+effects and unadjusted bootstrap intervals as descriptive estimates.
 
-\subsection{Fail-closed reproducibility controls}
+\subsection{Reproducibility controls}
 
-The machine-readable contract was frozen before the first confirmatory dataset.
-It pins method and seed grids, data counts, optimization, estimands, margins,
-multiplicity families, output location, and SHA-256 fingerprints for training
-code, analysis code, and the tuning archive. The dedicated runner accepts no
-overrides. Before data generation it checks all contract fields and hashes;
-partial resume is allowed only for an exact provenance-bound subset with paired
-JSON and checkpoint artifacts. The generic experiment CLI rejects every frozen
-seed and the reserved output directory before loading tuning or generating
-data. The analyzer independently revalidates the contract, current code,
-payload configurations, 40 distinct dataset fingerprints, exact row grid,
-paired trajectory identifiers, and finite values. Intermediate confirmatory
-metrics are not inspected.
-
-The first invocation of the frozen analyzer stopped before any bootstrap,
-decision, or result file because its generic loader omitted the already stored
-top-level \texttt{parameter\_count} field required only by the descriptive
-model-size summary. Before inspecting any performance output, we froze a
-versioned analysis amendment that performs one validated many-to-one join on
-method, seed, and system, then calls the unchanged confirmatory and statistical
-functions. It also rechecks all 440 JSON/checkpoint pairs and refuses to
-overwrite an analysis directory. The original contract, failed zero-output
-logs, amendment, and their hashes are retained; no outcome, estimand, margin,
-random seed, bootstrap count, or decision rule changed.
+The frozen contract fixes code hashes, configurations, data identities,
+trajectory pairing, and finite-metric checks. A metadata-loader amendment was
+frozen before performance inspection and left inferential functions and decision
+rules unchanged. Full provenance, amendment details, and recovery controls
+appear in the appendix.
 
 Execution uses Python 3.11.15 and PyTorch 2.11.0+cu130 on an NVIDIA RTX 5070
 Laptop GPU with 8,151 MiB reported memory and an AMD Ryzen 9 9955HX processor.
-The sequential runner stops at 80\% of an eight-hour budget, writes each
-condition atomically, and never synthesizes missing performance values.
+The sequential runner stops at 80\% of an eight-hour budget and writes each
+condition atomically.

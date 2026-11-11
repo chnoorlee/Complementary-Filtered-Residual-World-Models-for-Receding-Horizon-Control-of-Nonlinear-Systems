@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "venue": "IEEE Transactions on Automation Science and Engineering",
+  "anonymous": true,
+  "abstract_words": 141,
+  "note_to_practitioners_words": 166,
+  "main_pages": 7,
+  "supplement_pages": 6,
+  "main_pdf_sha256": "935bd8f4050bf2b42463fc9e76d18db54334c0a161c3935e946348e95260eb91",
+  "supplement_pdf_sha256": "104a9e0a84d27b5310818a574e01187d5eb192521f3e173e24dc7a25d8f36498",
+  "closed_loop_assets_manifest_sha256": "c8cfaae2504c61e3fbd356fd309d5aedd4c9453c26b0063f916628fe34b74331",
+  "package_manifest_sha256": "e1e3c36863454387dfdc28d13e82f9d216b879f46e13664c9a66ede930bff9e5"
+}

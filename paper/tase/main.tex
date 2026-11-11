@@ -1,0 +1,56 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{balance}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Complementary-Filtered Residual World Models for Receding-Horizon Control of Nonlinear Systems},
+  pdfauthor={},pdfsubject={},pdfkeywords={}
+}
+\newcommand{\method}{CFR-WM}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\input{results_macros}
+\input{reviewer_additional_macros}
+\input{external_results_macros}
+\input{closed_loop_macros}
+
+\title{Complementary-Filtered Residual World Models for Receding-Horizon Control of Nonlinear Systems}
+\author{Anonymous Author(s)}
+\markboth{Submitted to IEEE Transactions on Automation Science and Engineering}{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\section*{Note to Practitioners}
+\input{sections/note_to_practitioners}
+
+\begin{IEEEkeywords}
+Complementary filtering, model predictive control, nonlinear systems,
+physics-guided learning, state estimation, world models.
+\end{IEEEkeywords}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/evaluation}
+\input{sections/results}
+\input{sections/discussion_conclusion}
+
+\section*{Acknowledgment}
+OpenAI ChatGPT/Codex was used for literature screening, language drafting and
+editing, and assistance in drafting software and analysis scripts. The authors
+verified the cited sources, equations, code, numerical results, and claims,
+approved the manuscript, and take responsibility for its content.
+
+\balance
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

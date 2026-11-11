@@ -5,28 +5,25 @@ mask-exact complementary context update with a probabilistic
 physics-residual transition. The design isolates two sources of long-horizon
 error: uncertainty in the state at the forecast origin and error accumulated by
 the free-rollout transition. A conditional error identity explains when the
-fixed update can help, while gain and training-horizon sensitivities test its
-limits without claiming universal filtering optimality.
+fixed update can help, while gain and training-horizon sensitivities evaluate
+its contribution to forecast accuracy.
 
 The confirmatory study trained \ConfirmatoryRuns{} models across five
-controlled nonlinear systems, three deployment regimes, eight independent
-seed-level realizations, five broad comparators, and five sensitivities. Against
+controlled nonlinear systems and three evaluation regimes. Against
 the preselected PGNN-style baseline, the seed-balanced relative NRMSE-25 effect was
 \PrimaryImprovement\% (95\% CI [\PrimaryRelativeCILow\%,
 \PrimaryRelativeCIHigh\%]); accordingly, H1 was \PrimaryDecision, but the
 prespecified H2 robustness claim was \RobustnessDecision{} because clean
-noninferiority failed. Specifically, the corrupt/shifted component improved while clean-regime
-noninferiority failed, exposing the cost of a nonadaptive equal-trust update.
-These decisions follow the frozen 5\% practical margin and exact seed-level
-tests, not a favorable pooled mean or selected system.
+noninferiority failed. The corrupt/shifted improvement and clean-regime
+degradation expose the trade-off introduced by a nonadaptive equal-trust
+update.
 
-The work contributes both a technical composition and an evidential pattern:
-simple physics-aware corrections should be evaluated against matched
-sensitivities, and unsuccessful development mechanisms should remain visible
-rather than being absorbed into confirmation. The present evidence is limited
-to state-transition prediction with known controls on a synthetic-mechanistic
-benchmark. The next defensible steps are preregistered evaluation with
-structurally misspecified physics and informative missingness, followed by
-visual state estimation and hardware-in-the-loop closed-loop control. Those
-extensions require new safety, calibration, and policy endpoints; they cannot
-be inferred from NRMSE alone.
+The measured-flight extension tests a held-out trajectory family with a
+structurally simplified physical prior. CFR-WM has higher mean full-state NRMSE
+than the matched unfiltered residual model in all eight condition--horizon
+comparisons, although its 50-step position error is lower across the four
+context conditions. The controlled-benchmark advantage therefore does not
+extend to the full-state flight score. These results identify a practical
+design trade-off: a fixed context correction can benefit one state component
+while worsening the joint forecast. Channel-dependent updates informed by
+measurement reliability and physical-model error are a natural next step.

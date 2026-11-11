@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.7)  20 OCT 2026 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.10.21)  4 NOV 2026 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -756,7 +756,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 57.
+h' as default language. on input line 270.
 
 (D:\MikTex\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
@@ -764,24 +764,24 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (main_springer.aux)
 \openout1 = `main_springer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -839,13 +839,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (D:\MikTex\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \S on input line 57.
-LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 57.
+LaTeX Info: Redefining \S on input line 270.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 270.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
-(Font)                  U/msa/m/n --> U/msa/m/n on input line 57.
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 270.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/msa/m/n --> U/msa/m/n on input line 57.
-Package hyperref Info: Link coloring ON on input line 57.
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 270.
+Package hyperref Info: Link coloring ON on input line 270.
  (main_springer.out)
 (main_springer.out)
 \@outlinefile=\write3
@@ -858,32 +858,32 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 57.
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 96.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+or `english'. on input line 270.
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 309.
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 309
+.
  (D:\MikTex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 309
+.
 
 (D:\MikTex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 96
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 30
+9.
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 309
 .
-LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 96.
-
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 30
+9.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 {C:/Users/Chnoor/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 96
-.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -893,28 +893,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-<figures/figure1_method.png, id=226, 881.694pt x 390.258pt>
+<figures/figure1_method.png, id=250, 881.694pt x 390.258pt>
 File: figures/figure1_method.png Graphic file (type png)
 <use figures/figure1_method.png>
-Package pdftex.def Info: figures/figure1_method.png  used on input line 228.
+Package pdftex.def Info: figures/figure1_method.png  used on input line 439.
 (pdftex.def)             Requested size: 357.1225pt x 158.06552pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5]
+ [5 <./figures/figure1_method.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./figures/figure1_method.png>]
+ [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-Underfull \hbox (badness 10000) in paragraph at lines 482--491
+Underfull \hbox (badness 10000) in paragraph at lines 689--697
 \OT1/cmr/m/n/10 The con-fir-ma-tion grid con-tains 11 meth-ods, eight untouched
  seeds
  []
@@ -922,48 +919,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 482--491
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [10]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 764.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 584.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-<figures/confirmatory_overview.png, id=312, 809.424pt x 592.614pt>
+<figures/confirmatory_overview.png, id=327, 809.424pt x 592.614pt>
 File: figures/confirmatory_overview.png Graphic file (type png)
 <use figures/confirmatory_overview.png>
 Package pdftex.def Info: figures/confirmatory_overview.png  used on input line 
-664.
+842.
 (pdftex.def)             Requested size: 357.1225pt x 261.46532pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./figures/confirmatory_overview.png>]
-<figures/cell_difference_heatmap.png, id=334, 563.706pt x 346.896pt>
+ [13 <./figures/confirmatory_overview.png>]
+<figures/cell_difference_heatmap.png, id=349, 563.706pt x 346.896pt>
 File: figures/cell_difference_heatmap.png Graphic file (type png)
 <use figures/cell_difference_heatmap.png>
 Package pdftex.def Info: figures/cell_difference_heatmap.png  used on input lin
-e 779.
+e 950.
 (pdftex.def)             Requested size: 372.0pt x 228.92558pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+ [14 <./figures/cell_difference_heatmap.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./figures/cell_difference_heatmap.png>]
+ [15]
+<figures/external_flight.png, id=366, 737.154pt x 476.982pt>
+File: figures/external_flight.png Graphic file (type png)
+<use figures/external_flight.png>
+Package pdftex.def Info: figures/external_flight.png  used on input line 1119.
+(pdftex.def)             Requested size: 372.0pt x 240.71024pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
+Underfull \hbox (badness 1142) in paragraph at lines 1180--1188
+[]\OT1/cmr/m/n/10 The design sep-a-rates con-text cor-rec-tion and tran-si-tion
+ learn-ing through a
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
-Underfull \hbox (badness 1112) in paragraph at lines 997--998
+ [18 <./figures/external_flight.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+Underfull \hbox (badness 1112) in paragraph at lines 1326--1327
 []\OT1/cmr/m/n/10 Train/validation/test sep-a-ra-tion occurs before win-dow con
 -struc-tion. A root
  []
@@ -971,13 +989,13 @@ Underfull \hbox (badness 1112) in paragraph at lines 997--998
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
 (main_springer.bbl
 Underfull \hbox (badness 2150) in paragraph at lines 50--60
 []\OT1/cmr/m/n/10 Hafner, D., Pa^^Tsukonis, J., Ba, J., Lil-l-i-crap, T.: Mas-t
@@ -993,38 +1011,35 @@ Underfull \hbox (badness 2150) in paragraph at lines 50--60
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26])
+ [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
+ [27])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
 (main_springer.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main_springer.out' has not changed.
-(rerunfilecheck)             Checksum: 607DB404E916958DDC9812C2B524A37E;6448.
+(rerunfilecheck)             Checksum: A74505461524FF39E16952F87AA6AB49;7469.
  ) 
 Here is how much of TeX's memory you used:
- 16679 strings out of 467867
- 322863 string characters out of 5435167
- 709899 words of memory out of 5000000
- 45225 multiletter control sequences out of 15000+600000
+ 16922 strings out of 467867
+ 331294 string characters out of 5435165
+ 714130 words of memory out of 5000000
+ 45456 multiletter control sequences out of 15000+600000
  661369 words of font info for 167 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 90i,13n,93p,1317b,1275s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,13n,93p,1210b,1271s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Chnoor\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi602\tcr
 m1000.pk><D:/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTex/fonts/
 type1/public/amsfonts/cm/cmbx12.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/c
@@ -1043,9 +1058,9 @@ ic/amsfonts/cm/cmsy5.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D
 :/MikTex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTex/fonts/type1/public
 /amsfonts/cm/cmsy9.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:
 /MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_springer.pdf (27 pages, 1134938 bytes).
+Output written on main_springer.pdf (28 pages, 1333993 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 650 PDF objects out of 1000 (max. 8388607)
+ 147 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 

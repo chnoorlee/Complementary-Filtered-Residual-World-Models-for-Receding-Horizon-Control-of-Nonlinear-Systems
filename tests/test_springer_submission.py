@@ -229,6 +229,11 @@ def test_submission_manifest_detects_prose_drift(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr(springer, "_template_sources", lambda: template_sources)
     monkeypatch.setattr(springer, "_validate_bibliography_provenance", lambda: None)
     monkeypatch.setattr(springer, "_validate_asset_manifest", lambda required: None)
+    monkeypatch.setattr(springer, "_validate_external_citation", lambda: None)
+    monkeypatch.setattr(springer, "_validate_external_assets", lambda: None)
+    external_table = paper / "external_table.tex"
+    external_table.write_text("external results", encoding="utf-8")
+    monkeypatch.setattr(springer, "_external_submission_inputs", lambda: (external_table,))
 
     springer._write_submission_manifest()
     springer.validate_submission_manifest()
@@ -247,3 +252,105 @@ def test_submission_manifest_detects_prose_drift(tmp_path, monkeypatch) -> None:
     template_sources[0].write_text("edited class", encoding="utf-8")
     with pytest.raises(RuntimeError, match="submission source manifest mismatch"):
         springer.validate_submission_manifest()
+    template_sources[0].write_text(template_sources[0].name, encoding="utf-8")
+    springer._write_submission_manifest()
+    external_table.write_text("edited external results", encoding="utf-8")
+    with pytest.raises(RuntimeError, match="submission source manifest mismatch"):
+        springer.validate_submission_manifest()
+
+
+def test_external_citation_rejects_metadata_or_evidence_drift(tmp_path, monkeypatch):
+    root = tmp_path / "project"
+    references = root / "paper" / "external.bib"
+    audit_path = root / "literature" / "audit.json"
+    evidence = root / "source" / "README.md"
+    for path in (references, audit_path, evidence):
+        path.parent.mkdir(parents=True, exist_ok=True)
+    audit = json.loads(springer.EXTERNAL_CITATION_AUDIT.read_text(encoding="utf-8"))
+    references.write_bytes(springer.EXTERNAL_REFERENCES.read_bytes())
+    evidence.write_text("verified author metadata", encoding="utf-8")
+    audit["local_evidence"] = {"source/README.md": springer._sha256(evidence)}
+    audit_path.write_text(json.dumps(audit), encoding="utf-8")
+    monkeypatch.setattr(springer, "ROOT", root)
+    monkeypatch.setattr(springer, "EXTERNAL_REFERENCES", references)
+    monkeypatch.setattr(springer, "EXTERNAL_CITATION_AUDIT", audit_path)
+    springer._validate_external_citation()
+    original = references.read_bytes()
+    references.write_bytes(original.replace(b"2026", b"2025"))
+    with pytest.raises(RuntimeError, match="verified metadata"):
+        springer._validate_external_citation()
+    references.write_bytes(original)
+    # An unchanged file hash does not hide a mismatch with audited metadata.
+    audit["fields"]["volume"] = "999"
+    audit_path.write_text(json.dumps(audit), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="verified metadata"):
+        springer._validate_external_citation()
+    audit["fields"]["volume"] = "172"
+    audit_path.write_text(json.dumps(audit), encoding="utf-8")
+    evidence.write_text("altered author metadata", encoding="utf-8")
+    with pytest.raises(RuntimeError, match="citation evidence mismatch"):
+        springer._validate_external_citation()
+
+
+@pytest.fixture
+def external_asset_chain(tmp_path, monkeypatch):
+    root = tmp_path / "project"
+    paper = root / "paper"
+    main = paper / "mypaper"
+    macros = paper / "external_results_macros.tex"
+    generator = root / "code" / "make_external_assets.py"
+    manifest_path = paper / "external_assets_manifest.json"
+    monkeypatch.setattr(springer, "ROOT", root)
+    monkeypatch.setattr(springer, "PAPER", paper)
+    monkeypatch.setattr(springer, "MAIN_DIR", main)
+    monkeypatch.setattr(springer, "EXTERNAL_MACROS", macros)
+    monkeypatch.setattr(springer, "EXTERNAL_ASSET_GENERATOR", generator)
+    monkeypatch.setattr(springer, "EXTERNAL_ASSET_MANIFEST", manifest_path)
+    source = root / "source" / "record.csv"
+    checkpoint = root / "results" / "checkpoint.pt"
+    prediction = root / "results" / "prediction.npz"
+    for path in (source, checkpoint, prediction, generator, *springer._external_assets()):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(path.name, encoding="utf-8")
+    hashes = lambda paths: {path.relative_to(root).as_posix(): springer._sha256(path) for path in paths}
+    directory = root / "results" / "external_nanodrone"
+    train_path = directory / "training_manifest.json"
+    eval_path = directory / "evaluation_manifest.json"
+    train = {"complete": True, "sources": hashes([source]), "training_outputs": hashes([checkpoint])}
+    train_path.write_text(json.dumps(train), encoding="utf-8")
+    evaluation = {"complete": True, "sources": train["sources"], "files": hashes([prediction]),
+                  "training_manifest_sha256": springer._sha256(train_path)}
+    eval_path.write_text(json.dumps(evaluation), encoding="utf-8")
+    manifest = {"complete": True, "generator": hashes([generator]),
+                "assets": hashes(springer._external_assets()),
+                "authenticated_sources": hashes([source, checkpoint, prediction, train_path, eval_path]),
+                "counts": {"flight_rows": 384, "summary_rows": 32,
+                           "contrast_rows": 16, "prediction_files": 64}}
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    return manifest_path, manifest, source, checkpoint, prediction, train_path
+
+
+@pytest.mark.parametrize("target", ["asset", "source", "checkpoint", "prediction", "generator"])
+def test_external_assets_reject_hash_drift(external_asset_chain, target):
+    _, _, source, checkpoint, prediction, _ = external_asset_chain
+    springer._validate_external_assets()
+    path = {"asset": springer.EXTERNAL_MACROS, "source": source,
+            "checkpoint": checkpoint, "prediction": prediction,
+            "generator": springer.EXTERNAL_ASSET_GENERATOR}[target]
+    path.write_text("altered", encoding="utf-8")
+    with pytest.raises(RuntimeError, match="external .*mismatch"):
+        springer._validate_external_assets()
+
+
+def test_external_assets_reject_omitted_source_or_partial_grid(external_asset_chain):
+    path, manifest, source, _, _, _ = external_asset_chain
+    original_sources = manifest["authenticated_sources"].copy()
+    del manifest["authenticated_sources"][springer._manifest_key(source)]
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="asset-source inventory mismatch"):
+        springer._validate_external_assets()
+    manifest["authenticated_sources"] = original_sources
+    manifest["counts"]["prediction_files"] = 63
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="result inventory is incomplete"):
+        springer._validate_external_assets()

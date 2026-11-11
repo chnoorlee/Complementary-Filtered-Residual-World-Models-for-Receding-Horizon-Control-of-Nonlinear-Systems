@@ -1,12 +1,35 @@
 from __future__ import annotations
 
 import json
+import re
 from types import SimpleNamespace
 from pathlib import Path
 
 import pytest
 
 import create_springer_build_manifest as build_manifest
+
+
+def test_pdf_metadata_accepts_current_manuscript_title_and_rejects_old_title(monkeypatch):
+    manuscript = (build_manifest.MAIN_DIR / "main.tex").read_text(encoding="utf-8")
+    title = re.search(r"pdftitle=\{([^}]+)\}", manuscript).group(1)
+    assert title == (
+        "Complementary-Filtered Residual World Models: "
+        "Controlled Benchmarks and Real-Flight Evaluation"
+    )
+    calls = []
+
+    def pdfinfo_output(arguments, **kwargs):
+        calls.append(arguments)
+        return SimpleNamespace(stdout=f"Title: {title}\nPages: 31\nAuthor: Placeholder\n")
+
+    monkeypatch.setattr(build_manifest.subprocess, "run", pdfinfo_output)
+    assert build_manifest._pdf_metadata() == {"title": title, "pages": 31, "author": "Placeholder"}
+    assert calls == [["pdfinfo", str(build_manifest.MAIN_DIR / "main_springer.pdf")]]
+    title = ("A Confirmatory Study of Complementary-Filtered Residual World Models "
+             "under Synthetic Context Corruption")
+    with pytest.raises(RuntimeError, match="unexpected PDF metadata"):
+        build_manifest._pdf_metadata()
 
 
 def test_run_version_uses_tool_specific_arguments(monkeypatch) -> None:

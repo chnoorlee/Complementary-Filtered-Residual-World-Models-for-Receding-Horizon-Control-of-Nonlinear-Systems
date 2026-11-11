@@ -1,0 +1,48 @@
+{
+  "method": "cfr",
+  "seed": 17,
+  "learning_rate": 0.001,
+  "parameter_count": 47000,
+  "config": {
+    "epochs": 3,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "patience": 8,
+    "min_delta": 1e-05,
+    "gradient_clip": 5.0,
+    "reliability_weight": 0.0,
+    "num_workers": 0
+  },
+  "result": {
+    "best_epoch": 3,
+    "best_validation_nll": -0.48366839069115086,
+    "training_seconds": 12.758770899999945,
+    "epochs_completed": 3,
+    "history": [
+      {
+        "epoch": 1.0,
+        "train_loss": 1.024125700609252,
+        "train_nll": 1.024125700609252,
+        "train_reliability": 0.0,
+        "validation_nll": 0.9215174845644394
+      },
+      {
+        "epoch": 2.0,
+        "train_loss": 0.578392165418307,
+        "train_nll": 0.578392165418307,
+        "train_reliability": 0.0,
+        "validation_nll": 0.06500187290698872
+      },
+      {
+        "epoch": 3.0,
+        "train_loss": -0.26536056646798906,
+        "train_nll": -0.26536056646798906,
+        "train_reliability": 0.0,
+        "validation_nll": -0.48366839069115086
+      }
+    ],
+    "stopped_for_budget": false
+  },
+  "checkpoint_sha256": "9117ebb0d6cd4685892b7677eea14eeb291be12372ab5c98b3c74bbf0c2ac0ea"
+}

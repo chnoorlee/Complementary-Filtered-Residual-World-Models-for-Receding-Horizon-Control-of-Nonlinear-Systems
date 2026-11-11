@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "archive_sha256": "eef5bea2c4859f9bd94657987be28975513c1cf25496482a0726826573de45d1",
+  "files": {
+    "main.tex": "5b4a71e2575819c8a85df2dcbdb305a19cd84e6f91f177cdac5279b50a67a665",
+    "references.bib": "57c3cd7499f221a98dc630730549d7a20c615ff705e7c6d2766cb440979d3190",
+    "sn-jnl.cls": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "sn-basic.bst": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
+    "figures/Fig1.pdf": "ee2cfb05223277b77cdb85ef19ba83a1b2238b655e48af1895a8fc09966641da",
+    "figures/Fig2.pdf": "9765b8be94777b9feec9e3a64b587098aea41ab4bb86e8d4832cc208468c644b",
+    "figures/Fig3.pdf": "95f1e5988dda0e4f9dfea265a050d63554c951bb53bff73f60bb67da4a0aeba1",
+    "figures/Fig4.pdf": "6b87c4ba2194c52ea29ef7382970d38e3d4e14ccf619302e73e182740e2bf374",
+    "main.bbl": "c2ddd69ffb6f10de84d40708165f62e1321b51854a8dd2c6aaaa295557bd90fc",
+    "main.pdf": "3ebc8a5b0ae39bbfdd155e65a0b03cd62c55c110995f24a77490bfb15484cb45"
+  }
+}

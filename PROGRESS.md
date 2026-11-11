@@ -2,13 +2,12 @@
 
 ## Project identity
 
-- Final working title: **A Confirmatory Study of Complementary-Filtered Residual World Models under Synthetic Context Corruption**
+- Current working title: **Complementary-Filtered Residual World Models: Controlled Benchmarks and Real-Flight Evaluation**
 - Direction: world models
 - Working method name: **CFR-WM** (v3 confirmatory candidate; RGP-WM and learned-gain PFR-WM are rejected development versions)
 - Started: 2026-08-05 (Asia/Singapore)
-- Evidence cutoff: 2026-08-06
-- Candidate journal profile: *Journal of Intelligent & Robotic Systems*; the publisher page reports a 2025 Journal Impact Factor of 3.1. Current JCR quartile has not been independently verified and must be checked through an institutional JCR subscription before submission.
-- Integrity boundary: the deliverable targets a reviewable SCI-Q2-level standard; acceptance and quartile status are not guaranteed.
+- Original confirmation cutoff: 2026-08-06; external source supplement: 2026-11-04
+- Submission target: not selected; the earlier JIRS profile is historical venue screening.
 
 ## Nonlinear workflow
 
@@ -122,6 +121,36 @@
   Scoped source, bibliography, result-asset, submission-source, and build
   manifests validate; `archive/manifest_sha256.json` freezes the completed
   package after the documentation closeout.
+
+## External validity and concise-writing revision — 2026-11-04
+
+- Completed the separate, pre-recorded NanoDrone extension: 9 training flights,
+  3 validation flights, and 3 held-out Melon flights. Normalization and thrust
+  fitting use only training records. The three learned models each have
+  47,000 parameters; 6 learning-rate development runs and 15 final runs completed.
+- Evaluated 387 forecast windows, 4 context conditions and 2 horizons; saved
+  64 prediction arrays and independently recomputed all 384 flight-level
+  rows, 32 summaries and 16 paired contrasts. The external asset manifest
+  validates the raw-record, code, checkpoint, prediction and asset chain.
+- Full-state mean NRMSE is higher for CFR-WM than the unfiltered residual
+  model in all 8 comparisons. The mean paired-seed relative error increase
+  spans 1.15--3.45%. CFR-WM has lower 50-step position error than the other
+  learned models across 4 conditions; velocity effects are mixed, and the
+  nominal prior wins position error on recorded and missing-only contexts.
+- Rewrote the abstract, external results, discussion and conclusion around
+  this component trade-off. Removed repetitive defensive statements and
+  consolidated procedural details. Original H1/H2, theory conditions and
+  the single-platform/offline-acquisition scope remain explicit.
+- Independent code review and quick field/EIC agent review completed; the
+  multi-step sensitivity interpretation and two final wording issues were
+  corrected against actual results. No journal-specific criteria were bound.
+- Validation: 121 tests and byte-compilation passed; 20-page generic and
+  28-page Springer PDFs built with clean final logs; all 48 rendered pages
+  checked. Prior PDFs/source/build manifests are preserved in
+  `archive/pre_external_revision_20261104/`.
+- Completion record: `docs/23_external_validity_revision.md`. The new external
+  evidence strengthens the setting coverage while limiting performance claims
+  to the observed full-state/component pattern.
 
 ## Version history
 

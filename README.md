@@ -1,15 +1,16 @@
 # CFR-WM paper and reproducibility package
 
-This repository contains the completed confirmatory, evidence-bounded study of the
-**Complementary-Filtered Residual World Model (CFR-WM)** for 25-step prediction
-of controlled physical dynamics from noisy and incomplete context. The data are
-analytically simulated trajectories, not real sensor recordings. RGP-WM (v1)
-and learned-gain PFR-WM (v2) are archived rejected development candidates and
-must not be used as confirmatory evidence.
+This repository studies the **Complementary-Filtered Residual World Model
+(CFR-WM)** for forecasting controlled physical dynamics from noisy and incomplete
+context. It combines a frozen five-system synthetic confirmation with a separate
+NanoDrone measured-flight extension. RGP-WM (v1) and learned-gain PFR-WM (v2)
+remain archived development candidates.
 
-The package is written to the methodological standard expected of an SCI-Q2
-submission. It does not guarantee acceptance, and the target journal's current
-JCR quartile must be checked institutionally on the actual submission date.
+Public repository:
+https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems
+
+Licensed under the MIT License; see `LICENSE`. Citation metadata is in
+`CITATION.cff`.
 
 ## Primary artifacts
 
@@ -31,7 +32,38 @@ JCR quartile must be checked institutionally on the actual submission date.
 - Flattened-source provenance: `paper/submission_source_manifest.json`
 - Springer build provenance: `paper/springer_build_manifest.json`
 - Completion audit: `docs/20_completion_audit.md`
-- Package-wide checksum inventory: `archive/manifest_sha256.json`
+- Original package checksum inventory: `archive/manifest_sha256.json`
+- External protocol and source ledger: `plans/26_external_validity_revision.md`
+  and `docs/21_external_sources_and_protocol.md`
+- External experiment and reproducibility commands: `code/external_validity/`
+  and `code/README.md`
+- Prose revision record: `docs/22_anti_defensive_revision.md`
+- Current revision results and verification: `docs/23_external_validity_revision.md`
+
+## Measured-flight results (2026-11-04)
+
+The completed external study adds 21 development/final trainings, three
+held-out Melon flights, five final training seeds, four context conditions,
+and two forecast horizons. All three learned methods have exactly 47,000
+parameters. Full-state mean NRMSE favors the unfiltered residual model over
+CFR-WM in all eight comparisons; the mean paired-seed relative effects
+correspond to 1.15--3.45% higher error for CFR-WM. Its 50-step position error
+is lower than the other learned models across all four conditions, while
+velocity effects are mixed. Under combined noise and missingness, CFR-WM
+and unfiltered position errors are 0.094 and 0.125 m. The nominal prior has
+the lowest position error on recorded and missing-only contexts.
+
+The evidence now includes measured flights and a held-out trajectory family
+on one platform, with the authors' offline-preprocessed state estimates.
+These descriptive results are integrated into the abstract, results,
+discussion, and conclusion; the original confirmation remains frozen.
+
+The revised suite passes 121 tests and byte-compilation. The current PDFs
+have 20 pages (generic) and 28 pages (Springer), with clean final build logs
+and rendered layout checks across all 48 pages. Saved predictions, result
+tables, figures, macros, manuscript sources, and the Springer PDF have
+separate validated provenance manifests. See `docs/23_external_validity_revision.md`
+for the results and revision record.
 
 ## Frozen confirmation
 
@@ -70,17 +102,21 @@ seed, replicate count, multiplicity family, or decision rule.
 
 ## Scope
 
-The evidence concerns transition prediction on a fixed, low-dimensional,
-five-system synthetic-mechanistic benchmark with known future controls. It does
-not establish visual representation learning, policy quality, universal filter
-optimality, real-robot transfer, or hardware safety.
+The study predicts explicit state coordinates under known future controls.
+The controlled benchmark spans five nonlinear systems. The external protocol
+holds out complete Melon flights from the NanoDrone authors' offline-preprocessed
+records, with training and validation drawn from Square, Random, and Chirp flights.
+Four context conditions separate added noise and missingness; 25- and 50-step
+forecasts test a trajectory family absent from training on one drone platform.
+Online acquisition, closed-loop control, and transfer between platforms require
+further evaluation.
 
-## Final verification
+## Original verification (2026-08-06)
 
-The final suite passes 91/91 tests and Python byte-compilation. The 18-page
+The original suite passed 91/91 tests and Python byte-compilation. The 18-page
 working PDF and 27-page Springer PDF complete the full bibliography build
 chain with clean final logs. All 45 rendered pages passed programmatic and
 visual blank-page, clipping, overlap, and boundary checks. The rendered
-Springer abstract is 236 words. Detailed evidence and the remaining
+Springer abstract was 236 words. Detailed evidence and the remaining
 author-controlled submission fields are recorded in
 `docs/20_completion_audit.md` and `docs/13_pre_submission_checklist.md`.

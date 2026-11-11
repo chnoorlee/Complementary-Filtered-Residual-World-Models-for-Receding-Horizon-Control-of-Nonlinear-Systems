@@ -1,0 +1,24 @@
+\begin{abstract}
+Receding-horizon control with a learned dynamics model is sensitive to both
+forecast-origin state error and accumulated transition error. This paper
+presents a Complementary-Filtered Residual World Model (CFR-WM) that applies a
+mask-gated, gain-0.5 context update before free rollout with nominal dynamics
+and a bounded neural residual. Across five nonlinear controlled systems, three
+test regimes, and eight paired seeds, CFR-WM reduces 25-step normalized root
+mean squared error by \PrimaryImprovement\% relative to a physics-guided neural
+baseline (95\% interval [\PrimaryRelativeCILow\%,
+\PrimaryRelativeCIHigh\%], $p=\PrimaryPValue$ against a 5\% margin). The
+corrupt-regime improvement is \CorruptImprovement\%, whereas clean-regime
+noninferiority is not established. In \ClosedLoopEpisodes{} paired simulated
+receding-horizon control episodes, CFR-WM reduces realized normalized state
+loss by \ClosedLoopImprovement\% (95\% interval [\ClosedLoopCILow\%,
+\ClosedLoopCIHigh\%], $p=\ClosedLoopPValue$) relative to the same baseline.
+However, filtering followed by nominal dynamics slightly outperforms the
+complete model in both open- and closed-loop evaluations. On held-out measured
+NanoDrone flights, CFR-WM lowers 50-step position error relative to the matched
+unfiltered residual model in all four context conditions, but increases
+full-state error in all eight condition--horizon comparisons; its predictive
+intervals also under-cover. The results identify forecast-origin filtering as
+the supported source of robustness under corrupted observations and delimit
+the evidence for the learned residual and uncertainty output.
+\end{abstract}

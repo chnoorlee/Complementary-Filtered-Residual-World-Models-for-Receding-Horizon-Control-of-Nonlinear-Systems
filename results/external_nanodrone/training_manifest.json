@@ -1,0 +1,220 @@
+{
+  "complete": true,
+  "sources": {
+    "code/external_validity/__init__.py": "d05b9af4b48743aaf0723097b30601d2717ced0c351510aead549d0cbeb2e518",
+    "code/external_validity/data.py": "24c66c1b50b94627c74198f6e0048a7ce20c807ccc509e19aae5f4d877ebdc84",
+    "code/external_validity/physics.py": "136bef13c503bde0f10351df8b0efd39dad55503ed7f9c4e982d268c1d67d7f1",
+    "code/external_validity/run.py": "ee04420eeffe9d1aa93f2c662354ad0b28dac16fdf42243c210bad1b00c2501e",
+    "code/rgpwm/training.py": "7cd1114facf9a29b291bdae8714b60d67b8166111a68cf75be95d97e7ae0ba3c",
+    "code/rgpwm/data.py": "cf6630afd6e7d5b8d94962bf21b8bad8fd5836f272bda76fc83e2d342b0181fe",
+    "code/rgpwm/metrics.py": "ade3fa036b7d6b93751eb2c5d1d4f2d8c15947b874382b4a58923cb28f3a5672",
+    "plans/26_external_validity_revision.md": "cffd7070d64b9e9fa485a0ff3b715d50053cdaede17e795f0e12e3b2c0b2fc2d",
+    "data/external/nanodrone/download_manifest.json": "fe3bfbe134c91274afe6a0add7e24b7966ee87b45eb7ba437becc65f6603086f",
+    "data/external/nanodrone/source_metadata/README.md": "acff1c6eff5ed6d32b53339192edc00de9d67a970393acbb9c5f0347aa17930b",
+    "data/external/nanodrone/source_metadata/repository_tree.json": "276c773eba0fb1c4aeeb92a8e92fa28ff104e1a8fecccf6a6ed939131549239f",
+    "data/external/nanodrone/test/melon_20251017_run1.csv": "41137fbe34e8f3ecec17e9c00c99145898677906c1ee662ecf8491afeb4c678e",
+    "data/external/nanodrone/test/melon_20251017_run2.csv": "851771f39ad891428b097242a5c88eed48ae82e24dcb303b5b03b38acdb18dd1",
+    "data/external/nanodrone/test/melon_20251017_run3.csv": "f7bc4e38086d8674d0f7ed8f08bb532ce90b1e7ef97fbb00fb51629e1d1c47ed",
+    "data/external/nanodrone/train/chirp_20251017_run1.csv": "00e19738869e223c295232c44771c195f8c2f8c499e5497e27e520c7fc60ca23",
+    "data/external/nanodrone/train/chirp_20251017_run2.csv": "6e5587da5055fc620677aeeb8e016a8e1d8d219464d7b2b82f2667174038c979",
+    "data/external/nanodrone/train/chirp_20251017_run3.csv": "f151f009f23da67551e18b422bc7f2471d9df9dcf0a4e5279b469254bce86f91",
+    "data/external/nanodrone/train/chirp_20251017_run4.csv": "f07baf341a2ee55c84de7867fd7bebccacace2fa4daa8672a7f881631122b30e",
+    "data/external/nanodrone/train/random_20251017_run1.csv": "44b457f31ac71d6f18f8a680f69b909ac3cadbb270051430f2dd722acff4d890",
+    "data/external/nanodrone/train/random_20251017_run2.csv": "64f382ee8c06f71397d6abc42b50b270dc4ba47df5f13ebc3515e43bbfaa0c75",
+    "data/external/nanodrone/train/random_20251017_run3.csv": "716058325a802ea64c772961fd20f21bcf5c1dac6b6dc3d1591dcdf4e69c4ed6",
+    "data/external/nanodrone/train/random_20251017_run4.csv": "15445bf88620a5e875a68e62583a4d77dc514de836d644be5a7e8107686e7d13",
+    "data/external/nanodrone/train/square_20251017_run1.csv": "9b458d207d0a5e21933ba7ad16945bf505ab2b3abf6d151a1442cdd705d6c0cc",
+    "data/external/nanodrone/train/square_20251017_run2.csv": "3b47b3712915aff4fd301fd0a2f989bbdce0a5ca1af852c923f472ec7d05d084",
+    "data/external/nanodrone/train/square_20251017_run3.csv": "199f1de08d8da4830d79c4fff4e62f313af5ff54af9cac53c9d8341d4a73a2d8",
+    "data/external/nanodrone/train/square_20251017_run4.csv": "76b6a2e2400612681e65f041ca31e5c6ba6bea063a944d5d4a75481edd82a671"
+  },
+  "selection": {
+    "cfr": 0.003,
+    "unfiltered": 0.001,
+    "recurrent": 0.003
+  },
+  "norm": {
+    "state_mean": [
+      0.07293798551482228,
+      0.031065766992577244,
+      1.391587885398076,
+      0.0007590914084092673,
+      -0.016338083068460445,
+      0.00487877108847301,
+      0.008654964498265512,
+      -0.006910554109361024,
+      -0.008499349834148358,
+      -0.009632755992919283,
+      -0.002515570090536262,
+      -0.0004272429910983926
+    ],
+    "state_std": [
+      0.4790221658090398,
+      0.4461319345887267,
+      0.38490992410636904,
+      0.7919211650343332,
+      0.6805048978619662,
+      0.47787471016855737,
+      0.18360262621170348,
+      0.20144526389722345,
+      0.03138759282077761,
+      0.8420033339043413,
+      0.8356585560493489,
+      0.19063718515804723
+    ],
+    "action_mean": [
+      1733.2095990131033,
+      1747.304328859422,
+      1748.758383390827,
+      1746.458439825804
+    ],
+    "action_std": [
+      144.18554091386298,
+      151.09695696586425,
+      144.52843873080192,
+      145.50620068258786
+    ]
+  },
+  "prior": {
+    "fitted": true,
+    "method": "nonnegative scalar least squares, no intercept",
+    "training_record_ids": [
+      "square_20251017_run1",
+      "square_20251017_run2",
+      "square_20251017_run3",
+      "random_20251017_run1",
+      "random_20251017_run2",
+      "random_20251017_run3",
+      "chirp_20251017_run1",
+      "chirp_20251017_run2",
+      "chirp_20251017_run3"
+    ],
+    "training_transitions": 41691,
+    "thrust_coefficient": 8.318876552608469e-07,
+    "unconstrained_coefficient": 8.318876552608469e-07,
+    "coefficient_units": "(m/s^2)/(rad/s)^2",
+    "motor_input_units": "rad/s",
+    "gravity_m_s2": 9.81,
+    "dt_s": 0.01,
+    "equation": "dv/dt + g*e3 = coefficient * R(rotvec)*e3 * sum(motor_speed**2)",
+    "rotation": "constant body angular velocity; quaternion exponential update"
+  },
+  "records": {
+    "train": [
+      {
+        "id": "square_20251017_run1",
+        "samples": 1900
+      },
+      {
+        "id": "square_20251017_run2",
+        "samples": 1900
+      },
+      {
+        "id": "square_20251017_run3",
+        "samples": 1900
+      },
+      {
+        "id": "random_20251017_run1",
+        "samples": 6000
+      },
+      {
+        "id": "random_20251017_run2",
+        "samples": 6000
+      },
+      {
+        "id": "random_20251017_run3",
+        "samples": 6000
+      },
+      {
+        "id": "chirp_20251017_run1",
+        "samples": 6000
+      },
+      {
+        "id": "chirp_20251017_run2",
+        "samples": 6000
+      },
+      {
+        "id": "chirp_20251017_run3",
+        "samples": 6000
+      }
+    ],
+    "val": [
+      {
+        "id": "square_20251017_run4",
+        "samples": 1900
+      },
+      {
+        "id": "random_20251017_run4",
+        "samples": 5999
+      },
+      {
+        "id": "chirp_20251017_run4",
+        "samples": 6000
+      }
+    ],
+    "test": [
+      {
+        "id": "melon_20251017_run1",
+        "samples": 6499
+      },
+      {
+        "id": "melon_20251017_run2",
+        "samples": 6499
+      },
+      {
+        "id": "melon_20251017_run3",
+        "samples": 6499
+      }
+    ]
+  },
+  "training_windows": 8286,
+  "validation_windows": 2762,
+  "torch": "2.11.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "training_outputs": {
+    "results/external_nanodrone/final/cfr_131.json": "98f4fceb3858a03c81d2a194d1f63329a364cb18253c011321fc5d4738c4dc91",
+    "results/external_nanodrone/final/cfr_131.pt": "0e0ff80a37625d0f98546f1c71c20a8c9215a41d50b53c829bb3274b22711032",
+    "results/external_nanodrone/final/cfr_149.json": "5f5071703a919ae679db7f20f9c4532c67a43c0d8ba95fc6341b110137ff6444",
+    "results/external_nanodrone/final/cfr_149.pt": "77670b6b5b389181520a155c5f79551502ae6e0adbcd95f930f1d5d33155798a",
+    "results/external_nanodrone/final/cfr_167.json": "4c364ce766aeee8c97aaf0f9474b42e3f545085debdb4ecbb70bcc7677205d64",
+    "results/external_nanodrone/final/cfr_167.pt": "12b701178809009108b4a4559e39f821c05a5eba077e85e35be6bc14dbfc4aa9",
+    "results/external_nanodrone/final/cfr_181.json": "eb7b172fb4290a80262f42c32fa49dc3564afa98a7955613a3423ef89165bf60",
+    "results/external_nanodrone/final/cfr_181.pt": "52503f29237fb8fa2c08664bd2ee60ba55f97deeec220b341436edd2373d1258",
+    "results/external_nanodrone/final/cfr_199.json": "dba08a920aa390f1f3fb9ec94ed339deec24a54ac9031a999052136f7dd17118",
+    "results/external_nanodrone/final/cfr_199.pt": "11439ffeab8baac42f4092c429d3703f4876249c290db8fcba6709bec1eb3d5e",
+    "results/external_nanodrone/final/recurrent_131.json": "cd37f7e510ee53ceb8e16e5ea0e2b772c2f4efb22251015bbc86f9753d445627",
+    "results/external_nanodrone/final/recurrent_131.pt": "f74489e27d25644130d3f44421feca9588f442ebbdade7b4fdd164328138ea40",
+    "results/external_nanodrone/final/recurrent_149.json": "0df0c21173996e5069c15f94df28ca9f06ee9f2240e2ce6e7bc1260a009a0985",
+    "results/external_nanodrone/final/recurrent_149.pt": "524be81c85f5d53dbfd9beb35ac0ae45771578cb06066603692f27f88d473424",
+    "results/external_nanodrone/final/recurrent_167.json": "9de635d2bcdcac6f7b8e4fa9db3e27409aa52af5575bf962dbb31ac6c083de76",
+    "results/external_nanodrone/final/recurrent_167.pt": "b3a3507f17f47161ca33bb4215831a3111dfabc1b6c1023f5832f171e9839e92",
+    "results/external_nanodrone/final/recurrent_181.json": "2ddf8eda1e2d3b0f2ce01ebd0918af90278ccf51c94d866ece162e9d164860d4",
+    "results/external_nanodrone/final/recurrent_181.pt": "453e909a8395341f31e9420a46461d255f27ee43c9b2daafc5ef89cd2bc5ef81",
+    "results/external_nanodrone/final/recurrent_199.json": "e6e4829606646e9a4e78b833e82dee6c0442ffd81a36fa4e264224e4bda3b9e9",
+    "results/external_nanodrone/final/recurrent_199.pt": "ef4c42d1c982ba9fd717a3546837d2a9566e22e8b224d946063e01f7604adc2f",
+    "results/external_nanodrone/final/unfiltered_131.json": "66e19c3e85c6d1c636c85b7706414ac15a8d378d84a7261077a6931193fa5f7b",
+    "results/external_nanodrone/final/unfiltered_131.pt": "f2c6977c0d7b65b343fb1ef33fa06d26040c2420a0f98ccf816d8b99a6de5a1b",
+    "results/external_nanodrone/final/unfiltered_149.json": "1a418d306a047d7707c5ee8f0ef6066974be3debea28183f3d92c80c293f7279",
+    "results/external_nanodrone/final/unfiltered_149.pt": "2fda344b459444300d0559225bc2425b54c3e23623d9f2c4dc95df880e1c6e96",
+    "results/external_nanodrone/final/unfiltered_167.json": "85dbe1084808eaf27797dc2a30bd6a0f1db6dfee4e0c2f8dd58e4b8438995e9c",
+    "results/external_nanodrone/final/unfiltered_167.pt": "0238e3da360789320817b9c6af638609355a7bd259a0168363d6927b92b18d90",
+    "results/external_nanodrone/final/unfiltered_181.json": "26a70ee30e23c77a379f2d0ad38d0b1a4275406d40d8e4a8a1bdbe18195b5358",
+    "results/external_nanodrone/final/unfiltered_181.pt": "8cf6aba502c77b7aa78adcecaf233137cba8f7866bfa2739c1195426c43d8679",
+    "results/external_nanodrone/final/unfiltered_199.json": "95551f1580aaa840bfa2eb124fa2108292f41815f9a657a62429af3ac5dc2955",
+    "results/external_nanodrone/final/unfiltered_199.pt": "2779e27b7e3f556362596ae1c9fa982b58e3121281468d2b2424c010466d4bc4",
+    "results/external_nanodrone/pilot/cfr_17.json": "8382b24440bdbe641d95ba8effcf7658a0566779dfc57a0a06b156623da4ce76",
+    "results/external_nanodrone/pilot/cfr_17.pt": "9117ebb0d6cd4685892b7677eea14eeb291be12372ab5c98b3c74bbf0c2ac0ea",
+    "results/external_nanodrone/tuning/cfr_17_lr1000.json": "99227c4ac3bd2b9dd20d8e894875e82faf934d9bf9f72ca4ab568422803bb680",
+    "results/external_nanodrone/tuning/cfr_17_lr1000.pt": "444e7937509ff99a89fcb06a56c7b3abfca4e068310fa5f56ca178deee3ab5e8",
+    "results/external_nanodrone/tuning/cfr_17_lr3000.json": "a83d1f0458ced64ad31dc89189628ae34ed0fff28169fa8e611665bacd6f31c4",
+    "results/external_nanodrone/tuning/cfr_17_lr3000.pt": "535ecc594a27c311a6c1a0b4c7839c62c6bf76c77988587aaebe0063e164a7a2",
+    "results/external_nanodrone/tuning/recurrent_17_lr1000.json": "2d96dc48e11db4465a0e75a8b0b691f3fd4626621acbdac6ec0844bcea874a4a",
+    "results/external_nanodrone/tuning/recurrent_17_lr1000.pt": "953333e65578c9532a42a92dd8037eb8bcb2bc8e1fe9fdb0b7a2be69e5fb7bc3",
+    "results/external_nanodrone/tuning/recurrent_17_lr3000.json": "c9345d82fdd6418d67f3e99e287bddce82dff25511194640b4690cdf9dac6c1e",
+    "results/external_nanodrone/tuning/recurrent_17_lr3000.pt": "741faff7839e29b17bc7b58a2182a684bb09b486d313812251c546b8c8555bfa",
+    "results/external_nanodrone/tuning/unfiltered_17_lr1000.json": "83be0f89859f9aaf44c83860097d288b40d20a12c14787dbd6d56dc8002d3fd2",
+    "results/external_nanodrone/tuning/unfiltered_17_lr1000.pt": "b8cbc46c70ee724ffb5d4b5cbe86af9a0fde9c93c2db3c3385708c9121c1fe9f",
+    "results/external_nanodrone/tuning/unfiltered_17_lr3000.json": "0b8ca03c29b448344f4dbb83d7ca3a7bbedd6f35bac12e7e3d1fd0979c3cff7e",
+    "results/external_nanodrone/tuning/unfiltered_17_lr3000.pt": "f8e53875d6a20a7f8553474f8661ef7afbd66a5145f6f15ae4a30cd7d3684fde"
+  }
+}

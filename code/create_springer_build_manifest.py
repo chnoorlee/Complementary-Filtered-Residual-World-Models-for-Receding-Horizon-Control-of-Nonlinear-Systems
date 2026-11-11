@@ -15,13 +15,11 @@ import build_springer_submission as springer_submission
 ROOT = Path(__file__).resolve().parents[1]
 MAIN_DIR = ROOT / "paper" / "mypaper"
 MANIFEST = ROOT / "paper" / "springer_build_manifest.json"
-EXPECTED_TITLE = (
-    "A Confirmatory Study of Complementary-Filtered Residual World Models "
-    "under Synthetic Context Corruption"
-)
+EXPECTED_TITLE = springer_submission.TITLE
 INPUTS = (
     MAIN_DIR / "main_springer.tex",
     ROOT / "paper" / "references.bib",
+    ROOT / "paper" / "external_references.bib",
     ROOT / "paper" / "submission_source_manifest.json",
     ROOT / "paper" / "springer-official" / "sn-article-template" / "sn-jnl.cls",
     ROOT / "paper" / "springer-official" / "sn-article-template" / "bst" / "sn-mathphys-num.bst",

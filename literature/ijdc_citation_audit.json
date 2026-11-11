@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-06",
+  "records": [
+    {
+      "key": "kalman1960_filtering",
+      "doi": "10.1115/1.3662552",
+      "source": "https://doi.org/10.1115/1.3662552",
+      "verified_fields": ["author", "title", "journal", "volume", "issue", "pages", "year", "doi"]
+    },
+    {
+      "key": "mahony2008_complementary",
+      "doi": "10.1109/TAC.2008.923738",
+      "source": "https://doi.org/10.1109/TAC.2008.923738",
+      "verified_fields": ["author", "title", "journal", "volume", "issue", "pages", "year", "doi"]
+    },
+    {
+      "key": "zhao2023_wheel_rail_observer",
+      "doi": "10.1007/s40435-022-01085-2",
+      "source": "https://link.springer.com/article/10.1007/s40435-022-01085-2",
+      "verified_fields": ["author", "title", "journal", "volume", "pages", "year", "doi"]
+    },
+    {
+      "key": "hewing2020_learning_mpc",
+      "doi": "10.1146/annurev-control-090419-075625",
+      "source": "https://doi.org/10.1146/annurev-control-090419-075625",
+      "verified_fields": ["author", "title", "journal", "volume", "pages", "year", "doi"]
+    },
+    {
+      "key": "chen2022_autodifferentiable_enkf",
+      "doi": "10.1137/21M1434477",
+      "source": "https://doi.org/10.1137/21M1434477",
+      "verified_fields": ["author", "title", "journal", "volume", "issue", "pages", "year", "doi"]
+    },
+    {
+      "key": "kaiser2018_sindy_mpc",
+      "doi": "10.1098/rspa.2018.0335",
+      "source": "https://doi.org/10.1098/rspa.2018.0335",
+      "verified_fields": ["author", "title", "journal", "volume", "issue", "article_number", "year", "doi"]
+    },
+    {
+      "key": "tang2026_ham_world_soft_hamiltonian_world",
+      "arxiv": "2605.05951",
+      "source": "https://arxiv.org/abs/2605.05951",
+      "checked_on": "2026-11-04",
+      "verified_fields": ["author", "title", "year", "arxiv"],
+      "note": "Author order corrected to match the current arXiv record."
+    },
+    {
+      "key": "wang2026_scale_buys_interpolation_structure_buys",
+      "arxiv": "2606.13092",
+      "source": "https://arxiv.org/abs/2606.13092",
+      "checked_on": "2026-11-04",
+      "verified_fields": ["author", "title", "year", "arxiv"]
+    },
+    {
+      "key": "mingwei2025_prismatic_world_model_learning_compositional",
+      "arxiv": "2512.08411",
+      "source": "https://arxiv.org/abs/2512.08411",
+      "checked_on": "2026-11-04",
+      "verified_fields": ["author", "title", "year", "arxiv"]
+    }
+  ]
+}

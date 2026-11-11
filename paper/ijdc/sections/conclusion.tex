@@ -1,0 +1,23 @@
+\section{Conclusion}
+
+CFR-WM combines a gain-0.5 context filter with nominal-physics and learned-
+residual rollout. Against the prespecified PGNN-style comparator, it improves
+cell-balanced NRMSE-25 by \PrimaryImprovement\% (95\% CI
+[\PrimaryRelativeCILow\%, \PrimaryRelativeCIHigh\%]), so H1 is supported. H2
+is not supported because clean-condition noninferiority fails.
+
+The classical baseline identifies the source of the benchmark result.
+The gain-0.5 filter followed by nominal rollout records 0.111 NRMSE-25, below
+CFR-WM's 0.119, and residual scale zero is best in every reported regime.
+The benchmark gain therefore arises from forecast-origin filtering; the tested
+residual adds no point-accuracy benefit.
+A short synchronous all-channel outage increases CFR-WM error by 2.7\%, versus
+51.9\% for PGNN-style.
+
+On held-out flights, CFR-WM lowers 50-step position error in all four context
+conditions but raises full-state NRMSE in all eight condition--horizon
+comparisons and yields undercovered 50-step intervals. Together, these findings
+motivate channel-specific gains derived from prediction--measurement error
+statistics, state weights tied to the control objective, and covariance models
+that represent cross-state uncertainty.
+

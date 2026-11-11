@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "closed_loop_manifest_sha256": "89b0abf9a5d39a463d33bb0fad21af38950e90ad24d5c7c7bc8469f12d107705",
+  "inputs": {
+    "episode_results.csv": "a0eb15582089e89dc34d5e0314f6298b827e9187e259150f2bd0db8a3e156c61",
+    "overall_summary.csv": "6452ec2792934662501ef6d75d9a33b09620b122eb7740e13727ac474d6cb1ef",
+    "condition_summary.csv": "a7abfcdfca04da7678a98885e7eddf3fc8fbf5d03fbb9982438fb7820199742b"
+  },
+  "outputs": {
+    "paper/tase/closed_loop_macros.tex": "2a16da25a8bc847b768b86266c51e1ed2f8be2b9065b01cbdedd4b2fee9f888d",
+    "paper/tase/table_closed_loop.tex": "d42df48d049b1ec1941a98fd1ab7e34fdac1f9cd6ec48cb474617bd925166109",
+    "paper/tase/closed_loop_system_condition.csv": "9675079ea7768d2ad8269b3a8896a18c7381582deba6d50e3e287af4dbcbf405",
+    "paper/tase/figures/FigClosedLoop.pdf": "c77e586ce45f56dda33a71d2dd3a8185444b092abb0c45db98eca2e2874bb5f0",
+    "paper/tase/figures/FigClosedLoop.png": "cde0ae87ebad114c0e4268e8a9cb99b6384459dbe15635c9dd7069158f39dff9"
+  }
+}

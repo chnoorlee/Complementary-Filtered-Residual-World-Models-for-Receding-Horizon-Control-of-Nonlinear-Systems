@@ -1,0 +1,59 @@
+\section{Introduction}
+
+Model predictive control (MPC) repeatedly queries a dynamics model while
+optimizing an action sequence. Its performance therefore depends on two
+coupled quantities: the state at the forecast origin and the transition used
+to propagate that state under candidate controls \cite{hewing2020_learning_mpc}.
+For a learned transition, improving one quantity does not guarantee improving
+the other. A model may forecast accurately from clean states yet initialize
+poorly from incomplete measurements, or it may correct the current state while
+accumulating transition error during rollout.
+
+World models provide trainable predictors for planning and continuous control
+\cite{hansen2023_td_mpc2_scalable_robust_world,hafner2025_mastering_diverse_control_tasks_through}.
+Physics-guided models add a nominal transition or physical constraint, which
+can reduce data demand and expose departures from the assumed mechanism
+\cite{karniadakis2021_physics_informed_machine_learning,yu2024_learning_dynamical_systems_from_data}.
+Neither construction by itself resolves how recent noisy or missing
+observations should be reconciled with nominal dynamics before planning.
+
+This paper studies that interface through the Complementary-Filtered Residual
+World Model (\method). During an eight-step observed context, nominal dynamics
+predict the next state and a mask-gated complementary update combines the
+prediction with available measurements. The final corrected state initializes
+a probabilistic nominal-physics-plus-neural-residual transition. Future states
+are then rolled out freely under a candidate control sequence. The design
+separates forecast-origin correction from transition learning and can be
+queried directly by an optimizer.
+
+The evaluation connects predictive accuracy to realized regulation. The
+open-loop study contains five nonlinear controlled systems, three data regimes,
+eight independently generated data/training seeds, 11 model variants, and
+\ConfirmatoryRuns{} trained models. A frozen additional study places four
+prediction interfaces inside the same cross-entropy MPC controller and
+evaluates \ClosedLoopEpisodes{} paired control episodes. An external experiment
+uses measured NanoDrone states \cite{busetto2026_nanodrone} with a deliberately
+reduced quadrotor prior to test transfer beyond the synthetic equations.
+
+The contributions are:
+\begin{enumerate}
+  \item a causal estimator--predictor architecture that combines a mask-gated
+  complementary context update, nominal dynamics, and a bounded neural
+  residual for free multistep rollout;
+  \item an error decomposition and constrained mean-square-optimal scalar gain
+  that identify when a fixed complementary update should help;
+  \item a seed-paired evaluation that links open-loop forecast error to
+  receding-horizon regulation without retraining or controller-specific model
+  selection; and
+  \item component, outage, calibration, and measured-flight analyses that show
+  where the context filter helps and where the residual and predictive
+  intervals do not.
+\end{enumerate}
+
+The results do not reduce to a single accuracy claim. The aggregate open-loop
+contrast favors \method, whereas the clean-regime gate fails; the fixed
+gain-0.5 filter followed by nominal rollout outperforms the learned residual on
+aggregate point error; and the measured-flight study separates position error
+from full-state error and interval coverage. These distinctions determine how
+the model should be used in an automation pipeline.
+

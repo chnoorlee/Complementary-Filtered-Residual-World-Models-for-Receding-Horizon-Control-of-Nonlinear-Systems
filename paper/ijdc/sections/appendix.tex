@@ -1,0 +1,221 @@
+\appendix
+% Keep Hyperref destinations unique when the Springer class resets appendix counters.
+\renewcommand{\theHtable}{appendix.\arabic{table}}
+\renewcommand{\theHfigure}{appendix.\arabic{figure}}
+\renewcommand{\theHequation}{appendix.\arabic{equation}}
+\section{Benchmark specification}
+
+Table~\ref{tab:systems} records the simulator time step and nominal
+parameterization; Table~\ref{tab:parameter-ranges} gives every sampled training
+and OOD interval. All OOD intervals are non-overlapping on every named shifted
+parameter. These ranges define the fixed benchmark.
+
+\begin{table*}[ht]
+\centering
+\caption{Controlled-system definitions. $u$ is scalar in every system.}
+\label{tab:systems}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llll}
+\toprule
+System & State & $\Delta t$ & Nominal parameters \\
+\midrule
+Damped oscillator & $(q,\dot q)$ & 0.050 & $m=1.0,\; k=1.6,\; c=0.18$ \\
+Forced Duffing & $(q,\dot q)$ & 0.040 & $\alpha=-1.0,\;\beta=1.0,\;c=0.25$ \\
+Controlled Van der Pol & $(q,\dot q)$ & 0.035 & $\mu=1.2,\;g_u=1.0$ \\
+Torque pendulum & $(\sin\theta,\cos\theta,\dot\theta)$ & 0.040 & $g=9.81,\;l=1.0,\;m=1.0,\;c=0.12$ \\
+Cart--pole & $(x,\dot x,\theta,\dot\theta)$ & 0.025 & $g=9.81,\;m_c=1.0,\;m_p=0.1,\;l/2=0.5,\;c=0.04$ \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\begin{table*}[ht]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Complete independently sampled physical-parameter intervals. Symbols
+follow Table~\ref{tab:systems}; $g_u$ is the Van der Pol control gain.}
+\label{tab:parameter-ranges}
+\begin{tabular}{@{}lll@{}}
+\toprule
+System & Training interval & OOD interval \\
+\midrule
+Damped oscillator &
+  \shortstack[l]{$m\in[0.90,1.10],\ k\in[1.40,1.80],$\\$c\in[0.14,0.22]$} &
+  \shortstack[l]{$m\in[1.25,1.45],\ k\in[2.05,2.35],$\\$c\in[0.26,0.34]$} \\
+Forced Duffing &
+  \shortstack[l]{$\alpha\in[-1.10,-0.90],\ \beta\in[0.90,1.10],$\\$c\in[0.20,0.30]$} &
+  \shortstack[l]{$\alpha\in[-0.75,-0.60],\ \beta\in[1.25,1.45],$\\$c\in[0.34,0.44]$} \\
+Controlled Van der Pol &
+  \shortstack[l]{$\mu\in[1.00,1.40],$\\$g_u\in[0.90,1.10]$} &
+  \shortstack[l]{$\mu\in[1.65,1.95],$\\$g_u\in[1.25,1.45]$} \\
+Torque pendulum &
+  \shortstack[l]{$g\in[9.65,9.95],\ l\in[0.90,1.10],$\\$m\in[0.90,1.10],\ c\in[0.08,0.16]$} &
+  \shortstack[l]{$g\in[10.25,10.55],\ l\in[1.25,1.45],$\\$m\in[1.25,1.45],\ c\in[0.20,0.28]$} \\
+Cart--pole &
+  \shortstack[l]{$g\in[9.65,9.95],\ m_c\in[0.90,1.10],$\\$m_p\in[0.085,0.115],\ l/2\in[0.45,0.55],$\\$c\in[0.02,0.06]$} &
+  \shortstack[l]{$g\in[10.25,10.55],\ m_c\in[1.25,1.45],$\\$m_p\in[0.135,0.160],\ l/2\in[0.65,0.78],$\\$c\in[0.075,0.105]$} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The action generator is a bounded first-order filtered process. At step $t$, a Gaussian innovation with scale $0.55$ times the system action limit is combined with the previous action using coefficients 0.18 and 0.82, then clipped. Limits are 1.5, 1.8, 1.2, 2.2, and 8.0 for the systems in Table~\ref{tab:systems}. This produces persistent excitation independently of the simulated state and defines the control-input distribution.
+
+Train/validation/test separation occurs before window construction. A root NumPy \texttt{SeedSequence} spawns distinct split generators, which in turn spawn one generator per trajectory. The OOD test has a separate root seed. Observation corruption uses another recorded seed after state generation. Consequently, changing an observation-noise level does not change the underlying clean ID trajectory, and all methods see exactly the same corruption draw within a condition.
+
+\section{Confirmatory grid}
+
+The prespecified grid comprises 11 methods, eight seeds (41, 53, 67, 79, 83, 97, 109, and 113), five systems, and three test regimes. It therefore contains 440 fitted models, 1,320 aggregate evaluation cells, and 126,720 trajectory-level rows. Each seed--system dataset contains 256 training, 64 validation, and 96 test trajectories of 72 time steps. Models receive eight context steps and predict 25 steps open loop. Training observations use noise equal to 3\% of the fixed training-state scale and a nominal 10\% independent missing probability; the corrupt regimes use 8\% observation noise and a nominal 25\% probability. The first time point of each generated trajectory is forced observed in every channel, with independent masks sampled at all subsequent trajectory times; a later sliding-window context can begin with an imputed value. ID-clean and ID-corrupt evaluations share trajectory identifiers; the OOD trajectory set is disjoint.
+
+The five broad comparators are compact, protocol-matched RSSM-style,
+SimNorm-style, Transformer-style, PGNN-style, and PG-DMM-style transitions. Five
+prespecified CFR sensitivities test gains $0$, $0.25$, $0.75$, and $1$, plus a
+one-step-trained gain-0.5 model. CFR-WM retains the unused learned-gain-head
+parameters to maintain identical parameter counts across fixed-gain comparisons.
+
+All methods ingest normalized context values, masks, log-one-plus elapsed times,
+and actions. Except for the Transformer-style encoder, context is encoded by a
+GRU; open-loop recurrent updates use a GRUCell. Every MLP has two hidden linear
+layers with SiLU activation. Table~\ref{tab:architectures} lists the remaining
+architecture-specific choices.
+
+\begin{table*}[ht]
+\centering
+\scriptsize
+\caption{Exact compact transition architectures used in the confirmatory grid.
+The bounded correction is $0.25\tanh(\cdot)$ and all forecast covariances are
+diagonal.}
+\label{tab:architectures}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llll}
+\toprule
+Method & Width & Context representation & Forecast transition and variance \\
+\midrule
+RSSM-style & 80 & GRU; sigmoid feature scaling & data-only MLP mean/log-variance; GRUCell rollout \\
+SimNorm-style & 80 & GRU; eight-group simplex projection & data-only MLP mean/log-variance; GRUCell rollout \\
+Transformer-style & 48 & two causal layers, four heads, FF width 96, GELU, dropout 0 & data-only MLP mean/log-variance; GRUCell rollout \\
+PGNN-style & 84 & GRU & nominal one-substep RK4 plus deterministic residual MLP; learned constant log-variance \\
+PG-DMM-style & 84 & GRU & nominal one-substep RK4 plus residual mean/log-variance MLP \\
+CFR-WM and gain sensitivities & 72 & GRU states plus mask-gated fixed-gain context update & nominal one-substep RK4 plus residual mean/log-variance MLP \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+For CFR-WM, observed context channels use gain 0.5 and missing channels use
+gain 0 exactly. The learned gain head remains instantiated but is inactive.
+The four gain sensitivities change only the observed-channel gain; the
+one-step sensitivity changes only the likelihood horizon.
+
+\section{Hyperparameter search}
+
+The same six learning-rate/weight-decay trials were run on development seed 11
+for every system--baseline pair (Table~\ref{tab:tuning-grid}). The stored
+reliability-loss weight is shown because it is part of the generic training
+configuration, but it is inactive for all confirmatory methods in this paper.
+Each baseline uses the validation-NLL winner in
+Table~\ref{tab:tuning-winners}; CFR-WM and all CFR sensitivities inherit the
+PGNN-style winner for the same system.
+
+\begin{table}[ht]
+\centering
+\caption{Six-trial optimization grid.}
+\label{tab:tuning-grid}
+\begin{tabular}{rrrr}
+\toprule
+Trial & Learning rate & Weight decay & Stored $\lambda_{\mathrm{rel}}$ \\
+\midrule
+0 & $3\times10^{-4}$ & $10^{-6}$ & 0.1 \\
+1 & $6\times10^{-4}$ & $10^{-5}$ & 0.2 \\
+2 & $10^{-3}$ & $10^{-5}$ & 0.2 \\
+3 & $1.5\times10^{-3}$ & $10^{-4}$ & 0.3 \\
+4 & $2\times10^{-3}$ & $10^{-5}$ & 0.4 \\
+5 & $3\times10^{-3}$ & $10^{-4}$ & 0.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[ht]
+\centering
+\caption{Selected trial index by system and protocol-matched baseline.}
+\label{tab:tuning-winners}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+System & RSSM-style & SimNorm-style & Transformer-style & PGNN-style & PG-DMM-style \\
+\midrule
+Damped oscillator & 3 & 2 & 4 & 5 & 1 \\
+Forced Duffing & 5 & 4 & 5 & 5 & 5 \\
+Controlled Van der Pol & 5 & 5 & 5 & 5 & 0 \\
+Torque pendulum & 5 & 5 & 5 & 5 & 4 \\
+Cart--pole & 5 & 5 & 5 & 5 & 5 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\section{Confirmatory estimands and decisions}
+
+H1 is the sole confirmation gate. It asks whether CFR-WM improves fixed-training-scale NRMSE-25 over the preselected PGNN-style comparator by at least 5\%. Within each seed, PGNN-style and CFR-WM are averaged with equal weight over all 15 fixed system--regime cells; the primary point estimate is the arithmetic mean of the eight seed-specific relative improvements. H1 requires finite metrics, a 95\% bootstrap lower endpoint of at least 5\%, and a one-sided exact sign-flip $p<0.05$ for the 5\% margin.
+
+H2 is a hierarchically gated robustness claim. Conditional on H1, the combined corrupt and parameter-shifted regimes must satisfy the same 5\% improvement rule, while ID-clean performance must be noninferior under a signed relative margin of $-5\%$. Both components require their corresponding bootstrap lower endpoint to meet or exceed the margin and a one-sided exact sign-flip $p<0.05$. If H1 fails, H2 is not supported irrespective of its component estimates.
+
+The bootstrap uses 5,000 replicates. Each replicate resamples the eight seed clusters globally with replacement and then resamples paired trajectory identifiers within every retained seed--system block. A single sampled identifier vector is reused for ID-clean and ID-corrupt repeated measurements, whereas the disjoint OOD identifiers are sampled separately. All five systems and three regimes remain in every replicate, and baseline, candidate, and their relative ratio are recomputed within the replicate. Exact tests enumerate all $2^8$ seed-level sign flips and therefore rely on a seed-effect symmetry assumption. The five broad-comparator contrasts and the five sensitivity contrasts form separate Holm-adjusted families. The 15 system--regime contrasts are descriptive and carry no cell-level significance claim.
+
+\section{Secondary analysis protocol}
+
+The classical baseline applies the same normalized nominal step and state
+projection as CFR-WM. Its unfiltered version starts from the final causally
+imputed context state; its filtered version applies gain 0.5 to each observed
+channel throughout the eight-step context. Both then use nominal dynamics only
+for all 25 forecast steps. The residual-scale analysis loads every trained CFR-WM
+checkpoint and changes only the multiplier on $\tanh(\vect r)$ to 0, 0.125,
+0.25, or 0.5. The stored 0.25 aggregate is reproduced with maximum absolute
+difference \ResidualReconstructionDifference{}.
+
+The structured-outage audit starts from clean ID windows and makes all channels
+missing for context pair 3--4, 5--6, or 7--8. The previous observation is
+carried forward and elapsed time is set to one and two steps. Results average
+the three positions, five systems, and fixed cells within each of the eight
+seeds. The projection audit selects missing sine/cosine entries in the corrupt
+ID and corrupt OOD pendulum contexts and measures the absolute difference
+between the preprojection and projected normalized states.
+
+Stored latency is computed separately for every method, seed, system, and
+regime. One batch contains all 96 evaluation trajectories. Timing begins before
+the batch tensors move from CPU to GPU, synchronizes CUDA after the 25-step
+rollout, and excludes data-loader iteration and metric computation. The value
+is divided by 96 before seed-balanced aggregation. It is a batched throughput
+measure.
+
+External uncertainty is recomputed from the three held-out flight predictions
+for all five final seeds of CFR-WM, the unfiltered residual model, and the data-
+only recurrent model. Flight-level NLL, nominal 90\% marginal coverage, mean
+interval width, and central-interval calibration error are first given equal
+flight weight and then summarized across seeds. Recomputed prediction means
+match the stored means with maximum absolute difference
+\ExternalMeanReconstructionDifference{}.
+
+\section{Reproducibility checks}
+
+The reproducibility contract records the method list, seeds, data design,
+training configuration, decision rules, and SHA-256 hashes of the training,
+evaluation, analysis, and tuning artifacts. Analysis requires the complete grid,
+finite metrics, trajectory pairing, disjoint OOD identifiers, 40 distinct seed--
+system data hashes, and matching stored provenance. The top-level independent
+units are the eight stochastic training/data realizations, with trajectories
+nested within them. Statistical inference concerns the prespecified finite
+benchmark and variation across those seed realizations.
+
+\section{Complete descriptive cell contrasts}
+
+Table~\ref{tab:all-cell-contrasts} reports every prespecified CFR-WM--PGNN-style
+system--regime contrast. Absolute intervals come from the paired nested
+bootstrap. Relative changes use PGNN-style as the denominator, with negative values
+favoring CFR-WM. These fixed-cell estimates are descriptive.
+
+\begin{table*}[ht]
+\centering
+\small
+\caption{All 15 descriptive CFR-WM versus PGNN-style NRMSE-25 contrasts.}
+\label{tab:all-cell-contrasts}
+\resizebox{\textwidth}{!}{\input{../table_cell_contrasts}}
+\end{table*}

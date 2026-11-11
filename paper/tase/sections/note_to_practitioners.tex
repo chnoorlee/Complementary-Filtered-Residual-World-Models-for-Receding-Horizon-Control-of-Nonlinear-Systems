@@ -1,0 +1,16 @@
+This work addresses automation systems that optimize actions from short,
+imperfect state histories while retaining a usable nominal process model.
+The proposed interface first reconciles recent measurements with the nominal
+model, then supplies the corrected state to a predictive controller. It can be
+inserted between an existing state stream and a trajectory optimizer without
+training a policy. Across the tested nonlinear plants, this update is most
+useful when observations are noisy or missing; it does not improve every clean
+operating condition. A practical deployment should therefore validate the
+filter gain for each sensor regime and retain the nominal rollout as a required
+ablation. In our experiments, the neural residual did not improve mean point
+accuracy over filtering plus nominal dynamics, and the reported predictive
+intervals were too narrow on measured flights. The current uncertainty output
+should not be used directly for safety margins. Before deployment, operators
+should test longer sensor outages, plant-specific constraints, computation
+time on the target controller, and closed-loop behavior on the physical
+system.

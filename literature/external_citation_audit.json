@@ -1,0 +1,39 @@
+{
+  "status": "verified",
+  "verified_on": "2026-11-04",
+  "cite_key": "busetto2026_nanodrone",
+  "fields": {
+    "author": "Riccardo Busetto and Elia Cereda and Marco Forgione and Gabriele Maroni and Dario Piga and Daniele Palossi",
+    "doi": "10.1016/j.conengprac.2026.106871",
+    "journal": "Control Engineering Practice",
+    "pages": "106871",
+    "title": "Nonlinear system identification for a nano-drone benchmark",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0967066126001152",
+    "volume": "172",
+    "year": "2026"
+  },
+  "bibliography_sha256": "6a5eecb2c47b2dbfa47f2044fc1f960bb0ccae03b576b110f7a42f0576a4387a",
+  "local_evidence": {
+    "data/external/nanodrone/source_metadata/README.md": "acff1c6eff5ed6d32b53339192edc00de9d67a970393acbb9c5f0347aa17930b"
+  },
+  "evidence": [
+    {
+      "source": "author_repository",
+      "url": "https://github.com/idsia-robotics/nanodrone-sysid-benchmark/blob/2d921b57d166fe2debe08a5d39bd07297c5abc39/README.md",
+      "supports": "Exact author list, title, journal, volume, article number, year, DOI, and public data source. The Publications section supplies the authors' BibTeX entry."
+    },
+    {
+      "source": "crossref",
+      "url": "https://api.crossref.org/works/10.1016/j.conengprac.2026.106871",
+      "supports": "Independent bibliographic verification by the external_sources review agent: journal, volume 172, article 106871, year 2026 and authors."
+    },
+    {
+      "source": "author_preprint",
+      "url": "https://arxiv.org/html/2512.14450v1",
+      "section": "5.1 Data Preprocessing and Table 4",
+      "supports": "Offline synchronization, 100 Hz resampling, motor-acceleration alignment, and zero-phase fourth-order Butterworth filtering of released records.",
+      "version_note": "Processing details checked against the author preprint; publisher full text was not accessible during the review. Formal publication metadata verified separately."
+    }
+  ],
+  "license_note": "Article CC BY 4.0 does not establish a license for the repository's CSV data or software. No license file was found in the pinned repository tree."
+}

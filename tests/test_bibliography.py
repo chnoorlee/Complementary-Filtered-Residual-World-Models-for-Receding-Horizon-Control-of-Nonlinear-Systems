@@ -101,3 +101,14 @@ def test_bibliography_rejects_missing_audit_key(tmp_path, monkeypatch) -> None:
 
     with pytest.raises(RuntimeError, match="keys do not exactly match"):
         bibliography._load_verified_records()
+
+
+def test_arxiv_provider_label_and_url_are_normalized() -> None:
+    record = {
+        "work_type": "preprint",
+        "venue": "arXiv (Cornell University)",
+        "url": "http://arxiv.org/abs/2310.16828",
+    }
+
+    assert bibliography.publication_name(record) == "arXiv preprint"
+    assert bibliography.publication_url(record) == "https://arxiv.org/abs/2310.16828"

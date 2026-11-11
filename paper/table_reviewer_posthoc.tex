@@ -1,0 +1,15 @@
+\begin{tabular}{lrrrr}
+\toprule
+Analysis and variant & All & Clean & ID corrupt & OOD corrupt \\
+\midrule
+Nominal, final imputation & 0.137 & 0.040 & 0.151 & 0.221 \\
+Complementary filter + nominal & 0.111 & 0.042 & 0.092 & 0.201 \\
+PGNN-style & 0.132 & 0.052 & 0.134 & 0.211 \\
+CFR-WM & 0.119 & 0.055 & 0.097 & 0.204 \\
+\midrule
+CFR-WM, inference scale 0 & 0.111 & 0.042 & 0.092 & 0.201 \\
+CFR-WM, inference scale 0.125 & 0.113 & 0.046 & 0.093 & 0.202 \\
+CFR-WM, inference scale 0.25 & 0.119 & 0.055 & 0.097 & 0.204 \\
+CFR-WM, inference scale 0.5 & 0.135 & 0.079 & 0.113 & 0.213 \\
+\bottomrule
+\end{tabular}
