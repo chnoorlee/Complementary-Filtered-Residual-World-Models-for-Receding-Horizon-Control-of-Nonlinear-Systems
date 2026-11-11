@@ -179,3 +179,10 @@
   determines the prediction, motivating a structurally distinct v2 rather than
   post-hoc tuning. The corrected ablations support multi-step training but not
   the reliability gate or physics branch; H4 is unsupported.
+- Repository publication (2026-11-11): the full reproducibility package was
+  pushed to the public GitHub repository
+  https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems
+  (MIT license, `CITATION.cff`). The IJCAS data and code availability
+  statement now cites the repository, and the manuscript, title page, source
+  archive, and submission bundle were rebuilt. The Zenodo archival DOI remains
+  the only outstanding repository step.

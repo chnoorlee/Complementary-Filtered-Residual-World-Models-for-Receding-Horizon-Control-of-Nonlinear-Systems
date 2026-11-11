@@ -14,16 +14,16 @@
   "cover_letter_pages": 1,
   "upload_files": {
     "IJCAS_Manuscript.pdf": {
-      "sha256": "e4c4341fba6da414937f874431c7149bbf1d6a25e7a69e8f5edb980b66e3093d",
-      "bytes": 700733
+      "sha256": "46d9b8e4cb71699abd5da1f8458617dee827fb66ec230d0f331a983ce23991bc",
+      "bytes": 706089
     },
     "IJCAS_Source_Files.zip": {
-      "sha256": "63e3a3019add516a43523ab71a679dc04dd3f2021a390339eeb1bed50695afea",
-      "bytes": 861971
+      "sha256": "abf1c9e5cff0f3439ba63d32e3293858795bec2b3fcc829f65168eea646bbf8d",
+      "bytes": 867338
     },
     "IJCAS_Title_Page.pdf": {
-      "sha256": "b45b6674da85bbcb2e12883b9baf50beee56ae4aa233e0a4a012b27b78b51465",
-      "bytes": 113514
+      "sha256": "e21f915982f07af1c5136cd50897033ebae1128940a87f6cd01df24bbd717ba7",
+      "bytes": 143243
     },
     "IJCAS_Cover_Letter.pdf": {
       "sha256": "80f529e916b334d0480c86e16ca5da56bf0725417037561b81546116a017b785",
@@ -32,8 +32,8 @@
   },
   "support_files": {
     "IJCAS_Title_Page.tex": {
-      "sha256": "b5f0143ad6c8b9514f5bfcd8c61c12e8e56be4bb549cb6d7fe6835b0072a469c",
-      "bytes": 1594
+      "sha256": "e3d2bd65926ec1d2e00ff9bbb8be307562b30a6de5894ccd2e9f1b2abd557104",
+      "bytes": 2680
     },
     "IJCAS_Cover_Letter.tex": {
       "sha256": "a3f9a5b5ec2cc33a5bed00a2d87b1d131aec75cf49a69c19312ebaad042985d0",
@@ -48,5 +48,5 @@
       "bytes": 1735
     }
   },
-  "checksum_file_sha256": "0a264fe5defb3731dca1e2942b5505c2db3b8a19e19c57afa7004ae65816b3f0"
+  "checksum_file_sha256": "6cc1d69dfee0736b7f3899a3de2f08207d23c67f198de66717036ca140d29f34"
 }

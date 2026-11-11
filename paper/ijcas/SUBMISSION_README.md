@@ -48,9 +48,15 @@ categories when those categories are offered.
 
 ## Repository status
 
-The manuscript contains the required Data and Code Availability statement.
-The supporting materials do not yet have a public archival identifier. IJCAS
-strongly encourages repository deposition, but its general policy does not
-make a repository DOI a prerequisite for initial submission for this study's
-data types. Once an identifier is actually issued, update the statement and
-rebuild the manuscript; do not insert a provisional or invented DOI.
+The manuscript contains the required Data and Code Availability statement,
+which cites the public GitHub repository:
+
+https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems
+
+The repository holds the executable code, frozen configurations, seeds, split
+identifiers, saved predictions, metrics, analysis scripts, and permitted data
+provenance metadata. Third-party NanoDrone flight files are not redistributed.
+A persistent archival identifier (Zenodo DOI) is not yet issued; the statement
+describes the planned archival step. Once the DOI is issued, replace the
+Zenodo sentence with the DOI and rebuild the package; do not insert a
+provisional or invented DOI.

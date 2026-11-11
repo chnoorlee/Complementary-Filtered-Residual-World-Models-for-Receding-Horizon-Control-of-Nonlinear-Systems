@@ -26,11 +26,13 @@ upload this checklist as a manuscript file.
 
 ## Remaining action
 
-- Create or select the final data/code repository.
+- The final data/code repository is public at
+  https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems
+  (MIT license, `CITATION.cff`), and the availability statement cites it.
 - Archive the exact release in Zenodo and obtain the issued DOI. A GitHub URL
-  alone is not the archival identifier to insert in the manuscript.
-- Replace the current no-identifier sentence in the data and code availability
-  statement with the repository DOI, then rebuild the package.
+  alone is not the archival identifier to insert in the manuscript; once the
+  DOI is issued, replace the Zenodo sentence in the data and code availability
+  statement with the DOI, then rebuild the package.
 - If any additional author is later added, update the author list and replace
   the present contribution statement with roles confirmed for every author.
 

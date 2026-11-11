@@ -41,14 +41,16 @@ https://link.springer.com/journal/12555/submission-guidelines
 
 ## Remaining repository enhancement
 
-- Confirm the final repository location and add a persistent identifier only
-  after one has actually been issued. The recommended route is a public GitHub
-  repository linked to Zenodo, with the manuscript citing the archived release
-  DOI rather than only the mutable GitHub URL. Direct Zenodo upload is also
-  sufficient when a maintained GitHub repository is unnecessary.
-- A repository DOI is strongly encouraged but is not a general initial-
-  submission prerequisite for this study's data types. Rebuild and re-run the
-  package checks after inserting an identifier only after it has been issued.
+- The final repository location is confirmed: the public GitHub repository at
+  https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems,
+  which the data and code availability statement cites. It carries an MIT
+  license and `CITATION.cff`.
+- A persistent identifier is still to be issued. The recommended route remains
+  the public GitHub repository linked to Zenodo, with the manuscript citing
+  the archived release DOI rather than only the mutable GitHub URL. Direct
+  Zenodo upload is also sufficient. Once the DOI is issued, replace the
+  Zenodo sentence in the availability statement with the DOI and rebuild and
+  re-run the package checks; do not insert a provisional or invented DOI.
 
 The obsolete working title-page draft is retained for provenance. The current
 submission file is `title_page.tex`; the Springer manuscript source already

@@ -1,5 +1,10 @@
 # Repository and DOI route for the IJCAS manuscript
 
+Status (2026-11-11): the public GitHub repository is created at
+https://github.com/chnoorlee/Complementary-Filtered-Residual-World-Models-for-Receding-Horizon-Control-of-Nonlinear-Systems
+with an MIT license and `CITATION.cff`, and the availability statement cites
+it. Steps 1--3 below are complete; the Zenodo archival steps remain.
+
 ## Recommended route: GitHub plus Zenodo
 
 1. Create a clean public GitHub repository for the CFR-WM code and
